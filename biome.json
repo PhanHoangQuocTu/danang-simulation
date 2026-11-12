@@ -11,6 +11,7 @@
     "includes": [
       "**",
       "!node_modules",
+      "!history",
       "!**/.next",
       "!**/dist",
       "!**/public",

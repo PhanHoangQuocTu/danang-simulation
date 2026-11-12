@@ -1,0 +1,2 @@
+$ biome format .
+Checked 301 files in 29ms. No fixes applied.

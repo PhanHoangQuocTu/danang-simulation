@@ -1,0 +1,36 @@
+const { spawn } = require('node:child_process');
+const fs = require('node:fs');
+const chrome = spawn('/usr/bin/google-chrome', ['--headless=new', '--no-sandbox', '--disable-dev-shm-usage', '--remote-debugging-port=9227', '--user-data-dir=/tmp/danang-browser-profile', 'about:blank'], { stdio: 'ignore' });
+const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+(async () => {
+  let socket;
+  try {
+    let target;
+    for (let i=0;i<60;i++) {
+      try { target = (await (await fetch('http://127.0.0.1:9227/json')).json()).find(t=>t.type==='page'); if(target) break; } catch {}
+      await pause(100);
+    }
+    if (!target) throw new Error('Chrome debug endpoint unavailable');
+    socket = new WebSocket(target.webSocketDebuggerUrl);
+    await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=reject});
+    let id=0; const pending=new Map(); const events=[];
+    socket.onmessage=({data})=>{ const msg=JSON.parse(data); if(msg.id){const callbacks=pending.get(msg.id);pending.delete(msg.id);if(msg.error)callbacks.reject(msg.error);else callbacks.resolve(msg.result);} else events.push(msg); };
+    const send=(method,params={})=>new Promise((resolve,reject)=>{const next=++id;pending.set(next,{resolve,reject});socket.send(JSON.stringify({id:next,method,params}));});
+    await send('Runtime.enable'); await send('Page.enable'); await send('Network.enable'); await send('Log.enable');
+    const results=[];
+    for(const route of ['/', '/vi', '/health', '/vi/health']) {
+      await send('Network.clearBrowserCookies');
+      events.length=0;
+      await send('Page.navigate',{url:`http://127.0.0.1:3187${route}`});
+      await pause(3000);
+      const dom=await send('Runtime.evaluate',{expression:'JSON.stringify({title:document.title,lang:document.documentElement.lang,h1:document.querySelector("h1")?.textContent,canonical:document.querySelector("link[rel=canonical]")?.href,robots:document.querySelector("meta[name=robots]")?.content})',returnByValue:true});
+      const errors=events.filter(e=>e.method==='Runtime.exceptionThrown'||(e.method==='Runtime.consoleAPICalled'&&['error','warning'].includes(e.params.type))||(e.method==='Log.entryAdded'&&['error','warning'].includes(e.params.entry.level))||e.method==='Network.loadingFailed'||(e.method==='Network.responseReceived'&&e.params.response.status>=400));
+      results.push({route,dom:JSON.parse(dom.result.value),errors});
+    }
+    const health=await fetch('http://127.0.0.1:3187/api/health');
+    const report={browser:await send('Browser.getVersion'),routes:results,health:{status:health.status,cacheControl:health.headers.get('cache-control'),body:await health.json()}};
+    fs.writeFileSync('/tmp/danang-browser-results.json',JSON.stringify(report,null,2));
+    console.log(JSON.stringify(report,null,2));
+    if(results.some(r=>r.errors.length))process.exitCode=1;
+  } finally { if(socket)socket.close();chrome.kill('SIGTERM'); }
+})().catch(error=>{console.error(error);process.exitCode=1;chrome.kill('SIGTERM')});

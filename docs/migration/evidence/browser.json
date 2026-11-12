@@ -1,0 +1,66 @@
+{
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/157.0.8103.78",
+    "revision": "@4b3d0dabb8250b6f152d2d85d79e7706e309d087",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "jsVersion": "15.7.112.43"
+  },
+  "routes": [
+    {
+      "route": "/",
+      "dom": {
+        "title": "Frontend Boilerplate: Next.js, shadcn/ui, i18n",
+        "lang": "en",
+        "h1": "Next.js frontend boilerplate",
+        "canonical": "http://localhost:3000/",
+        "robots": "noindex, nofollow"
+      },
+      "errors": []
+    },
+    {
+      "route": "/vi",
+      "dom": {
+        "title": "Frontend Boilerplate: Next.js, shadcn/ui, i18n",
+        "lang": "vi",
+        "h1": "Next.js frontend boilerplate",
+        "canonical": "http://localhost:3000/vi",
+        "robots": "noindex, nofollow"
+      },
+      "errors": []
+    },
+    {
+      "route": "/health",
+      "dom": {
+        "title": "System health | Frontend Boilerplate",
+        "lang": "en",
+        "h1": "System health",
+        "canonical": "http://localhost:3000/health",
+        "robots": "noindex, nofollow"
+      },
+      "errors": []
+    },
+    {
+      "route": "/vi/health",
+      "dom": {
+        "title": "Tình trạng hệ thống | Frontend Boilerplate",
+        "lang": "vi",
+        "h1": "Tình trạng hệ thống",
+        "canonical": "http://localhost:3000/vi/health",
+        "robots": "noindex, nofollow"
+      },
+      "errors": []
+    }
+  ],
+  "health": {
+    "status": 200,
+    "cacheControl": "no-store",
+    "body": {
+      "status": "ok",
+      "timestamp": "2026-11-12T07:11:50.885Z",
+      "uptime": 13,
+      "version": "0.1.0",
+      "environment": "development"
+    }
+  }
+}
