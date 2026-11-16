@@ -12,6 +12,7 @@
       "**",
       "!node_modules",
       "!history",
+      "!.agents",
       "!**/.next",
       "!**/dist",
       "!**/public",

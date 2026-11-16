@@ -29,7 +29,8 @@ export function projectWorldToMiniMap(
   mapCenterZ: number,
   zoom: number,
   orthoHalfExtent: number = GAME_CONFIG.miniMap.orthoHalfExtent,
-  orthoCamera?: THREE.OrthographicCamera | null
+  orthoCamera?: THREE.OrthographicCamera | null,
+  output?: MiniMapProjectionResult
 ): MiniMapProjectionResult {
   const safeX = Number.isFinite(worldX) ? worldX : 0;
   const safeZ = Number.isFinite(worldZ) ? worldZ : 0;
@@ -80,12 +81,12 @@ export function projectWorldToMiniMap(
   const clampedU = THREE.MathUtils.clamp(u, edgeMargin, 1 - edgeMargin);
   const clampedV = THREE.MathUtils.clamp(v, edgeMargin, 1 - edgeMargin);
 
-  return {
-    u,
-    v,
-    clampedU,
-    clampedV,
-    isOutOfBounds,
-    screenRotationDeg,
-  };
+  const result = output ?? ({} as MiniMapProjectionResult);
+  result.u = u;
+  result.v = v;
+  result.clampedU = clampedU;
+  result.clampedV = clampedV;
+  result.isOutOfBounds = isOutOfBounds;
+  result.screenRotationDeg = screenRotationDeg;
+  return result;
 }

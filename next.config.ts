@@ -9,7 +9,7 @@ const isProductionEnv = process.env.NEXT_PUBLIC_APP_ENV === 'production';
  * Backend origin used by the `/proxy/*` rewrite: a zero-code alternative to Route Handlers.
  * The browser calls `/proxy/...` on this origin, so CORS never applies.
  */
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://jsonplaceholder.typicode.com').replace(/\/$/, '');
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/$/, '');
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
   experimental: { globalNotFound: true },
   env: { APP_VERSION: pkg.version },
   async rewrites() {
-    return [{ source: '/proxy/:path*', destination: `${API_URL}/:path*` }];
+    return API_URL ? [{ source: '/proxy/:path*', destination: `${API_URL}/:path*` }] : [];
   },
   async headers() {
     const security = [

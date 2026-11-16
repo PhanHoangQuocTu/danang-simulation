@@ -10,7 +10,7 @@ export { isProductionEnv };
  */
 export const siteConfig = {
   appUrl: env.APP_URL,
-  name: 'Frontend Boilerplate',
-  shortName: 'Boilerplate',
-  description: 'Production-ready Next.js frontend boilerplate.',
+  name: 'Da Nang 3D Open World',
+  shortName: 'Da Nang 3D',
+  description: 'Interactive 3D exploration with Da Nang time and weather in a synthetic test environment.',
 };

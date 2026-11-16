@@ -1,5 +1,5 @@
 {
-  "appName": "Frontend Boilerplate",
+  "appName": "Da Nang 3D Open World",
   "language": "Language",
   "theme": {
     "label": "Theme",
@@ -21,9 +21,8 @@
     "error": "Something went wrong"
   },
   "home": {
-    "title": "Next.js frontend boilerplate",
-    "description": "Next.js 16, React 19, Tailwind v4, shadcn/ui, next-intl, TanStack Query and Zustand. Ready for your next project.",
-    "openHealth": "Open health page"
+    "title": "Da Nang 3D Open World",
+    "description": "Interactive 3D exploration with a third-person character, Da Nang time, astronomical sunlight, and live weather in a synthetic test environment."
   },
   "notFound": {
     "title": "Page not found",
@@ -34,8 +33,8 @@
     "description": "An unexpected error occurred. You can try again."
   },
   "seo": {
-    "siteName": "Frontend Boilerplate",
-    "defaultTitle": "Frontend Boilerplate: Next.js, shadcn/ui, i18n",
-    "description": "Production-ready Next.js frontend boilerplate with shadcn/ui, next-intl, TanStack Query, Zustand, Docker and CI."
+    "siteName": "Da Nang 3D Open World",
+    "defaultTitle": "Da Nang 3D Open World — Interactive Simulation",
+    "description": "Interactive 3D exploration with a third-person character, Da Nang time, astronomical sunlight, and live weather in a synthetic test environment."
   }
 }

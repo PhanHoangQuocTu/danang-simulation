@@ -60,11 +60,14 @@ export function getSupportSurfaceHeight(x: number, z: number, currentY: number, 
   return highestY;
 }
 
+const allCylinders = [...ROCK_COLLIDERS, ...TREE_COLLIDERS];
+
 export function resolveHorizontalCollisions(
   nextX: number,
   nextZ: number,
   currentY: number,
-  playerRadius: number
+  playerRadius: number,
+  output?: { x: number; z: number }
 ): { x: number; z: number } {
   let rx = nextX;
   let rz = nextZ;
@@ -87,7 +90,6 @@ export function resolveHorizontalCollisions(
     }
   }
 
-  const allCylinders = [...ROCK_COLLIDERS, ...TREE_COLLIDERS];
   for (const c of allCylinders) {
     const minDist = c.radius + playerRadius;
     const dx = rx - c.x;
@@ -101,5 +103,8 @@ export function resolveHorizontalCollisions(
     }
   }
 
-  return { x: rx, z: rz };
+  const result = output ?? { x: 0, z: 0 };
+  result.x = rx;
+  result.z = rz;
+  return result;
 }

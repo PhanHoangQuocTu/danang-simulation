@@ -26,5 +26,9 @@ export const requestInternal: AxiosInstance = axios.create({
 /** Server code calls the backend directly; browser code always goes through the BFF. */
 export const getApiRequestClient = (): AxiosInstance => (isServer ? request : requestInternal);
 
+request.interceptors.request.use((config) => {
+  if (!env.API_URL) throw new axios.AxiosError('Backend origin is not configured', 'BACKEND_NOT_CONFIGURED', config);
+  return config;
+});
 attachInterceptors(request);
 attachInterceptors(requestInternal);

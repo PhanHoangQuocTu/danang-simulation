@@ -5,7 +5,7 @@ Claude Code reads `CLAUDE.md`, which imports this file. Keep the two in sync by 
 
 ## What this repo is
 
-A reusable **Next.js 16 frontend boilerplate**: App Router, React 19, TypeScript 7 (strict), Tailwind v4, shadcn/ui, next-intl (`en`, `vi`), TanStack Query, Zustand, Storybook, Vitest, Docker, CI. It has no product features. `src/modules/Health` and `src/api/posts` are examples to copy, not code to extend.
+**Da Nang 3D Open World**, built on a reusable Next.js frontend foundation: App Router, React 19, TypeScript 7 (strict), Tailwind v4, shadcn/ui, next-intl (`en`, `vi`), TanStack Query, Zustand, Storybook, Vitest, Docker, CI. The homepage renders the Phase 1–10 synthetic simulation. Preserve `src/modules/Health` as operational functionality. API domain patterns are documented in `docs/API_INTEGRATIONS.md`.
 
 ## Commands
 
@@ -76,7 +76,7 @@ src/proxy.ts        next-intl locale negotiation (Next 16 renamed middleware.ts 
 ## API layer
 
 - The browser never calls the real backend. Browser code uses `getApiRequestClient()` (BFF at `/api/*`); server code uses the direct `request` client. The real URL is `NEXT_PUBLIC_API_URL`.
-- New domain: `src/api/<domain>/{keys,requests,queries,mutations,type,index}.ts` plus a mirroring Route Handler `src/app/api/<domain>/route.ts`. Copy `src/api/posts`.
+- New domain: `src/api/<domain>/{keys,requests,queries,mutations,type,index}.ts` plus a mirroring Route Handler `src/app/api/<domain>/route.ts`. Follow `docs/API_INTEGRATIONS.md`; the Health domain demonstrates reusable queries and internal requests.
 - Errors reaching callers are normalised `IApiError` (`status`, `message`, `code`, `details`).
 - Token refresh is opt-in through `setRefreshTokenHandler`. There is no auth provider by design.
 
@@ -122,4 +122,24 @@ Vitest + Testing Library (jsdom). Put tests in `__tests__/` next to the code. Pu
 ## Codex-specific notes
 
 - Prefer targeted commands (`pnpm exec vitest run <file>`) while iterating, then the full definition of done once.
-- The sandbox may block network access. `pnpm install`, `pnpm dlx shadcn@latest` and the demo API (`jsonplaceholder.typicode.com`) need it; if blocked, say so instead of faking results.
+- The sandbox may block network access. `pnpm install`, `pnpm dlx shadcn@latest` and live Open-Meteo requests need it; if blocked, say so instead of faking results.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
+
+## Simulation integration
+
+- The homepage is an immersive WorldExplorer viewport; do not wrap it in MainLayout. Health keeps its existing layout.
+- Generic engine code must not import React, Next.js, or city content. Da Nang composition and atmosphere live in `src/worlds/danang/`.
+- Reuse EngineRuntime, ResourceScope, controller, registries, and extracted helpers. Preserve the historical Phase 10 files unchanged.
+- All current terrain and placements are synthetic local meters, not verified geographic city geometry. Product Phase 11 remains unstarted.
+- Live weather uses the fixed `/api/weather` BFF. Strict live validation runs before the historical normalizer. Never display fabricated defaults as observations.
+- `NEXT_PUBLIC_API_URL` may be empty. No backend rewrite is registered in that case; direct backend requests fail before network.
+- Shared catalogs own geometry/material; instances borrow them. Register owned resources before attaching them to scenes.

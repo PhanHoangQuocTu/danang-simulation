@@ -10,6 +10,9 @@ describe('translation typing', () => {
   it('offers only existing namespaces', () => {
     expectTypeOf<'common'>().toExtend<Namespace>();
     expectTypeOf<'common.actions'>().toExtend<Namespace>();
+    expectTypeOf<'health.app'>().toExtend<Namespace>();
+    expectTypeOf<'worldExplorer'>().toExtend<Namespace>();
+    // @ts-expect-error removed demo namespace must not remain available
     expectTypeOf<'health.proxy'>().toExtend<Namespace>();
     // @ts-expect-error unknown namespace
     expectTypeOf<'nope'>().toExtend<Namespace>();

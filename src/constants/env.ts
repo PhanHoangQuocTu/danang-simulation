@@ -9,7 +9,12 @@ const envSchema = z.object({
   /** Public origin of this app. Used for canonical URLs, sitemap and Open Graph. */
   APP_URL: z.string().default('http://localhost:3000'),
   /** Backend origin the BFF route handlers and the `/proxy/*` rewrite forward to. */
-  API_URL: z.string().default('https://jsonplaceholder.typicode.com'),
+  API_URL: z
+    .union([
+      z.literal(''),
+      z.url().refine((value) => ['http:', 'https:'].includes(new URL(value).protocol), 'Backend must use HTTP(S)'),
+    ])
+    .default(''),
   /** Injected by `next.config.ts` from package.json. */
   APP_VERSION: z.string().default('0.0.0'),
 });

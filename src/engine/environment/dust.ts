@@ -1,3 +1,4 @@
+import { ResourceScope } from '../core/resources';
 import * as THREE from 'three';
 interface DustParticle {
   mesh: THREE.Mesh;
@@ -7,17 +8,19 @@ interface DustParticle {
   active: boolean;
 }
 
-export function createFootstepParticleSystem(scene: THREE.Scene) {
+export function createFootstepParticleSystem(scene: THREE.Scene, scope = new ResourceScope()) {
   const pool: DustParticle[] = [];
-  const geo = new THREE.SphereGeometry(0.11, 6, 6);
-  const baseMat = new THREE.MeshBasicMaterial({
-    color: 0xd6d3d1,
-    transparent: true,
-    opacity: 0.55,
-  });
+  const geo = scope.own(new THREE.SphereGeometry(0.11, 6, 6));
+  const baseMat = scope.own(
+    new THREE.MeshBasicMaterial({
+      color: 0xd6d3d1,
+      transparent: true,
+      opacity: 0.55,
+    })
+  );
 
   for (let i = 0; i < 24; i++) {
-    const mesh = new THREE.Mesh(geo, baseMat.clone());
+    const mesh = new THREE.Mesh(geo, scope.own(baseMat.clone()));
     mesh.visible = false;
     scene.add(mesh);
     pool.push({

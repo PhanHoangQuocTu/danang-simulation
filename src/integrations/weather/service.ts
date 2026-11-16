@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { DA_NANG_CONFIG } from '@/worlds/danang/const';
-import { GAME_CONFIG } from '@/engine/core/const';
 import { getDaNangClockData, formatIsoTimeString } from '@/worlds/danang/environment/solar';
 import type { NormalizedWeatherState } from './type';
 import { mapWmoWeatherCode } from './mapper';
@@ -115,62 +114,6 @@ export function validateAndNormalizeWeatherPayload(
     validationStatus: anySanitized ? 'sanitized' : 'valid',
     mapped,
   };
-}
-
-export async function fetchDaNangWeatherWithRetry(
-  externalSignal?: AbortSignal,
-  maxRetries = 3
-): Promise<NormalizedWeatherState> {
-  const url = buildDaNangOpenMeteoUrl();
-  let attempt = 0;
-
-  while (attempt < maxRetries) {
-    const timeoutController = new AbortController();
-    const timeoutId = window.setTimeout(() => timeoutController.abort(), GAME_CONFIG.weatherRequestTimeoutMs);
-
-    const onExternalAbort = () => timeoutController.abort();
-    if (externalSignal) {
-      if (externalSignal.aborted) {
-        window.clearTimeout(timeoutId);
-        throw new DOMException('Aborted', 'AbortError');
-      }
-      externalSignal.addEventListener('abort', onExternalAbort, { once: true });
-    }
-
-    try {
-      const response = await fetch(url, {
-        signal: timeoutController.signal,
-        headers: { Accept: 'application/json' },
-      });
-      window.clearTimeout(timeoutId);
-      if (externalSignal) {
-        externalSignal.removeEventListener('abort', onExternalAbort);
-      }
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      const rawJson = (await response.json()) as Record<string, unknown>;
-      return validateAndNormalizeWeatherPayload(rawJson, new Date());
-    } catch (err: unknown) {
-      window.clearTimeout(timeoutId);
-      if (externalSignal) {
-        externalSignal.removeEventListener('abort', onExternalAbort);
-      }
-      if (externalSignal?.aborted) {
-        throw err;
-      }
-      attempt++;
-      if (attempt >= maxRetries) {
-        throw err;
-      }
-      const backoffMs = 1000 * 2 ** (attempt - 1);
-      await new Promise((resolve) => window.setTimeout(resolve, backoffMs));
-    }
-  }
-
-  throw new Error('Weather API maximum retries exceeded');
 }
 
 export function formatCompassDirection(deg: number): string {

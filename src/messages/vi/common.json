@@ -1,5 +1,5 @@
 {
-  "appName": "Frontend Boilerplate",
+  "appName": "Da Nang 3D Open World",
   "language": "Ngôn ngữ",
   "theme": {
     "label": "Giao diện",
@@ -21,9 +21,8 @@
     "error": "Đã có lỗi xảy ra"
   },
   "home": {
-    "title": "Next.js frontend boilerplate",
-    "description": "Next.js 16, React 19, Tailwind v4, shadcn/ui, next-intl, TanStack Query và Zustand. Sẵn sàng cho dự án tiếp theo của bạn.",
-    "openHealth": "Mở trang health"
+    "title": "Da Nang 3D Open World",
+    "description": "Khám phá 3D tương tác với nhân vật góc nhìn thứ ba, giờ Đà Nẵng, mặt trời thiên văn và thời tiết trực tiếp trong môi trường thử nghiệm tổng hợp."
   },
   "notFound": {
     "title": "Không tìm thấy trang",
@@ -34,8 +33,8 @@
     "description": "Có lỗi không mong muốn. Bạn có thể thử lại."
   },
   "seo": {
-    "siteName": "Frontend Boilerplate",
-    "defaultTitle": "Frontend Boilerplate: Next.js, shadcn/ui, i18n",
-    "description": "Boilerplate frontend Next.js sẵn sàng production với shadcn/ui, next-intl, TanStack Query, Zustand, Docker và CI."
+    "siteName": "Da Nang 3D Open World",
+    "defaultTitle": "Da Nang 3D Open World — Interactive Simulation",
+    "description": "Khám phá 3D tương tác với nhân vật góc nhìn thứ ba, giờ Đà Nẵng, mặt trời thiên văn và thời tiết trực tiếp trong môi trường thử nghiệm tổng hợp."
   }
 }

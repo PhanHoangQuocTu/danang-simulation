@@ -52,6 +52,7 @@ export interface NormalizedWeatherState {
   apiObservationTime: string;
   fetchedAtFormatted: string;
   fetchedAtTimestampMs: number;
+  observationTimestampMs?: number;
   freshness: DataFreshnessStatus;
   validationStatus: 'valid' | 'sanitized';
   mapped: MappedWeatherInfo;

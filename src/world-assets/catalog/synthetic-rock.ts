@@ -1,12 +1,14 @@
-import { DodecahedronGeometry, Mesh, MeshStandardMaterial, type Group } from 'three';
+import { DodecahedronGeometry, Mesh, MeshStandardMaterial, type Texture, type Group } from 'three';
 import { ResourceScope } from '@/engine/core/resources';
 import type { ElementFactory } from '@/world-core/registries/prefabs';
 
 /** Synthetic Phase 1 rock kit. One catalog owns the shared geometry and material. */
-export function createSyntheticRockCatalog(parent: Group) {
+export function createSyntheticRockCatalog(parent: Group, texture?: Texture) {
   const scope = new ResourceScope();
   const geometry = scope.own(new DodecahedronGeometry(1, 1));
-  const material = scope.own(new MeshStandardMaterial({ color: 0x64748b, roughness: 0.82, metalness: 0.08 }));
+  const material = scope.own(
+    new MeshStandardMaterial({ map: texture, color: 0x64748b, roughness: 0.82, metalness: 0.08 })
+  );
   const instances = new Set<Mesh>();
   let disposed = false;
   const factory: ElementFactory = (element) => {

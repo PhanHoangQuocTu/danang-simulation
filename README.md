@@ -1,8 +1,8 @@
-# Next.js Frontend Boilerplate
+# Da Nang 3D Open World
 
-A **Next.js 16** frontend starter: App Router, React 19, TypeScript, Tailwind CSS v4, shadcn/ui, i18n (English and Vietnamese), SEO foundations, TanStack Query, Zustand, Storybook, Vitest, Docker and CI.
+Ứng dụng Next.js 16 tích hợp mô phỏng Three.js Phase 1–10: nhân vật góc nhìn thứ ba, địa hình thử nghiệm tổng hợp, Mini Map, tương tác, đồng hồ Đà Nẵng và thời tiết Open-Meteo.
 
-Clone it, rename it, delete the example `Health` module, and start building.
+Mở `/` hoặc `/vi` để khám phá. Địa hình hiện tại là synthetic local meters, không phải bản dựng địa lý thành phố đã đo đạc. Product Phase 11 chưa bắt đầu.
 
 ## Tech stack
 
@@ -34,18 +34,18 @@ pnpm dev                 # http://localhost:3000
 pnpm storybook           # http://localhost:6006
 ```
 
-Open [`/health`](http://localhost:3000/health) or `/vi/health` to see the example page: application status, uptime, round-trip latency, and a live list fetched through the proxy.
+Mở `/` để chạy mô phỏng, `/vi` cho tiếng Việt. `/health` và `/vi/health` giữ thông tin vận hành; `/api/health` phục vụ Docker liveness và không gọi dịch vụ ngoài.
 
-## Customize before launch
+## Trạng thái và kiến trúc
 
-- Rename the project in `package.json` and replace the site name and description in `src/config/site.ts` and `src/messages/{en,vi}/common.json`. Replace the icons and review the shared Open Graph image.
-- Set `NEXT_PUBLIC_APP_URL` to the public origin, `NEXT_PUBLIC_APP_ENV` to the deployment environment, and `NEXT_PUBLIC_API_URL` to the intended backend **at build time**. Public environment variables are exposed to the browser; do not put secrets in them.
-- Replace or remove the Health and posts examples, and review locale routing, supported languages, indexable routes and SEO metadata for the new product.
-- Review image host restrictions in `next.config.ts`, security headers, proxy behavior and deployment configuration for the target environment.
-- Implement and review authentication for the product. The included session store is a starting point, not a complete auth system: its tokens are stored in JavaScript-accessible cookies, not HttpOnly cookies. Choose storage and session protection appropriate to your threat model.
-- Review third-party dependencies and asset licenses, and configure CI, vulnerability reporting and repository settings for your own project.
+- Route trang chủ giữ metadata và nội dung semantic phía server. WorldExplorer dùng client boundary, dynamic loading, một WebGL renderer và EngineRuntime.
+- HUD lấy mẫu 10 Hz; clock/solar 1 Hz; interaction targeting 20 Hz. Mini Map dùng viewport/scissor của cùng renderer, không tạo renderer thứ hai.
+- `src/engine/` giữ khả năng dùng lại. `src/worlds/danang/` giữ scene và placements tổng hợp. Catalog và PrefabRegistry quản lý shared assets và zone rollback.
+- Weather BFF có fixed upstream, timeout 10 giây, giới hạn 256 KiB, strict validation và cache kết quả hợp lệ 15 phút. Lỗi refresh giữ quan trắc cũ và đánh dấu stale.
+- Không có GIS đã kiểm chứng, first-person, city streaming hoặc Phase 11 mới. FPS và browser coverage được ghi theo bằng chứng thực trong báo cáo migration.
+- Giữ providers, Query, Zustand, i18n, UI, SEO, Health, Docker, Nginx và CI.
 
-The examples and defaults are intended to be adapted and reviewed before production use.
+Xem [báo cáo migration](docs/migration/MIGRATION_REPORT.md), [vòng đời engine](docs/architecture/ENGINE_LIFECYCLE.md) và [API patterns](docs/API_INTEGRATIONS.md).
 
 ## Scripts
 
@@ -66,12 +66,12 @@ The examples and defaults are intended to be adapted and reviewed before product
 src/
 ├── app/                      # Routes only (thin): layouts, pages, metadata, route handlers
 │   ├── [locale]/             # i18n segment: layout, providers, home, health, error, not-found
-│   ├── api/                  # BFF route handlers (health, posts proxy example)
+│   ├── api/                  # BFF route handlers (health, weather)
 │   ├── manifest.ts, robots.ts, sitemap.ts, icon.svg, apple-icon.tsx, opengraph-image/, twitter-image/
 ├── api/                      # API layer, one folder per domain
 │   ├── axios.ts              # `request` (server -> backend) and `requestInternal` (browser -> BFF)
 │   ├── interceptors.ts       # bearer token, single-flight refresh on 401, error normalisation
-│   └── health/  posts/       # keys.ts, requests.ts, queries.ts, mutations.ts, type.ts, index.ts
+│   └── health/       # keys.ts, requests.ts, queries.ts, mutations.ts, type.ts, index.ts
 ├── components/
 │   ├── ui/                   # shadcn/ui + a *.stories.tsx next to each component
 │   ├── form-field/           # React Hook Form + shadcn field wrappers
@@ -87,7 +87,12 @@ src/
 ├── i18n/                     # routing, request (namespaces), navigation
 ├── lib/                      # cn(), seo.ts, og-image.tsx, cookies, validation regex and messages
 ├── messages/                 # index.ts (registry + locale parity check) and {en,vi}/*.json
-├── modules/                  # page-level business UI (Health is the example)
+├── engine/                   # Runtime, renderer, character, input, interaction, resource ownership
+├── world-core/               # Schemas and prefab registry
+├── world-assets/             # Shared procedural catalog
+├── worlds/danang/            # Synthetic composition, placements, astronomy
+├── integrations/weather/     # Strict provider validation and BFF client
+├── modules/                  # WorldExplorer and operational Health UI
 ├── stores/                   # Zustand: session, modal
 ├── styles/globals.css        # Tailwind v4 + shadcn tokens (light and dark)
 ├── types/                    # type.ts (shared), translation.ts (message typing), additional.d.ts
@@ -100,7 +105,7 @@ docker/                       # Dockerfile and nginx
 
 ### Conventions
 
-- Shared types live in `type.ts`, enums in `enum.ts`, constants in `const.ts`. A feature may have its own next to its code (`src/api/posts/type.ts`, `src/modules/Health/const.ts`).
+- Shared types live in `type.ts`, enums in `enum.ts`, constants in `const.ts`. A feature may have its own next to its code (`src/api/health/type.ts`, `src/modules/Health/const.ts`).
 - Components `PascalCase.tsx`, hooks `useCamelCase.ts`, utils `lowercase.ts`. Tests go in `__tests__/`, stories sit next to the component.
 - Alias `@/*` maps to `src/*`.
 - Commits follow Conventional Commits. Husky runs lint-staged on commit and commitlint on the message.
@@ -179,23 +184,9 @@ To add an indexable page: create the route, call `buildMetadata({ locale, path, 
 
 ## API layer and proxy
 
-The browser never calls the real backend. Two patterns are included:
+Browser gọi BFF cùng origin qua `requestInternal` hoặc `getApiRequestClient()`. Server dùng `request` cho backend được cấu hình. `NEXT_PUBLIC_API_URL` mặc định rỗng; không có backend thì không đăng ký `/proxy/*`, và direct backend client trả lỗi `BACKEND_NOT_CONFIGURED` trước network. Health và weather hoạt động độc lập với backend này.
 
-1. **Route Handler (BFF)** in `src/app/api/posts/route.ts`: browser to `/api/posts` to backend `/posts`. The browser requests the same origin, avoiding browser CORS requirements, and responses can be reshaped. `getApiRequestClient()` returns the direct client on the server and the BFF client in the browser, so one `requests.ts` works in both. The backend URL is configured with `NEXT_PUBLIC_API_URL` and is not a secret.
-2. **Rewrite** in `next.config.ts`: `/proxy/*` is forwarded to `NEXT_PUBLIC_API_URL` with no code. Use it for simple pass-through.
-
-Add a domain:
-
-```text
-src/api/<domain>/{keys,requests,queries,mutations,type,index}.ts
-src/app/api/<domain>/route.ts        # mirror the backend path
-```
-
-Token refresh is opt-in. Register a handler once at start-up; without one a 401 clears the session:
-
-```ts
-setRefreshTokenHandler(async (refreshToken) => (await requestInternal.post('/auth/refresh', { refreshToken })).data);
-```
+Tạo domain theo `src/api/<domain>/{keys,requests,queries,mutations,type,index}.ts` và Route Handler tương ứng. Xem [API_INTEGRATIONS.md](docs/API_INTEGRATIONS.md) cho trách nhiệm từng file, error normalization và refresh handling. Không tạo open proxy; provider ngoài cần allowlist cố định.
 
 ## Environment variables
 
@@ -203,9 +194,9 @@ setRefreshTokenHandler(async (refreshToken) => (await requestInternal.post('/aut
 | --- | --- |
 | `NEXT_PUBLIC_APP_ENV` | `development`, `staging` or `production`. Non-production is `noindex` |
 | `NEXT_PUBLIC_APP_URL` | Public origin of this app (canonical URLs, sitemap, Open Graph) |
-| `NEXT_PUBLIC_API_URL` | Backend origin. Target of the BFF handlers and the `/proxy/*` rewrite |
+| `NEXT_PUBLIC_API_URL` | Optional HTTP(S) backend origin; empty disables the `/proxy/*` rewrite |
 
-Values are parsed in `src/constants/env.ts`: the environment name is validated, and URLs are strings with defaults. Supply valid absolute URLs. `NEXT_PUBLIC_*` values are exposed to the browser and inlined at build time, so Docker takes them as build args.
+Values are parsed in `src/constants/env.ts`: the environment name is validated, APP_URL has a local default; API_URL accepts an HTTP(S) URL or an empty value. `NEXT_PUBLIC_*` values are exposed to the browser and inlined at build time, so Docker takes them as build args.
 
 ## Storybook
 

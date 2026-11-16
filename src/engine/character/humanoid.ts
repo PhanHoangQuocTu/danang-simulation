@@ -1,19 +1,20 @@
+import { ResourceScope } from '../core/resources';
 import * as THREE from 'three';
 import type { HumanoidRig, PlayerRuntimeState } from '../core/type';
-export function createCasualExplorerRig(): HumanoidRig {
+export function createCasualExplorerRig(scope = new ResourceScope()): HumanoidRig {
   const root = new THREE.Group();
   root.name = 'PlayerRoot';
 
-  const skinMat = new THREE.MeshStandardMaterial({ color: 0xf1c29d, roughness: 0.62, metalness: 0.04 });
-  const hairMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.78, metalness: 0.05 });
-  const jacketMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, roughness: 0.52, metalness: 0.1 });
-  const shirtMat = new THREE.MeshStandardMaterial({ color: 0xf8fafc, roughness: 0.7, metalness: 0.02 });
-  const pantsMat = new THREE.MeshStandardMaterial({ color: 0x334155, roughness: 0.76, metalness: 0.05 });
-  const shoeMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.55, metalness: 0.12 });
-  const soleMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.5 });
-  const backpackMat = new THREE.MeshStandardMaterial({ color: 0xd97706, roughness: 0.65, metalness: 0.08 });
-  const darkDetailMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.25 });
-  const mouthMat = new THREE.MeshStandardMaterial({ color: 0xb96b59, roughness: 0.5 });
+  const skinMat = scope.own(new THREE.MeshStandardMaterial({ color: 0xf1c29d, roughness: 0.62, metalness: 0.04 }));
+  const hairMat = scope.own(new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.78, metalness: 0.05 }));
+  const jacketMat = scope.own(new THREE.MeshStandardMaterial({ color: 0x0284c7, roughness: 0.52, metalness: 0.1 }));
+  const shirtMat = scope.own(new THREE.MeshStandardMaterial({ color: 0xf8fafc, roughness: 0.7, metalness: 0.02 }));
+  const pantsMat = scope.own(new THREE.MeshStandardMaterial({ color: 0x334155, roughness: 0.76, metalness: 0.05 }));
+  const shoeMat = scope.own(new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.55, metalness: 0.12 }));
+  const soleMat = scope.own(new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.5 }));
+  const backpackMat = scope.own(new THREE.MeshStandardMaterial({ color: 0xd97706, roughness: 0.65, metalness: 0.08 }));
+  const darkDetailMat = scope.own(new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.25 }));
+  const mouthMat = scope.own(new THREE.MeshStandardMaterial({ color: 0xb96b59, roughness: 0.5 }));
 
   const enableShadow = (mesh: THREE.Mesh): THREE.Mesh => {
     mesh.castShadow = true;
@@ -28,10 +29,10 @@ export function createCasualExplorerRig(): HumanoidRig {
   const waist = new THREE.Group();
   hips.add(waist);
 
-  const pelvisMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.14, 0.22), pantsMat));
+  const pelvisMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.34, 0.14, 0.22)), pantsMat));
   waist.add(pelvisMesh);
 
-  const beltMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.355, 0.04, 0.23), darkDetailMat));
+  const beltMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.355, 0.04, 0.23)), darkDetailMat));
   beltMesh.position.set(0, 0.06, 0);
   waist.add(beltMesh);
 
@@ -39,19 +40,19 @@ export function createCasualExplorerRig(): HumanoidRig {
   body.position.set(0, 0.08, 0);
   waist.add(body);
 
-  const abdomenShirt = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.31, 0.22, 0.19), shirtMat));
+  const abdomenShirt = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.31, 0.22, 0.19)), shirtMat));
   abdomenShirt.position.set(0, 0.11, 0);
   body.add(abdomenShirt);
 
-  const jacketLeftPanel = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.23, 0.215), jacketMat));
+  const jacketLeftPanel = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.11, 0.23, 0.215)), jacketMat));
   jacketLeftPanel.position.set(0.11, 0.11, 0.005);
   body.add(jacketLeftPanel);
 
-  const jacketRightPanel = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.23, 0.215), jacketMat));
+  const jacketRightPanel = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.11, 0.23, 0.215)), jacketMat));
   jacketRightPanel.position.set(-0.11, 0.11, 0.005);
   body.add(jacketRightPanel);
 
-  const jacketBackLower = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.23, 0.1), jacketMat));
+  const jacketBackLower = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.34, 0.23, 0.1)), jacketMat));
   jacketBackLower.position.set(0, 0.11, -0.06);
   body.add(jacketBackLower);
 
@@ -59,23 +60,25 @@ export function createCasualExplorerRig(): HumanoidRig {
   chest.position.set(0, 0.22, 0);
   body.add(chest);
 
-  const upperChestMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.28, 0.23), jacketMat));
+  const upperChestMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.38, 0.28, 0.23)), jacketMat));
   upperChestMesh.position.set(0, 0.14, 0);
   chest.add(upperChestMesh);
 
-  const shirtVNeck = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.13, 0.26, 0.06), shirtMat));
+  const shirtVNeck = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.13, 0.26, 0.06)), shirtMat));
   shirtVNeck.position.set(0, 0.15, 0.095);
   chest.add(shirtVNeck);
 
-  const collarMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.06, 0.19), jacketMat));
+  const collarMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.26, 0.06, 0.19)), jacketMat));
   collarMesh.position.set(0, 0.29, -0.015);
   chest.add(collarMesh);
 
-  const backpackMain = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.34, 0.14), backpackMat));
+  const backpackMain = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.28, 0.34, 0.14)), backpackMat));
   backpackMain.position.set(0, 0.12, -0.17);
   chest.add(backpackMain);
 
-  const backpackPocket = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.16, 0.05), darkDetailMat));
+  const backpackPocket = enableShadow(
+    new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.22, 0.16, 0.05)), darkDetailMat)
+  );
   backpackPocket.position.set(0, 0.06, -0.25);
   chest.add(backpackPocket);
 
@@ -83,7 +86,7 @@ export function createCasualExplorerRig(): HumanoidRig {
   neck.position.set(0, 0.29, 0);
   chest.add(neck);
 
-  const neckMesh = enableShadow(new THREE.Mesh(new THREE.CylinderGeometry(0.064, 0.074, 0.1, 14), skinMat));
+  const neckMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.CylinderGeometry(0.064, 0.074, 0.1, 14)), skinMat));
   neckMesh.position.set(0, 0.05, 0);
   neck.add(neckMesh);
 
@@ -91,64 +94,64 @@ export function createCasualExplorerRig(): HumanoidRig {
   head.position.set(0, 0.09, 0);
   neck.add(head);
 
-  const faceBox = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.24, 0.22), skinMat));
+  const faceBox = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.22, 0.24, 0.22)), skinMat));
   faceBox.position.set(0, 0.12, 0);
   head.add(faceBox);
 
-  const jawMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.19, 0.05, 0.19), skinMat));
+  const jawMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.19, 0.05, 0.19)), skinMat));
   jawMesh.position.set(0, 0.01, 0.01);
   head.add(jawMesh);
 
-  const noseMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.034, 0.052, 0.04), skinMat));
+  const noseMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.034, 0.052, 0.04)), skinMat));
   noseMesh.position.set(0, 0.115, 0.12);
   head.add(noseMesh);
 
-  const mouthMesh = new THREE.Mesh(new THREE.BoxGeometry(0.064, 0.016, 0.015), mouthMat);
+  const mouthMesh = new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.064, 0.016, 0.015)), mouthMat);
   mouthMesh.position.set(0, 0.062, 0.112);
   head.add(mouthMesh);
 
-  const leftEye = new THREE.Mesh(new THREE.BoxGeometry(0.034, 0.028, 0.015), darkDetailMat);
+  const leftEye = new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.034, 0.028, 0.015)), darkDetailMat);
   leftEye.position.set(0.052, 0.14, 0.112);
   head.add(leftEye);
 
-  const rightEye = new THREE.Mesh(new THREE.BoxGeometry(0.034, 0.028, 0.015), darkDetailMat);
+  const rightEye = new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.034, 0.028, 0.015)), darkDetailMat);
   rightEye.position.set(-0.052, 0.14, 0.112);
   head.add(rightEye);
 
-  const leftBrow = new THREE.Mesh(new THREE.BoxGeometry(0.048, 0.013, 0.015), hairMat);
+  const leftBrow = new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.048, 0.013, 0.015)), hairMat);
   leftBrow.position.set(0.052, 0.174, 0.114);
   head.add(leftBrow);
 
-  const rightBrow = new THREE.Mesh(new THREE.BoxGeometry(0.048, 0.013, 0.015), hairMat);
+  const rightBrow = new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.048, 0.013, 0.015)), hairMat);
   rightBrow.position.set(-0.052, 0.174, 0.114);
   head.add(rightBrow);
 
-  const leftEar = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.026, 0.06, 0.042), skinMat));
+  const leftEar = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.026, 0.06, 0.042)), skinMat));
   leftEar.position.set(0.12, 0.12, 0);
   head.add(leftEar);
 
-  const rightEar = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.026, 0.06, 0.042), skinMat));
+  const rightEar = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.026, 0.06, 0.042)), skinMat));
   rightEar.position.set(-0.12, 0.12, 0);
   head.add(rightEar);
 
-  const hairTop = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.242, 0.075, 0.25), hairMat));
+  const hairTop = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.242, 0.075, 0.25)), hairMat));
   hairTop.position.set(0, 0.24, 0.01);
   head.add(hairTop);
 
-  const hairFringe = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.225, 0.045, 0.06), hairMat));
+  const hairFringe = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.225, 0.045, 0.06)), hairMat));
   hairFringe.position.set(0, 0.215, 0.115);
   hairFringe.rotation.x = 0.2;
   head.add(hairFringe);
 
-  const hairBack = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.236, 0.21, 0.095), hairMat));
+  const hairBack = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.236, 0.21, 0.095)), hairMat));
   hairBack.position.set(0, 0.145, -0.08);
   head.add(hairBack);
 
-  const leftSideburn = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.022, 0.11, 0.18), hairMat));
+  const leftSideburn = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.022, 0.11, 0.18)), hairMat));
   leftSideburn.position.set(0.114, 0.18, 0.005);
   head.add(leftSideburn);
 
-  const rightSideburn = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.022, 0.11, 0.18), hairMat));
+  const rightSideburn = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.022, 0.11, 0.18)), hairMat));
   rightSideburn.position.set(-0.114, 0.18, 0.005);
   head.add(rightSideburn);
 
@@ -160,7 +163,9 @@ export function createCasualExplorerRig(): HumanoidRig {
     const arm = new THREE.Group();
     shoulder.add(arm);
 
-    const upperArmSleeve = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.112, 0.26, 0.112), jacketMat));
+    const upperArmSleeve = enableShadow(
+      new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.112, 0.26, 0.112)), jacketMat)
+    );
     upperArmSleeve.position.set(0, -0.12, 0);
     arm.add(upperArmSleeve);
 
@@ -168,7 +173,7 @@ export function createCasualExplorerRig(): HumanoidRig {
     elbow.position.set(0, -0.25, 0);
     arm.add(elbow);
 
-    const forearmMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.088, 0.22, 0.088), skinMat));
+    const forearmMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.088, 0.22, 0.088)), skinMat));
     forearmMesh.position.set(0, -0.11, 0);
     elbow.add(forearmMesh);
 
@@ -176,7 +181,7 @@ export function createCasualExplorerRig(): HumanoidRig {
     hand.position.set(0, -0.23, 0);
     elbow.add(hand);
 
-    const handMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.1, 0.095), skinMat));
+    const handMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.08, 0.1, 0.095)), skinMat));
     handMesh.position.set(0, -0.04, 0);
     hand.add(handMesh);
 
@@ -194,7 +199,7 @@ export function createCasualExplorerRig(): HumanoidRig {
     const leg = new THREE.Group();
     hip.add(leg);
 
-    const thighMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.136, 0.4, 0.145), pantsMat));
+    const thighMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.136, 0.4, 0.145)), pantsMat));
     thighMesh.position.set(0, -0.2, 0);
     leg.add(thighMesh);
 
@@ -202,7 +207,7 @@ export function createCasualExplorerRig(): HumanoidRig {
     knee.position.set(0, -0.4, 0);
     leg.add(knee);
 
-    const shinMesh = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.116, 0.38, 0.122), pantsMat));
+    const shinMesh = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.116, 0.38, 0.122)), pantsMat));
     shinMesh.position.set(0, -0.19, 0);
     knee.add(shinMesh);
 
@@ -210,11 +215,11 @@ export function createCasualExplorerRig(): HumanoidRig {
     foot.position.set(0, -0.39, 0);
     knee.add(foot);
 
-    const shoeUpper = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.126, 0.075, 0.225), shoeMat));
+    const shoeUpper = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.126, 0.075, 0.225)), shoeMat));
     shoeUpper.position.set(0, -0.04, 0.036);
     foot.add(shoeUpper);
 
-    const shoeSole = enableShadow(new THREE.Mesh(new THREE.BoxGeometry(0.132, 0.025, 0.235), soleMat));
+    const shoeSole = enableShadow(new THREE.Mesh(scope.own(new THREE.BoxGeometry(0.132, 0.025, 0.235)), soleMat));
     shoeSole.position.set(0, -0.08, 0.036);
     foot.add(shoeSole);
 

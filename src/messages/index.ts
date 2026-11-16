@@ -1,4 +1,6 @@
 import type { Locale } from '@/i18n/routing';
+import enWorldExplorer from './en/worldExplorer.json';
+import viWorldExplorer from './vi/worldExplorer.json';
 import enCommon from './en/common.json';
 import enHealth from './en/health.json';
 import viCommon from './vi/common.json';
@@ -14,8 +16,8 @@ import viHealth from './vi/health.json';
  * have exactly the same keys as English.
  */
 export const messages = {
-  en: { common: enCommon, health: enHealth },
-  vi: { common: viCommon, health: viHealth },
+  en: { common: enCommon, health: enHealth, worldExplorer: enWorldExplorer },
+  vi: { common: viCommon, health: viHealth, worldExplorer: viWorldExplorer },
 } as const satisfies Record<Locale, unknown>;
 
 /** Namespaces registered above. */
