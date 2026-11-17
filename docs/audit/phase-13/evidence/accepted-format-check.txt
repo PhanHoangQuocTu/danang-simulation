@@ -1,0 +1,30 @@
+pnpm.CMD : $ biome format .
+At line:6 char:3
++   & pnpm.cmd $check *> $log
++   ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ biome format .:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+docs\audit\phase-13\evidence\after-browser.json format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    165 165 │       }
+    166 166 │     ],
+    167     │ - ··"screenshots":·[
+    168     │ - ····"after-1920x1080.png"
+    169     │ - ··]
+        167 │ + ··"screenshots":·["after-1920x1080.png"]
+    170 168 │   }
+    171 169 │   
+  
+
+Checked 367 files in 157ms. No fixes applied.
+Found 1 error.
+format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
+[ELIFECYCLE] Command failed with exit code 1.
+EXIT_CODE=1

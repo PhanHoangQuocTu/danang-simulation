@@ -1,0 +1,123 @@
+[
+  {
+    "url": "https://www.openstreetmap.org/copyright",
+    "checkedAt": "2026-11-17T19:28:14.336Z",
+    "error": "fetch failed"
+  },
+  {
+    "url": "https://osmfoundation.org/wiki/Licence/Attribution_Guidelines",
+    "checkedAt": "2026-11-17T19:28:15.495Z",
+    "status": 200,
+    "bytes": 58237,
+    "excerpts": [
+      " Licence/Attribution Guidelines - OpenStreetMap Foundation Jump to content Main menu Main menu move to sidebar hide Navigation Main page About OSMF Blog Donate Join OSMF Contact FAQ Recent changes Ope",
+      "ance Log in Personal tools Log in Contents move to sidebar hide Beginning 1 OpenStreetMap Attribution Guideline Toggle OpenStreetMap Attribution Guideline subsection 1.1 Introduction 1.2 Why attribution is important 1.3 Requirements to fit within OSMF’s safe harbour 1.4 Attributio",
+      "5.10 Computer games and simulations 1.6 Other considerations Toggle the table of contents Licence/Attribution Guidelines Page Discussion English Read View source View history Tools Tools move to sidebar hide Actions Read View source View history General What links here Related",
+      "rmation Cite this page Appearance move to sidebar hide From OpenStreetMap Foundation &lt; Licence OpenStreetMap Attribution Guideline Adopted by the OpenStreetMap Foundation board on 2021-06-25. Introduction OpenStreetMap (OSM) data is distributed under the Open Database Licen",
+      "se (ODbL). If you want to use OpenStreetMap data in something you create and distribute, you must attribute OpenStreetMap. While attribution is required, the way it must be done depends on",
+      "the type of map, database, or other creation involved, and how it is presented. Note that attribution is only necessary when a Produced Work is used Publicly (as defined by the ODbL). This guideline does not concern internal uses. The base requirement in ODbL is attribution that i",
+      "s “…reasonably calculated to make any Person that uses, views, accesses, interacts with, or is otherwise exposed to the Produced Work aware that Content was obtained from [OpenStreetMap] …”. These guidelines are not a substitute for the legal text i",
+      "legal text takes precedence. The guidelines may not be the only, best or absolute minimum attribution necessary under the licence and under applicable law. They are intended to provide a technically feasible safe harbour that OSMF believes satisfies the legal requirements under th",
+      "e ODbL and the OpenStreetMap contributor terms, but they are also an expression of best practices and values that the OSM community socially and ethically expects data reusers to follow.",
+      "ing mission, compliance today does not mean that we will not propose or ask for different attribution guidelines in the future if it promotes our shared goals. You may, of course, provide even better and more prominent attribution. Why attribution is important Attribution encourag",
+      "the quality of the map for everyone. Finally, it is not only a legal obligation under the ODbL but also a moral duty of data reusers to give credit where credit is due. Requirements to fit within OSMF’s safe harbour Attribution must be presented to anyone who uses, views, a",
+      "ccesses, interacts with, or is otherwise exposed to the map or produced work. The attribution format should not require individuals to interact with the map or produced work to see the attribution. Attribution must be placed in the vicinity of the produced work or in a loc",
+      "ation where customarily attribution would be expected by the users of the produced work. Attribution must be legible and understandable. Other attribution, logos, or text must not create any false or misleading impression that OSM data is not from OSM. The text may appear at the ",
+      "same time as, or next to, other attributions. There needs to be a way to access more information, including origin and licence of the data, if that information is not directly in the attribution text (for example by making the text a clickable link). Attribut",
+      "ion text Attribution must be to “OpenStreetMap”. Attribution must also make it clear that the data is available under the Open Database License. This may be done by making the text “OpenStreetMap” a link to openstreetmap.org/copyright, whic",
+      "n about OpenStreetMap’s data sources (which OpenStreetMap needs to credit) as well as the ODbL. The text must be easily readable and understandable, taking into consideration the font, size, colour, contrast, positioning and amount of time that it is visible. We recommend y"
+    ]
+  },
+  {
+    "url": "https://operations.osmfoundation.org/policies/tiles/",
+    "checkedAt": "2026-11-17T19:28:16.293Z",
+    "status": 200,
+    "bytes": 19113,
+    "excerpts": [
+      ", heavy or inappropriate use harms others’ ability to edit and view the map. We may block access, without notice, if your usage degrades the service. We may try to contact you if possible, but cannot guarantee this. Availability is best-effort : there is no SLA or guarantee .",
+      "st: Use the correct URL: https://tile.openstreetmap.org/{z}/{x}/{y}.png . Provide visible licence attribution , following the Attribution Guidelines . Send a valid HTTP User-Agent that clearly identifies your application (or a platform X-Requested-With app ID where set automat",
+      "ation support for specific map libraries; please consult your library’s documentation. 2. Attribution and licensing Show OpenStreetMap licence attribution clearly on the map (typically bottom-right). Typically: © OpenStreetMap contributors See: Attribution Guidelines Do not active",
+      "ly or passively encourage copyright infringement. Do not hide attribution beneath UI, behind toggles, or off-screen. 3. Technical requirements 3.1 Identification User-Agent: Send a clear, unique User-Agent string that names your app and optionally inclu",
+      "mised, aggregated usage data for research and operations, including summary data on tiles accessed and websites/apps using the service . Additional aggregated reports may be produced on an ad-hoc basis. 7. Changes and enforcement This policy may change at any time to reflect ",
+      "aints. Commercial services, or those that seek donations, should be especially aware that access may be withdrawn at any point: you may no longer be able to serve your paying customers if access is withdrawn. We may try to contact you (for example, via your User-Agent or publ",
+      "ic contact details) if there is a problem, but this may not always be possible. Access may be blocked without prior notice . 8. Support We are a small team of mostly volunteers. Do not contact us for integration support for specific map libraries; please consult you"
+    ]
+  },
+  {
+    "url": "https://operations.osmfoundation.org/policies/vector/",
+    "checkedAt": "2026-11-17T19:28:16.546Z",
+    "status": 200,
+    "bytes": 8658,
+    "excerpts": [
+      "ources. Should any users or patterns of usage nevertheless cause problems to the service, access may still be blocked without prior notice. We will try to contact relevant parties if possible, but cannot guarantee this. Although our map tiles are generally very reliable, thei",
+      "k with this URL and recommend you consult its documentation. Requirements Clearly display license attribution , normally in the bottom-right corner of the map. Do not actively or passively encourage copyright infringement. Recommended: Do not hardcode any URL to vector.openstr",
+      "oject. Commercial services, or those that seek donations, should be especially aware that access may be withdrawn at any point: you may no longer be able to serve your paying customers if access is withdrawn. Versioning We will try to offer new tiles immediately after the rel"
+    ]
+  },
+  {
+    "url": "https://wiki.openstreetmap.org/wiki/Overpass_API",
+    "checkedAt": "2026-11-17T19:28:16.550Z",
+    "error": "fetch failed"
+  },
+  {
+    "url": "https://download.geofabrik.de/asia/vietnam.html",
+    "checkedAt": "2026-11-17T19:28:17.376Z",
+    "status": 200,
+    "bytes": 22867,
+    "excerpts": [
+      "k&ouml;nnen. Data processed by Geofabrik GmbH and created by OpenStreetMap Contributors | License: ODbL 1.0 | Contact | Legal Notice/Privacy Policy "
+    ]
+  },
+  {
+    "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+    "checkedAt": "2026-11-17T19:28:18.406Z",
+    "status": 200,
+    "bytes": 114799,
+    "excerpts": [
+      "ashboard Cases Events Gallery Videos About Contact DATA Copernicus Sentinel Missions Easy access to Earth observation data from the Copernicus Sentinel satellites. Copernicus Services Explore open datasets from the Copernicus Services to support environmental monitoring, disa",
+      "ts from European providers enrich the Copernicus Data Space Ecosystem. Complementary Data Access complementary data collections that enhance Earth observation workflows with high-resolution imagery and curated datasets. STAC Browser Discover and search Earth observation data ",
+      "red. openEO Build, run, and monitor EO workflows through a visual dashboard. Sentinel Hub Access and analyze Earth observation data without the need to develop or maintain their own infrastructure. SERVICES ECOSYSTEM About the Ecosystem The Copernicus Data Space Ecosystem off",
+      "ers flexible access, integration, and deployment options to help users turn Sentinel data into actionable applications. About the Ecosystem Services Registry The Ecosystem Services Registry offers fl",
+      " a request Video tutorials Data Availability Login Your profile Log in to your account to access all services or edit your profile. openEO Algorithm Plaza Log in to the openEO Algorithm Plaza and access ready-to-use algorithms that run directly on EO data. Sentinel Hub Access",
+      "sions Copernicus DEM - Global and European Digital Elevation Model Digital Surface Model (DSM) provided in 3 different resolutions (90m, 30m, 10m) with varying geographical extent (EEA: European and GLO: global) and varying format (INSPIRE, DGED, DTED). Copernicus DEM - Gl",
+      "obal and European Digital Elevation Model The Copernicus DEM is a Digital Surface Model (DSM) that represents the surface of the Earth including buildings, infrastructure and vegetation. The Copernicus DEM is provided in 3 different instances: EEA-10, GLO-30 and GLO-90. D",
+      " in 2019 and will be maintained until 2026. All registered users (i.e. How to register to access Copernicus Contributing Missions data ) can freely access the 30m and 90m resolution instances of the Copernicus DEM. Access to the 10m resolution instances over Europe is limited",
+      " to a specific subset of users, as outlined in the ESA-User license for the use of CCM data and CCM Data Access Restrictions . The Copernicus DEM is a Digital Surface Model (DSM) which represents the top-reflective surface of the Earth including b",
+      "uildings, infrastructure and vegetation. This DEM is derived from an edited DSM named WorldDEMTM , i.e. flattening of water bodies and consistent flow of rivers has been included. Editing of shore- and coastlines, special features such as airports and implaus",
+      "-4292/13/18/3581 ) The aforementioned differentiation should be considered when comparing DSMs, such as the current Copernicus DEM, with external reference data (e.g. LiDAR-based DTM data). EEA-10: European coverage EEA-10 covers 39 European countries including all islands",
+      "h a surface coverage of ~ 6 M km 2 . Land surface coverage within Copernicus DEM – EEA-10 GLO-30 and GLO-90: worldwide coverage GLO-30 offers global coverage at a resolution of 30 metres. GLO-90 offers global coverage at a resolution of 90 metres. Both datasets have a surface",
+      " coverage of ~ 149 M km 2 . Land surface coverage within Copernicus DEM – GLO-30 &amp; GLO-90 Nine releases are currently available for all Copernicus DEM instances. See in “Releases” section of this page for more details. How to access the data The following ",
+      " users can view all instances of the Copernicus DEM. They can download the GLO-90 and the GLO-30 instances of the Copernicus DEM: International organizations General public More details on the Copernicus DEM eligibility and access conditions can be found in the ESA User Licen",
+      "se and relevant Mission Specific Annex . The Copernicus DEM is accessible via the Copernicus Browser or API . For further guidance and technical support, please visit the documentation portal (e.g. the Copernicus DEM section) or see the CDSE Forum .",
+      " For issues/bugs please submit a request . Full dataset downloads (bulk access) are supported via S3-compatible object storage and OData API using temporary credentials. For more information please consult the related FAQ item: How can I download Copernicus "
+    ]
+  },
+  {
+    "url": "https://dataspace.copernicus.eu/news/2026-8-25-copernicus-dem-30m-view-service-update",
+    "checkedAt": "2026-11-17T19:28:18.687Z",
+    "status": 200,
+    "bytes": 71135,
+    "excerpts": [
+      "ashboard Cases Events Gallery Videos About Contact DATA Copernicus Sentinel Missions Easy access to Earth observation data from the Copernicus Sentinel satellites. Copernicus Services Explore open datasets from the Copernicus Services to support environmental monitoring, disa",
+      "ts from European providers enrich the Copernicus Data Space Ecosystem. Complementary Data Access complementary data collections that enhance Earth observation workflows with high-resolution imagery and curated datasets. STAC Browser Discover and search Earth observation data ",
+      "red. openEO Build, run, and monitor EO workflows through a visual dashboard. Sentinel Hub Access and analyze Earth observation data without the need to develop or maintain their own infrastructure. SERVICES ECOSYSTEM About the Ecosystem The Copernicus Data Space Ecosystem off",
+      "ers flexible access, integration, and deployment options to help users turn Sentinel data into actionable applications. About the Ecosystem Services Registry The Ecosystem Services Registry offers fl",
+      " a request Video tutorials Data Availability Login Your profile Log in to your account to access all services or edit your profile. openEO Algorithm Plaza Log in to the openEO Algorithm Plaza and access ready-to-use algorithms that run directly on EO data. Sentinel Hub Access",
+      "eneral Satellite Copernicus Digital Elevation Model Following our previous announcement , access to the Copernicus DEM 30m (COP-DEM-GLO-30) View Service is now restricted to authorized user categories according to the access rights indicated in the Copernicus Contributing Mis",
+      "sions User Categories . To continue accessing the COP DEM 30m View Service, users are required to register as CCM users by updating their profile: Log in to the CDSE Identity Portal &gt; Personal Info . Select “ I am also ",
+      "interested in accessing Copernicus Contributing Missions data ” and save your changes. Users who do not complete these steps will no longer be granted access to the COP DEM 30m View Service. Thank you"
+    ]
+  },
+  {
+    "url": "https://gisportal.danang.gov.vn/sxd/",
+    "checkedAt": "2026-11-17T19:28:26.704Z",
+    "error": "The operation was aborted due to timeout"
+  },
+  {
+    "url": "https://dosm.vnsdi.gov.vn/",
+    "checkedAt": "2026-11-17T19:28:26.876Z",
+    "status": 200,
+    "bytes": 5791,
+    "excerpts": []
+  }
+]

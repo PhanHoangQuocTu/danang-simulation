@@ -1,0 +1,477 @@
+{
+  "mode": "release",
+  "node": "v26.13.1",
+  "started": "2026-11-17T19:43:48.020Z",
+  "checks": [
+    {
+      "name": "production-render",
+      "status": "PASS",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "152",
+        "textures": "5",
+        "fps": "20",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "debug": "FPS: 20\nFrame: 50.9 ms\nChecks: 25/25"
+      }
+    },
+    {
+      "name": "F3-diagnostics",
+      "status": "PASS",
+      "result": {
+        "checks": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass",
+            "passed": true
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-05: Joystick input limits\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-07: Map zoom and span\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-08: Map position and heading\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight\nPASSED",
+            "details": "",
+            "passed": true
+          }
+        ],
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "21",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n48.7 / 70.1 ms\nDraw calls / triangles\n354 / 77414\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "performance": {
+          "fps": 20.837467751538007,
+          "averageMs": 47.99047619047619,
+          "p95Ms": 70,
+          "frames": 63
+        }
+      }
+    },
+    {
+      "name": "source-registry-offline-read",
+      "status": "PASS",
+      "result": "Geographic data sources\n\n6 sources · 5 candidates · 0 metadata verified · 0 approved · 0 ingested · 1 blocked\n\nReal geometry loaded: no. Catalog entries are not loaded datasets. Coverage, rights and accuracy need dataset-specific review.\n\nWikimedia Commons\n\ncommons-ground-reference · Candidate · CRS: Unknown · License: Unknown\n\nCopernicus Data Space\n\ncopernicus-dsm · Candidate · CRS: Unknown · License: Unknown\n\nDa Nang GIS portal\n\ndanang-official-gis · Blocked · CRS: Unknown · License: Unknown\n\nOpenStreetMap contributors\n\nosm-vector · Candidate · CRS: EPSG:4326 · License: ODbL-1.0\n\nCopernicus Data Space\n\nsentinel-imagery · Candidate · CRS: Unknown · License: Unknown\n\nVietnam national spatial data portal\n\nvietnam-official-gis · Candidate · CRS: Unknown · License: Unknown"
+    },
+    {
+      "name": "vietnamese-F3",
+      "status": "PASS",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "152",
+        "textures": "5",
+        "fps": "24",
+        "geo": "Geo Core: SẴN SÀNG · reference-only\n\nWGS84 / ECEF / ENU · +X Đông / +Y Lên / -Z Bắc\n\nEllipsoid WGS84 · anchor giả định 0m, không phải MSL đã đo\n\nVỊ TRÍ MÔ PHỎNG — CHƯA XÁC MINH ĐỊA LÝ\n\nVĩ độ suy ra\n16.0544000°\nKinh độ suy ra\n108.2022000°\nĐộ cao ellipsoid mô phỏng\n0.000 m\nHướng la bàn\n180.0°",
+        "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\nVị trí (XZ)\n0.00 m, 0.00 m\nPhạm vi: 144 m\n+\n−\nĐặt lại 1×",
+        "debug": "THÔNG SỐ CHẨN ĐOÁN (F3)\nKhung hình TB / P95\n41.5 / 50.1 ms\nLệnh vẽ / tam giác\n354 / 77414\nHình học / kết cấu\n152 / 5\nChất lượng / tỷ lệ điểm ảnh\nCân bằng / 1.00\nGeo Core: SẴN SÀNG · reference-only\n\nWGS84 / ECEF / ENU · +X Đông / +Y Lên / -Z Bắc\n\nEllipsoid WGS84 · anchor giả định 0m, không phải MSL đã đo\n\nVỊ TRÍ MÔ PHỎNG — CHƯA XÁC MINH ĐỊA LÝ\n\nVĩ độ suy ra\n16.0544000°\nKinh độ suy ra\n108.2022000°\nĐộ cao ellipsoid mô phỏng\n0.000 m\nHướng la bàn\n180.0°\nKiểm tra Geo: 16/16\nNguồn dữ liệu địa lý\nTự chẩn đoán\nDIAG-01: Múi giờ Đà Nẵng\nĐẠT\nDIAG-02: Quỹ đạo và giai đoạn mặt trời\nĐẠT\nDIAG-03: Ánh xạ thời tiết WMO\nĐẠT\nDIAG-04: Chuẩn hóa dữ liệu lịch sử\nĐẠT\nDIAG-05: Giới hạn cần điều khiển\nĐẠT\nDIAG-06: Hướng dẫn điều khiển thích ứng\nĐẠT\nDIAG-07: Thu phóng và phạm vi bản đồ\nĐẠT\nDIAG-08: Vị trí và hướng trên bản đồ\nĐẠT\nDIAG-09: Tương tác và làm nổi bật\nĐẠT\nThử cô lập nhập liệu: gõ WASD hoặc Space"
+      }
+    },
+    {
+      "name": "health-route",
+      "status": "PASS",
+      "result": {
+        "status": 200,
+        "body": {
+          "status": "ok",
+          "timestamp": "2026-11-17T19:44:12.128Z",
+          "uptime": 24,
+          "version": "0.1.0",
+          "environment": "development"
+        }
+      }
+    }
+  ],
+  "events": [],
+  "requests": [
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a1d8lvabf94h.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2amv59xn6oxfd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2jrri10nall4b.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/234t1lvykgjp_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0101jvhdaku10.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a2rzgipm44z9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/32ukizac54wzv.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ixq0qw4kea_w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m0rp0x0xv3hn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ob1vs9g6e78s.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1i8s32vgiunsd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3fbnj8qjrfu02.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/01ed12bub3u2p.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2xc7-eurswbb9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/06ltda9tot9ja.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2iseburusolhj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1onawpp3v8d9y.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2u3tbt1_ha88n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg?icon.19y2j-mbj8p8e.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/035tyziksa2ny.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1oz52on975goe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/26dvd22994rbu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2aw_its1nbwb6.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a1d8lvabf94h.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2amv59xn6oxfd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2jrri10nall4b.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/234t1lvykgjp_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0101jvhdaku10.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a2rzgipm44z9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/32ukizac54wzv.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ixq0qw4kea_w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m0rp0x0xv3hn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ob1vs9g6e78s.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1i8s32vgiunsd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3fbnj8qjrfu02.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/01ed12bub3u2p.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2xc7-eurswbb9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/06ltda9tot9ja.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2iseburusolhj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1onawpp3v8d9y.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2u3tbt1_ha88n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/035tyziksa2ny.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1oz52on975goe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/26dvd22994rbu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2aw_its1nbwb6.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/health",
+      "method": "GET"
+    }
+  ],
+  "screenshots": ["release-1920x1080.png", "release-debug.png", "release-source-registry.png", "release-vi-debug.png"],
+  "finished": "2026-11-17T19:44:12.143Z"
+}

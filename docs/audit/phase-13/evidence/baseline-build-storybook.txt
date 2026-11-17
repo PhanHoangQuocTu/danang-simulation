@@ -1,0 +1,43 @@
+pnpm.CMD : $ storybook build
+At line:6 char:3
++   & pnpm.cmd $check *> $log
++   ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ storybook build:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+T  Building storybook v10.6.2
+|
+o  Cleaning outputDir: storybook-static
+(node:16832) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+|
+o  Loading presets
+|
+o  Building manager..
+|
+•  Building open services..
+|
+•  Building preview..
+|
+x  Failed to build the preview
+|
+x  [38;2;241;97;97mError: Failed to load native binding[39m
+|  at Object.<anonymous>
+|  (.\node_modules\.pnpm\@swc+core@1.16.18_@swc+helpers@0.5.23\node_modules\@swc\core\binding.js:345:11)
+|  at Module._compile (node:internal/modules/cjs/loader:1968:14)
+|  at node:internal/modules/cjs/loader:2108:10
+|  at require.extensions..js
+|  (.\node_modules\.pnpm\next@16.4.2_@babel+core@7.2_67190dee01d785d223e4a89c852c7e4a\node_modules\next\dist\build\next-config-ts\require-hook.js:49:20)
+|  at Module.load (node:internal/modules/cjs/loader:1690:32)
+|  at Module._load (node:internal/modules/cjs/loader:1480:12)
+|  at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+|  at Module.<anonymous> (node:internal/modules/cjs/loader:1713:12)
+|  at mod.require
+|  (.\node_modules\.pnpm\next@16.4.2_@babel+core@7.2_67190dee01d785d223e4a89c852c7e4a\node_modules\next\dist\server\require-hook.js:79:28)
+|  at require (node:internal/modules/helpers:318:16)
+|
+—  Storybook exited with an error
+
+[ELIFECYCLE] Command failed with exit code 1.
+EXIT_CODE=1

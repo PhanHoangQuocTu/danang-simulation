@@ -1,0 +1,509 @@
+{
+  "mode": "health-retry",
+  "node": "v26.13.1",
+  "started": "2026-11-17T19:52:10.223Z",
+  "checks": [
+    {
+      "name": "health-pages-and-root",
+      "status": "PASS",
+      "result": [
+        {
+          "path": "/health",
+          "language": "en",
+          "heading": "System health",
+          "title": "System health | Da Nang 3D Open World",
+          "description": "Live status of this application."
+        },
+        {
+          "path": "/vi/health",
+          "language": "vi",
+          "heading": "Tình trạng hệ thống",
+          "title": "Tình trạng hệ thống | Da Nang 3D Open World",
+          "description": "Trạng thái trực tiếp của ứng dụng."
+        },
+        {
+          "path": "/",
+          "language": "en",
+          "title": "Da Nang 3D Open World — Interactive Simulation"
+        }
+      ]
+    }
+  ],
+  "events": [],
+  "requests": [
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a1d8lvabf94h.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2amv59xn6oxfd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2jrri10nall4b.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/234t1lvykgjp_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0101jvhdaku10.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a2rzgipm44z9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/32ukizac54wzv.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ixq0qw4kea_w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m0rp0x0xv3hn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ob1vs9g6e78s.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1i8s32vgiunsd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3fbnj8qjrfu02.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/01ed12bub3u2p.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2xc7-eurswbb9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/06ltda9tot9ja.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2iseburusolhj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1onawpp3v8d9y.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2u3tbt1_ha88n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg?icon.19y2j-mbj8p8e.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/035tyziksa2ny.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1oz52on975goe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/26dvd22994rbu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2aw_its1nbwb6.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a1d8lvabf94h.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2amv59xn6oxfd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2jrri10nall4b.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/234t1lvykgjp_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0101jvhdaku10.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a2rzgipm44z9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/32ukizac54wzv.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ixq0qw4kea_w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m0rp0x0xv3hn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ob1vs9g6e78s.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1i8s32vgiunsd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3fbnj8qjrfu02.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/01ed12bub3u2p.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2u3tbt1_ha88n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3dww56r4-nzqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/06ltda9tot9ja.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/26dvd22994rbu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2iseburusolhj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a1d8lvabf94h.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2amv59xn6oxfd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2jrri10nall4b.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/234t1lvykgjp_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0101jvhdaku10.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a2rzgipm44z9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/32ukizac54wzv.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ixq0qw4kea_w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m0rp0x0xv3hn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ob1vs9g6e78s.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1i8s32vgiunsd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3fbnj8qjrfu02.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/01ed12bub3u2p.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2u3tbt1_ha88n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3dww56r4-nzqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/06ltda9tot9ja.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/26dvd22994rbu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2iseburusolhj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi?_rsc=jzG0fWaIKkwj1XGm",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi?_rsc=Wzvz2l1Zr8smnprM",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi?_rsc=6WD_1J-g0QWMbcH1",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a1d8lvabf94h.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2amv59xn6oxfd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2jrri10nall4b.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/234t1lvykgjp_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0101jvhdaku10.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a2rzgipm44z9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/32ukizac54wzv.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ixq0qw4kea_w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m0rp0x0xv3hn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ob1vs9g6e78s.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1i8s32vgiunsd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3fbnj8qjrfu02.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/01ed12bub3u2p.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2xc7-eurswbb9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/06ltda9tot9ja.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2iseburusolhj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1onawpp3v8d9y.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2u3tbt1_ha88n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/035tyziksa2ny.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1oz52on975goe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/26dvd22994rbu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2aw_its1nbwb6.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    }
+  ],
+  "screenshots": [],
+  "finished": "2026-11-17T19:52:21.549Z"
+}

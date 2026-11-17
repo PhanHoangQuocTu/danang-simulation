@@ -1,0 +1,36 @@
+pnpm.cmd : $ next build
+At line:4 char:1
++ pnpm.cmd build *> docs/audit/phase-13/evidence/baseline-build-retry.t ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ next build:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+▲ Next.js 16.4.2 (Turbopack)
+✓ Running next.config.ts took 148ms
+- Experiments (use with caution):
+  ✓ globalNotFound
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.0s
+  Running TypeScript ...
+  Finished TypeScript in 1966ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/14) ...
+  Generating static pages using 7 workers (3/14) 
+  Generating static pages using 7 workers (6/14) 
+  Generating static pages using 7 workers (10/14) 
+✓ Generating static pages using 7 workers (14/14) in 1233ms
+  Finalizing page optimization ...
+
+> Build error occurred
+Error: ENOENT: no such file or directory, mkdir 
+'C:\Workspace\Personnel\danang-simulation\.next\standalone\node_modules\.pnpm\react@19.3.1\node_modules\react'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: 'C:\\Workspace\\Personnel\\danang-simulation\\.next\\standalone\\node_modules\\.pnpm\\react@19.3.1\\node_module
+s\\react'
+}
+[ELIFECYCLE] Command failed with exit code 1.
+EXIT_CODE=1

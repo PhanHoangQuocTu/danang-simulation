@@ -1,0 +1,10 @@
+pnpm.CMD : $ next typegen && tsc --noEmit --incremental false
+At line:6 char:3
++   & pnpm.cmd $check *> $log
++   ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ next typegen ...cremental false:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Generating route types...
+✓ Types generated successfully
+EXIT_CODE=0

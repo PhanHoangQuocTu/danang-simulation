@@ -199,5 +199,16 @@
   "geoDiag13": "Đường đổi ngày",
   "geoDiag14": "Nghịch đảo tại cực",
   "geoDiag15": "Chuẩn độ cao / độ tin cậy",
-  "geoDiag16": "Diagnostics Phase 1–10"
+  "geoDiag16": "Diagnostics Phase 1–10",
+  "dataSources": "Nguồn dữ liệu địa lý",
+  "sourceSummary": "{total} nguồn · {candidate} ứng viên · {metadataVerified} xác minh metadata · {approved} được duyệt · {ingested} đã nhập · {blocked} bị chặn",
+  "sourceNotLoaded": "Chưa tải hình học địa lý thật. Mục trong danh mục chưa phải dataset được tải. Phạm vi, quyền và độ chính xác cần được duyệt theo dataset.",
+  "sourceEntry": "{id} · {status} · CRS: {crs} · Giấy phép: {license}",
+  "sourceUnknown": "Chưa rõ",
+  "sourceCandidate": "Ứng viên",
+  "sourceMetadataVerified": "Đã xác minh metadata",
+  "sourceApproved": "Được duyệt nhập dữ liệu",
+  "sourceIngested": "Đã nhập dữ liệu",
+  "sourceBlocked": "Bị chặn",
+  "sourceRejected": "Bị từ chối"
 }

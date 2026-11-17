@@ -13,6 +13,7 @@ import { runGeospatialDiagnosticsSuite } from '../geospatial-diagnostics';
 import { useGeoTelemetry } from '../hooks/useGeoTelemetry';
 import { computeMiniMapVisibleSpanMeters } from '@/engine/spatial/minimap';
 import { GAME_CONFIG } from '@/engine/core/const';
+import { danangSourceRegistry } from '@/worlds/danang/data-sources';
 import {
   Compass,
   ChevronDown,
@@ -38,6 +39,16 @@ import {
 } from './Icons';
 
 type CopyKey = keyof typeof messages.en.worldExplorer;
+const sourceReadiness = danangSourceRegistry.getReadinessSummary();
+const sourceCatalog = danangSourceRegistry.listSources();
+const sourceStatusKeys = {
+  candidate: 'sourceCandidate',
+  'metadata-verified': 'sourceMetadataVerified',
+  'approved-for-ingestion': 'sourceApproved',
+  ingested: 'sourceIngested',
+  blocked: 'sourceBlocked',
+  rejected: 'sourceRejected',
+} as const;
 export function HudButton({
   children,
   onClick,
@@ -541,6 +552,28 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
                       <b className={check.passed ? 'world-green' : 'world-amber'}>
                         {t(check.passed ? 'passed' : 'failed')}
                       </b>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+              <details data-testid='source-registry'>
+                <summary>{t('dataSources')}</summary>
+                <p>{t('sourceSummary', sourceReadiness)}</p>
+                <p className='world-amber'>{t('sourceNotLoaded')}</p>
+                <ul>
+                  {sourceCatalog.map((source) => (
+                    <li key={source.id}>
+                      <a href={source.officialUrl} target='_blank' rel='noreferrer'>
+                        {source.provider}
+                      </a>
+                      <p>
+                        {t('sourceEntry', {
+                          id: source.id,
+                          status: t(sourceStatusKeys[source.reviewStatus]),
+                          crs: source.horizontalCrs ?? t('sourceUnknown'),
+                          license: source.rights.licenseId ?? t('sourceUnknown'),
+                        })}
+                      </p>
                     </li>
                   ))}
                 </ul>

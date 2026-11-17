@@ -1,0 +1,47 @@
+pnpm.CMD : $ next typegen && tsc --noEmit --incremental false
+At line:6 char:3
++   & pnpm.cmd $check *> $log
++   ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ next typegen ...cremental false:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+> Unexpected error while generating route types. Original error:
+
+Error: Failed to load native binding
+    at ignore-listed frames {
+  [cause]: [
+    Error: Cannot find module './swc.win32-x64-msvc.node'
+    Require stack:
+    - C:\Workspace\Personnel\danang-simulation\node_modules\.pnpm\@swc+core@1.16.18_@swc+helpers@0.5.23\node_modules\@s
+wc\core\binding.js
+    - C:\Workspace\Personnel\danang-simulation\node_modules\.pnpm\@swc+core@1.16.18_@swc+helpers@0.5.23\node_modules\@s
+wc\core\index.js
+    - C:\Workspace\Personnel\danang-simulation\node_modules\.pnpm\next-intl@4.14.9_@swc+helpe_322b7055cfa30f3b1609a1f61
+94c2317\node_modules\next-intl\dist\cjs\development\plugin.cjs
+    - C:\Workspace\Personnel\danang-simulation\next.config.compiled.js
+    - C:\Workspace\Personnel\danang-simulation\node_modules\.pnpm\next@16.4.2_@babel+core@7.2_67190dee01d785d223e4a89c8
+52c7e4a\node_modules\next\dist\build\next-config-ts\transpile-config.js
+    - C:\Workspace\Personnel\danang-simulation\node_modules\.pnpm\next@16.4.2_@babel+core@7.2_67190dee01d785d223e4a89c8
+52c7e4a\node_modules\next\dist\server\config.js
+    - C:\Workspace\Personnel\danang-simulation\node_modules\.pnpm\next@16.4.2_@babel+core@7.2_67190dee01d785d223e4a89c8
+52c7e4a\node_modules\next\dist\cli\next-test.js
+    - C:\Workspace\Personnel\danang-simulation\node_modules\.pnpm\next@16.4.2_@babel+core@7.2_67190dee01d785d223e4a89c8
+52c7e4a\node_modules\next\dist\bin\next
+        at ignore-listed frames {
+      code: 'MODULE_NOT_FOUND',
+      requireStack: [Array]
+    },
+    Error: SWC native addon: user cache failed: validate cache root C:\Users\USER\AppData\Local\swc: cache ancestor 
+C:\Users\USER\AppData\Local\swc has untrusted owner SID S-1-5-21-3755296832-436628576-2309662567-1001; fallback cache 
+failed: create cache root C:\Users\USER\.swc-cache: Access is denied. (os error 5); set SWC_NATIVE_BINDING_CACHE to a 
+safe absolute directory owned by your user whose ancestors do not grant other users replacement rights. Reinstall the 
+native package if its payload is damaged; check SWC_NATIVE_BINDING_CACHE and directory permissions for materialization 
+failures.
+        at ignore-listed frames {
+      code: 'ERR_SWC_NATIVE_CACHE'
+    }
+  ]
+}
+[ELIFECYCLE] Command failed with exit code 1.
+EXIT_CODE=1

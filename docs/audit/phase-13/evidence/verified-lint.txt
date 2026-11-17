@@ -1,0 +1,33 @@
+pnpm.CMD : $ biome lint .
+At line:12 char:3
++   & pnpm.cmd $check *> $log
++   ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ biome lint .:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+src\world-core\registries\data-sources.ts:218:91 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Do not nest ternary expressions.
+  
+    216 │     const canonical = {
+    217 │       ...node,
+  > 218 │       tags: Object.fromEntries(Object.entries(node.tags).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))),
+        │                                                                                           ^^^^^^^^^^^^^
+    219 │     };
+    220 │     const previous = nodes.get(node.id);
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to 
+understand.
+  
+
+Checked 367 files in 537ms. No fixes applied.
+Found 1 error.
+lint ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
+[ELIFECYCLE] Command failed with exit code 1.
+EXIT_CODE=1

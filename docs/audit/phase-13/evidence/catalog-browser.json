@@ -1,0 +1,283 @@
+{
+  "mode": "catalog",
+  "node": "v26.13.1",
+  "started": "2026-11-17T19:45:36.399Z",
+  "checks": [
+    {
+      "name": "vietnamese-F3",
+      "status": "PASS",
+      "result": {
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "68",
+          "geo": "Geo Core: SẴN SÀNG · reference-only\n\nWGS84 / ECEF / ENU · +X Đông / +Y Lên / -Z Bắc\n\nEllipsoid WGS84 · anchor giả định 0m, không phải MSL đã đo\n\nVỊ TRÍ MÔ PHỎNG — CHƯA XÁC MINH ĐỊA LÝ\n\nVĩ độ suy ra\n16.0544000°\nKinh độ suy ra\n108.2022000°\nĐộ cao ellipsoid mô phỏng\n0.000 m\nHướng la bàn\n180.0°",
+          "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "THÔNG SỐ CHẨN ĐOÁN (F3)\nKhung hình TB / P95\n14.7 / 20.1 ms\nLệnh vẽ / tam giác\n309 / 73044\nHình học / kết cấu\n152 / 5\nChất lượng / tỷ lệ điểm ảnh\nCân bằng / 1.00\nGeo Core: SẴN SÀNG · reference-only\n\nWGS84 / ECEF / ENU · +X Đông / +Y Lên / -Z Bắc\n\nEllipsoid WGS84 · anchor giả định 0m, không phải MSL đã đo\n\nVỊ TRÍ MÔ PHỎNG — CHƯA XÁC MINH ĐỊA LÝ\n\nVĩ độ suy ra\n16.0544000°\nKinh độ suy ra\n108.2022000°\nĐộ cao ellipsoid mô phỏng\n0.000 m\nHướng la bàn\n180.0°\nKiểm tra Geo: 16/16\nNguồn dữ liệu địa lý\n\n6 nguồn · 5 ứng viên · 0 xác minh metadata · 0 được duyệt · 0 đã nhập · 1 bị chặn\n\nChưa tải hình học địa lý thật. Mục trong danh mục chưa phải dataset được tải. Phạm vi, quyền và độ chính xác cần được duyệt theo dataset.\n\nWikimedia Commons\n\ncommons-ground-reference · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nCopernicus Data Space\n\ncopernicus-dsm · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nDa Nang GIS portal\n\ndanang-official-gis · Bị chặn · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nOpenStreetMap contributors\n\nosm-vector · Ứng viên · CRS: EPSG:4326 · Giấy phép: ODbL-1.0\n\nCopernicus Data Space\n\nsentinel-imagery · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nVietnam national spatial data portal\n\nvietnam-official-gis · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nTự chẩn đoán\nDIAG-01: Múi giờ Đà Nẵng\nĐẠT\nDIAG-02: Quỹ đạo và giai đoạn mặt trời\nĐẠT\nDIAG-03: Ánh xạ thời tiết WMO\nĐẠT\nDIAG-04: Chuẩn hóa dữ liệu lịch sử\nĐẠT\nDIAG-05: Giới hạn cần điều khiển\nĐẠT\nDIAG-06: Hướng dẫn điều khiển thích ứng\nĐẠT\nDIAG-07: Thu phóng và phạm vi bản đồ\nĐẠT\nDIAG-08: Vị trí và hướng trên bản đồ\nĐẠT\nDIAG-09: Tương tác và làm nổi bật\nĐẠT\nThử cô lập nhập liệu: gõ WASD hoặc Space"
+        },
+        "sources": "Nguồn dữ liệu địa lý\n\n6 nguồn · 5 ứng viên · 0 xác minh metadata · 0 được duyệt · 0 đã nhập · 1 bị chặn\n\nChưa tải hình học địa lý thật. Mục trong danh mục chưa phải dataset được tải. Phạm vi, quyền và độ chính xác cần được duyệt theo dataset.\n\nWikimedia Commons\n\ncommons-ground-reference · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nCopernicus Data Space\n\ncopernicus-dsm · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nDa Nang GIS portal\n\ndanang-official-gis · Bị chặn · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nOpenStreetMap contributors\n\nosm-vector · Ứng viên · CRS: EPSG:4326 · Giấy phép: ODbL-1.0\n\nCopernicus Data Space\n\nsentinel-imagery · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nVietnam national spatial data portal\n\nvietnam-official-gis · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ"
+      }
+    }
+  ],
+  "events": [],
+  "requests": [
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a1d8lvabf94h.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2amv59xn6oxfd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2jrri10nall4b.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/234t1lvykgjp_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0101jvhdaku10.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a2rzgipm44z9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/32ukizac54wzv.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ixq0qw4kea_w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m0rp0x0xv3hn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ob1vs9g6e78s.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1i8s32vgiunsd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3fbnj8qjrfu02.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/01ed12bub3u2p.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2xc7-eurswbb9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/06ltda9tot9ja.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2iseburusolhj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1onawpp3v8d9y.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2u3tbt1_ha88n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg?icon.19y2j-mbj8p8e.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/035tyziksa2ny.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1oz52on975goe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/26dvd22994rbu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2aw_its1nbwb6.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a1d8lvabf94h.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2amv59xn6oxfd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2jrri10nall4b.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/234t1lvykgjp_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0101jvhdaku10.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2a2rzgipm44z9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/32ukizac54wzv.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ixq0qw4kea_w.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m0rp0x0xv3hn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1ob1vs9g6e78s.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1i8s32vgiunsd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3fbnj8qjrfu02.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/01ed12bub3u2p.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2xc7-eurswbb9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/06ltda9tot9ja.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2iseburusolhj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1onawpp3v8d9y.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2u3tbt1_ha88n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/035tyziksa2ny.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1oz52on975goe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/26dvd22994rbu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2aw_its1nbwb6.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    }
+  ],
+  "screenshots": ["catalog-vi-debug.png"],
+  "finished": "2026-11-17T19:45:51.092Z"
+}

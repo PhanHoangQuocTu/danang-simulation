@@ -1,0 +1,28 @@
+
+ RUN  v5.0.5 C:/Workspace/Personnel/danang-simulation
+      Coverage enabled with v8
+
+
+ Test Files  3 passed (3)
+      Tests  20 passed (20)
+   Start at  02:37:56
+   Duration  2.25s (environment 37%, setup 34%, import 16%, tests 6%, worker 4%, transform 3%)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   96.29 |    93.95 |   95.12 |   98.08 |                   
+ ...ations/geodata |   92.72 |    88.88 |      50 |   95.74 |                   
+  ...ass.server.ts |   92.72 |    88.88 |      50 |   95.74 | 49,80             
+ ...ore/registries |   97.76 |    95.62 |     100 |   99.09 |                   
+  data-sources.ts  |   97.76 |    95.62 |     100 |   99.09 | 202               
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 96.29% ( 182/189 )
+Branches     : 93.95% ( 171/182 )
+Functions    : 95.12% ( 39/41 )
+Lines        : 98.08% ( 154/157 )
+================================================================================
+EXIT_CODE=0

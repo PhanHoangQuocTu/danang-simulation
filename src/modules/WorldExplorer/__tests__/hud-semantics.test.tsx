@@ -17,6 +17,8 @@ describe('HUD button semantics', () => {
     expect(screen.getByText('geoWarning')).toBeInTheDocument();
     expect(screen.getByText('geoHeightAssumption')).toBeInTheDocument();
     expect(screen.getByText('geoReference')).toBeInTheDocument();
+    expect(screen.getByText('sourceNotLoaded')).toBeInTheDocument();
+    expect(screen.getByText('sourceSummary')).toBeInTheDocument();
   });
   it('preserves the Phase 10 FPS, frame time, and checks chips in compact diagnostics', () => {
     const setPanels = vi.fn();

@@ -1,0 +1,21 @@
+pnpm.CMD : $ vitest run
+At line:12 char:3
++   & pnpm.cmd $check *> $log
++   ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ vitest run:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+ RUN  v5.0.5 C:/Workspace/Personnel/danang-simulation
+
+
+ Test Files  36 passed (36)
+      Tests  171 passed (171)
+   Start at  02:35:28
+   Duration  25.37s (environment 66%, setup 20%, import 7%, tests 5%, transform 1%, worker 1%)
+
+Environment  jsdom was created 36 times · 97.00s total, 66% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+EXIT_CODE=0

@@ -199,5 +199,16 @@
   "geoDiag13": "Date line",
   "geoDiag14": "Polar inverse",
   "geoDiag15": "Height datum / confidence",
-  "geoDiag16": "Phase 1–10 diagnostics"
+  "geoDiag16": "Phase 1–10 diagnostics",
+  "dataSources": "Geographic data sources",
+  "sourceSummary": "{total} sources · {candidate} candidates · {metadataVerified} metadata verified · {approved} approved · {ingested} ingested · {blocked} blocked",
+  "sourceNotLoaded": "Real geometry loaded: no. Catalog entries are not loaded datasets. Coverage, rights and accuracy need dataset-specific review.",
+  "sourceEntry": "{id} · {status} · CRS: {crs} · License: {license}",
+  "sourceUnknown": "Unknown",
+  "sourceCandidate": "Candidate",
+  "sourceMetadataVerified": "Metadata verified",
+  "sourceApproved": "Approved for ingestion",
+  "sourceIngested": "Ingested",
+  "sourceBlocked": "Blocked",
+  "sourceRejected": "Rejected"
 }
