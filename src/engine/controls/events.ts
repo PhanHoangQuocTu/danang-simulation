@@ -75,6 +75,20 @@ export function bindWorldInput(
         isInteractiveInputElement(document.activeElement)
       )
         return;
+      const cameraDirections: Record<string, [number, number]> = {
+        KeyI: [0, 1],
+        KeyK: [0, -1],
+        KeyJ: [-1, 0],
+        KeyL: [1, 0],
+      };
+      const direction = cameraDirections[event.code];
+      if (direction || event.code === 'PageUp' || event.code === 'PageDown') {
+        event.preventDefault();
+        options.device('keyboard');
+        if (direction) orbit(direction[0], direction[1], 0.08);
+        else options.zoom((event.code === 'PageUp' ? -1 : 1) * GAME_CONFIG.camera.zoomStep);
+        return;
+      }
       const commands: Record<string, WorldCommand> = {
         KeyE: event.shiftKey ? 'environment' : 'interact',
         KeyF: 'follow',

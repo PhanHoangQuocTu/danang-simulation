@@ -1,0 +1,116 @@
+const { spawn } = require('node:child_process');
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+const origin = 'http://localhost:3000';
+const chrome = spawn('C:/Program Files/Google/Chrome/Application/chrome.exe', [
+  '--headless=new', '--remote-debugging-port=9340', `--user-data-dir=${path.join(__dirname,'prompt02-profile')}`,
+  '--no-first-run', '--no-default-browser-check', '--window-size=1440,1000', 'about:blank',
+], { windowsHide:true, stdio:'ignore' });
+let socket, sequence = 0;
+const pending = new Map(), events = [], report = { origin, weather: 'controlled fixture; live upstream tested separately', checks: [] };
+function check(name, detail) { report.checks.push({ name, detail }); console.log('PASS', name, JSON.stringify(detail ?? true)); fs.writeFileSync(path.join(__dirname,'prompt02-progress.json'),JSON.stringify(report,null,2)); }
+async function send(method,params={}) {
+  const id=++sequence;
+  const response=new Promise((resolve,reject)=> {
+    pending.set(id,{resolve,reject});
+    setTimeout(()=> { if(pending.delete(id)) reject(new Error(`Timeout: ${method}`)); },60000).unref();
+  });
+  socket.send(JSON.stringify({id,method,params})); return response;
+}
+async function evaluate(expression) {
+  const result=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});
+  if(result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails));
+  return result.result.value;
+}
+async function waitFor(expression,timeout=12000) {
+  const start=Date.now();
+  while(Date.now()-start<timeout) { if(await evaluate(expression)) return; await pause(100); }
+  throw new Error(`Condition failed: ${expression}`);
+}
+async function shot(name) { const {data}=await send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(__dirname,`${name}.png`),Buffer.from(data,'base64')); }
+const snapshot=()=>evaluate(`({...document.querySelector('.world-explorer')?.dataset})`);
+async function key(code,key,type='keyDown',extra={}) { await send('Input.dispatchKeyEvent',{type,code,key,...extra}); }
+async function tap(code,name=code.replace('Key','').toLowerCase()) { await key(code,name);await key(code,name,'keyUp'); }
+async function rect(selector) { return evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(selector)});const r=e.getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2,w:r.width,h:r.height}})()`); }
+async function click(selector) { await waitFor(`document.querySelector(${JSON.stringify(selector)})!==null`);const {x,y}=await rect(selector);await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,x,y});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,x,y}); }
+const focus=()=>evaluate(`document.querySelector('.world-canvas').focus()`);
+async function navigate(route) { await send('Page.navigate',{url:origin+route});await waitFor(`document.querySelector('.world-explorer')?.dataset.runtimeStatus==='ready'`,45000);await pause(600); }
+const fixture=()=>({source:'Open-Meteo Forecast API',temperature:28,apparentTemperature:30,humidity:75,isDay:true,precipitation:0,rain:0,showers:0,weatherCode:2,cloudCover:48,windSpeed:12,windDirection:90,windGusts:18,sunriseIso:'',sunsetIso:'',sunriseFormatted:'--:--',sunsetFormatted:'--:--',apiObservationTime:'12:00',fetchedAtFormatted:'12:00',fetchedAtTimestampMs:Date.now(),observationTimestampMs:Date.now(),freshness:'live',validationStatus:'valid',mapped:{code:2,category:'partly-cloudy',viDescription:'',enDescription:'',effects:{cloudCoverFloor:48,cloudDarkness:0.14,sunAttenuation:0.84,fogMultiplier:1.05,rainParticleCount:0,rainFallSpeed:0,groundWetness:0,hasLightning:false}}});
+(async()=>{
+  let targets;
+  for(let i=0;i<60;i++){try{targets=await(await fetch('http://localhost:9340/json')).json();break;}catch{await pause(250);}}
+  assert(targets,'Chrome start');socket=new WebSocket(targets.find(t=>t.type==='page').webSocketDebuggerUrl);
+  await new Promise(resolve=>socket.addEventListener('open',resolve,{once:true}));
+  let weatherMode='live';
+  const rawWeather=()=>({current:{time:'2026-11-17T12:00',temperature_2m:28,apparent_temperature:30,relative_humidity_2m:75,is_day:1,precipitation:0,rain:0,showers:0,weather_code:2,cloud_cover:48,wind_speed_10m:12,wind_direction_10m:90,wind_gusts_10m:18},daily:{sunrise:['2026-11-17T05:50'],sunset:['2026-11-17T17:12']}});
+  socket.addEventListener('message',({data})=>{
+    const m=JSON.parse(data);if(m.id){const p=pending.get(m.id);if(p){pending.delete(m.id);m.error?p.reject(m.error):p.resolve(m.result);}}
+    else {events.push(m);if(m.method==='Fetch.requestPaused'){
+      const url=m.params.request.url;let body;
+      if(weatherMode==='live'&&url.includes('/api/weather')){void send('Fetch.continueRequest',{requestId:m.params.requestId});return;}
+      if(url.includes('/api/weather')){body=fixture();body.fetchedAtTimestampMs=Date.parse('2026-11-17T05:00:00Z');body.observationTimestampMs=body.fetchedAtTimestampMs;body.sunriseFormatted='05:50';body.sunsetFormatted='17:12';}
+      else body=rawWeather();
+      void send('Fetch.fulfillRequest',{requestId:m.params.requestId,responseCode:200,responseHeaders:[{name:'Content-Type',value:'application/json'},{name:'Access-Control-Allow-Origin',value:'*'}],body:Buffer.from(JSON.stringify(body)).toString('base64')});
+    }}
+  });
+  await send('Page.enable');await send('Runtime.enable');await send('Log.enable');await send('Network.enable');
+  report.preview=origin;report.browser=await send('Browser.getVersion');report.screenshots=[];report.performance=[];report.layout=[];
+  const instrument=await send('Page.addScriptToEvaluateOnNewDocument',{source:`(()=>{
+    const qa=window.qa={frames:[],longTasks:[],readyAt:null,firstDrawAt:null,hudChanges:[],contexts:0,contextLosses:0,creates:{buffer:0,texture:0,program:0},deletes:{buffer:0,texture:0,program:0},weak:{buffer:[],texture:[],program:[]},deleted:new WeakSet()};
+    let currentFrame=null,drawn=false;const raf=window.requestAnimationFrame.bind(window);
+    window.requestAnimationFrame=callback=>raf(time=>{currentFrame=time;drawn=false;try{callback(time);}finally{if(drawn)qa.frames.push(time);currentFrame=null;}});
+    const original=HTMLCanvasElement.prototype.getContext;const seen=new WeakSet();
+    HTMLCanvasElement.prototype.getContext=function(...args){const gl=original.apply(this,args);if(args[0]==='webgl2'&&gl&&!seen.has(gl)){seen.add(gl);qa.contexts++;this.addEventListener('webglcontextlost',()=>qa.contextLosses++);for(const type of ['buffer','texture','program']){const name=type[0].toUpperCase()+type.slice(1),create=gl['create'+name].bind(gl),dispose=gl['delete'+name].bind(gl);gl['create'+name]=(...a)=>{const value=create(...a);qa.creates[type]++;if(value)qa.weak[type].push({ref:new WeakRef(value),context:gl});return value;};gl['delete'+name]=value=>{qa.deletes[type]++;if(value)qa.deleted.add(value);return dispose(value);};}for(const method of ['drawElements','drawArrays','drawElementsInstanced','drawArraysInstanced']){const call=gl[method].bind(gl);gl[method]=(...a)=>{if(qa.firstDrawAt===null)qa.firstDrawAt=performance.now();if(currentFrame!==null)drawn=true;return call(...a);};}}return gl;};
+    new PerformanceObserver(list=>qa.longTasks.push(...list.getEntries().map(e=>({start:e.startTime,duration:e.duration})))).observe({type:'longtask',buffered:true});
+    new MutationObserver(records=>{const root=document.querySelector('.world-explorer');if(root?.dataset.runtimeStatus==='ready'&&qa.readyAt===null)qa.readyAt=performance.now();if(records.some(r=>r.target===root))qa.hudChanges.push(performance.now());}).observe(document,{subtree:true,attributes:true,childList:true});
+  })()`});
+  const sizes=[['desktop-1920',1920,1080,false],['desktop-1440',1440,900,false],['desktop-1280',1280,720,false],['mobile-390',390,844,true],['mobile-375',375,812,true],['tablet-768',768,1024,true]];
+  const resize=async(w,h,mobile)=>{await send('Emulation.setDeviceMetricsOverride',{width:w,height:h,deviceScaleFactor:mobile?2:1,mobile});await send('Emulation.setTouchEmulationEnabled',{enabled:mobile,maxTouchPoints:mobile?5:1});};
+  const save=async name=>{await shot(name);report.screenshots.push(name+'.png');};
+  if(process.env.QA_LAYOUT){
+    await resize(768,1024,true);await navigate('/');await evaluate(`Array.from(document.querySelectorAll('.world-toolbar button')).find(e=>e.innerText==='Debug').click()`);await waitFor(`document.querySelector('.world-debug.ds-surface-card')!==null`);await save('tablet-debug-'+(process.env.QA_LAYOUT==='after'?'after':'before'));
+    const dimensions=await evaluate(`(()=>{const e=document.querySelector('.world-debug'),r=e.getBoundingClientRect();return{width:r.width,scrollWidth:e.scrollWidth,clientWidth:e.clientWidth,x:r.x,y:r.y}})()`);check('tablet expanded diagnostics',dimensions);assert(dimensions.width>=280);await send('Browser.close');return;
+  }
+  for(const [name,w,h,mobile]of sizes){
+    await resize(w,h,mobile);await send('Network.clearBrowserCookies');await navigate('/');await waitFor(`/[0-9]+°C/.test(document.querySelector('.world-weather')?.innerText??'')`,30000);await pause(700);await save('homepage-'+name);
+    const layout=await evaluate(`(()=>{const q=s=>{const r=document.querySelector(s)?.getBoundingClientRect();return r?{x:r.x,y:r.y,width:r.width,height:r.height}:null};return{viewport:[innerWidth,innerHeight],canvas:q('.world-canvas'),backing:[document.querySelector('.world-canvas').width,document.querySelector('.world-canvas').height],dpr:devicePixelRatio,map:q('.world-map-viewport'),weather:q('.world-weather'),guide:q('.world-guide'),character:q('.world-character, .world-character-compact'),joystick:q('.world-joystick'),overflow:[document.documentElement.scrollWidth-innerWidth,document.documentElement.scrollHeight-innerHeight],status:document.querySelector('.world-explorer').dataset.runtimeStatus}})()`);
+    assert.equal(layout.status,'ready');assert.equal(layout.canvas.width,w);assert.equal(layout.canvas.height,h);assert(layout.overflow.every(v=>v<=0));report.layout.push({name,...layout});check('viewport '+name,layout.backing);
+    if(name==='desktop-1440'||name==='mobile-390'){
+      await evaluate('window.qa.frames=[];window.qa.hudChanges=[]');await pause(5000);
+      const perf=await evaluate(`(()=>{const f=qa.frames,d=f.slice(1).map((t,i)=>t-f[i]),sum=d.reduce((a,b)=>a+b,0);return{sampleMs:sum,frames:d.length,averageFps:1000*d.length/sum,minInstantFps:1000/Math.max(...d),averageFrameMs:sum/d.length,maxFrameMs:Math.max(...d),longTasks:qa.longTasks,firstDrawMs:qa.firstDrawAt,readyMs:qa.readyAt,jsHeapBytes:performance.memory?.usedJSHeapSize??null,contexts:qa.contexts,hudMutationBatches:qa.hudChanges.length,snapshot:{...document.querySelector('.world-explorer').dataset}}})()`);report.performance.push({name,...perf});check('performance '+name,{fps:perf.averageFps,min:perf.minInstantFps,firstDraw:perf.firstDrawMs});
+    }
+  }
+  await resize(1440,900,false);await send('Network.clearBrowserCookies');await navigate('/vi');await save('homepage-vi-desktop-1440');assert.equal(await evaluate('document.documentElement.lang'),'vi');
+  weatherMode='fixture';await send('Fetch.enable',{patterns:[{urlPattern:'*/api/weather'},{urlPattern:'https://api.open-meteo.com/*'}]});
+  const fixed=await send('Page.addScriptToEvaluateOnNewDocument',{source:`(()=>{const OriginalDate=Date,epoch=Date.parse('2026-11-17T05:00:00Z');window.Date=class extends OriginalDate{constructor(...args){super(...(args.length?args:[epoch]));}static now(){return epoch;}};let seed=42;Math.random=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};})()`});
+  report.reference={url:'http://127.0.0.1:3188',time:'2026-11-17T12:00:00+07:00',weather:'controlled WMO 2 / 28°C',randomSeed:42,original:'unchanged archived TSX in separate installed-Vite harness'};
+  for(const [name,w,h,mobile]of sizes){
+    await resize(w,h,mobile);await send('Network.clearBrowserCookies');await navigate('/');await pause(700);await save('comparison-current-'+name);
+    await send('Page.navigate',{url:'http://127.0.0.1:3188/'});await waitFor(`document.querySelector('canvas')?.width>0 && window.qa.firstDrawAt!==null`,45000);await waitFor(`document.body.innerText.includes('28°C')`,20000);await pause(700);await save('reference-phase10-'+name);check('direct reference '+name,true);
+  }
+  await send('Page.removeScriptToEvaluateOnNewDocument',{identifier:fixed.identifier});await send('Fetch.disable');weatherMode='live';await resize(1440,900,false);await send('Network.clearBrowserCookies');await navigate('/');await focus();
+  for(const [code,k,axis,sign]of [['KeyW','w','playerZ',-1],['KeyS','s','playerZ',1],['KeyA','a','playerX',-1],['KeyD','d','playerX',1],['ArrowUp','ArrowUp','playerZ',-1],['ArrowDown','ArrowDown','playerZ',1],['ArrowLeft','ArrowLeft','playerX',-1],['ArrowRight','ArrowRight','playerX',1]]){
+    await tap('KeyR');await pause(250);await key(code,k);await pause(450);await key(code,k,'keyUp');await pause(250);const value=Number((await snapshot())[axis]);assert(sign*value>0.2);check('movement '+code,value);
+  }
+  await tap('KeyR');await key('KeyW','w');await key('KeyD','d');await pause(750);const diagonal=await snapshot();await key('KeyW','w','keyUp');await key('KeyD','d','keyUp');assert(Number(diagonal.speed)<=4.51);check('diagonal normalization',diagonal.speed);
+  await pause(500);await key('KeyW','w');await pause(200);await evaluate(`window.dispatchEvent(new Event('blur'))`);await pause(700);assert.equal(Number((await snapshot()).speed),0);await key('KeyW','w','keyUp');check('blur releases movement');
+  await tap('KeyR');await tap('KeyF');await key('ShiftLeft','Shift');await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-25`);await key('KeyW','w','keyUp');await key('ShiftLeft','Shift','keyUp');await pause(600);await tap('KeyF');await save('minimap-distant-overview');
+  for(let i=0;i<10;i++)await click('button[aria-label="Zoom in"]');assert(await evaluate(`document.querySelector('button[aria-label="Zoom in"]').disabled`));for(let i=0;i<15;i++)await click('button[aria-label="Zoom out"]');assert(await evaluate(`document.querySelector('button[aria-label="Zoom out"]').disabled`));check('map zoom bounds');
+  await click('button[aria-label="Specs"]');await waitFor(`document.querySelector('[role="dialog"]')!==null`);assert(await evaluate(`document.querySelector('[role="dialog"]').contains(document.activeElement)`));await save('dialog-desktop');await tap('Escape','Escape');await waitFor(`!document.querySelector('[role="dialog"]')`);check('dialog focus and Escape');await focus();
+  const resources=[];
+  for(let i=0;i<5;i++){
+    await evaluate(`(()=>{const gl=document.querySelector('.world-canvas').getContext('webgl2');window.qaGl=gl;window.qaDraw=gl.drawElements;gl.drawElements=()=>{throw new Error('Controlled QA runtime failure')}})()`);await waitFor(`document.querySelector('.world-explorer').dataset.runtimeStatus==='error'`);await evaluate('qaGl.drawElements=qaDraw');await click('.world-runtime-overlay button');await waitFor(`document.querySelector('.world-explorer').dataset.runtimeStatus==='ready'`);await pause(300);await send('HeapProfiler.collectGarbage');resources.push(await evaluate(`({snapshot:{...document.querySelector('.world-explorer').dataset},alive:Object.fromEntries(Object.entries(qa.weak).map(([k,list])=>[k,list.filter(({ref,context})=>{const obj=ref.deref();return obj&&!qa.deleted.has(obj)&&!context.isContextLost()}).length])),contexts:qa.contexts-qa.contextLosses,createdContexts:qa.contexts,lostContexts:qa.contextLosses})`));
+  }
+  report.resourceRetries=resources;const baseline=resources[0];assert(resources.every(r=>r.contexts===1&&Math.abs(Number(r.snapshot.geometries)-Number(baseline.snapshot.geometries))<=1&&r.snapshot.textures===baseline.snapshot.textures&&JSON.stringify(r.alive)===JSON.stringify(baseline.alive)));check('five runtime disposals/restarts',resources.map(r=>r.alive));
+  for(const route of ['/health','/vi/health']){await send('Network.clearBrowserCookies');await send('Page.navigate',{url:origin+route});await pause(1000);assert.equal(await evaluate('document.documentElement.lang'),route.startsWith('/vi')?'vi':'en');check('route '+route);}
+  const health=await fetch(origin+'/api/health');assert.equal(health.status,200);assert.equal(health.headers.get('cache-control'),'no-store');check('health HTTP/no-store');
+  const badWeather=await fetch(origin+'/api/weather?url=https://example.com');assert.equal(badWeather.status,400);check('weather fixed boundary');
+  const appEvents=events.filter(e=>!JSON.stringify(e).includes('127.0.0.1:3188'));
+  report.console=appEvents.filter(e=>e.method==='Runtime.exceptionThrown'||e.method==='Log.entryAdded'&&['warning','error'].includes(e.params.entry.level)||e.method==='Runtime.consoleAPICalled'&&['warning','error'].includes(e.params.type)).map(e=>({method:e.method,level:e.params.entry?.level??e.params.type,text:e.params.entry?.text??e.params.exceptionDetails?.text??e.params.args?.map(a=>a.value??a.description).join(' ')}));
+  report.network=appEvents.filter(e=>e.method==='Network.responseReceived').map(e=>({url:e.params.response.url,status:e.params.response.status}));
+  report.networkFailures=report.network.filter(r=>r.status>=400);assert(!report.network.some(r=>/jsonplaceholder|\/proxy\/posts/.test(r.url)));
+  check('application console issues',report.console.length);check('network failures',report.networkFailures.length);
+  await send('Browser.close');
+})().catch(async error=>{report.failure=String(error.stack??error);console.error(error);try{report.failureSnapshot=await snapshot();report.failureText=await evaluate('document.body.innerText');await shot('prompt02-failure');}catch{}process.exitCode=1;}).finally(()=>{fs.writeFileSync(path.join(__dirname,process.env.QA_LAYOUT?'prompt02-layout-'+process.env.QA_LAYOUT+'.json':'prompt02-report.json'),JSON.stringify(report,null,2)+'\n');socket?.close();chrome.kill();});

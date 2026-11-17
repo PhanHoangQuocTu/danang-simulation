@@ -1,0 +1,23 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const { pathToFileURL } = require('node:url');
+(async () => {
+  const root = process.cwd();
+  const target = path.join(__dirname,'phase10-reference');
+  fs.mkdirSync(target,{recursive:true});
+  fs.copyFileSync('history/code/da_nang_3d_open_world_simulation_phase_10.tsx',path.join(target,'App.tsx'));
+  fs.writeFileSync(path.join(target,'index.html'),'<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head><body><div id="root"></div><script type="module" src="/main.tsx"></script></body></html>');
+  fs.writeFileSync(path.join(target,'main.tsx'),`import React from 'react';import {createRoot} from 'react-dom/client';import App from './App';import './style.css';createRoot(document.getElementById('root')!).render(<App/>);`);
+  fs.writeFileSync(path.join(target,'style.css'),`@import "tailwindcss";\n@source "./App.tsx";\nbody { margin: 0; }`);
+  const pluginRoot = path.dirname(require.resolve('@storybook/nextjs-vite/package.json'));
+  const vitePath = require.resolve('vite',{paths:[pluginRoot]});
+  const {createServer}=await import(pathToFileURL(vitePath).href);
+  const tailwind=require('@tailwindcss/postcss');
+  const server=await createServer({
+    root:target, configFile:false, cacheDir:path.join(__dirname,'reference-vite-cache'),
+    server:{port:3188,host:'127.0.0.1',strictPort:true,fs:{allow:[root]}},
+    css:{postcss:{plugins:[tailwind({base:target})]}},
+    resolve:{alias:{'tailwindcss':path.dirname(require.resolve('tailwindcss/package.json'))}},
+  });
+  await server.listen();console.log('Original unmodified Phase 10 reference: http://127.0.0.1:3188');
+})().catch(error=>{console.error(error);process.exitCode=1;});

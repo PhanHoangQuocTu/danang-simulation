@@ -1,0 +1,14 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const root = process.cwd();
+const target = path.join(root, 'verification-tmp');
+fs.mkdirSync(target, { recursive:true });
+for (const name of ['src','public','tests','package.json','pnpm-lock.yaml','tsconfig.json','next-env.d.ts','next.config.ts','postcss.config.mjs','.env.example','.env.local']) {
+  if (fs.existsSync(name)) fs.cpSync(name,path.join(target,name),{recursive:true});
+}
+const config=path.join(target,'next.config.ts');
+fs.writeFileSync(config,fs.readFileSync(config,'utf8').replace('  reactStrictMode: true,',`  reactStrictMode: true,\n  turbopack: { root: ${JSON.stringify(root)} },`));
+console.log('Isolated current-source preview prepared:', target);
+for (const pkg of ['vite','postcss','@tailwindcss/postcss','react','react-dom/client','three']) {
+  try { console.log(pkg,require.resolve(pkg)); } catch { console.log(pkg,'not available at repository root'); }
+}

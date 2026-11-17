@@ -1,4 +1,16 @@
-# Engineering report — batch foundation, 2026-11-12
+# Migration report
+
+## Current integration — 2026-11-17
+
+Prompt 02 adds direct screenshots of the independently executed Phase 10 reference, six responsive viewports, Chrome/Edge gameplay checks, resource instrumentation, and fixes for adaptive-resize blank frames, Retry context retention, and HUD layout. Current evidence and limitations: [Phase 1–10 browser QA report](evidence/PHASE_1_TO_10_BROWSER_QA_REPORT.md). This report supersedes earlier browser-coverage limitations where it records new evidence; it does not certify the full master specification.
+
+Homepage `/` và `/vi` hiện render simulation WebGL thật. Scene, camera, runtime, input, Mini Map, HUD, weather BFF và typed translations đã tích hợp. Health và reusable boilerplate được giữ; Posts demo đã bị loại bỏ.
+
+Xem [Integration report, 2026-11-17](INTEGRATION_REPORT_2026_11_17.md) cho actual source paths, thay đổi lifecycle, browser evidence, quality checks và các giới hạn chưa được chứng minh. Không dùng các dòng NOT RUN hoặc boilerplate bên dưới làm mô tả source hiện tại.
+
+## Historical foundation report — 2026-11-12
+
+Phần dưới giữ nguyên như hồ sơ audit của batch extraction trước integration. Các đường dẫn, số tests và trạng thái là lịch sử tại thời điểm đó.
 
 ## Kết luận và phạm vi
 

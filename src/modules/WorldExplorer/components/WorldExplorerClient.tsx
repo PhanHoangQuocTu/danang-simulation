@@ -31,7 +31,13 @@ export default function WorldExplorerClient() {
       data-textures={model.snapshot?.perf.texturesCount}
       data-fps={model.snapshot?.perf.fps}
     >
-      <canvas ref={model.canvas} className='world-canvas' tabIndex={0} aria-label={t('summary')} />
+      <canvas
+        key={model.generation}
+        ref={model.canvas}
+        className='world-canvas'
+        tabIndex={0}
+        aria-label={t('summary')}
+      />
       <div className='world-hud'>
         <div className='world-top-left'>
           <MiniMap model={model} />

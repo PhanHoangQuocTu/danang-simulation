@@ -1,0 +1,35 @@
+{
+  "origin": "http://localhost:3187",
+  "weather": "controlled fixture; live upstream tested separately",
+  "checks": [
+    {
+      "name": "map follow-to-static captures during settling",
+      "detail": 3
+    },
+    {
+      "name": "inspect fixture dialog"
+    },
+    {
+      "name": "information fixture dialog"
+    },
+    {
+      "name": "runtime error Retry rebuilds scene"
+    },
+    {
+      "name": "fresh-cookie /health",
+      "detail": "en"
+    },
+    {
+      "name": "fresh-cookie /vi/health",
+      "detail": "vi"
+    },
+    {
+      "name": "health no-store"
+    },
+    {
+      "name": "focused console issue count",
+      "detail": 0
+    }
+  ],
+  "issues": []
+}

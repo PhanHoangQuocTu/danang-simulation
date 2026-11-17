@@ -15,12 +15,13 @@ function setup() {
   let blocked = false;
   const command = vi.fn();
   const release = vi.fn();
+  const zoom = vi.fn();
   const state = createPlayerState();
   const binding = bindWorldInput(canvas, state, keyboard, {
     blocked: () => blocked,
     command,
     release,
-    zoom: vi.fn(),
+    zoom,
     device: vi.fn(),
   });
   cleanups.push(() => binding.dispose());
@@ -30,6 +31,7 @@ function setup() {
     state,
     command,
     release,
+    zoom,
     binding,
     block() {
       blocked = true;
@@ -40,6 +42,61 @@ function setup() {
 const key = (type: string, code: string, target: EventTarget = window) =>
   target.dispatchEvent(new KeyboardEvent(type, { code, bubbles: true, cancelable: true }));
 describe('input lifecycle', () => {
+  it('orbits and tilts the camera from the keyboard without moving the player', () => {
+    const { state, keyboard } = setup();
+    const pitch = state.cameraPitch;
+    key('keydown', 'KeyJ');
+    expect(state.cameraYaw).toBeGreaterThan(0);
+    key('keydown', 'KeyL');
+    expect(state.cameraYaw).toBeCloseTo(0);
+    key('keydown', 'KeyI');
+    expect(state.cameraPitch).toBeGreaterThan(pitch);
+    key('keydown', 'KeyK');
+    expect(state.cameraPitch).toBeCloseTo(pitch);
+    expect(Object.values(keyboard).some(Boolean)).toBe(false);
+  });
+  it('keeps keyboard camera tilt within the pointer camera limits', () => {
+    const { state } = setup();
+    for (let i = 0; i < 100; i++) key('keydown', 'KeyI');
+    expect(state.cameraPitch).toBe(1.25);
+    const upper = state.cameraPitch;
+    key('keydown', 'KeyI');
+    expect(state.cameraPitch).toBe(upper);
+    for (let i = 0; i < 100; i++) key('keydown', 'KeyK');
+    expect(state.cameraPitch).toBeLessThan(upper);
+    const lower = state.cameraPitch;
+    expect(lower).toBe(-0.18);
+    key('keydown', 'KeyK');
+    expect(state.cameraPitch).toBe(lower);
+  });
+  it('zooms the camera with Page Up and Page Down', () => {
+    const { zoom } = setup();
+    key('keydown', 'PageUp');
+    expect(zoom).toHaveBeenLastCalledWith(expect.any(Number));
+    expect(zoom.mock.calls[0][0]).toBeLessThan(0);
+    key('keydown', 'PageDown');
+    expect(zoom.mock.calls[1][0]).toBeGreaterThan(0);
+  });
+  it('does not change the camera while typing, using modifiers, or blocked', () => {
+    const { state, zoom, block, canvas } = setup();
+    const pitch = state.cameraPitch;
+    const input = document.createElement('input');
+    document.body.append(input);
+    input.focus();
+    key('keydown', 'KeyJ', input);
+    key('keydown', 'PageUp', input);
+    canvas.focus();
+    for (const modifier of ['ctrlKey', 'altKey', 'metaKey']) {
+      window.dispatchEvent(new KeyboardEvent('keydown', { code: 'KeyI', [modifier]: true }));
+      window.dispatchEvent(new KeyboardEvent('keydown', { code: 'PageUp', [modifier]: true }));
+    }
+    block();
+    key('keydown', 'KeyJ');
+    key('keydown', 'PageUp');
+    expect(state.cameraYaw).toBe(0);
+    expect(state.cameraPitch).toBe(pitch);
+    expect(zoom).not.toHaveBeenCalled();
+  });
   it('retains movement when one overlapping mapping is released', () => {
     const { keyboard } = setup();
     key('keydown', 'KeyW');

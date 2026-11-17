@@ -163,6 +163,7 @@ export function createWorldRuntime(bindings: WorldBindings) {
     let pageActive = true;
     const baseDpr = Math.min(window.devicePixelRatio || 1, 2);
     let activeDpr = baseDpr;
+    let resizePending = false;
     const release = () => {
       Object.assign(joystick, { x: 0, y: 0, magnitude: 0, active: false });
       Object.assign(actions, { sprint: false, sprintLatched: false, jump: false });
@@ -284,6 +285,10 @@ export function createWorldRuntime(bindings: WorldBindings) {
       [
         {
           update(dt, now) {
+            if (resizePending) {
+              resize();
+              resizePending = false;
+            }
             const rawMs = lastFrame === null ? 0 : now - lastFrame;
             lastFrame = now;
             if (rawMs > 0 && rawMs < 250) {
@@ -344,14 +349,27 @@ export function createWorldRuntime(bindings: WorldBindings) {
               selectTarget();
               lastRay = now;
             }
-            mapCenter.x = THREE.MathUtils.damp(mapCenter.x, follow ? state.position.x : 0, 12, dt);
-            mapCenter.y = THREE.MathUtils.damp(mapCenter.y, follow ? state.position.z : 0, 12, dt);
+            const previousMapX = mapCenter.x;
+            const previousMapZ = mapCenter.y;
+            mapCenter.x = THREE.MathUtils.damp(
+              mapCenter.x,
+              follow ? state.position.x : 0,
+              GAME_CONFIG.miniMap.followSmoothing,
+              dt
+            );
+            mapCenter.y = THREE.MathUtils.damp(
+              mapCenter.y,
+              follow ? state.position.z : 0,
+              GAME_CONFIG.miniMap.followSmoothing,
+              dt
+            );
+            const mapCenterMoved = Math.hypot(mapCenter.x - previousMapX, mapCenter.y - previousMapZ) > 0.04;
             mapCamera.position.set(mapCenter.x, 140, mapCenter.y);
             mapCamera.lookAt(mapCenter.x, 0, mapCenter.y);
             mapCamera.zoom = zoom;
             mapCamera.updateProjectionMatrix();
             mapCamera.updateMatrixWorld();
-            if (mapDirty || now - lastMap >= (follow ? 50 : 2500)) {
+            if (mapDirty || now - lastMap >= (follow || mapCenterMoved ? 50 : 2500)) {
               captureMap();
               lastMap = now;
               mapDirty = false;
@@ -401,7 +419,7 @@ export function createWorldRuntime(bindings: WorldBindings) {
                   perf.adaptiveQualityTier = tiers[tier];
                   activeDpr = tier === 0 ? baseDpr : Math.min(baseDpr, tier === 1 ? 1.35 : 1);
                   rainQuality = [1, 0.75, 0.5][tier];
-                  resize();
+                  resizePending = true;
                   qualityCooldown = 3500;
                 }
               }
@@ -511,7 +529,8 @@ export function createWorldRuntime(bindings: WorldBindings) {
       },
       reset() {
         input.release();
-        Object.assign(state, createPlayerState());
+        const { perf, isPointerLocked } = state;
+        Object.assign(state, createPlayerState(), { perf, isPointerLocked });
         targetDistance = GAME_CONFIG.camera.defaultDistance;
         lookAt.set(0, 1.48, 0);
         camera.position.set(0, 3, 5.4);

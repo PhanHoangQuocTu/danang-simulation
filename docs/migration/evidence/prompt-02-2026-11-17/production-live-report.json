@@ -1,0 +1,155 @@
+{
+  "origin": "http://localhost:3000",
+  "weather": "live Open-Meteo through fixed BFF; Node --use-system-ca",
+  "checks": [
+    {
+      "name": "live BFF validated observation",
+      "detail": {
+        "temperature": 26.9,
+        "observation": "20:30",
+        "code": 0
+      }
+    },
+    {
+      "name": "live weather homepage",
+      "detail": "DA NANG, VIETNAM\n20:32:19\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-47.0°\n27°C\nFeels like 32°C\n\nClear sky\n\nWMO #0\nLIVE\nHumidity\n85%\nCloud cover\n18%\nWind\n4.6 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:30\nOpen-Meteo"
+    },
+    {
+      "name": "context-lost overlay"
+    },
+    {
+      "name": "live console issue count",
+      "detail": 0
+    }
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Edg/157.0.4341.60",
+    "revision": "@fbcb2989a6c61b72a4919fe1028e58e70131cd46",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
+    "jsVersion": "15.7.11.7"
+  },
+  "network": [
+    {
+      "url": "http://localhost:3000/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/2p8bzgfr0ho3m.css",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/10b5_8-zyx83l.css",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/2amv59xn6oxfd.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/2jrri10nall4b.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/234t1lvykgjp_.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/2a2rzgipm44z9.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0c1c9esfxaxhf.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0101jvhdaku10.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0egburf3stuu5.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/2dd28yoozvbg2.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/04_nn6ja9olu0.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/13kix4j_8ilvx.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/04o339j4xd5yv.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/2ulaqmziuvmtc.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/1--ddn2md8tbz.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/390v_-fcl08s8.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/2cxsb5622vyz-.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/3gdyfkdsg1k34.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/1m0rp0x0xv3hn.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/manifest.webmanifest",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0qsll7hzma8ce.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/icon.svg",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/2aw_its1nbwb6.css",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/1rondpsyxg_y2.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/09reay6a4lsi6.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/api/weather",
+      "status": 200
+    }
+  ],
+  "issues": []
+}

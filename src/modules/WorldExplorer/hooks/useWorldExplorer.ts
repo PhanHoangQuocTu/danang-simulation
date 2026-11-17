@@ -22,7 +22,8 @@ export function useWorldExplorer() {
   const cone = useRef<HTMLDivElement>(null);
   const edge = useRef<HTMLSpanElement>(null);
   const runtime = useRef<WorldRuntime | null>(null);
-  const [_generation, setGeneration] = useState(0);
+  const runtimeGeneration = useRef<number | null>(null);
+  const [generation, setGeneration] = useState(0);
   const [status, setStatus] = useState<RuntimeStatus>('loading');
   const [snapshot, setSnapshot] = useState<WorldSnapshot | null>(null);
   const [profile, setProfile] = useState(() => evaluateAdaptiveDeviceProfile(null));
@@ -131,6 +132,7 @@ export function useWorldExplorer() {
   useEffect(() => {
     if (!canvas.current || !mapCanvas.current || !marker.current || !cone.current || !edge.current) return;
     let active = true;
+    runtimeGeneration.current = generation;
     try {
       const instance = createWorldRuntime({
         canvas: canvas.current,
@@ -139,37 +141,40 @@ export function useWorldExplorer() {
         cone: cone.current,
         edge: edge.current,
         release: () => {
-          if (active) resetTouch();
+          if (active && runtimeGeneration.current === generation) resetTouch();
         },
         command: (command) => onCommandRef.current(command),
         device: (input) => setProfile(evaluateAdaptiveDeviceProfile(input)),
         snapshot: (value) => {
-          if (active) setSnapshot(value);
+          if (active && runtimeGeneration.current === generation) setSnapshot(value);
         },
         status: (value) => {
-          if (active) setStatus(value);
+          if (active && runtimeGeneration.current === generation) setStatus(value);
         },
       });
       runtime.current = instance;
       return () => {
         active = false;
+        runtimeGeneration.current = null;
         runtime.current = null;
         instance.dispose();
       };
     } catch (error) {
+      active = false;
+      runtimeGeneration.current = null;
       setStatus(error instanceof Error && /WebGL|context|renderer/i.test(error.message) ? 'unsupported' : 'error');
     }
-  }, [resetTouch]);
+  }, [generation, resetTouch]);
   useEffect(() => {
-    runtime.current?.setMap(map.zoom, map.follow);
-  }, [map]);
+    if (runtimeGeneration.current === generation) runtime.current?.setMap(map.zoom, map.follow);
+  }, [map, generation]);
   useEffect(() => {
-    runtime.current?.setBlocked(dialog !== null);
+    if (runtimeGeneration.current === generation) runtime.current?.setBlocked(dialog !== null);
     if (dialog) resetTouch();
-  }, [dialog, resetTouch]);
+  }, [dialog, generation, resetTouch]);
   useEffect(() => {
-    runtime.current?.setWeather(weather);
-  }, [weather]);
+    if (runtimeGeneration.current === generation) runtime.current?.setWeather(weather);
+  }, [weather, generation]);
   useEffect(() => {
     const update = () => setClock(getDaNangClockData());
     update();
@@ -382,6 +387,7 @@ export function useWorldExplorer() {
     cone,
     edge,
     status,
+    generation,
     snapshot,
     profile,
     panels,

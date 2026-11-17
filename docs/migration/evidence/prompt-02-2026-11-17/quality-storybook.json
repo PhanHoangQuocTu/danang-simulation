@@ -1,0 +1,10 @@
+{
+  "node": "v22.22.3",
+  "rtk": "bypass, exact command output captured",
+  "results": [
+    {
+      "command": "build-storybook",
+      "code": 0
+    }
+  ]
+}

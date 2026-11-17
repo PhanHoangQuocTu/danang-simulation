@@ -606,8 +606,7 @@
 .world-debug {
   position: absolute;
   top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 338px;
   max-width: 340px;
 }
 .world-debug.ds-surface-card {
@@ -961,6 +960,11 @@
   bottom: 170px;
 }
 @media (max-width: 1100px) {
+  .world-top-left .world-debug:not(.ds-surface-card) {
+    position: static;
+    transform: none;
+    max-width: 276px;
+  }
   .world-debug {
     left: 310px;
     transform: none;
@@ -968,9 +972,9 @@
     max-width: 240px;
   }
   .world-debug.ds-surface-card {
-    top: 16px;
-    left: 310px;
-    max-width: calc(100vw - 660px);
+    top: 80px;
+    left: max(12px, calc((100vw - 320px) / 2));
+    max-width: calc(100vw - 24px);
   }
 }
 @media (max-width: 767px) {
@@ -1223,6 +1227,8 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  order: -1;
+  flex-shrink: 0;
 }
 .world-wasd > div {
   display: flex;

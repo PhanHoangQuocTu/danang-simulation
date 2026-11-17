@@ -40,13 +40,15 @@ export function HudButton({
   children,
   onClick,
   label,
-  active = false,
+  active,
+  expanded,
   disabled = false,
 }: {
   children: ReactNode;
   onClick(): void;
   label?: string;
   active?: boolean;
+  expanded?: boolean;
   disabled?: boolean;
 }) {
   return (
@@ -57,6 +59,7 @@ export function HudButton({
       aria-label={label}
       title={label}
       aria-pressed={active}
+      aria-expanded={expanded}
       disabled={disabled}
     >
       {children}
@@ -143,7 +146,11 @@ export function MiniMap({ model: m }: { model: WorldExplorerModel }) {
             {t(m.profile.formFactor)} · {t(m.profile.activeInput)}
           </small>
         </div>
-        <HudButton label={t(compact ? 'expand' : 'collapse', { panel: t('map') })} onClick={() => m.toggle('miniMap')}>
+        <HudButton
+          expanded={!compact}
+          label={t(compact ? 'expand' : 'collapse', { panel: t('map') })}
+          onClick={() => m.toggle('miniMap')}
+        >
           {compact ? <ChevronDown /> : <ChevronUp />}
         </HudButton>
       </div>
@@ -294,6 +301,7 @@ export function TimeWeather({ model: m }: { model: WorldExplorerModel }) {
           </>
         )}
         <HudButton
+          expanded={!compact}
           label={t(compact ? 'expand' : 'collapse', { panel: t('weather') })}
           onClick={() => m.toggle('statusWidget')}
         >
@@ -379,10 +387,10 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
     <>
       {environment === 'compact' && (
         <div className='world-chips world-env-chips' data-hud-interactive='true'>
-          <HudButton onClick={() => set('environmentPanel', 'expanded')}>
+          <HudButton expanded={false} onClick={() => set('environmentPanel', 'expanded')}>
             {t('elevation')}: {s?.surface.toFixed(2) ?? '0.00'} m
           </HudButton>
-          <HudButton onClick={() => set('environmentPanel', 'expanded')}>
+          <HudButton expanded={false} onClick={() => set('environmentPanel', 'expanded')}>
             {t('solarAltitude')}: {m.solar.altitudeDeg.toFixed(1)}°
           </HudButton>
           <HudButton label={t('hide', { panel: t('environment') })} onClick={() => set('environmentPanel', 'hidden')}>
@@ -395,6 +403,7 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
           <header className='world-panel-heading'>
             <strong>{t('environmentTitle')}</strong>
             <HudButton
+              expanded
               label={t('collapse', { panel: t('environment') })}
               onClick={() => set('environmentPanel', 'compact')}
             >
@@ -433,10 +442,13 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
         <section className={`world-debug ${debug === 'expanded' ? 'ds-surface-card' : ''}`} data-hud-interactive='true'>
           {debug === 'compact' ? (
             <div className='world-chips'>
-              <HudButton onClick={() => set('secondaryInfo', 'expanded')}>
+              <HudButton expanded={false} onClick={() => set('secondaryInfo', 'expanded')}>
                 {t('fps')}: {s?.perf.fps ?? '--'}
               </HudButton>
-              <HudButton onClick={() => set('secondaryInfo', 'expanded')}>
+              <HudButton expanded={false} onClick={() => set('secondaryInfo', 'expanded')}>
+                {t('frameShort')}: {s?.perf.avgFrameTimeMs.toFixed(1) ?? '--'} ms
+              </HudButton>
+              <HudButton expanded={false} onClick={() => set('secondaryInfo', 'expanded')}>
                 {t('checks')}: {diagnostics.filter((check) => check.passed).length}/9
               </HudButton>
               <HudButton label={t('hide', { panel: t('debug') })} onClick={() => set('secondaryInfo', 'hidden')}>
@@ -447,7 +459,11 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
             <>
               <header className='world-panel-heading'>
                 <strong>{t('debugTitle')}</strong>
-                <HudButton label={t('collapse', { panel: t('debug') })} onClick={() => set('secondaryInfo', 'compact')}>
+                <HudButton
+                  expanded
+                  label={t('collapse', { panel: t('debug') })}
+                  onClick={() => set('secondaryInfo', 'compact')}
+                >
                   <ChevronUp />
                 </HudButton>
                 <HudButton label={t('hide', { panel: t('debug') })} onClick={() => set('secondaryInfo', 'hidden')}>
@@ -535,7 +551,7 @@ export function MovementGuide({ model: m }: { model: WorldExplorerModel }) {
       data-guide-mode={m.panels.movementGuide}
     >
       {collapsed ? (
-        <HudButton onClick={() => m.toggle('movementGuide')}>
+        <HudButton expanded={false} onClick={() => m.toggle('movementGuide')}>
           {m.profile.showTouchControls ? <Gamepad2 /> : <Keyboard />}
           {t('controls')} <kbd>H</kbd>
           <ChevronUp />
@@ -547,7 +563,11 @@ export function MovementGuide({ model: m }: { model: WorldExplorerModel }) {
               {m.profile.showTouchControls ? <Gamepad2 /> : <Keyboard />}
               {t('guide')}
             </strong>
-            <HudButton label={t('collapse', { panel: t('controls') })} onClick={() => m.toggle('movementGuide')}>
+            <HudButton
+              expanded
+              label={t('collapse', { panel: t('controls') })}
+              onClick={() => m.toggle('movementGuide')}
+            >
               <ChevronDown />
             </HudButton>
           </header>
@@ -591,11 +611,15 @@ export function CharacterStatus({ model: m }: { model: WorldExplorerModel }) {
         data-panel-mode='compact'
         data-hud-interactive='true'
       >
-        <HudButton label={t('expand', { panel: t('character') })} onClick={() => m.toggle('playerStatus')}>
+        <HudButton
+          expanded={false}
+          label={t('expand', { panel: t('character') })}
+          onClick={() => m.toggle('playerStatus')}
+        >
           <Footprints />
           {t(s?.animation ?? 'IDLE')}
         </HudButton>
-        <HudButton label={t('expand', { panel: t('speed') })} onClick={() => m.toggle('playerStatus')}>
+        <HudButton expanded={false} label={t('expand', { panel: t('speed') })} onClick={() => m.toggle('playerStatus')}>
           {t('speed')}: {s?.speed.toFixed(2) ?? '0.00'} m/s
         </HudButton>
       </section>
@@ -622,7 +646,7 @@ export function CharacterStatus({ model: m }: { model: WorldExplorerModel }) {
           </div>
         )}
       </div>
-      <HudButton label={t('collapse', { panel: t('character') })} onClick={() => m.toggle('playerStatus')}>
+      <HudButton expanded label={t('collapse', { panel: t('character') })} onClick={() => m.toggle('playerStatus')}>
         <ChevronDown />
       </HudButton>
     </section>

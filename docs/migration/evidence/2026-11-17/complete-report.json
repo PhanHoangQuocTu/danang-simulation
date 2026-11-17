@@ -1,0 +1,210 @@
+{
+  "origin": "http://localhost:3187",
+  "weather": "controlled fixture; live upstream tested separately",
+  "checks": [
+    {
+      "name": "English homepage real WebGL",
+      "detail": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "29"
+      }
+    },
+    {
+      "name": "weather fixture displayed"
+    },
+    {
+      "name": "walk",
+      "detail": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "-3.1037313255454904",
+        "playerState": "WALK",
+        "speed": "4.499932502675859",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "152",
+        "textures": "5",
+        "fps": "26"
+      }
+    },
+    {
+      "name": "sprint",
+      "detail": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "-4.982398167658926",
+        "playerState": "RUN",
+        "speed": "8.424041367309558",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "152",
+        "textures": "5",
+        "fps": "26"
+      }
+    },
+    {
+      "name": "jump",
+      "detail": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0.8705",
+        "playerZ": "-5.488037945260586",
+        "playerState": "JUMP",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "153",
+        "textures": "5",
+        "fps": "28"
+      }
+    },
+    {
+      "name": "landing"
+    },
+    {
+      "name": "mouse drag orbit"
+    },
+    {
+      "name": "mouse wheel zoom"
+    },
+    {
+      "name": "map follow and compact"
+    },
+    {
+      "name": "map zoom"
+    },
+    {
+      "name": "dialog blocks movement"
+    },
+    {
+      "name": "dialog Escape"
+    },
+    {
+      "name": "fullscreen enter"
+    },
+    {
+      "name": "fullscreen exit"
+    },
+    {
+      "name": "interaction approach",
+      "detail": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "-3.236169223855648",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "153",
+        "textures": "5",
+        "fps": "18"
+      }
+    },
+    {
+      "name": "beacon activation",
+      "detail": "Calibration beacon activated"
+    },
+    {
+      "name": "beacon deactivation",
+      "detail": "Calibration beacon deactivated"
+    },
+    {
+      "name": "real input isolates movement"
+    },
+    {
+      "name": "WebGL context recovery"
+    },
+    {
+      "name": "repeated locale mounts",
+      "detail": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "24"
+      }
+    },
+    {
+      "name": "Vietnamese mobile layout"
+    },
+    {
+      "name": "mobile joystick",
+      "detail": {
+        "runtimeStatus": "ready",
+        "playerX": "1.0600284722349503e-16",
+        "playerY": "0",
+        "playerZ": "-1.7311578701270987",
+        "playerState": "WALK",
+        "speed": "3.453255714667496",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "152",
+        "textures": "5",
+        "fps": "71"
+      }
+    },
+    {
+      "name": "multitouch movement and orbit"
+    },
+    {
+      "name": "touch release stops movement"
+    },
+    {
+      "name": "touch pinch zoom",
+      "detail": {
+        "runtimeStatus": "ready",
+        "playerX": "0.28798052695102666",
+        "playerY": "0",
+        "playerZ": "-3.6244066341726335",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "4.150451535550894",
+        "cameraYaw": "-0.21599999999999997",
+        "geometries": "152",
+        "textures": "5",
+        "fps": "61"
+      }
+    },
+    {
+      "name": "touch sprint"
+    },
+    {
+      "name": "touch jump"
+    },
+    {
+      "name": "/health",
+      "detail": "vi"
+    },
+    {
+      "name": "/vi/health",
+      "detail": "vi"
+    },
+    {
+      "name": "health API",
+      "detail": "ok"
+    },
+    {
+      "name": "console issue count",
+      "detail": 0
+    }
+  ],
+  "issues": []
+}

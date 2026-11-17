@@ -1,0 +1,15 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
+const root = process.cwd();
+const target = path.join(root, 'verification-tmp');
+fs.mkdirSync(target, { recursive: true });
+for (const name of ['src', 'public', 'tests', 'package.json', 'pnpm-lock.yaml', 'tsconfig.json', 'next-env.d.ts', 'next.config.ts', 'postcss.config.mjs']) {
+  if (fs.existsSync(name)) fs.cpSync(name, path.join(target, name), { recursive: true });
+}
+const configPath = path.join(target, 'next.config.ts');
+let config = fs.readFileSync(configPath, 'utf8');
+config = config.replace("  reactStrictMode: true,", `  reactStrictMode: true,\n  turbopack: { root: ${JSON.stringify(root)} },`);
+fs.writeFileSync(configPath, config);
+const result = spawnSync(process.execPath, [require.resolve('next/dist/bin/next'), 'build', target], { stdio: 'inherit', windowsHide: true });
+process.exitCode = result.status ?? 1;

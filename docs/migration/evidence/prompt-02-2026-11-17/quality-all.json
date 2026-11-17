@@ -1,0 +1,26 @@
+{
+  "node": "v22.22.3",
+  "rtk": "bypass, exact command output captured",
+  "results": [
+    {
+      "command": "lint",
+      "code": 0
+    },
+    {
+      "command": "format:check",
+      "code": 0
+    },
+    {
+      "command": "type-check",
+      "code": 0
+    },
+    {
+      "command": "test",
+      "code": 0
+    },
+    {
+      "command": "build-storybook",
+      "code": 0
+    }
+  ]
+}

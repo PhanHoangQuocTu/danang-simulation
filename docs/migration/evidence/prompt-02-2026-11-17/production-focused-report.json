@@ -1,0 +1,42 @@
+{
+  "origin": "http://localhost:3000",
+  "weather": "controlled fixture; live upstream tested separately",
+  "checks": [
+    {
+      "name": "map follow-to-static captures during settling",
+      "detail": 3
+    },
+    {
+      "name": "inspect fixture dialog"
+    },
+    {
+      "name": "information fixture dialog"
+    },
+    {
+      "name": "runtime error Retry rebuilds scene"
+    },
+    {
+      "name": "fresh-cookie /health",
+      "detail": "en"
+    },
+    {
+      "name": "fresh-cookie /vi/health",
+      "detail": "vi"
+    },
+    {
+      "name": "health no-store"
+    },
+    {
+      "name": "focused console issue count",
+      "detail": 0
+    }
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Edg/157.0.4341.60",
+    "revision": "@fbcb2989a6c61b72a4919fe1028e58e70131cd46",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
+    "jsVersion": "15.7.11.7"
+  },
+  "issues": []
+}

@@ -1,0 +1,16 @@
+const fs=require('node:fs');
+const path=require('node:path');
+const {spawn}=require('node:child_process');
+const root=process.cwd();
+const phase=process.argv[2]??'all';
+const commands=phase==='build'?['build']:phase==='storybook'?['build-storybook']:['lint','format:check','type-check','test','build-storybook'];
+const evidence=path.join(root,'docs/migration/evidence/prompt-02-2026-11-17');
+fs.mkdirSync(evidence,{recursive:true});
+const corepack='C:/Users/USER/AppData/Roaming/npm/node_modules/corepack/dist/pnpm.js';
+async function run(command){return new Promise(resolve=>{
+  let output='';
+  const child=spawn('rtk.exe',['bypass',process.execPath,corepack,command,...(command==='build'?['verification-tmp']:[])],{cwd:root,windowsHide:true,env:{...process.env,PATH:`${path.dirname(process.execPath)};${process.env.PATH}`}});
+  child.stdout.on('data',data=>output+=data);child.stderr.on('data',data=>output+=data);
+  child.on('exit',code=>{fs.writeFileSync(path.join(evidence,command.replaceAll(':','-')+'.txt'),output);console.log(JSON.stringify({command,code,tail:output.split(/\r?\n/).slice(-9).join('\n')}));resolve({command,code});});
+});}
+(async()=>{const results=await Promise.all(commands.map(run));fs.writeFileSync(path.join(evidence,'quality-'+phase+'.json'),JSON.stringify({node:process.version,rtk:'bypass, exact command output captured',results},null,2)+'\n');process.exitCode=results.some(x=>x.code!==0)?1:0;})();

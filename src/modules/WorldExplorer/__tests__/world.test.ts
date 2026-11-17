@@ -15,6 +15,7 @@ const renderer = vi.hoisted(() => ({
 }));
 vi.mock('@/engine/renderer/webgl', () => ({ createWebGlRenderer: () => renderer }));
 afterEach(() => {
+  Reflect.deleteProperty(document, 'pointerLockElement');
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
   document.body.replaceChildren();
@@ -45,10 +46,12 @@ describe('scene composition and browser runtime', () => {
     expect(rocks[0].geometry).toBe(rocks[1].geometry);
     expect(rocks[0].material).toBe(rocks[1].material);
     const dispose = vi.spyOn(rocks[0].geometry, 'dispose');
+    const disposeInstances = vi.spyOn(world.instancedGrass, 'dispose');
     registry.clear();
     scope.dispose();
     scope.dispose();
     expect(dispose).toHaveBeenCalledTimes(1);
+    expect(disposeInstances).toHaveBeenCalledTimes(1);
     expect(rocks[0].parent).toBeNull();
   });
   it('owns one loop, resizes camera, clears input on hidden context, and disposes listeners/resources', () => {
@@ -103,10 +106,17 @@ describe('scene composition and browser runtime', () => {
     const runtime = createWorldRuntime(bindings);
     expect(queue.size).toBe(1);
     expect(renderer.resize).toHaveBeenCalledWith(800, 600, expect.any(Number));
+    const resizesAfterRender: number[] = [];
     const frame = (time: number) => {
+      const resizeCount = renderer.resize.mock.calls.length;
       const entry = queue.entries().next().value!;
       queue.delete(entry[0]);
       entry[1](time);
+      if (
+        renderer.resize.mock.calls.length > resizeCount &&
+        renderer.resize.mock.invocationCallOrder.at(-1)! > renderer.render.mock.invocationCallOrder.at(-1)!
+      )
+        resizesAfterRender.push(time);
     };
     frame(0);
     canvas.focus();
@@ -116,13 +126,36 @@ describe('scene composition and browser runtime', () => {
     expect(queue.size).toBe(1);
     const camera = renderer.render.mock.calls.at(-1)![1] as { aspect: number };
     expect(camera.aspect).toBe(800 / 600);
+    window.dispatchEvent(new KeyboardEvent('keyup', { code: 'KeyW' }));
+    for (let time = 1240; time <= 4440; time += 40) frame(time);
+    expect(resizesAfterRender).toEqual([]);
+    const quality = snapshots.at(-1)!.perf.adaptiveQualityTier;
+    expect(quality).not.toBe('ultra');
+    Object.defineProperty(document, 'pointerLockElement', { configurable: true, value: canvas });
+    document.dispatchEvent(new Event('pointerlockchange'));
+    runtime.reset();
+    const move = new MouseEvent('mousemove');
+    Object.defineProperties(move, { movementX: { value: 20 }, movementY: { value: 0 } });
+    document.dispatchEvent(move);
+    frame(4600);
+    expect(snapshots.at(-1)!.cameraYaw).toBeLessThan(0);
+    expect(snapshots.at(-1)!.perf.adaptiveQualityTier).toBe(quality);
+    Reflect.deleteProperty(document, 'pointerLockElement');
+    runtime.setMap(1, true);
+    runtime.joystick({ x: 0, y: 1, magnitude: 1, active: true });
+    for (let time = 4650; time <= 10000; time += 50) frame(time);
+    runtime.setMap(1, false);
+    frame(10050);
+    const captures = renderer.captureOverview.mock.calls.length;
+    for (let time = 10100; time <= 10500; time += 50) frame(time);
+    expect(renderer.captureOverview.mock.calls.length - captures).toBeGreaterThan(3);
     const lost = new Event('webglcontextlost', { cancelable: true });
     canvas.dispatchEvent(lost);
     expect(lost.defaultPrevented).toBe(true);
     expect(queue.size).toBe(0);
     canvas.dispatchEvent(new Event('webglcontextrestored'));
     expect(queue.size).toBe(1);
-    frame(2000);
+    frame(11000);
     expect(snapshots.at(-1)!.speed).toBeLessThan(5);
     runtime.dispose();
     runtime.dispose();

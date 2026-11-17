@@ -4,6 +4,8 @@ const fake = vi.hoisted(() => ({
   state: { target: null as unknown, scissorTest: false },
   render: vi.fn(),
   dispose: vi.fn(),
+  resetState: vi.fn(),
+  forceContextLoss: vi.fn(),
   setPixelRatio: vi.fn(),
   setSize: vi.fn(),
   setViewport: vi.fn(),
@@ -23,6 +25,8 @@ vi.mock('three', async (importOriginal) => {
       info = { render: { calls: 4, triangles: 8 }, memory: { geometries: 2, textures: 1 } };
       render = fake.render;
       dispose = fake.dispose;
+      resetState = fake.resetState;
+      forceContextLoss = fake.forceContextLoss;
       setPixelRatio = fake.setPixelRatio;
       setSize = fake.setSize;
       getPixelRatio() {
@@ -68,15 +72,38 @@ function fixture() {
   return { renderer: createWebGlRenderer(canvas), target, drawImage };
 }
 describe('single renderer adapter', () => {
+  it('releases the owned context after disposal unless Strict Mode immediately reuses its canvas', async () => {
+    const f = fixture();
+    fake.forceContextLoss.mockClear();
+    f.renderer.dispose();
+    const replacement = createWebGlRenderer(f.renderer.canvas);
+    await Promise.resolve();
+    expect(fake.forceContextLoss).not.toHaveBeenCalled();
+    replacement.dispose();
+    await Promise.resolve();
+    expect(fake.forceContextLoss).toHaveBeenCalledTimes(1);
+  });
+  it('coalesces context release when both Strict Mode instances are disposed in the same task', async () => {
+    const f = fixture();
+    fake.forceContextLoss.mockClear();
+    f.renderer.dispose();
+    const replacement = createWebGlRenderer(f.renderer.canvas);
+    replacement.dispose();
+    await Promise.resolve();
+    expect(fake.forceContextLoss).toHaveBeenCalledTimes(1);
+  });
   it('caps DPR, rejects invalid sizes, and disposes once', () => {
     const f = fixture();
     f.renderer.resize(800, 600, 3);
     expect(fake.setPixelRatio).toHaveBeenLastCalledWith(2);
     expect(() => f.renderer.resize(0, 600, 1)).toThrow('Invalid viewport');
     fake.dispose.mockClear();
+    fake.resetState.mockClear();
     f.renderer.dispose();
     f.renderer.dispose();
     expect(fake.dispose).toHaveBeenCalledTimes(1);
+    expect(fake.resetState).toHaveBeenCalledTimes(1);
+    expect(fake.resetState.mock.invocationCallOrder[0]).toBeLessThan(fake.dispose.mock.invocationCallOrder[0]);
     expect(() => f.renderer.render(new Scene(), new PerspectiveCamera())).toThrow('disposed');
   });
   it('copies overview in device pixels and restores render target, viewport, and scissor', () => {

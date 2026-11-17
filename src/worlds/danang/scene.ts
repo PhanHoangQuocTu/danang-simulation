@@ -635,7 +635,7 @@ export function createDaNangScene(registry: InteractableRegistry, scope: Resourc
       roughness: 0.75,
     })
   );
-  const instancedGrass = new THREE.InstancedMesh(bladeGeo, bladeMat, grassCount);
+  const instancedGrass = scope.own(new THREE.InstancedMesh(bladeGeo, bladeMat, grassCount));
   instancedGrass.receiveShadow = true;
 
   const grassBaseData: {

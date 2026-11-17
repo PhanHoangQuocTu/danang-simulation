@@ -1,0 +1,105 @@
+const { spawn } = require('node:child_process');
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+const origin = 'http://localhost:3000';
+const chrome = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', [
+  '--headless=new', '--remote-debugging-port=9341', `--user-data-dir=${path.join(__dirname,'prompt02-edge-profile')}`,
+  '--no-first-run', '--no-default-browser-check', '--window-size=1440,1000', 'about:blank',
+], { windowsHide:true, stdio:'ignore' });
+let socket, sequence = 0;
+const pending = new Map(), events = [], report = { origin, weather: 'controlled fixture; live upstream tested separately', checks: [] };
+function check(name, detail) { report.checks.push({ name, detail }); console.log('PASS', name, JSON.stringify(detail ?? true)); }
+async function send(method,params={}) {
+  const id=++sequence;
+  const response=new Promise((resolve,reject)=> {
+    pending.set(id,{resolve,reject});
+    setTimeout(()=> { if(pending.delete(id)) reject(new Error(`Timeout: ${method}`)); },20000).unref();
+  });
+  socket.send(JSON.stringify({id,method,params})); return response;
+}
+async function evaluate(expression) {
+  const result=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});
+  if(result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails));
+  return result.result.value;
+}
+async function waitFor(expression,timeout=12000) {
+  const start=Date.now();
+  while(Date.now()-start<timeout) { if(await evaluate(expression)) return; await pause(100); }
+  throw new Error(`Condition failed: ${expression}`);
+}
+async function shot(name) { const {data}=await send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(__dirname,`${name}.png`),Buffer.from(data,'base64')); }
+const snapshot=()=>evaluate(`({...document.querySelector('.world-explorer')?.dataset})`);
+async function key(code,key,type='keyDown',extra={}) { await send('Input.dispatchKeyEvent',{type,code,key,...extra}); }
+async function tap(code,name=code.replace('Key','').toLowerCase()) { await key(code,name);await key(code,name,'keyUp'); }
+async function rect(selector) { return evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(selector)});const r=e.getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2,w:r.width,h:r.height}})()`); }
+async function click(selector) { await waitFor(`document.querySelector(${JSON.stringify(selector)})!==null`);const {x,y}=await rect(selector);await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,x,y});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,x,y}); }
+const focus=()=>evaluate(`document.querySelector('.world-canvas').focus()`);
+async function navigate(route) { await send('Page.navigate',{url:origin+route});await waitFor(`document.querySelector('.world-explorer')?.dataset.runtimeStatus==='ready'`,45000);await pause(600); }
+const fixture=()=>({source:'Open-Meteo Forecast API',temperature:28,apparentTemperature:30,humidity:75,isDay:true,precipitation:0,rain:0,showers:0,weatherCode:2,cloudCover:48,windSpeed:12,windDirection:90,windGusts:18,sunriseIso:'',sunsetIso:'',sunriseFormatted:'--:--',sunsetFormatted:'--:--',apiObservationTime:'12:00',fetchedAtFormatted:'12:00',fetchedAtTimestampMs:Date.now(),observationTimestampMs:Date.now(),freshness:'live',validationStatus:'valid',mapped:{code:2,category:'partly-cloudy',viDescription:'',enDescription:'',effects:{cloudCoverFloor:48,cloudDarkness:0.14,sunAttenuation:0.84,fogMultiplier:1.05,rainParticleCount:0,rainFallSpeed:0,groundWetness:0,hasLightning:false}}});
+(async()=>{
+  let targets;
+  for(let attempt=0;attempt<60;attempt++){try{targets=await(await fetch('http://localhost:9341/json')).json();break;}catch{await pause(250);}}
+  if(!targets)throw new Error('Chrome did not start');
+  socket=new WebSocket(targets.find(t=>t.type==='page').webSocketDebuggerUrl);
+  await new Promise(resolve=>socket.addEventListener('open',resolve,{once:true}));
+  socket.addEventListener('message',({data})=>{const message=JSON.parse(data);if(message.id){const p=pending.get(message.id);if(p){pending.delete(message.id);message.error?p.reject(message.error):p.resolve(message.result);}}else{events.push(message);if(message.method==='Fetch.requestPaused')void send('Fetch.fulfillRequest',{requestId:message.params.requestId,responseCode:200,responseHeaders:[{name:'Content-Type',value:'application/json'}],body:Buffer.from(JSON.stringify(fixture())).toString('base64')});}});
+  report.browser=await send('Browser.getVersion'); await send('Page.enable');await send('Runtime.enable');await send('Log.enable');await send('Network.enable');await send('Network.clearBrowserCookies');
+  await send('Fetch.enable',{patterns:[{urlPattern:'*/api/weather'}]});
+  if (process.env.QA_LIVE) {
+    await send('Fetch.disable');report.weather='live Open-Meteo through fixed BFF; Node --use-system-ca';
+    const weatherResponse=await fetch(origin+'/api/weather');const weather=await weatherResponse.json();assert.equal(weatherResponse.status,200);assert.equal(weather.validationStatus,'valid');check('live BFF validated observation',{temperature:weather.temperature,observation:weather.apiObservationTime,code:weather.weatherCode});
+    await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+    await navigate('/');await waitFor(`document.querySelector('.world-weather')?.innerText.includes('LIVE')`);check('live weather homepage',await evaluate(`document.querySelector('.world-weather').innerText`));await shot('production-live-weather');
+    await evaluate(`document.querySelector('.world-canvas').getContext('webgl2').getExtension('WEBGL_lose_context').loseContext()`);await waitFor(`document.querySelector('.world-explorer').dataset.runtimeStatus==='context-lost'`);
+    check('context-lost overlay');
+    report.network=events.filter(e=>e.method==='Network.responseReceived').map(e=>({url:e.params.response.url,status:e.params.response.status}));assert(!report.network.some(n=>/api.open-meteo.com|jsonplaceholder/.test(n.url)));report.issues=events.filter(e=>e.method==='Runtime.exceptionThrown'||e.method==='Log.entryAdded'&&['warning','error'].includes(e.params.entry.level)||e.method==='Runtime.consoleAPICalled'&&['warning','error'].includes(e.params.type));assert.equal(report.issues.length,0);check('live console issue count',0);await send('Browser.close');return;
+  }
+  if (process.env.QA_FOCUSED) {
+    await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+    await navigate('/');await focus();await tap('KeyF');await key('ShiftLeft','Shift');await key('KeyW','w');
+    await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-20`);
+    await key('KeyW','w','keyUp');await key('ShiftLeft','Shift','keyUp');await pause(500);
+    await evaluate(`(()=>{const original=CanvasRenderingContext2D.prototype.drawImage;window.qaCaptures=0;CanvasRenderingContext2D.prototype.drawImage=function(...args){if(this.canvas.width===256)window.qaCaptures++;return original.apply(this,args)}})()`);
+    await tap('KeyF');await waitFor('window.qaCaptures>=3');check('map follow-to-static captures during settling',await evaluate('window.qaCaptures'));
+    await tap('KeyR');await pause(400);await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-2.8`);await key('KeyW','w','keyUp');await key('KeyA','a');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerX)<-3`);await key('KeyA','a','keyUp');await pause(700);await waitFor(`document.querySelector('[data-interaction-status="eligible"]')?.innerText.includes('monolith')`);await tap('KeyE');await waitFor(`document.querySelector('[role="dialog"]')?.innerText.includes('Survey Monolith')`);check('inspect fixture dialog');await tap('Escape','Escape');await pause(200);await focus();
+    await tap('KeyR');await pause(400);await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-2.8`);await key('KeyW','w','keyUp');await key('KeyD','d');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerX)>4`);await key('KeyD','d','keyUp');await pause(700);await waitFor(`document.querySelector('[data-interaction-status="eligible"]')?.innerText.includes('weather')`);await tap('KeyE');await waitFor(`document.querySelector('[role="dialog"]')?.innerText.includes('Weather Telemetry')`);check('information fixture dialog');await tap('Escape','Escape');await pause(200);await focus();
+    await evaluate(`(()=>{const gl=document.querySelector('.world-canvas').getContext('webgl2');window.qaGl=gl;window.qaDraw=gl.drawElements;gl.drawElements=()=>{throw new Error('Controlled runtime failure')}})()`);
+    await waitFor(`document.querySelector('.world-explorer').dataset.runtimeStatus==='error'`);
+    await evaluate('window.qaGl.drawElements=window.qaDraw');await click('.world-runtime-overlay button');await waitFor(`document.querySelector('.world-explorer').dataset.runtimeStatus==='ready'`);check('runtime error Retry rebuilds scene');
+    for(const route of ['/health','/vi/health']){await send('Network.clearBrowserCookies');await send('Page.navigate',{url:origin+route});await pause(1000);assert.equal(await evaluate('document.documentElement.lang'),route.startsWith('/vi')?'vi':'en');check('fresh-cookie '+route,await evaluate('document.documentElement.lang'));}
+    const health=await fetch(origin+'/api/health');assert.equal(health.headers.get('cache-control'),'no-store');check('health no-store');
+    report.issues=events.filter(e=>e.method==='Runtime.exceptionThrown'||e.method==='Log.entryAdded'&&['warning','error'].includes(e.params.entry.level)||e.method==='Runtime.consoleAPICalled'&&['warning','error'].includes(e.params.type));assert.equal(report.issues.length,0);check('focused console issue count',0);
+    await send('Browser.close');return;
+  }
+  await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+  await navigate('/');check('English homepage real WebGL',await snapshot());await shot('production-desktop');
+  assert(await evaluate(`document.querySelector('.world-weather').innerText.includes('28°C')`));check('weather fixture displayed');
+  await focus();await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.speed)>4.4`);await pause(400);await key('KeyW','w','keyUp');check('walk',await snapshot());
+  await key('ShiftLeft','Shift');await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.speed)>8.4`);check('sprint',await snapshot());await key('KeyW','w','keyUp');await key('ShiftLeft','Shift','keyUp');await pause(500);
+  await key('Space',' ', 'keyDown',{windowsVirtualKeyCode:32});await waitFor(`['JUMP','FALL'].includes(document.querySelector('.world-explorer').dataset.playerState)`);check('jump',await snapshot());await key('Space',' ','keyUp',{windowsVirtualKeyCode:32});await waitFor(`document.querySelector('.world-explorer').dataset.playerState==='IDLE'`);check('landing');
+  await tap('KeyR');await pause(300);await tap('KeyJ');await pause(150);assert(Number((await snapshot()).cameraYaw)!==0);await tap('KeyR');
+  await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',buttons:1,x:750,y:500,clickCount:1});await send('Input.dispatchMouseEvent',{type:'mouseMoved',button:'left',buttons:1,x:820,y:520});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',buttons:0,x:820,y:520,clickCount:1});await pause(250);assert(Number((await snapshot()).cameraYaw)!==0);check('mouse drag orbit');
+  const distance=Number((await snapshot()).cameraDistance);await send('Input.dispatchMouseEvent',{type:'mouseWheel',x:700,y:450,deltaX:0,deltaY:100});await pause(650);assert(Number((await snapshot()).cameraDistance)>distance);check('mouse wheel zoom');
+  await tap('KeyR');await tap('KeyF');await tap('KeyM');await pause(250);assert(await evaluate(`document.querySelector('.world-map-compact')!==null && document.querySelector('.world-map-panel').innerText.includes('PLAYER FOLLOW')`));check('map follow and compact');await click('button[aria-label="Zoom in"]');await pause(250);assert(await evaluate(`document.querySelector('.world-map-panel').innerText.includes('1.4')`));check('map zoom');await shot('production-map');
+  await click('button[aria-label="Specs"]');await waitFor(`document.querySelector('[role="dialog"]')!==null`);await key('KeyW','w');await pause(400);assert(Number((await snapshot()).speed)===0);await key('KeyW','w','keyUp');check('dialog blocks movement');await tap('Escape','Escape');await waitFor(`document.querySelector('[role="dialog"]')===null`);check('dialog Escape');
+  await click('button[aria-label="Fullscreen"]');await waitFor("Boolean(document.fullscreenElement)||document.body.innerText.includes('Fullscreen unavailable in this browser')");if(await evaluate('Boolean(document.fullscreenElement)')){check('fullscreen enter');await click('button[aria-label="Exit fullscreen"]');await waitFor('!document.fullscreenElement');check('fullscreen exit');}else check('headless fullscreen graceful fallback');
+  await evaluate(`document.exitPointerLock()`);await focus();await tap('KeyR');await pause(400);await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-2.7`);await key('KeyW','w','keyUp');await pause(500);check('interaction approach',await snapshot());await waitFor(`document.querySelector('[data-interaction-status="eligible"]')!==null`);await tap('KeyE');await waitFor(`document.querySelector('.world-feedback')!==null`);check('beacon activation',await evaluate(`document.querySelector('.world-feedback').innerText`));await pause(400);await tap('KeyE');await pause(200);check('beacon deactivation',await evaluate(`document.querySelector('.world-feedback').innerText`));
+  await tap('F3','F3');await pause(250);await evaluate(`document.querySelector('.world-focus-test input').focus()`);await waitFor(`document.activeElement===document.querySelector('.world-focus-test input')`);const before=await snapshot();await key('KeyW','w');await pause(350);await key('KeyW','w','keyUp');assert.equal((await snapshot()).playerZ,before.playerZ);check('real input isolates movement');await focus();
+  await evaluate(`(()=>{window.qaExtension=document.querySelector('.world-canvas').getContext('webgl2').getExtension('WEBGL_lose_context');window.qaExtension.loseContext()})()`);await waitFor(`document.querySelector('.world-explorer').dataset.runtimeStatus==='context-lost'`);await pause(400);await evaluate('window.qaExtension.restoreContext()');await waitFor(`document.querySelector('.world-explorer').dataset.runtimeStatus==='ready'`);check('WebGL context recovery');
+  for(let i=0;i<3;i++){await navigate('/vi');assert(await evaluate(`document.documentElement.lang==='vi'`));await navigate('/');}
+  check('repeated locale mounts',await snapshot());
+  await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});await send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:5});await navigate('/vi');await waitFor(`document.querySelector('.world-joystick')!==null`);await shot('production-mobile');assert(await evaluate(`document.documentElement.scrollWidth<=innerWidth && document.documentElement.scrollHeight<=innerHeight`));check('Vietnamese mobile layout');
+  const joy=await rect('.world-joystick');const touch=(id,x,y)=>({id,x,y,radiusX:4,radiusY:4,force:1});
+  await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(1,joy.x,joy.y)]});await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[touch(1,joy.x,joy.y-35)]});await pause(600);const moving=await snapshot();assert(Number(moving.speed)>1);check('mobile joystick',moving);
+  await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(1,joy.x,joy.y-35),touch(2,280,400)]});await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[touch(1,joy.x,joy.y-35),touch(2,325,420)]});await pause(350);assert.notEqual((await snapshot()).cameraYaw,moving.cameraYaw);check('multitouch movement and orbit');await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await pause(500);assert.equal(Number((await snapshot()).speed),0);check('touch release stops movement');
+  await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(3,230,400),touch(4,290,400)]});await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[touch(3,210,400),touch(4,320,400)]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await pause(650);check('touch pinch zoom',await snapshot());
+  await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(1,joy.x,joy.y)]});await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[touch(1,joy.x,joy.y-40)]});const sprint=await rect('.world-touch-sprint');await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(1,joy.x,joy.y-40),touch(2,sprint.x,sprint.y)]});await pause(600);assert(Number((await snapshot()).speed)>7);check('touch sprint');await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  const jump=await rect('.world-touch-jump');await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(3,jump.x,jump.y)]});await waitFor(`['JUMP','FALL'].includes(document.querySelector('.world-explorer').dataset.playerState)`);check('touch jump');await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await shot('production-mobile-controls');
+  for(const route of ['/health','/vi/health']){await send('Page.navigate',{url:origin+route});await pause(1200);assert(!await evaluate(`document.querySelector('.world-explorer')!==null`));check(route,await evaluate('document.documentElement.lang'));}
+  const health=await(await fetch(origin+'/api/health')).json();assert.equal(health.status,'ok');check('health API',health.status);
+  report.issues=events.filter(e=>e.method==='Runtime.exceptionThrown'||e.method==='Log.entryAdded'&&['warning','error'].includes(e.params.entry.level)||e.method==='Runtime.consoleAPICalled'&&['warning','error'].includes(e.params.type));
+  check('console issue count',report.issues.length);assert.equal(report.issues.length,0);
+  await send('Browser.close');
+})().catch(async error=>{report.failure=String(error.stack??error);console.error(error);try{report.failureSnapshot=await snapshot();report.failureText=await evaluate('document.body.innerText');await shot('failure');}catch{}process.exitCode=1;}).finally(()=>{fs.writeFileSync(path.join(__dirname,process.env.QA_LIVE?'live-report.json':(process.env.QA_FOCUSED?'focused-report.json':'prompt02-edge-report.json')),JSON.stringify(report,null,2));socket?.close();chrome.kill();});

@@ -4,6 +4,8 @@
 
 Mở `/` hoặc `/vi` để khám phá. Địa hình hiện tại là synthetic local meters, không phải bản dựng địa lý thành phố đã đo đạc. Product Phase 11 chưa bắt đầu.
 
+Xem [báo cáo browser QA và ảnh so sánh Phase 10](docs/migration/evidence/PHASE_1_TO_10_BROWSER_QA_REPORT.md) cho kiểm thử Chrome/Edge, sáu kích thước viewport, kết quả đo và giới hạn đã xác minh.
+
 ## Tech stack
 
 | Area | Choice |
@@ -36,6 +38,8 @@ pnpm storybook           # http://localhost:6006
 
 Mở `/` để chạy mô phỏng, `/vi` cho tiếng Việt. `/health` và `/vi/health` giữ thông tin vận hành; `/api/health` phục vụ Docker liveness và không gọi dịch vụ ngoài.
 
+Trên Windows host gặp lỗi weather `UNABLE_TO_VERIFY_LEAF_SIGNATURE`, Node 22 có thể dùng certificate store đã cấu hình của hệ điều hành: `node --use-system-ca node_modules/next/dist/bin/next dev`. Đây là runtime option của Node; không thêm biến môi trường ứng dụng hoặc tắt TLS verification. Production QA đã kiểm tra live observation với cấu hình này.
+
 ## Trạng thái và kiến trúc
 
 - Route trang chủ giữ metadata và nội dung semantic phía server. WorldExplorer dùng client boundary, dynamic loading, một WebGL renderer và EngineRuntime.
@@ -45,7 +49,7 @@ Mở `/` để chạy mô phỏng, `/vi` cho tiếng Việt. `/health` và `/vi/
 - Không có GIS đã kiểm chứng, first-person, city streaming hoặc Phase 11 mới. FPS và browser coverage được ghi theo bằng chứng thực trong báo cáo migration.
 - Giữ providers, Query, Zustand, i18n, UI, SEO, Health, Docker, Nginx và CI.
 
-Xem [báo cáo migration](docs/migration/MIGRATION_REPORT.md), [vòng đời engine](docs/architecture/ENGINE_LIFECYCLE.md) và [API patterns](docs/API_INTEGRATIONS.md).
+Xem [báo cáo integration và bằng chứng hiện tại](docs/migration/INTEGRATION_REPORT_2026_11_17.md), [báo cáo migration](docs/migration/MIGRATION_REPORT.md), [vòng đời engine](docs/architecture/ENGINE_LIFECYCLE.md) và [API patterns](docs/API_INTEGRATIONS.md). Browser coverage không thay pixel-perfect reference comparison hoặc GPU profiling dài hạn.
 
 ## Scripts
 

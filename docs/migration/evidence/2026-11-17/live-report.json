@@ -1,0 +1,26 @@
+{
+  "origin": "http://localhost:3187",
+  "weather": "live Open-Meteo through fixed BFF; Node --use-system-ca",
+  "checks": [
+    {
+      "name": "live BFF validated observation",
+      "detail": {
+        "temperature": 25.1,
+        "observation": "02:15",
+        "code": 0
+      }
+    },
+    {
+      "name": "live weather homepage",
+      "detail": "DA NANG, VIETNAM\n02:22:48\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-49.3°\n25°C\nFeels like 31°C\n\nClear sky\n\nWMO #0\nLIVE\nHumidity\n96%\nCloud cover\n14%\nWind\n3.3 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 02:15\nOpen-Meteo"
+    },
+    {
+      "name": "context-lost overlay"
+    },
+    {
+      "name": "live console issue count",
+      "detail": 0
+    }
+  ],
+  "issues": []
+}

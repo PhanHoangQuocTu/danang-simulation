@@ -1,9 +1,13 @@
 import { ACESFilmicToneMapping, PCFShadowMap, SRGBColorSpace, Vector4, WebGLRenderer } from 'three';
 import type { WorldRenderer } from './type';
 
+const activeRenderers = new WeakMap<HTMLCanvasElement, WebGLRenderer>();
+const pendingContextRelease = new WeakSet<HTMLCanvasElement>();
+
 /** Call only after mounting the client viewport. Scene assets have a separate owner. */
 export function createWebGlRenderer(canvas: HTMLCanvasElement): WorldRenderer {
   const renderer = new WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+  activeRenderers.set(canvas, renderer);
   renderer.outputColorSpace = SRGBColorSpace;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = PCFShadowMap;
@@ -65,7 +69,24 @@ export function createWebGlRenderer(canvas: HTMLCanvasElement): WorldRenderer {
     dispose() {
       if (disposed) return;
       disposed = true;
-      renderer.dispose();
+      try {
+        // Strict Mode may reuse this canvas/context. Reset upload flags before another renderer initializes.
+        renderer.resetState();
+      } finally {
+        try {
+          renderer.dispose();
+        } finally {
+          if (activeRenderers.get(canvas) === renderer) activeRenderers.delete(canvas);
+          // Strict Mode can synchronously reuse this canvas. Detached/retried canvases release the entire context.
+          if (!pendingContextRelease.has(canvas)) {
+            pendingContextRelease.add(canvas);
+            queueMicrotask(() => {
+              pendingContextRelease.delete(canvas);
+              if (!activeRenderers.has(canvas)) renderer.forceContextLoss();
+            });
+          }
+        }
+      }
     },
   };
 }

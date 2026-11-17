@@ -83,6 +83,7 @@ function Preview({
     cone,
     edge,
     status: 'ready',
+    generation: 0,
     snapshot: {
       x: 0,
       y: 0,
