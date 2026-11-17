@@ -1,0 +1,44 @@
+{
+  "status": 200,
+  "body": {
+    "source": "Open-Meteo Forecast API",
+    "temperature": 26.8,
+    "apparentTemperature": 32.3,
+    "humidity": 85,
+    "isDay": false,
+    "precipitation": 0,
+    "rain": 0,
+    "showers": 0,
+    "weatherCode": 1,
+    "cloudCover": 22,
+    "windSpeed": 4.9,
+    "windDirection": 172,
+    "windGusts": 9.4,
+    "sunriseIso": "2026-11-17T05:50",
+    "sunsetIso": "2026-11-17T17:12",
+    "sunriseFormatted": "05:50",
+    "sunsetFormatted": "17:12",
+    "apiObservationTime": "21:00",
+    "fetchedAtFormatted": "21:12",
+    "fetchedAtTimestampMs": 1794924747410,
+    "freshness": "live",
+    "validationStatus": "valid",
+    "mapped": {
+      "code": 1,
+      "category": "mainly-clear",
+      "viDescription": "Nắng nhẹ, ít mây",
+      "enDescription": "Mainly Clear",
+      "effects": {
+        "cloudCoverFloor": 18,
+        "cloudDarkness": 0.04,
+        "sunAttenuation": 0.96,
+        "fogMultiplier": 0.92,
+        "rainParticleCount": 0,
+        "rainFallSpeed": 0,
+        "groundWetness": 0,
+        "hasLightning": false
+      }
+    },
+    "observationTimestampMs": 1794924000000
+  }
+}

@@ -1,0 +1,30 @@
+const {spawn}=require('node:child_process'),fs=require('node:fs'),path=require('node:path'),readline=require('node:readline');
+const dir=path.resolve('docs/audit/phase-11/evidence'),origin='http://localhost:3191';
+const report={origin,node:process.version,started:new Date().toISOString(),weather:'Real BFF only; no fabricated payloads or observations',commands:[],events:[]};
+const out=fs.openSync(path.join(dir,'server.txt'),'w');
+const server=spawn(process.execPath,['--use-system-ca',require.resolve('next/dist/bin/next'),'start','--port','3191','--hostname','0.0.0.0'],{windowsHide:true,stdio:['ignore',out,out]});
+const chrome=spawn('C:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--remote-debugging-port=9341','--remote-debugging-address=127.0.0.1','--user-data-dir='+path.resolve('.next/phase11-chrome'),'--no-first-run','--no-default-browser-check','--window-size=1920,1080','about:blank'],{windowsHide:true,stdio:'ignore'});
+let socket,sequence=0;const pending=new Map();const pause=ms=>new Promise(r=>setTimeout(r,ms));
+function save(){fs.writeFileSync(path.join(dir,'browser.json'),JSON.stringify(report,null,2)+'\n')}
+async function send(method,params={}){const id=++sequence;const p=new Promise((resolve,reject)=>{pending.set(id,{resolve,reject});setTimeout(()=>{if(pending.delete(id))reject(new Error('Timeout '+method))},30000).unref()});socket.send(JSON.stringify({id,method,params}));return p}
+async function evaluate(expression){const r=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw new Error(JSON.stringify(r.exceptionDetails));return r.result.value}
+async function waitFor(expression,ms=15000){const t=Date.now();while(Date.now()-t<ms){if(await evaluate(expression))return true;await pause(150)}throw new Error('Condition '+expression)}
+async function key(code,key,type='keyDown',extra={}){await send('Input.dispatchKeyEvent',{type,code,key,...extra})}
+async function tap(code,name=code.replace('Key','').toLowerCase(),extra={}){await key(code,name,'keyDown',extra);await key(code,name,'keyUp',extra)}
+async function focus(){await evaluate("document.querySelector('.world-canvas').focus()")}
+async function rect(selector){return evaluate('(()=>{const r=document.querySelector('+JSON.stringify(selector)+').getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2,w:r.width,h:r.height}})()')}
+async function click(selector){const r=await rect(selector);await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,x:r.x,y:r.y});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,x:r.x,y:r.y})}
+async function shot(name){const r=await send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(dir,name+'.png'),Buffer.from(r.data,'base64'));return name+'.png'}
+async function snapshot(){return evaluate("({...document.querySelector('.world-explorer')?.dataset,debug:document.querySelector('.world-debug')?.innerText,weather:document.querySelector('.world-weather')?.innerText,map:document.querySelector('.world-map-panel')?.innerText,heap:performance.memory?.usedJSHeapSize})")}
+async function navigate(route='/'){await send('Page.navigate',{url:origin+route});await waitFor("document.querySelector('.world-explorer')?.dataset.runtimeStatus==='ready'",45000);await pause(600)}
+async function viewport(width,height,touch=false){await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:touch});await send('Emulation.setTouchEmulationEnabled',{enabled:touch,maxTouchPoints:touch?5:1})}
+async function measure(name,ms=2000){const before=await snapshot();const frames=await evaluate('new Promise(resolve=>{const a=[];let prev=performance.now(),start=prev;function tick(now){a.push(now-prev);prev=now;if(now-start<'+ms+')requestAnimationFrame(tick);else{a.sort((x,y)=>x-y);resolve({n:a.length,elapsed:now-start,averageMs:(now-start)/a.length,p95Ms:a[Math.floor(a.length*.95)],fps:1000*a.length/(now-start)})}}requestAnimationFrame(tick)})');const result={name,before,frames,after:await snapshot()};report.commands.push({measurement:result});save();return result}
+function cleanup(){save();try{socket?.close()}catch{}chrome.kill();server.kill()}
+process.on('SIGINT',()=>{cleanup();process.exit()});process.on('SIGTERM',()=>{cleanup();process.exit()});
+(async()=>{let targets;for(let i=0;i<100;i++){try{targets=await(await fetch('http://127.0.0.1:9341/json')).json();if(targets.some(t=>t.type==='page'))break}catch{}await pause(200)}
+socket=new WebSocket(targets.find(t=>t.type==='page').webSocketDebuggerUrl);await new Promise(r=>socket.addEventListener('open',r,{once:true}));
+socket.addEventListener('message',({data})=>{const m=JSON.parse(data);if(m.id){const p=pending.get(m.id);if(p){pending.delete(m.id);m.error?p.reject(new Error(JSON.stringify(m.error))):p.resolve(m.result)}}else if(['Runtime.exceptionThrown','Runtime.consoleAPICalled','Log.entryAdded','Network.loadingFailed','Network.responseReceived'].includes(m.method)){if(m.method==='Network.responseReceived'){if(m.params.response.url.includes('/api/'))report.events.push({method:m.method,url:m.params.response.url,status:m.params.response.status})}else report.events.push(m);save()}});
+await send('Page.enable');await send('Runtime.enable');await send('Log.enable');await send('Network.enable');console.log('AUDIT_BROWSER_READY');
+const rl=readline.createInterface({input:process.stdin,terminal:false});for await(const line of rl){if(!line.trim())continue;if(line==='EXIT'){cleanup();console.log('CLEANED');process.exit(0)}try{const code=JSON.parse(line);const result=await eval('(async()=>{'+code+'})()');report.commands.push({code,result});save();console.log('RESULT '+JSON.stringify(result))}catch(e){report.commands.push({code:line,error:String(e.stack)});save();console.log('ERROR '+e.stack)}}
+cleanup();
+})().catch(e=>{console.error(e);report.failure=String(e.stack);cleanup();process.exit(1)});

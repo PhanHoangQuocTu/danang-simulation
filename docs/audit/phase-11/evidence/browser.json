@@ -1,0 +1,4277 @@
+{
+  "origin": "http://localhost:3191",
+  "node": "v26.13.1",
+  "started": "2026-11-17T13:54:20.555Z",
+  "weather": "Real BFF only; no fabricated payloads or observations",
+  "commands": [
+    {
+      "code": "report.browser=await send('Browser.getVersion'); await viewport(1920,1080); await navigate('/'); await focus(); await tap('F3','F3'); await pause(300); const s=await snapshot(); await shot('desktop-1920'); return {browser:report.browser,snapshot:s,canvas:await evaluate(`Array.from(document.querySelectorAll('canvas')).map(c=>({class:c.className,width:c.width,height:c.height}))`)};",
+      "result": {
+        "browser": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/132.0.6834.110",
+          "revision": "@df453a35f099772fdb954e33551388add2ca3cde",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/132.0.0.0 Safari/537.36",
+          "jsVersion": "13.2.1010152"
+        },
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "17",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n58.5 / 140.1 ms\nDraw calls / triangles\n349 / 76590\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nUltra / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:54:52\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-52.4°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 14801325
+        },
+        "canvas": [
+          {
+            "class": "world-canvas",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "class": "",
+            "width": 256,
+            "height": 256
+          }
+        ]
+      }
+    },
+    {
+      "code": "server.kill(); await pause(1000); const standaloneRoot=path.resolve('.next/standalone'); fs.cpSync('.next/static',path.join(standaloneRoot,'.next/static'),{recursive:true}); fs.cpSync('public',path.join(standaloneRoot,'public'),{recursive:true}); const prodlog=fs.openSync(path.join(dir,'server-standalone.txt'),'w'); const prod=spawn(process.execPath,['--use-system-ca',path.join(standaloneRoot,'server.js')],{cwd:standaloneRoot,env:{...process.env,PORT:'3191',HOSTNAME:'0.0.0.0'},windowsHide:true,stdio:['ignore',prodlog,prodlog]}); process.on('exit',()=>prod.kill()); await pause(1500); await navigate('/'); await focus(); await tap('F3','F3'); return await snapshot();",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "24",
+        "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n41.6 / 60.0 ms\nDraw calls / triangles\n349 / 76590\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nUltra / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+        "weather": "DA NANG, VIETNAM\n20:56:37\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-52.8°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "heap": 28089105
+      }
+    },
+    {
+      "measurement": {
+        "name": "idle-after-30s",
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "20",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n50.4 / 70.0 ms\nDraw calls / triangles\n349 / 76590\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:57:59\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 34160859
+        },
+        "frames": {
+          "n": 54,
+          "elapsed": 3012.499999999811,
+          "averageMs": 55.787037037033535,
+          "p95Ms": 80.09999999999127,
+          "fps": 17.92531120332063
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "18",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n56.4 / 80.1 ms\nDraw calls / triangles\n349 / 76590\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:02\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 32957847
+        }
+      }
+    },
+    {
+      "measurement": {
+        "name": "walking",
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "18",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n56.4 / 80.1 ms\nDraw calls / triangles\n349 / 76590\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:02\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 33116319
+        },
+        "frames": {
+          "n": 34,
+          "elapsed": 2023.0000000001892,
+          "averageMs": 59.50000000000556,
+          "p95Ms": 110.19999999999709,
+          "fps": 16.806722689074057
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "-0.00703810271979429",
+          "playerZ": "-6.683864426903836",
+          "playerState": "WALK",
+          "speed": "4.499999999515267",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "17",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n59.7 / 100.1 ms\nDraw calls / triangles\n333 / 74868\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:04\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -6.68 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 32241818
+        }
+      }
+    },
+    {
+      "measurement": {
+        "name": "sprinting",
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "-0.00703810271979429",
+          "playerZ": "-6.683864426903836",
+          "playerState": "WALK",
+          "speed": "4.499999999515267",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "17",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n59.7 / 100.1 ms\nDraw calls / triangles\n333 / 74868\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:04\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -6.68 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 32241818
+        },
+        "frames": {
+          "n": 51,
+          "elapsed": 2033.6000000000058,
+          "averageMs": 39.87450980392168,
+          "p95Ms": 50.09999999999127,
+          "fps": 25.07867820613683
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "-0.35178235289757803",
+          "playerZ": "-23.87510785728647",
+          "playerState": "RUN",
+          "speed": "8.59999999999972",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "24",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n41.2 / 60.0 ms\nDraw calls / triangles\n270 / 68930\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:06\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -23.88 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 30627033
+        }
+      }
+    },
+    {
+      "measurement": {
+        "name": "jumping",
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "-0.3449243621324776",
+          "playerZ": "-24.199966009253526",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "25",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n40.4 / 50.1 ms\nDraw calls / triangles\n261 / 68350\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:06\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -24.20 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 31865161
+        },
+        "frames": {
+          "n": 31,
+          "elapsed": 1207.699999999997,
+          "averageMs": 38.958064516128935,
+          "p95Ms": 60,
+          "fps": 25.668626314482136
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "1.3676636378675273",
+          "playerZ": "-24.199966009253526",
+          "playerState": "JUMP",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "25",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n39.9 / 50.0 ms\nDraw calls / triangles\n262 / 68514\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:08\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -24.20 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 31215582
+        }
+      }
+    },
+    {
+      "measurement": {
+        "name": "camera-rotation",
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "-0.3449243621324776",
+          "playerZ": "-24.199966009253526",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "26",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n39.2 / 50.1 ms\nDraw calls / triangles\n260 / 68290\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:09\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.2°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -24.20 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 34811720
+        },
+        "frames": {
+          "n": 44,
+          "elapsed": 2022.8000000003667,
+          "averageMs": 45.972727272735604,
+          "p95Ms": 60.09999999999127,
+          "fps": 21.752026893411124
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0.08",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "23",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n44.2 / 60.1 ms\nDraw calls / triangles\n351 / 76878\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:11\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.2°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 32052691
+        }
+      }
+    },
+    {
+      "measurement": {
+        "name": "minimap-follow",
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0.08",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "23",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n44.2 / 60.1 ms\nDraw calls / triangles\n351 / 76878\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:11\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.2°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 32052691
+        },
+        "frames": {
+          "n": 49,
+          "elapsed": 2542.9000000001834,
+          "averageMs": 51.89591836735068,
+          "p95Ms": 100,
+          "fps": 19.26933815722068
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "19",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n51.4 / 100.0 ms\nDraw calls / triangles\n352 / 77022\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:58:13\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.2°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 34857006
+        }
+      }
+    },
+    {
+      "code": "const results=[]; results.push(await measure('idle-after-30s',3000)); await key('KeyW','w'); results.push(await measure('walking',2000)); await key('ShiftLeft','Shift'); results.push(await measure('sprinting',2000)); await key('KeyW','w','keyUp'); await key('ShiftLeft','Shift','keyUp'); await pause(400); await key('Space',' ','keyDown',{windowsVirtualKeyCode:32}); results.push(await measure('jumping',1200)); await key('Space',' ','keyUp',{windowsVirtualKeyCode:32}); await pause(1000); await tap('KeyR'); await key('KeyJ','j'); results.push(await measure('camera-rotation',2000)); await key('KeyJ','j','keyUp'); await tap('KeyR'); await tap('KeyF'); results.push(await measure('minimap-follow',2500)); await tap('KeyF'); return results.map(r=>({name:r.name,frames:r.frames,state:r.after}));",
+      "result": [
+        {
+          "name": "idle-after-30s",
+          "frames": {
+            "n": 54,
+            "elapsed": 3012.499999999811,
+            "averageMs": 55.787037037033535,
+            "p95Ms": 80.09999999999127,
+            "fps": 17.92531120332063
+          },
+          "state": {
+            "runtimeStatus": "ready",
+            "playerX": "0",
+            "playerY": "0",
+            "playerZ": "0",
+            "playerState": "IDLE",
+            "speed": "0",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0",
+            "geometries": "152",
+            "textures": "5",
+            "fps": "18",
+            "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n56.4 / 80.1 ms\nDraw calls / triangles\n349 / 76590\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+            "weather": "DA NANG, VIETNAM\n20:58:02\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+            "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+            "heap": 32957847
+          }
+        },
+        {
+          "name": "walking",
+          "frames": {
+            "n": 34,
+            "elapsed": 2023.0000000001892,
+            "averageMs": 59.50000000000556,
+            "p95Ms": 110.19999999999709,
+            "fps": 16.806722689074057
+          },
+          "state": {
+            "runtimeStatus": "ready",
+            "playerX": "0",
+            "playerY": "-0.00703810271979429",
+            "playerZ": "-6.683864426903836",
+            "playerState": "WALK",
+            "speed": "4.499999999515267",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0",
+            "geometries": "153",
+            "textures": "5",
+            "fps": "17",
+            "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n59.7 / 100.1 ms\nDraw calls / triangles\n333 / 74868\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+            "weather": "DA NANG, VIETNAM\n20:58:04\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+            "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -6.68 m\nSpan: 144 m\n+\n−\nReset 1×",
+            "heap": 32241818
+          }
+        },
+        {
+          "name": "sprinting",
+          "frames": {
+            "n": 51,
+            "elapsed": 2033.6000000000058,
+            "averageMs": 39.87450980392168,
+            "p95Ms": 50.09999999999127,
+            "fps": 25.07867820613683
+          },
+          "state": {
+            "runtimeStatus": "ready",
+            "playerX": "0",
+            "playerY": "-0.35178235289757803",
+            "playerZ": "-23.87510785728647",
+            "playerState": "RUN",
+            "speed": "8.59999999999972",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0",
+            "geometries": "153",
+            "textures": "5",
+            "fps": "24",
+            "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n41.2 / 60.0 ms\nDraw calls / triangles\n270 / 68930\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+            "weather": "DA NANG, VIETNAM\n20:58:06\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+            "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -23.88 m\nSpan: 144 m\n+\n−\nReset 1×",
+            "heap": 30627033
+          }
+        },
+        {
+          "name": "jumping",
+          "frames": {
+            "n": 31,
+            "elapsed": 1207.699999999997,
+            "averageMs": 38.958064516128935,
+            "p95Ms": 60,
+            "fps": 25.668626314482136
+          },
+          "state": {
+            "runtimeStatus": "ready",
+            "playerX": "0",
+            "playerY": "1.3676636378675273",
+            "playerZ": "-24.199966009253526",
+            "playerState": "JUMP",
+            "speed": "0",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0",
+            "geometries": "153",
+            "textures": "5",
+            "fps": "25",
+            "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n39.9 / 50.0 ms\nDraw calls / triangles\n262 / 68514\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+            "weather": "DA NANG, VIETNAM\n20:58:08\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.1°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+            "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -24.20 m\nSpan: 144 m\n+\n−\nReset 1×",
+            "heap": 31215582
+          }
+        },
+        {
+          "name": "camera-rotation",
+          "frames": {
+            "n": 44,
+            "elapsed": 2022.8000000003667,
+            "averageMs": 45.972727272735604,
+            "p95Ms": 60.09999999999127,
+            "fps": 21.752026893411124
+          },
+          "state": {
+            "runtimeStatus": "ready",
+            "playerX": "0",
+            "playerY": "0",
+            "playerZ": "0",
+            "playerState": "IDLE",
+            "speed": "0",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0.08",
+            "geometries": "153",
+            "textures": "5",
+            "fps": "23",
+            "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n44.2 / 60.1 ms\nDraw calls / triangles\n351 / 76878\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+            "weather": "DA NANG, VIETNAM\n20:58:11\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.2°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+            "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+            "heap": 32052691
+          }
+        },
+        {
+          "name": "minimap-follow",
+          "frames": {
+            "n": 49,
+            "elapsed": 2542.9000000001834,
+            "averageMs": 51.89591836735068,
+            "p95Ms": 100,
+            "fps": 19.26933815722068
+          },
+          "state": {
+            "runtimeStatus": "ready",
+            "playerX": "0",
+            "playerY": "0",
+            "playerZ": "0",
+            "playerState": "IDLE",
+            "speed": "0",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0",
+            "geometries": "153",
+            "textures": "5",
+            "fps": "19",
+            "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n51.4 / 100.0 ms\nDraw calls / triangles\n352 / 77022\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+            "weather": "DA NANG, VIETNAM\n20:58:13\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.2°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+            "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+            "heap": 34857006
+          }
+        }
+      ]
+    },
+    {
+      "measurement": {
+        "name": "interaction",
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "-3.3770292395227335",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "21",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n46.9 / 60.1 ms\nDraw calls / triangles\n345 / 76382\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:59:05\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.4°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -3.38 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 22105078
+        },
+        "frames": {
+          "n": 34,
+          "elapsed": 1521.000000000553,
+          "averageMs": 44.73529411766332,
+          "p95Ms": 60,
+          "fps": 22.353714661398843
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "-3.3770292395227335",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "22",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n45.7 / 60.1 ms\nDraw calls / triangles\n345 / 76382\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n20:59:06\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.4°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -3.38 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 18362218
+        }
+      }
+    },
+    {
+      "code": "const results=[]; await tap('KeyR'); await key('KeyW','w'); await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-2.8`); await key('KeyW','w','keyUp'); await pause(600); results.push({approach:await snapshot(),prompt:await evaluate(`document.querySelector('[data-interaction-status]')?.innerText`)}); const before=await evaluate(`document.querySelector('.world-env-chips')!==null`); await tap('KeyE'); await tap('KeyE'); const after=await evaluate(`document.querySelector('.world-env-chips')!==null`); results.push({cooldownEnvBefore:before,cooldownEnvAfter:after,feedback:await evaluate(`document.querySelector('.world-feedback')?.innerText`)}); await pause(500); await tap('KeyE'); results.push({toggleFeedback:await evaluate(`document.querySelector('.world-feedback')?.innerText`)}); await measure('interaction',1500); await tap('KeyE','e',{modifiers:8}); results.push({shiftEEnv:await evaluate(`({chips:!!document.querySelector('.world-env-chips'),panel:!!document.querySelector('.world-environment')})`)}); return results;",
+      "result": [
+        {
+          "approach": {
+            "runtimeStatus": "ready",
+            "playerX": "0",
+            "playerY": "0",
+            "playerZ": "-3.3770292395227335",
+            "playerState": "IDLE",
+            "speed": "0",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0",
+            "geometries": "153",
+            "textures": "5",
+            "fps": "21",
+            "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n47.2 / 60.1 ms\nDraw calls / triangles\n345 / 76382\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+            "weather": "DA NANG, VIETNAM\n20:59:04\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.4°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+            "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -3.38 m\nSpan: 144 m\n+\n−\nReset 1×",
+            "heap": 18427691
+          },
+          "prompt": "E\nToggle calibration beacon\nCalibration Beacon · 3.6 m OFF"
+        },
+        {
+          "cooldownEnvBefore": true,
+          "cooldownEnvAfter": false,
+          "feedback": "Calibration beacon activated"
+        },
+        {
+          "toggleFeedback": "Calibration beacon deactivated"
+        },
+        {
+          "shiftEEnv": {
+            "chips": true,
+            "panel": false
+          }
+        }
+      ]
+    },
+    {
+      "code": "const rows=[]; for(const [w,h,t] of [[1920,1080,false],[1366,768,false],[768,1024,true],[1024,768,true],[390,844,true],[844,390,true]]){ await viewport(w,h,t); await navigate('/'); const layout=await evaluate(`(()=>{const rect=e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,w:r.width,h:r.height}};const controls=[...document.querySelectorAll('.world-hud button')].filter(e=>e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden').map(e=>{const r=e.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{text:e.getAttribute('aria-label')||e.innerText,r:rect(e),small:r.width<24||r.height<24,covered:!!hit&&!e.contains(hit),offscreen:r.left<0||r.top<0||r.right>innerWidth||r.bottom>innerHeight}});return{width:innerWidth,height:innerHeight,overflow:document.documentElement.scrollWidth>innerWidth||document.documentElement.scrollHeight>innerHeight,weather:document.querySelector('.world-weather').innerText,controls,zones:['.world-top-left','.world-top-right','.world-bottom-left','.world-bottom-right','.world-joystick'].map(s=>({selector:s,rect:document.querySelector(s)?rect(document.querySelector(s)):null}))}})()`); await shot('viewport-'+w+'x'+h);rows.push({viewport:[w,h],touch:t,layout,snapshot:await snapshot()}); } report.viewports=rows;save();return rows.map(r=>({viewport:r.viewport,overflow:r.layout.overflow,small:r.layout.controls.filter(c=>c.small).length,covered:r.layout.controls.filter(c=>c.covered),offscreen:r.layout.controls.filter(c=>c.offscreen)}));",
+      "result": [
+        {
+          "viewport": [1920, 1080],
+          "overflow": false,
+          "small": 0,
+          "covered": [],
+          "offscreen": []
+        },
+        {
+          "viewport": [1366, 768],
+          "overflow": false,
+          "small": 0,
+          "covered": [],
+          "offscreen": []
+        },
+        {
+          "viewport": [768, 1024],
+          "overflow": false,
+          "small": 0,
+          "covered": [],
+          "offscreen": []
+        },
+        {
+          "viewport": [1024, 768],
+          "overflow": false,
+          "small": 0,
+          "covered": [
+            {
+              "text": "Reset (R)",
+              "r": {
+                "x": 16,
+                "y": 292,
+                "w": 60.515625,
+                "h": 27
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Env",
+              "r": {
+                "x": 80.515625,
+                "y": 292,
+                "w": 52.09375,
+                "h": 27
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Debug",
+              "r": {
+                "x": 136.609375,
+                "y": 292,
+                "w": 66.375,
+                "h": 27
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Specs",
+              "r": {
+                "x": 206.984375,
+                "y": 292,
+                "w": 61.796875,
+                "h": 27
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Fullscreen",
+              "r": {
+                "x": 16,
+                "y": 323,
+                "w": 32,
+                "h": 26
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Elevation: 0.00 m",
+              "r": {
+                "x": 16,
+                "y": 357,
+                "w": 99.125,
+                "h": 27
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Solar altitude: -53.7°",
+              "r": {
+                "x": 121.125,
+                "y": 357,
+                "w": 114.421875,
+                "h": 27
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Hide Env",
+              "r": {
+                "x": 241.546875,
+                "y": 357.5,
+                "w": 36,
+                "h": 26
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "FPS: 35",
+              "r": {
+                "x": 16,
+                "y": 392,
+                "w": 54.609375,
+                "h": 27
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Frame: 28.9 ms",
+              "r": {
+                "x": 76.609375,
+                "y": 392,
+                "w": 90.328125,
+                "h": 27
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Checks: 9/9",
+              "r": {
+                "x": 172.9375,
+                "y": 392,
+                "w": 74.09375,
+                "h": 27
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Hide Debug",
+              "r": {
+                "x": 253.03125,
+                "y": 392.5,
+                "w": 36,
+                "h": 26
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            }
+          ],
+          "offscreen": []
+        },
+        {
+          "viewport": [390, 844],
+          "overflow": false,
+          "small": 1,
+          "covered": [],
+          "offscreen": []
+        },
+        {
+          "viewport": [844, 390],
+          "overflow": false,
+          "small": 0,
+          "covered": [
+            {
+              "text": "Specs",
+              "r": {
+                "x": 16,
+                "y": 236,
+                "w": 55.21875,
+                "h": 24
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            },
+            {
+              "text": "Fullscreen",
+              "r": {
+                "x": 75.21875,
+                "y": 236,
+                "w": 28,
+                "h": 24
+              },
+              "small": false,
+              "covered": true,
+              "offscreen": false
+            }
+          ],
+          "offscreen": []
+        }
+      ]
+    },
+    {
+      "code": "await viewport(1366,768);await navigate('/');await focus();const results=[];await key('KeyW','w');await pause(500);await key('KeyW','w','keyUp');await key('KeyS','s');await pause(500);await key('KeyS','s','keyUp');await key('KeyA','a');await pause(500);await key('KeyA','a','keyUp');await key('KeyD','d');await pause(500);await key('KeyD','d','keyUp');await pause(400);results.push({cardinal:await snapshot()});await tap('KeyR');await key('ArrowUp','ArrowUp');await pause(400);await key('ArrowUp','ArrowUp','keyUp');results.push({arrow:await snapshot()});await tap('KeyR');await click('button[aria-label=\"Specs\"]');await key('KeyW','w');await pause(400);results.push({dialog:await evaluate(`({text:document.querySelector('[role=dialog]')?.innerText,focus:document.activeElement?.tagName,speed:document.querySelector('.world-explorer').dataset.speed})`)});await key('KeyW','w','keyUp');await tap('Escape','Escape');await focus();await tap('F3','F3');await evaluate(`document.querySelector('.world-focus-test input').focus()`);const before=await snapshot();await key('KeyW','w');await pause(400);await key('KeyW','w','keyUp');results.push({inputBefore:before.playerZ,inputAfter:(await snapshot()).playerZ});await focus();const d=Number((await snapshot()).cameraDistance);await send('Input.dispatchMouseEvent',{type:'mouseWheel',x:700,y:350,deltaX:0,deltaY:200});await pause(600);results.push({wheelBefore:d,wheelAfter:(await snapshot()).cameraDistance});await click('button[aria-label=\"Fullscreen\"]');await pause(300);results.push({fullscreen:await evaluate('!!document.fullscreenElement')});await click('button[aria-label=\"Exit fullscreen\"]');await pause(300);results.push({fullscreenExited:await evaluate('!document.fullscreenElement')});return results;",
+      "result": [
+        {
+          "cardinal": {
+            "runtimeStatus": "ready",
+            "playerX": "0.13227704145092367",
+            "playerY": "0",
+            "playerZ": "-0.0844615693996886",
+            "playerState": "IDLE",
+            "speed": "0",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0",
+            "geometries": "152",
+            "textures": "5",
+            "fps": "35",
+            "debug": "FPS: 35\nFrame: 28.7 ms\nChecks: 9/9",
+            "weather": "DA NANG, VIETNAM\n21:01:55\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-54.0°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+            "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.13 m, -0.08 m\nSpan: 144 m\n+\n−\nReset 1×",
+            "heap": 67828580
+          }
+        },
+        {
+          "arrow": {
+            "runtimeStatus": "ready",
+            "playerX": "0",
+            "playerY": "0",
+            "playerZ": "-1.4776061756699197",
+            "playerState": "WALK",
+            "speed": "4.484988258286959",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0",
+            "geometries": "152",
+            "textures": "5",
+            "fps": "35",
+            "debug": "FPS: 35\nFrame: 28.9 ms\nChecks: 9/9",
+            "weather": "DA NANG, VIETNAM\n21:01:56\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-54.0°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+            "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -1.48 m\nSpan: 144 m\n+\n−\nReset 1×",
+            "heap": 66316498
+          }
+        },
+        {
+          "dialog": {
+            "text": "DA NANG 3D — ARCHITECTURE & CONTROLS\nTime & Astronomy\n\nDa Nang wall clock and solar trajectory drive lighting automatically. Weather is based only on validated observations.\n\nSynthetic Test Environment\n\nOriginal Phase 1–10 terrain, character, vegetation, and interaction fixtures. This scene does not represent surveyed city geography.\n\nKeyboard & Touch\n\nE interact · Shift+E environment · F follow · M map · H guide · R reset · F3 diagnostics · ESC close. Touch controls support simultaneous movement and camera gestures.\n\nRendering & Lifecycle\n\nOne WebGL renderer serves the world and Mini Map. HUD samples runtime state at 10 Hz; clock and solar state update at 1 Hz.\n\nClose (ESC)",
+            "focus": "BUTTON",
+            "speed": "0"
+          }
+        },
+        {
+          "inputBefore": "0",
+          "inputAfter": "0"
+        },
+        {
+          "wheelBefore": 5.4,
+          "wheelAfter": "6.0490054129341"
+        },
+        {
+          "fullscreen": true
+        },
+        {
+          "fullscreenExited": true
+        }
+      ]
+    },
+    {
+      "measurement": {
+        "name": "mobile-idle",
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "1.8598180531161597",
+          "playerY": "1.769882035713793",
+          "playerZ": "-10.529986466605106",
+          "playerState": "JUMP",
+          "speed": "0",
+          "cameraDistance": "4.150000000001609",
+          "cameraYaw": "-0.24",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "92",
+          "weather": "21:02\n27°C",
+          "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "heap": 82761110
+        },
+        "frames": {
+          "n": 230,
+          "elapsed": 2508.0000000001855,
+          "averageMs": 10.904347826087763,
+          "p95Ms": 20,
+          "fps": 91.70653907495334
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "1.8598180531161597",
+          "playerY": "-0.06717046428620799",
+          "playerZ": "-10.529986466605106",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "4.150000000000001",
+          "cameraYaw": "-0.24",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "91",
+          "weather": "21:02\n27°C",
+          "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "heap": 85124601
+        }
+      }
+    },
+    {
+      "code": "await viewport(390,844,true);await navigate('/vi');const joy=await rect('.world-joystick');const touch=(id,x,y)=>({id,x,y,radiusX:4,radiusY:4,force:1});const results=[];await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(1,joy.x,joy.y)]});await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[touch(1,joy.x,joy.y-38)]});await pause(650);const moving=await snapshot();results.push({joystick:moving});await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(1,joy.x,joy.y-38),touch(2,270,400)]});await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[touch(1,joy.x,joy.y-38),touch(2,320,420)]});await pause(400);results.push({multi:await snapshot()});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await pause(450);results.push({release:await snapshot()});const before=Number((await snapshot()).cameraDistance);await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(3,240,400),touch(4,300,400)]});await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[touch(3,220,400),touch(4,330,400)]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await pause(650);results.push({pinchBefore:before,pinchAfter:(await snapshot()).cameraDistance});await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(1,joy.x,joy.y)]});await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[touch(1,joy.x,joy.y-44)]});const sp=await rect('.world-touch-sprint');await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(1,joy.x,joy.y-44),touch(2,sp.x,sp.y)]});await pause(650);results.push({sprint:await snapshot()});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await pause(400);const jump=await rect('.world-touch-jump');await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touch(3,jump.x,jump.y)]});await pause(200);results.push({jump:await snapshot()});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await shot('mobile-touch');await measure('mobile-idle',2500);return results.map(r=>r);",
+      "result": [
+        {
+          "joystick": {
+            "runtimeStatus": "ready",
+            "playerX": "1.3390261646637569e-16",
+            "playerY": "0",
+            "playerZ": "-2.1867956795315004",
+            "playerState": "WALK",
+            "speed": "3.802389399711649",
+            "cameraDistance": "5.4",
+            "cameraYaw": "0",
+            "geometries": "152",
+            "textures": "5",
+            "fps": "47",
+            "weather": "21:02\n27°C",
+            "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+            "heap": 86937958
+          }
+        },
+        {
+          "multi": {
+            "runtimeStatus": "ready",
+            "playerX": "0.3027005263530697",
+            "playerY": "0",
+            "playerZ": "-4.166465010829041",
+            "playerState": "WALK",
+            "speed": "3.8023733200814522",
+            "cameraDistance": "5.4",
+            "cameraYaw": "-0.24",
+            "geometries": "152",
+            "textures": "5",
+            "fps": "44",
+            "weather": "21:02\n27°C",
+            "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+            "heap": 82106899
+          }
+        },
+        {
+          "release": {
+            "runtimeStatus": "ready",
+            "playerX": "0.4409174672865916",
+            "playerY": "0",
+            "playerZ": "-4.731851030442664",
+            "playerState": "IDLE",
+            "speed": "0",
+            "cameraDistance": "5.4",
+            "cameraYaw": "-0.24",
+            "geometries": "152",
+            "textures": "5",
+            "fps": "47",
+            "weather": "21:02\n27°C",
+            "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+            "heap": 80973069
+          }
+        },
+        {
+          "pinchBefore": 5.4,
+          "pinchAfter": "4.150400476107993"
+        },
+        {
+          "sprint": {
+            "runtimeStatus": "ready",
+            "playerX": "1.6985602462461222",
+            "playerY": "-0.05197703929494154",
+            "playerZ": "-9.871029374255784",
+            "playerState": "RUN",
+            "speed": "8.599652622568925",
+            "cameraDistance": "4.150000026961487",
+            "cameraYaw": "-0.24",
+            "geometries": "152",
+            "textures": "5",
+            "fps": "95",
+            "weather": "21:02\n27°C",
+            "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+            "heap": 84934809
+          }
+        },
+        {
+          "jump": {
+            "runtimeStatus": "ready",
+            "playerX": "1.8598180531161597",
+            "playerY": "0.9761730357137954",
+            "playerZ": "-10.529986466605106",
+            "playerState": "JUMP",
+            "speed": "0",
+            "cameraDistance": "4.150000000020033",
+            "cameraYaw": "-0.24",
+            "geometries": "152",
+            "textures": "5",
+            "fps": "89",
+            "weather": "21:02\n27°C",
+            "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+            "heap": 81868908
+          }
+        }
+      ]
+    },
+    {
+      "code": "\"await viewport(1366,768);await navigate('/');await focus();const results=[];await tap('KeyR');await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-2.8`);await key('KeyW','w','keyUp');await key('KeyA','a');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerX)<-3`);await key('KeyA','a','keyUp');await pause(600);results.push({inspectPrompt:await evaluate(`document.querySelector('[data-interaction-status]')?.innerText`)});await tap('KeyE');await pause(300);results.push({inspect:await evaluate(`document.querySelector('[role=dialog]')?.innerText`)});await tap('Escape','Escape');await focus();await tap('KeyR');await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-2.8`);await key('KeyW','w','keyUp');await key('KeyD','d');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerX)>4`);await key('KeyD','d','keyUp');await pause(600);results.push({informationPrompt:await evaluate(`document.querySelector('[data-interaction-status]')?.innerText`)});await tap('KeyE');await pause(300);results.push({information:await evaluate(`document.querySelector('[role=dialog]')?.innerText`)});await tap('Escape','Escape');await focus();await tap('KeyR');await key('KeyW','w');await key('KeyD','d');await pause(700);results.push({diagonal:await snapshot()});await key('KeyW','w','keyUp');await key('KeyD','d','keyUp');await tap('KeyR');await key('ShiftLeft','Shift');await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-67.9`,25000);await pause(500);results.push({boundary:await snapshot()});await key('KeyW','w','keyUp');await key('ShiftLeft','Shift','keyUp');for(let i=0;i<6;i++)await click('button[aria-label=\\\"Zoom in\\\"]');await pause(400);results.push({edge:await evaluate(`({map:document.querySelector('.world-map-panel').innerText,marker:document.querySelector('.world-map-marker').style.cssText,edgeHidden:document.querySelector('.world-map-marker span').hidden})`)});await shot('map-edge');await focus();await tap('KeyF');await pause(1000);results.push({followEdgeHidden:await evaluate(`document.querySelector('.world-map-marker span').hidden`)});return results;\"",
+      "error": "Error: {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":70,\"scriptId\":\"181\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"181\",\"url\":\"\",\"lineNumber\":0,\"columnNumber\":70},{\"functionName\":\"\",\"scriptId\":\"181\",\"url\":\"\",\"lineNumber\":0,\"columnNumber\":158}]},\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read properties of null (reading 'getBoundingClientRect')\\n    at <anonymous>:1:71\\n    at <anonymous>:1:159\",\"objectId\":\"-7080098527094389070.14.2\"}}\n    at evaluate (eval at <anonymous> ([eval]:1:1), <anonymous>:11:154)\n    at async click (eval at <anonymous> ([eval]:1:1), <anonymous>:17:40)\n    at async eval (eval at <anonymous> (eval at <anonymous> ([eval]:1:1)), <anonymous>:1:1780)\n    at async eval (eval at <anonymous> ([eval]:1:1), <anonymous>:29:238)"
+    },
+    {
+      "code": "await viewport(1366,768);await navigate('/');await focus();await tap('KeyH');await tap('F3','F3');await evaluate(`(()=>{const gl=document.querySelector('.world-canvas').getContext('webgl2');window.auditGl=gl;window.auditExt=gl.getExtension('WEBGL_lose_context');window.auditDraws=0;const original=gl.drawElements;gl.drawElements=function(...args){window.auditDraws++;return original.apply(this,args)}})()`);await evaluate('window.auditExt.loseContext()');await waitFor(`document.querySelector('.world-explorer').dataset.runtimeStatus==='context-lost'`);const lost=await evaluate('({lost:window.auditGl.isContextLost(),draws:window.auditDraws})');await pause(500);await evaluate('window.auditExt.restoreContext()');await waitFor(`document.querySelector('.world-explorer').dataset.runtimeStatus==='ready'`);await pause(1000);const restored=await evaluate(`({lost:window.auditGl.isContextLost(),error:window.auditGl.getError(),draws:window.auditDraws,map:document.querySelector('.world-map-loading')?.innerText})`);await key('KeyW','w');await pause(500);await key('KeyW','w','keyUp');await shot('context-restored');const moved=await snapshot();await send('Page.setWebLifecycleState',{state:'frozen'});await pause(1500);await send('Page.setWebLifecycleState',{state:'active'});await pause(500);const resumed=await snapshot();return {lost,restored,moved,resumed,next:await evaluate('Object.keys(window.next||{})')};",
+      "result": {
+        "lost": {
+          "lost": true,
+          "draws": 254
+        },
+        "restored": {
+          "lost": false,
+          "error": 0,
+          "draws": 12166
+        },
+        "moved": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "-2.0516961259450284",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "35",
+          "debug": "THÔNG SỐ CHẨN ĐOÁN (F3)\nKhung hình TB / P95\n28.9 / 40.1 ms\nLệnh vẽ / tam giác\n348 / 76550\nHình học / kết cấu\n152 / 5\nChất lượng / tỷ lệ điểm ảnh\nCân bằng / 1.00\nTự chẩn đoán\nDIAG-01: Múi giờ Đà Nẵng\nĐẠT\nDIAG-02: Quỹ đạo và giai đoạn mặt trời\nĐẠT\nDIAG-03: Ánh xạ thời tiết WMO\nĐẠT\nDIAG-04: Chuẩn hóa dữ liệu lịch sử\nĐẠT\nDIAG-05: Giới hạn cần điều khiển\nĐẠT\nDIAG-06: Hướng dẫn điều khiển thích ứng\nĐẠT\nDIAG-07: Thu phóng và phạm vi bản đồ\nĐẠT\nDIAG-08: Vị trí và hướng trên bản đồ\nĐẠT\nDIAG-09: Tương tác và làm nổi bật\nĐẠT\nThử cô lập nhập liệu: gõ WASD hoặc Space",
+          "weather": "ĐÀ NẴNG, VIỆT NAM\n21:07:00\nThứ Ba, 17/11/2026\nGMT+7 · Asia/Ho_Chi_Minh\nBan đêm\n-55.2°\n27°C\nCảm giác 32°C\n\nNắng nhẹ, ít mây\n\nWMO #1\nTRỰC TIẾP\nĐộ ẩm\n85%\nMây\n20%\nGió\n4.8 km/h · Nam\nLượng mưa\n0.0 mm\nMặt trời mọc 05:50\nMặt trời lặn 17:12\nQuan trắc: 20:45\nOpen-Meteo",
+          "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\nVị trí (XZ)\n0.00 m, -2.05 m\nPhạm vi: 144 m\n+\n−\nĐặt lại 1×",
+          "heap": 39617153
+        },
+        "resumed": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "-2.0516961259450284",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "35",
+          "debug": "THÔNG SỐ CHẨN ĐOÁN (F3)\nKhung hình TB / P95\n28.9 / 40.1 ms\nLệnh vẽ / tam giác\n348 / 76550\nHình học / kết cấu\n152 / 5\nChất lượng / tỷ lệ điểm ảnh\nCân bằng / 1.00\nTự chẩn đoán\nDIAG-01: Múi giờ Đà Nẵng\nĐẠT\nDIAG-02: Quỹ đạo và giai đoạn mặt trời\nĐẠT\nDIAG-03: Ánh xạ thời tiết WMO\nĐẠT\nDIAG-04: Chuẩn hóa dữ liệu lịch sử\nĐẠT\nDIAG-05: Giới hạn cần điều khiển\nĐẠT\nDIAG-06: Hướng dẫn điều khiển thích ứng\nĐẠT\nDIAG-07: Thu phóng và phạm vi bản đồ\nĐẠT\nDIAG-08: Vị trí và hướng trên bản đồ\nĐẠT\nDIAG-09: Tương tác và làm nổi bật\nĐẠT\nThử cô lập nhập liệu: gõ WASD hoặc Space",
+          "weather": "ĐÀ NẴNG, VIỆT NAM\n21:07:00\nThứ Ba, 17/11/2026\nGMT+7 · Asia/Ho_Chi_Minh\nBan đêm\n-55.2°\n27°C\nCảm giác 32°C\n\nNắng nhẹ, ít mây\n\nWMO #1\nTRỰC TIẾP\nĐộ ẩm\n85%\nMây\n20%\nGió\n4.8 km/h · Nam\nLượng mưa\n0.0 mm\nMặt trời mọc 05:50\nMặt trời lặn 17:12\nQuan trắc: 20:45\nOpen-Meteo",
+          "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\nVị trí (XZ)\n0.00 m, -2.05 m\nPhạm vi: 144 m\n+\n−\nĐặt lại 1×",
+          "heap": 39768173
+        },
+        "next": ["version", "appDir", "turbopack", "router", "__internal_src_page"]
+      }
+    },
+    {
+      "code": "globalThis.record=(id,result)=>{report.scenarios??=[];report.scenarios.push({id,result});save();return result}; await viewport(1366,768);await navigate('/en');await focus();record('explicit-English-locale',await evaluate('document.documentElement.lang'));await tap('KeyH');await tap('F3','F3');await evaluate('window.auditRealmToken=123');const cycles=[];for(let i=0;i<3;i++){await evaluate(`window.next.router.push('/en/health')`);await waitFor(`!document.querySelector('.world-explorer')`);await pause(400);const unmounted=await evaluate(`({canvases:document.querySelectorAll('canvas').length,token:window.auditRealmToken,health:document.body.innerText.includes('Health')})`);await evaluate(`window.next.router.push('/en')`);await waitFor(`document.querySelector('.world-explorer')?.dataset.runtimeStatus==='ready'`);await pause(800);await send('HeapProfiler.collectGarbage');cycles.push({cycle:i+1,unmounted,remounted:await snapshot(),canvases:await evaluate('document.querySelectorAll(\"canvas\").length'),sameRealm:await evaluate('window.auditRealmToken===123')});record('spa-cycle-'+i,cycles.at(-1));}return cycles.map(c=>({cycle:c.cycle,unmounted:c.unmounted,sameRealm:c.sameRealm,canvases:c.canvases,geometry:c.remounted.geometries,textures:c.remounted.textures,heap:c.remounted.heap}));",
+      "result": [
+        {
+          "cycle": 1,
+          "unmounted": {
+            "canvases": 0,
+            "token": 123,
+            "health": false
+          },
+          "sameRealm": true,
+          "canvases": 2,
+          "heap": 31157279
+        },
+        {
+          "cycle": 2,
+          "unmounted": {
+            "canvases": 0,
+            "token": 123,
+            "health": false
+          },
+          "sameRealm": true,
+          "canvases": 2,
+          "heap": 30962073
+        },
+        {
+          "cycle": 3,
+          "unmounted": {
+            "canvases": 0,
+            "token": 123,
+            "health": false
+          },
+          "sameRealm": true,
+          "canvases": 2,
+          "heap": 31032463
+        }
+      ]
+    },
+    {
+      "code": "\"await viewport(1366,768);await navigate('/en');await focus();await tap('KeyR');await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-2.8`);await key('KeyW','w','keyUp');await key('KeyA','a');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerX)<-3`);await key('KeyA','a','keyUp');await pause(600);await tap('KeyE');await pause(300);record('inspect-fixture',{dialog:await evaluate(`document.querySelector('[role=dialog]')?.innerText`),snapshot:await snapshot()});await tap('Escape','Escape');await focus();await tap('KeyR');await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-2.8`);await key('KeyW','w','keyUp');await key('KeyD','d');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerX)>4`);await key('KeyD','d','keyUp');await pause(600);await tap('KeyE');await pause(300);record('information-fixture',{dialog:await evaluate(`document.querySelector('[role=dialog]')?.innerText`),snapshot:await snapshot()});await tap('Escape','Escape');await focus();await tap('KeyR');await key('KeyW','w');await key('KeyD','d');await pause(700);record('diagonal',await snapshot());await key('KeyW','w','keyUp');await key('KeyD','d','keyUp');await tap('KeyR');await key('ShiftLeft','Shift');await key('KeyW','w');await waitFor(`Number(document.querySelector('.world-explorer').dataset.playerZ)<-67.9`,25000);await pause(500);record('boundary',await snapshot());await key('KeyW','w','keyUp');await key('ShiftLeft','Shift','keyUp');for(let i=0;i<6;i++)await click('button[aria-label=\\\"Zoom in\\\"]');await pause(400);record('map-edge',await evaluate(`({map:document.querySelector('.world-map-panel').innerText,marker:document.querySelector('.world-map-marker').style.cssText,edgeHidden:document.querySelector('.world-map-marker span').hidden})`));await shot('map-edge');await focus();await tap('KeyF');await pause(1000);record('follow-edge-hidden',await evaluate(`document.querySelector('.world-map-marker span').hidden`));return 'fixtures, diagonal, boundary, edge recorded';\"",
+      "error": "Error: Condition Number(document.querySelector('.world-explorer').dataset.playerZ)<-2.8\n    at waitFor (eval at <anonymous> ([eval]:1:1), <anonymous>:12:152)\n    at async eval (eval at <anonymous> (eval at <anonymous> ([eval]:1:1)), <anonymous>:1:113)\n    at async eval (eval at <anonymous> ([eval]:1:1), <anonymous>:29:238)"
+    },
+    {
+      "code": "await send('Page.bringToFront');const v=await evaluate('({visibility:document.visibilityState,focus:document.hasFocus(),lang:document.documentElement.lang})');await pause(600);record('foreground-restored',v);return {v,snapshot:await snapshot()};",
+      "result": {
+        "v": {
+          "visibility": "hidden",
+          "focus": true,
+          "lang": "en"
+        },
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "debug": "FPS: --\nFrame: -- ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:09:44\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-55.9°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nBuilding map…\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 33663737
+        }
+      }
+    },
+    {
+      "code": "const protocol=await(await fetch('http://127.0.0.1:9341/json/protocol')).json();return protocol.domains.flatMap(d=>d.commands.filter(c=>/visib|lifecycle|focus/i.test(c.name)).map(c=>({domain:d.domain,name:c.name,parameters:c.parameters})));",
+      "result": [
+        {
+          "domain": "DOM",
+          "name": "focus",
+          "parameters": [
+            {
+              "name": "nodeId",
+              "description": "Identifier of the node.",
+              "optional": true,
+              "$ref": "NodeId"
+            },
+            {
+              "name": "backendNodeId",
+              "description": "Identifier of the backend node.",
+              "optional": true,
+              "$ref": "BackendNodeId"
+            },
+            {
+              "name": "objectId",
+              "description": "JavaScript object id of the node wrapper.",
+              "optional": true,
+              "$ref": "Runtime.RemoteObjectId"
+            }
+          ]
+        },
+        {
+          "domain": "Emulation",
+          "name": "setFocusEmulationEnabled",
+          "parameters": [
+            {
+              "name": "enabled",
+              "description": "Whether to enable to disable focus emulation.",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "domain": "Emulation",
+          "name": "setVisibleSize",
+          "parameters": [
+            {
+              "name": "width",
+              "description": "Frame width (DIP).",
+              "type": "integer"
+            },
+            {
+              "name": "height",
+              "description": "Frame height (DIP).",
+              "type": "integer"
+            }
+          ]
+        },
+        {
+          "domain": "Page",
+          "name": "setLifecycleEventsEnabled",
+          "parameters": [
+            {
+              "name": "enabled",
+              "description": "If true, starts emitting lifecycle events.",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "domain": "Page",
+          "name": "setWebLifecycleState",
+          "parameters": [
+            {
+              "name": "state",
+              "description": "Target lifecycle state",
+              "type": "string",
+              "enum": ["frozen", "active"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "await send('Emulation.setFocusEmulationEnabled',{enabled:true});await pause(600);return {visibility:await evaluate('document.visibilityState'),snapshot:await snapshot()};",
+      "result": {
+        "visibility": "visible",
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "-0.1187175256332717",
+          "playerState": "WALK",
+          "speed": "2.374350512665434",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "0",
+          "debug": "FPS: 0\nFrame: 0.0 ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:10:51\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-56.2°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nSTALE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo\nRefresh",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -0.12 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 38252498
+        }
+      }
+    },
+    {
+      "code": "const previous=report.commands.findLast(c=>c.code?.includes(\"record('inspect-fixture'\"));let code=previous.code;if(code.startsWith('\"'))code=JSON.parse(code);return await eval('(async()=>{'+code+'})()');",
+      "result": "fixtures, diagonal, boundary, edge recorded"
+    },
+    {
+      "measurement": {
+        "name": "continuous-camera-drag",
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "-0.161",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "32",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n31.4 / 50.1 ms\nDraw calls / triangles\n350 / 76596\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nBalanced / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n21:13:30\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-56.8°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n22%\nWind\n4.9 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 21:00\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 37341994
+        },
+        "frames": {
+          "n": 69,
+          "elapsed": 2026.000000000373,
+          "averageMs": 29.362318840585115,
+          "p95Ms": 40.100000000000364,
+          "fps": 34.05725567620301
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "-2.161000000000001",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "34",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n29.2 / 40.1 ms\nDraw calls / triangles\n329 / 73858\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nBalanced / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n21:13:32\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-56.8°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n22%\nWind\n4.9 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 21:00\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 40158666
+        }
+      }
+    },
+    {
+      "code": "await navigate('/en');await focus();await tap('KeyR');await key('KeyW','w','keyUp');await tap('KeyH');await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',buttons:1,x:750,y:450,clickCount:1});await send('Input.dispatchMouseEvent',{type:'mouseMoved',button:'left',buttons:1,x:820,y:470});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',buttons:0,x:820,y:470,clickCount:1});await pause(250);record('mouse-drag',await snapshot());await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',x:800,y:450,clickCount:1});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',x:800,y:450,clickCount:1});await pause(250);record('pointer-lock',await evaluate('document.pointerLockElement?.className||null'));await tap('Escape','Escape');record('pointer-lock-escape',await evaluate('document.pointerLockElement===null'));await tap('F3','F3');const s=await snapshot();await evaluate(`document.querySelector('.world-focus-test input').focus()`);await key('KeyW','w');await pause(450);await key('KeyW','w','keyUp');record('input-isolation',{before:s.playerZ,after:(await snapshot()).playerZ});await focus();const p=measure('continuous-camera-drag',2000);for(let i=0;i<25;i++){await tap('KeyL','l');await pause(40)}await p;await click('button[aria-label=\"Fullscreen\"]');await pause(250);record('fullscreen-enter',await evaluate('Boolean(document.fullscreenElement)'));await click('button[aria-label=\"Exit fullscreen\"]');await pause(250);record('fullscreen-exit',await evaluate('!document.fullscreenElement'));return 'mouse, input, fullscreen recorded';",
+      "result": "mouse, input, fullscreen recorded"
+    },
+    {
+      "code": "await navigate('/en');await focus();await evaluate('window.auditRealmToken=456');const cycles=[];for(let i=0;i<3;i++){await evaluate(`window.next.router.push('/en/health')`);await waitFor(`!document.querySelector('.world-explorer')`);await pause(600);const health=await evaluate(`({canvasCount:document.querySelectorAll('canvas').length,lang:document.documentElement.lang,url:location.pathname,text:document.body.innerText.slice(0,160)})`);await evaluate(`window.next.router.push('/en')`);await waitFor(`document.querySelector('.world-explorer')?.dataset.geometries!==undefined`);await pause(600);await send('HeapProfiler.collectGarbage');const s=await snapshot();const row={cycle:i+1,health,sameRealm:await evaluate('window.auditRealmToken===456'),canvases:await evaluate('document.querySelectorAll(\"canvas\").length'),snapshot:s};cycles.push(row);record('visible-spa-cycle-'+i,row)}return cycles.map(c=>({cycle:c.cycle,health:c.health,sameRealm:c.sameRealm,canvases:c.canvases,geometry:c.snapshot.geometries,textures:c.snapshot.textures,heap:c.snapshot.heap}));",
+      "result": [
+        {
+          "cycle": 1,
+          "health": {
+            "canvasCount": 0,
+            "lang": "en",
+            "url": "/health",
+            "text": "Da Nang 3D Open World\nEN\nSystem health\n\nLive status of this application.\n\nApplication\nAuto-refresh every 30s\nStatus\nOperational\nEnvironment\ndevelopment\nVersion\n"
+          },
+          "sameRealm": true,
+          "canvases": 2,
+          "geometry": "151",
+          "textures": "5",
+          "heap": 37190644
+        },
+        {
+          "cycle": 2,
+          "health": {
+            "canvasCount": 0,
+            "lang": "en",
+            "url": "/health",
+            "text": "Da Nang 3D Open World\nEN\nSystem health\n\nLive status of this application.\n\nApplication\nAuto-refresh every 30s\nStatus\nOperational\nEnvironment\ndevelopment\nVersion\n"
+          },
+          "sameRealm": true,
+          "canvases": 2,
+          "geometry": "151",
+          "textures": "5",
+          "heap": 29447086
+        },
+        {
+          "cycle": 3,
+          "health": {
+            "canvasCount": 0,
+            "lang": "en",
+            "url": "/health",
+            "text": "Da Nang 3D Open World\nEN\nSystem health\n\nLive status of this application.\n\nApplication\nAuto-refresh every 30s\nStatus\nOperational\nEnvironment\ndevelopment\nVersion\n"
+          },
+          "sameRealm": true,
+          "canvases": 2,
+          "geometry": "151",
+          "textures": "5",
+          "heap": 29933984
+        }
+      ]
+    },
+    {
+      "code": "await navigate('/en');report.networkFailureStart=report.events.length;await send('Network.setBlockedURLs',{urls:['*api/weather*']});try{await navigate('/en');await waitFor(`document.querySelector('.world-weather-error')!==null`,15000);record('network-unavailable',{weather:await evaluate(`document.querySelector('.world-weather').innerText`),snapshot:await snapshot()});await shot('weather-unavailable');}finally{await send('Network.setBlockedURLs',{urls:[]});report.networkFailureEnd=report.events.length;save();}await click('.world-weather-error button');await waitFor(`!document.querySelector('.world-weather-error')`,40000);record('network-retry-restored',await evaluate(`document.querySelector('.world-weather').innerText`));const response=await fetch(origin+'/api/weather');const body=await response.json();fs.writeFileSync(path.join(dir,'weather-response.json'),JSON.stringify({status:response.status,cacheControl:response.headers.get('cache-control'),body},null,2)+'\\n');record('live-weather-api',{status:response.status,temperature:body.temperature,code:body.weatherCode,observed:body.apiObservationTime,freshness:body.freshness});const health=await fetch(origin+'/api/health');record('health-api',{status:health.status,cacheControl:health.headers.get('cache-control'),body:await health.json()});return 'actual network failure, recovery, weather and health recorded';",
+      "result": "actual network failure, recovery, weather and health recorded"
+    },
+    {
+      "code": "\"await navigate('/en');await focus();const r=[];await tap('KeyM');record('map-compact',await evaluate(`!!document.querySelector('.world-map-compact')`));await tap('KeyM');record('map-expanded',await evaluate(`!document.querySelector('.world-map-compact')`));await click('button[aria-label=\\\"Collapse weather\\\"]');record('weather-compact',await evaluate(`({mode:document.querySelector('.world-weather').dataset.widgetMode,text:document.querySelector('.world-weather').innerText,icon:!!document.querySelector('.world-weather svg')})`));await click('button[aria-label=\\\"Expand weather\\\"]');await tap('KeyH');record('guide-collapsed',await evaluate(`!document.querySelector('.world-guide.ds-surface-card')`));await tap('KeyH');record('guide-expanded',await evaluate(`!!document.querySelector('.world-guide.ds-surface-card')`));await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});record('reduced-motion-css',await evaluate(`({matches:matchMedia('(prefers-reduced-motion:reduce)').matches,duration:getComputedStyle(document.querySelector('.world-button')).transitionDuration})`));await send('Emulation.setEmulatedMedia',{features:[]});await tap('F3','F3');record('diagnostics-final',await evaluate(`Array.from(document.querySelectorAll('.world-diagnostics li')).map(e=>e.innerText)`));return 'HUD and CSS motion checks recorded';\"",
+      "error": "Error: {\"exceptionId\":3,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":79,\"scriptId\":\"518\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"518\",\"url\":\"\",\"lineNumber\":0,\"columnNumber\":79},{\"functionName\":\"\",\"scriptId\":\"518\",\"url\":\"\",\"lineNumber\":0,\"columnNumber\":167}]},\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read properties of null (reading 'getBoundingClientRect')\\n    at <anonymous>:1:80\\n    at <anonymous>:1:168\",\"objectId\":\"-7080098527094389070.23.2\"}}\n    at evaluate (eval at <anonymous> ([eval]:1:1), <anonymous>:11:154)\n    at async click (eval at <anonymous> ([eval]:1:1), <anonymous>:17:40)\n    at async eval (eval at <anonymous> (eval at <anonymous> ([eval]:1:1)), <anonymous>:1:269)\n    at async eval (eval at <anonymous> ([eval]:1:1), <anonymous>:29:238)"
+    },
+    {
+      "code": "await navigate('/en');await focus();await evaluate(`window.auditStates=[];window.auditStateTimer=setInterval(()=>{const s=document.querySelector('.world-explorer').dataset.playerState;if(window.auditStates.at(-1)!==s)window.auditStates.push(s)},20)`);await key('Space',' ','keyDown',{windowsVirtualKeyCode:32});await pause(100);await key('Space',' ','keyUp',{windowsVirtualKeyCode:32});await pause(1600);record('jump-animation-sequence',await evaluate('clearInterval(window.auditStateTimer);window.auditStates'));record('gpu-environment',await evaluate(`(()=>{const gl=document.querySelector('.world-canvas').getContext('webgl2'),ext=gl.getExtension('WEBGL_debug_renderer_info');return{version:gl.getParameter(gl.VERSION),renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):null,vendor:ext?gl.getParameter(ext.UNMASKED_VENDOR_WEBGL):null}})()`));const raw=await fetch(origin+'/api/weather');fs.writeFileSync(path.join(dir,'weather-response.json'),JSON.stringify({status:raw.status,body:await raw.json()},null,2)+String.fromCharCode(10));record('console-summary',{all:report.events.filter(e=>e.method==='Runtime.exceptionThrown'||e.method==='Runtime.consoleAPICalled'&&['warning','error'].includes(e.params.type)||e.method==='Log.entryAdded'&&['warning','error'].includes(e.params.entry.level)),networkNegativeRange:[report.networkFailureStart,report.networkFailureEnd]});return 'animation, GPU, final console recorded';",
+      "result": "animation, GPU, final console recorded"
+    },
+    {
+      "code": "await navigate('/en');await focus();await click('.world-weather-heading button');await pause(100);record('weather-compact',await evaluate(`({mode:document.querySelector('.world-weather').dataset.widgetMode,text:document.querySelector('.world-weather').innerText,icon:!!document.querySelector('.world-weather svg')})`));await click('.world-weather-heading button');await tap('KeyH');record('guide-collapsed',await evaluate(`!document.querySelector('.world-guide.ds-surface-card')`));await tap('KeyH');record('guide-expanded',await evaluate(`!!document.querySelector('.world-guide.ds-surface-card')`));await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});record('reduced-motion-css',await evaluate(`({matches:matchMedia('(prefers-reduced-motion:reduce)').matches,duration:getComputedStyle(document.querySelector('.world-button')).transitionDuration})`));await send('Emulation.setEmulatedMedia',{features:[]});await tap('F3','F3');record('diagnostics-final',await evaluate(`Array.from(document.querySelectorAll('.world-diagnostics li')).map(e=>e.innerText)`));await click('button[aria-label=\"Specs\"]');await pause(150);await key('KeyW','w');await pause(350);record('specs-blocking',{dialog:await evaluate(`document.querySelector('[role=dialog]')?.innerText`),speed:(await snapshot()).speed});await key('KeyW','w','keyUp');await tap('Escape','Escape');record('specs-closed',await evaluate(`!document.querySelector('[role=dialog]')`));return 'HUD, diagnostics, dialog checks recorded';",
+      "result": "HUD, diagnostics, dialog checks recorded"
+    },
+    {
+      "code": "await navigate('/en');await focus();const start=report.events.length;for(let i=0;i<2;i++){await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',x:800,y:450,clickCount:1});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',x:800,y:450,clickCount:1});await pause(200);}record('pointer-lock-second-click',{locked:await evaluate('document.pointerLockElement?.className'),events:report.events.slice(start),snapshot:await snapshot()});await tap('Escape','Escape');return report.events.slice(start).filter(e=>e.method==='Runtime.exceptionThrown');",
+      "result": [
+        {
+          "method": "Runtime.exceptionThrown",
+          "params": {
+            "timestamp": 1794925167652.86,
+            "exceptionDetails": {
+              "exceptionId": 4,
+              "text": "Uncaught",
+              "lineNumber": 365,
+              "columnNumber": 25148,
+              "scriptId": "493",
+              "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+              "stackTrace": {
+                "callFrames": [
+                  {
+                    "functionName": "",
+                    "scriptId": "493",
+                    "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+                    "lineNumber": 365,
+                    "columnNumber": 25148
+                  }
+                ]
+              },
+              "exception": {
+                "type": "object",
+                "subtype": "error",
+                "className": "DOMException",
+                "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+                "objectId": "-7080098527094389070.26.1",
+                "preview": {
+                  "type": "object",
+                  "subtype": "error",
+                  "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+                  "overflow": false,
+                  "properties": [
+                    {
+                      "name": "stack",
+                      "type": "string",
+                      "value": "InvalidStateError: Failed to execute 'setPointerCa…1/_next/static/chunks/1anx00-m1qnpf.js:366:25149)"
+                    },
+                    {
+                      "name": "code",
+                      "type": "number",
+                      "value": "11"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "InvalidStateError"
+                    },
+                    {
+                      "name": "message",
+                      "type": "string",
+                      "value": "Failed to execute 'setPointerCapture' on 'Element': InvalidStateError"
+                    }
+                  ]
+                }
+              },
+              "executionContextId": 26
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": "await navigate('/en');await focus();await tap('KeyH');await pause(200);record('guide-collapse-confirmed',await evaluate(`!document.querySelector('.world-guide.ds-surface-card')`));await tap('KeyH');await pause(200);record('guide-expand-confirmed',await evaluate(`!!document.querySelector('.world-guide.ds-surface-card')`));await tap('F3','F3');await pause(200);record('diagnostics-confirmed',await evaluate(`Array.from(document.querySelectorAll('.world-diagnostics li')).map(e=>e.innerText)`));report.completed=new Date().toISOString();save();return {runtime:await snapshot(),consoleExceptions:report.events.filter(e=>e.method==='Runtime.exceptionThrown').length,consoleWarnings:report.events.filter(e=>e.method==='Runtime.consoleAPICalled'&&['warning','error'].includes(e.params.type)||e.method==='Log.entryAdded'&&['warning','error'].includes(e.params.entry.level)).length};",
+      "result": {
+        "runtime": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "32",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n31.5 / 50.2 ms\nDraw calls / triangles\n348 / 76446\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nBalanced / 1.00\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space",
+          "weather": "DA NANG, VIETNAM\n21:24:21\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-59.3°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n22%\nWind\n4.9 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 21:00\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 28328965
+        },
+        "consoleExceptions": 2,
+        "consoleWarnings": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Runtime.consoleAPICalled",
+      "params": {
+        "type": "log",
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Lost."
+          }
+        ],
+        "executionContextId": 15,
+        "timestamp": 1794924418096.052,
+        "stackTrace": {
+          "callFrames": [
+            {
+              "functionName": "F",
+              "scriptId": "45",
+              "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+              "lineNumber": 0,
+              "columnNumber": 983
+            },
+            {
+              "functionName": "eV",
+              "scriptId": "45",
+              "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+              "lineNumber": 341,
+              "columnNumber": 25102
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "Runtime.consoleAPICalled",
+      "params": {
+        "type": "log",
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Restored."
+          }
+        ],
+        "executionContextId": 15,
+        "timestamp": 1794924418779.551,
+        "stackTrace": {
+          "callFrames": [
+            {
+              "functionName": "F",
+              "scriptId": "45",
+              "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+              "lineNumber": 0,
+              "columnNumber": 983
+            },
+            {
+              "functionName": "eH",
+              "scriptId": "45",
+              "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+              "lineNumber": 341,
+              "columnNumber": 25156
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/health",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Runtime.exceptionThrown",
+      "params": {
+        "timestamp": 1794924809519.1,
+        "exceptionDetails": {
+          "exceptionId": 2,
+          "text": "Uncaught",
+          "lineNumber": 365,
+          "columnNumber": 25148,
+          "scriptId": "348",
+          "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+          "stackTrace": {
+            "callFrames": [
+              {
+                "functionName": "",
+                "scriptId": "348",
+                "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+                "lineNumber": 365,
+                "columnNumber": 25148
+              }
+            ]
+          },
+          "exception": {
+            "type": "object",
+            "subtype": "error",
+            "className": "DOMException",
+            "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+            "objectId": "-7080098527094389070.19.1",
+            "preview": {
+              "type": "object",
+              "subtype": "error",
+              "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+              "overflow": false,
+              "properties": [
+                {
+                  "name": "stack",
+                  "type": "string",
+                  "value": "InvalidStateError: Failed to execute 'setPointerCa…1/_next/static/chunks/1anx00-m1qnpf.js:366:25149)"
+                },
+                {
+                  "name": "code",
+                  "type": "number",
+                  "value": "11"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "InvalidStateError"
+                },
+                {
+                  "name": "message",
+                  "type": "string",
+                  "value": "Failed to execute 'setPointerCapture' on 'Element': InvalidStateError"
+                }
+              ]
+            }
+          },
+          "executionContextId": 19
+        }
+      }
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/health",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "2040.1087",
+        "timestamp": 6676.945514,
+        "type": "XHR",
+        "errorText": "",
+        "canceled": false,
+        "blockedReason": "inspector"
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "2040.1089",
+        "timestamp": 6678.606279,
+        "type": "XHR",
+        "errorText": "",
+        "canceled": false,
+        "blockedReason": "inspector"
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "2040.1090",
+        "timestamp": 6680.60976,
+        "type": "XHR",
+        "errorText": "",
+        "canceled": false,
+        "blockedReason": "inspector"
+      }
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    },
+    {
+      "method": "Runtime.exceptionThrown",
+      "params": {
+        "timestamp": 1794925167652.86,
+        "exceptionDetails": {
+          "exceptionId": 4,
+          "text": "Uncaught",
+          "lineNumber": 365,
+          "columnNumber": 25148,
+          "scriptId": "493",
+          "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+          "stackTrace": {
+            "callFrames": [
+              {
+                "functionName": "",
+                "scriptId": "493",
+                "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+                "lineNumber": 365,
+                "columnNumber": 25148
+              }
+            ]
+          },
+          "exception": {
+            "type": "object",
+            "subtype": "error",
+            "className": "DOMException",
+            "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+            "objectId": "-7080098527094389070.26.1",
+            "preview": {
+              "type": "object",
+              "subtype": "error",
+              "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+              "overflow": false,
+              "properties": [
+                {
+                  "name": "stack",
+                  "type": "string",
+                  "value": "InvalidStateError: Failed to execute 'setPointerCa…1/_next/static/chunks/1anx00-m1qnpf.js:366:25149)"
+                },
+                {
+                  "name": "code",
+                  "type": "number",
+                  "value": "11"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "InvalidStateError"
+                },
+                {
+                  "name": "message",
+                  "type": "string",
+                  "value": "Failed to execute 'setPointerCapture' on 'Element': InvalidStateError"
+                }
+              ]
+            }
+          },
+          "executionContextId": 26
+        }
+      }
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "http://localhost:3191/api/weather",
+      "status": 200
+    }
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/132.0.6834.110",
+    "revision": "@df453a35f099772fdb954e33551388add2ca3cde",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/132.0.0.0 Safari/537.36",
+    "jsVersion": "13.2.1010152"
+  },
+  "viewports": [
+    {
+      "viewport": [1920, 1080],
+      "touch": false,
+      "layout": {
+        "width": 1920,
+        "height": 1080,
+        "overflow": false,
+        "weather": "DA NANG, VIETNAM\n21:00:23\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+        "controls": [
+          {
+            "text": "Collapse Mini Map",
+            "r": {
+              "x": 249,
+              "y": 29,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "PLAYER FOLLOW",
+            "r": {
+              "x": 208.296875,
+              "y": 87,
+              "w": 48.890625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom in",
+            "r": {
+              "x": 179,
+              "y": 201,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom out",
+            "r": {
+              "x": 231.046875,
+              "y": 201,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset 1×",
+            "r": {
+              "x": 179,
+              "y": 234,
+              "w": 77,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset (R)",
+            "r": {
+              "x": 16,
+              "y": 292,
+              "w": 60.515625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Env",
+            "r": {
+              "x": 80.515625,
+              "y": 292,
+              "w": 52.09375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Debug",
+            "r": {
+              "x": 136.609375,
+              "y": 292,
+              "w": 66.375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Specs",
+            "r": {
+              "x": 206.984375,
+              "y": 292,
+              "w": 61.796875,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Fullscreen",
+            "r": {
+              "x": 16,
+              "y": 323,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Elevation: 0.00 m",
+            "r": {
+              "x": 16,
+              "y": 357,
+              "w": 99.125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Solar altitude: -53.7°",
+            "r": {
+              "x": 121.125,
+              "y": 357,
+              "w": 114.421875,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hide Env",
+            "r": {
+              "x": 241.546875,
+              "y": 357.5,
+              "w": 36,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "FPS: 20",
+            "r": {
+              "x": 338,
+              "y": 16,
+              "w": 54.609375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Frame: 50.0 ms",
+            "r": {
+              "x": 398.609375,
+              "y": 16,
+              "w": 90.296875,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Checks: 9/9",
+            "r": {
+              "x": 494.90625,
+              "y": 16,
+              "w": 74.09375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hide Debug",
+            "r": {
+              "x": 575,
+              "y": 16.5,
+              "w": 36,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Time & Weather",
+            "r": {
+              "x": 1855,
+              "y": 33,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Controls",
+            "r": {
+              "x": 309,
+              "y": 698.5,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Character State",
+            "r": {
+              "x": 1855,
+              "y": 1020,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          }
+        ],
+        "zones": [
+          {
+            "selector": ".world-top-left",
+            "rect": {
+              "x": 16,
+              "y": 16,
+              "w": 276,
+              "h": 368
+            }
+          },
+          {
+            "selector": ".world-top-right",
+            "rect": {
+              "x": 1584,
+              "y": 16,
+              "w": 320,
+              "h": 362
+            }
+          },
+          {
+            "selector": ".world-bottom-left",
+            "rect": {
+              "x": 16,
+              "y": 683.5,
+              "w": 340,
+              "h": 380.5
+            }
+          },
+          {
+            "selector": ".world-bottom-right",
+            "rect": {
+              "x": 1613.40625,
+              "y": 1002,
+              "w": 290.59375,
+              "h": 62
+            }
+          },
+          {
+            "selector": ".world-joystick",
+            "rect": null
+          }
+        ]
+      },
+      "snapshot": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "19",
+        "debug": "FPS: 19\nFrame: 54.0 ms\nChecks: 9/9",
+        "weather": "DA NANG, VIETNAM\n21:00:24\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "heap": 30479688
+      }
+    },
+    {
+      "viewport": [1366, 768],
+      "touch": false,
+      "layout": {
+        "width": 1366,
+        "height": 768,
+        "overflow": false,
+        "weather": "DA NANG, VIETNAM\n21:00:27\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+        "controls": [
+          {
+            "text": "Collapse Mini Map",
+            "r": {
+              "x": 249,
+              "y": 29,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "PLAYER FOLLOW",
+            "r": {
+              "x": 208.296875,
+              "y": 87,
+              "w": 48.890625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom in",
+            "r": {
+              "x": 179,
+              "y": 201,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom out",
+            "r": {
+              "x": 231.046875,
+              "y": 201,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset 1×",
+            "r": {
+              "x": 179,
+              "y": 234,
+              "w": 77,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset (R)",
+            "r": {
+              "x": 16,
+              "y": 292,
+              "w": 60.515625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Env",
+            "r": {
+              "x": 80.515625,
+              "y": 292,
+              "w": 52.09375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Debug",
+            "r": {
+              "x": 136.609375,
+              "y": 292,
+              "w": 66.375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Specs",
+            "r": {
+              "x": 206.984375,
+              "y": 292,
+              "w": 61.796875,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Fullscreen",
+            "r": {
+              "x": 16,
+              "y": 323,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Elevation: 0.00 m",
+            "r": {
+              "x": 16,
+              "y": 357,
+              "w": 99.125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Solar altitude: -53.7°",
+            "r": {
+              "x": 121.125,
+              "y": 357,
+              "w": 114.421875,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hide Env",
+            "r": {
+              "x": 241.546875,
+              "y": 357.5,
+              "w": 36,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "FPS: 37",
+            "r": {
+              "x": 338,
+              "y": 16,
+              "w": 54.421875,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Frame: 27.1 ms",
+            "r": {
+              "x": 398.421875,
+              "y": 16,
+              "w": 88.578125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Checks: 9/9",
+            "r": {
+              "x": 493,
+              "y": 16,
+              "w": 74.09375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hide Debug",
+            "r": {
+              "x": 573.09375,
+              "y": 16.5,
+              "w": 36,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Time & Weather",
+            "r": {
+              "x": 1301,
+              "y": 33,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Controls",
+            "r": {
+              "x": 309,
+              "y": 386.5,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Character State",
+            "r": {
+              "x": 1301,
+              "y": 708,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          }
+        ],
+        "zones": [
+          {
+            "selector": ".world-top-left",
+            "rect": {
+              "x": 16,
+              "y": 16,
+              "w": 276,
+              "h": 368
+            }
+          },
+          {
+            "selector": ".world-top-right",
+            "rect": {
+              "x": 1030,
+              "y": 16,
+              "w": 320,
+              "h": 362
+            }
+          },
+          {
+            "selector": ".world-bottom-left",
+            "rect": {
+              "x": 16,
+              "y": 371.5,
+              "w": 340,
+              "h": 380.5
+            }
+          },
+          {
+            "selector": ".world-bottom-right",
+            "rect": {
+              "x": 1059.40625,
+              "y": 690,
+              "w": 290.59375,
+              "h": 62
+            }
+          },
+          {
+            "selector": ".world-joystick",
+            "rect": null
+          }
+        ]
+      },
+      "snapshot": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "36",
+        "debug": "FPS: 36\nFrame: 27.7 ms\nChecks: 9/9",
+        "weather": "DA NANG, VIETNAM\n21:00:27\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "heap": 36438433
+      }
+    },
+    {
+      "viewport": [768, 1024],
+      "touch": true,
+      "layout": {
+        "width": 768,
+        "height": 1024,
+        "overflow": false,
+        "weather": "DA NANG, VIETNAM\n21:00:29\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+        "controls": [
+          {
+            "text": "Collapse Mini Map",
+            "r": {
+              "x": 249,
+              "y": 29,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "PLAYER FOLLOW",
+            "r": {
+              "x": 208.296875,
+              "y": 87,
+              "w": 48.890625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom in",
+            "r": {
+              "x": 179,
+              "y": 201,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom out",
+            "r": {
+              "x": 231.046875,
+              "y": 201,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset 1×",
+            "r": {
+              "x": 179,
+              "y": 234,
+              "w": 77,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset (R)",
+            "r": {
+              "x": 16,
+              "y": 292,
+              "w": 60.515625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Env",
+            "r": {
+              "x": 80.515625,
+              "y": 292,
+              "w": 52.09375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Debug",
+            "r": {
+              "x": 136.609375,
+              "y": 292,
+              "w": 66.375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Specs",
+            "r": {
+              "x": 206.984375,
+              "y": 292,
+              "w": 61.796875,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Fullscreen",
+            "r": {
+              "x": 16,
+              "y": 323,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Elevation: 0.00 m",
+            "r": {
+              "x": 16,
+              "y": 357,
+              "w": 99.125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Solar altitude: -53.7°",
+            "r": {
+              "x": 121.125,
+              "y": 357,
+              "w": 114.421875,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hide Env",
+            "r": {
+              "x": 241.546875,
+              "y": 357.5,
+              "w": 36,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "FPS: 45",
+            "r": {
+              "x": 16,
+              "y": 392,
+              "w": 54.828125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Frame: 22.4 ms",
+            "r": {
+              "x": 76.828125,
+              "y": 392,
+              "w": 90.5,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Checks: 9/9",
+            "r": {
+              "x": 173.328125,
+              "y": 392,
+              "w": 74.09375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hide Debug",
+            "r": {
+              "x": 253.421875,
+              "y": 392.5,
+              "w": 36,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Time & Weather",
+            "r": {
+              "x": 703,
+              "y": 33,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Controls",
+            "r": {
+              "x": 309,
+              "y": 521,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Character State",
+            "r": {
+              "x": 703,
+              "y": 810,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hold or double-tap to latch sprint",
+            "r": {
+              "x": 598,
+              "y": 940,
+              "w": 64,
+              "h": 64
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "JUMP",
+            "r": {
+              "x": 676,
+              "y": 936,
+              "w": 72,
+              "h": 72
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          }
+        ],
+        "zones": [
+          {
+            "selector": ".world-top-left",
+            "rect": {
+              "x": 16,
+              "y": 16,
+              "w": 276,
+              "h": 403
+            }
+          },
+          {
+            "selector": ".world-top-right",
+            "rect": {
+              "x": 432,
+              "y": 16,
+              "w": 320,
+              "h": 362
+            }
+          },
+          {
+            "selector": ".world-bottom-left",
+            "rect": {
+              "x": 16,
+              "y": 506,
+              "w": 340,
+              "h": 348
+            }
+          },
+          {
+            "selector": ".world-bottom-right",
+            "rect": {
+              "x": 461.40625,
+              "y": 792,
+              "w": 290.59375,
+              "h": 62
+            }
+          },
+          {
+            "selector": ".world-joystick",
+            "rect": {
+              "x": 20,
+              "y": 869,
+              "w": 116,
+              "h": 116
+            }
+          }
+        ]
+      },
+      "snapshot": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "42",
+        "debug": "FPS: 42\nFrame: 23.6 ms\nChecks: 9/9",
+        "weather": "DA NANG, VIETNAM\n21:00:29\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "heap": 30691282
+      }
+    },
+    {
+      "viewport": [1024, 768],
+      "touch": true,
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "overflow": false,
+        "weather": "DA NANG, VIETNAM\n21:00:31\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+        "controls": [
+          {
+            "text": "Collapse Mini Map",
+            "r": {
+              "x": 249,
+              "y": 29,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "PLAYER FOLLOW",
+            "r": {
+              "x": 208.296875,
+              "y": 87,
+              "w": 48.890625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom in",
+            "r": {
+              "x": 179,
+              "y": 201,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom out",
+            "r": {
+              "x": 231.046875,
+              "y": 201,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset 1×",
+            "r": {
+              "x": 179,
+              "y": 234,
+              "w": 77,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset (R)",
+            "r": {
+              "x": 16,
+              "y": 292,
+              "w": 60.515625,
+              "h": 27
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Env",
+            "r": {
+              "x": 80.515625,
+              "y": 292,
+              "w": 52.09375,
+              "h": 27
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Debug",
+            "r": {
+              "x": 136.609375,
+              "y": 292,
+              "w": 66.375,
+              "h": 27
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Specs",
+            "r": {
+              "x": 206.984375,
+              "y": 292,
+              "w": 61.796875,
+              "h": 27
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Fullscreen",
+            "r": {
+              "x": 16,
+              "y": 323,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Elevation: 0.00 m",
+            "r": {
+              "x": 16,
+              "y": 357,
+              "w": 99.125,
+              "h": 27
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Solar altitude: -53.7°",
+            "r": {
+              "x": 121.125,
+              "y": 357,
+              "w": 114.421875,
+              "h": 27
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Hide Env",
+            "r": {
+              "x": 241.546875,
+              "y": 357.5,
+              "w": 36,
+              "h": 26
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "FPS: 35",
+            "r": {
+              "x": 16,
+              "y": 392,
+              "w": 54.609375,
+              "h": 27
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Frame: 28.9 ms",
+            "r": {
+              "x": 76.609375,
+              "y": 392,
+              "w": 90.328125,
+              "h": 27
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Checks: 9/9",
+            "r": {
+              "x": 172.9375,
+              "y": 392,
+              "w": 74.09375,
+              "h": 27
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Hide Debug",
+            "r": {
+              "x": 253.03125,
+              "y": 392.5,
+              "w": 36,
+              "h": 26
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Time & Weather",
+            "r": {
+              "x": 959,
+              "y": 33,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Controls",
+            "r": {
+              "x": 309,
+              "y": 265,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Collapse Character State",
+            "r": {
+              "x": 959,
+              "y": 554,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hold or double-tap to latch sprint",
+            "r": {
+              "x": 854,
+              "y": 684,
+              "w": 64,
+              "h": 64
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "JUMP",
+            "r": {
+              "x": 932,
+              "y": 680,
+              "w": 72,
+              "h": 72
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          }
+        ],
+        "zones": [
+          {
+            "selector": ".world-top-left",
+            "rect": {
+              "x": 16,
+              "y": 16,
+              "w": 276,
+              "h": 403
+            }
+          },
+          {
+            "selector": ".world-top-right",
+            "rect": {
+              "x": 688,
+              "y": 16,
+              "w": 320,
+              "h": 362
+            }
+          },
+          {
+            "selector": ".world-bottom-left",
+            "rect": {
+              "x": 16,
+              "y": 250,
+              "w": 340,
+              "h": 348
+            }
+          },
+          {
+            "selector": ".world-bottom-right",
+            "rect": {
+              "x": 717.40625,
+              "y": 536,
+              "w": 290.59375,
+              "h": 62
+            }
+          },
+          {
+            "selector": ".world-joystick",
+            "rect": {
+              "x": 20,
+              "y": 613,
+              "w": 116,
+              "h": 116
+            }
+          }
+        ]
+      },
+      "snapshot": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "34",
+        "debug": "FPS: 34\nFrame: 29.3 ms\nChecks: 9/9",
+        "weather": "DA NANG, VIETNAM\n21:00:31\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-53.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "heap": 39506677
+      }
+    },
+    {
+      "viewport": [390, 844],
+      "touch": true,
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "overflow": false,
+        "weather": "21:00\n27°C",
+        "controls": [
+          {
+            "text": "Expand Mini Map",
+            "r": {
+              "x": 162,
+              "y": 20,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "PLAYER FOLLOW",
+            "r": {
+              "x": 135.46875,
+              "y": 71,
+              "w": 34.71875,
+              "h": 22
+            },
+            "small": true,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom in",
+            "r": {
+              "x": 109,
+              "y": 134.5,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom out",
+            "r": {
+              "x": 139.953125,
+              "y": 134.5,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset (R)",
+            "r": {
+              "x": 12,
+              "y": 205,
+              "w": 60.515625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Env",
+            "r": {
+              "x": 76.515625,
+              "y": 205,
+              "w": 52.09375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Debug",
+            "r": {
+              "x": 132.609375,
+              "y": 205,
+              "w": 66.375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Specs",
+            "r": {
+              "x": 12,
+              "y": 236,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Fullscreen",
+            "r": {
+              "x": 48,
+              "y": 236,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Elevation: 0.00 m",
+            "r": {
+              "x": 12,
+              "y": 270,
+              "w": 99.125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Solar altitude: -53.7°",
+            "r": {
+              "x": 117.125,
+              "y": 270,
+              "w": 114.421875,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hide Env",
+            "r": {
+              "x": 12,
+              "y": 303,
+              "w": 36,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Expand Time & Weather",
+            "r": {
+              "x": 347,
+              "y": 19,
+              "w": 24,
+              "h": 24
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Controls\nH",
+            "r": {
+              "x": 12,
+              "y": 645,
+              "w": 112.546875,
+              "h": 29
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Expand Character State",
+            "r": {
+              "x": 217.40625,
+              "y": 647,
+              "w": 60.15625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Expand Speed",
+            "r": {
+              "x": 283.5625,
+              "y": 647,
+              "w": 94.4375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hold or double-tap to latch sprint",
+            "r": {
+              "x": 220,
+              "y": 760,
+              "w": 64,
+              "h": 64
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "JUMP",
+            "r": {
+              "x": 298,
+              "y": 756,
+              "w": 72,
+              "h": 72
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          }
+        ],
+        "zones": [
+          {
+            "selector": ".world-top-left",
+            "rect": {
+              "x": 12,
+              "y": 12,
+              "w": 240,
+              "h": 317
+            }
+          },
+          {
+            "selector": ".world-top-right",
+            "rect": {
+              "x": 254.296875,
+              "y": 12,
+              "w": 123.703125,
+              "h": 38
+            }
+          },
+          {
+            "selector": ".world-bottom-left",
+            "rect": {
+              "x": 12,
+              "y": 645,
+              "w": 112.546875,
+              "h": 29
+            }
+          },
+          {
+            "selector": ".world-bottom-right",
+            "rect": {
+              "x": 217.40625,
+              "y": 647,
+              "w": 160.59375,
+              "h": 27
+            }
+          },
+          {
+            "selector": ".world-joystick",
+            "rect": {
+              "x": 20,
+              "y": 689,
+              "w": 116,
+              "h": 116
+            }
+          }
+        ]
+      },
+      "snapshot": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "94",
+        "weather": "21:00\n27°C",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+        "heap": 47396716
+      }
+    },
+    {
+      "viewport": [844, 390],
+      "touch": true,
+      "layout": {
+        "width": 844,
+        "height": 390,
+        "overflow": false,
+        "weather": "21:00\n27°C",
+        "controls": [
+          {
+            "text": "Expand Mini Map",
+            "r": {
+              "x": 166,
+              "y": 25,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "PLAYER FOLLOW",
+            "r": {
+              "x": 124.296875,
+              "y": 77,
+              "w": 48.890625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom in",
+            "r": {
+              "x": 105,
+              "y": 141.5,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Zoom out",
+            "r": {
+              "x": 135.953125,
+              "y": 141.5,
+              "w": 24.953125,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Reset (R)",
+            "r": {
+              "x": 16,
+              "y": 208,
+              "w": 54.0625,
+              "h": 24
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Env",
+            "r": {
+              "x": 74.0625,
+              "y": 208,
+              "w": 46.484375,
+              "h": 24
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Debug",
+            "r": {
+              "x": 124.546875,
+              "y": 208,
+              "w": 59.34375,
+              "h": 24
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Specs",
+            "r": {
+              "x": 16,
+              "y": 236,
+              "w": 55.21875,
+              "h": 24
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Fullscreen",
+            "r": {
+              "x": 75.21875,
+              "y": 236,
+              "w": 28,
+              "h": 24
+            },
+            "small": false,
+            "covered": true,
+            "offscreen": false
+          },
+          {
+            "text": "Expand Time & Weather",
+            "r": {
+              "x": 785,
+              "y": 23,
+              "w": 32,
+              "h": 26
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Controls\nH",
+            "r": {
+              "x": 16,
+              "y": 238,
+              "w": 113.640625,
+              "h": 32
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Expand Character State",
+            "r": {
+              "x": 667.40625,
+              "y": 243,
+              "w": 60.15625,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Expand Speed",
+            "r": {
+              "x": 733.5625,
+              "y": 243,
+              "w": 94.4375,
+              "h": 27
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "Hold or double-tap to latch sprint",
+            "r": {
+              "x": 674,
+              "y": 306,
+              "w": 64,
+              "h": 64
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          },
+          {
+            "text": "JUMP",
+            "r": {
+              "x": 752,
+              "y": 302,
+              "w": 72,
+              "h": 72
+            },
+            "small": false,
+            "covered": false,
+            "offscreen": false
+          }
+        ],
+        "zones": [
+          {
+            "selector": ".world-top-left",
+            "rect": {
+              "x": 16,
+              "y": 16,
+              "w": 190,
+              "h": 244
+            }
+          },
+          {
+            "selector": ".world-top-right",
+            "rect": {
+              "x": 669.796875,
+              "y": 16,
+              "w": 158.203125,
+              "h": 40
+            }
+          },
+          {
+            "selector": ".world-bottom-left",
+            "rect": {
+              "x": 16,
+              "y": 238,
+              "w": 340,
+              "h": 32
+            }
+          },
+          {
+            "selector": ".world-bottom-right",
+            "rect": {
+              "x": 667.40625,
+              "y": 243,
+              "w": 160.59375,
+              "h": 27
+            }
+          },
+          {
+            "selector": ".world-joystick",
+            "rect": {
+              "x": 20,
+              "y": 263,
+              "w": 88,
+              "h": 88
+            }
+          }
+        ]
+      },
+      "snapshot": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "86",
+        "weather": "21:00\n27°C",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+        "heap": 57645805
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "explicit-English-locale",
+      "result": "en"
+    },
+    {
+      "id": "spa-cycle-0",
+      "result": {
+        "cycle": 1,
+        "unmounted": {
+          "canvases": 0,
+          "token": 123,
+          "health": false
+        },
+        "remounted": {
+          "runtimeStatus": "ready",
+          "debug": "FPS: --\nFrame: -- ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:08:46\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-55.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nBuilding map…\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 31157279
+        },
+        "canvases": 2,
+        "sameRealm": true
+      }
+    },
+    {
+      "id": "spa-cycle-1",
+      "result": {
+        "cycle": 2,
+        "unmounted": {
+          "canvases": 0,
+          "token": 123,
+          "health": false
+        },
+        "remounted": {
+          "runtimeStatus": "ready",
+          "debug": "FPS: --\nFrame: -- ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:08:48\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-55.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nBuilding map…\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 30962073
+        },
+        "canvases": 2,
+        "sameRealm": true
+      }
+    },
+    {
+      "id": "spa-cycle-2",
+      "result": {
+        "cycle": 3,
+        "unmounted": {
+          "canvases": 0,
+          "token": 123,
+          "health": false
+        },
+        "remounted": {
+          "runtimeStatus": "ready",
+          "debug": "FPS: --\nFrame: -- ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:08:50\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-55.7°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nBuilding map…\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 31032463
+        },
+        "canvases": 2,
+        "sameRealm": true
+      }
+    },
+    {
+      "id": "foreground-restored",
+      "result": {
+        "visibility": "hidden",
+        "focus": true,
+        "lang": "en"
+      }
+    },
+    {
+      "id": "inspect-fixture",
+      "result": {
+        "dialog": "Survey Monolith (Test Fixture)\n\nLocal axis marker (-Z/+X) at X -3.20 m, Z -4.50 m. Interaction range: 4.60 m from player root.\n\nInteractions: 1\nClose (ESC)",
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "-4.058404938048082",
+          "playerY": "0",
+          "playerZ": "-3.4444827232086723",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "30",
+          "debug": "FPS: 30\nFrame: 33.5 ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:12:30\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-56.5°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nSTALE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo\nRefresh",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n-4.06 m, -3.44 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 48790869
+        }
+      }
+    },
+    {
+      "id": "information-fixture",
+      "result": {
+        "dialog": "Weather Telemetry Station\n\nSynthetic station at X +4.20 m, Z -4.20 m. Displays current Da Nang weather and solar data. Interaction range: 4.80 m.\n\n21:12:32 · 27°C · Mainly clear\n\nSolar altitude: -56.6°\n\nInteractions: 1\nClose (ESC)",
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "4.905670052200075",
+          "playerY": "0",
+          "playerZ": "-0.30678964710840106",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "28",
+          "debug": "FPS: 28\nFrame: 35.7 ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:12:32\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-56.6°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nSTALE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo\nRefresh",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n4.91 m, -0.31 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 39964995
+        }
+      }
+    },
+    {
+      "id": "diagonal",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "1.8819238658404545",
+        "playerY": "0",
+        "playerZ": "-2.116356597495483",
+        "playerState": "WALK",
+        "speed": "4.4998099242636505",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "152",
+        "textures": "5",
+        "fps": "28",
+        "debug": "FPS: 28\nFrame: 35.9 ms\nChecks: 9/9",
+        "weather": "DA NANG, VIETNAM\n21:12:33\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-56.6°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nSTALE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo\nRefresh",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n1.88 m, -2.12 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "heap": 38729909
+      }
+    },
+    {
+      "id": "boundary",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "3.268234046390365",
+        "playerZ": "-68",
+        "playerState": "RUN",
+        "speed": "8.599999999999998",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "153",
+        "textures": "5",
+        "fps": "48",
+        "debug": "FPS: 48\nFrame: 20.7 ms\nChecks: 9/9",
+        "weather": "DA NANG, VIETNAM\n21:12:42\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-56.6°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nSTALE\nHumidity\n85%\nCloud cover\n20%\nWind\n4.8 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 20:45\nOpen-Meteo\nRefresh",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\nEDGE\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -68.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "heap": 30639188
+      }
+    },
+    {
+      "id": "map-edge",
+      "result": {
+        "map": "WORLD OVERVIEW\nSTATIC\n2.8×\nEDGE\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, -68.00 m\nSpan: 51 m\n+\n−\nReset 1×",
+        "marker": "left: 50%; top: 6.5%;",
+        "edgeHidden": false
+      }
+    },
+    {
+      "id": "follow-edge-hidden",
+      "result": true
+    },
+    {
+      "id": "mouse-drag",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "-0.161",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "33",
+        "debug": "FPS: 33\nFrame: 30.6 ms\nChecks: 9/9",
+        "weather": "DA NANG, VIETNAM\n21:13:29\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-56.8°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n22%\nWind\n4.9 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 21:00\nOpen-Meteo",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "heap": 39292933
+      }
+    },
+    {
+      "id": "pointer-lock",
+      "result": "world-canvas"
+    },
+    {
+      "id": "pointer-lock-escape",
+      "result": true
+    },
+    {
+      "id": "input-isolation",
+      "result": {
+        "before": "0",
+        "after": "0"
+      }
+    },
+    {
+      "id": "fullscreen-enter",
+      "result": true
+    },
+    {
+      "id": "fullscreen-exit",
+      "result": true
+    },
+    {
+      "id": "visible-spa-cycle-0",
+      "result": {
+        "cycle": 1,
+        "health": {
+          "canvasCount": 0,
+          "lang": "en",
+          "url": "/health",
+          "text": "Da Nang 3D Open World\nEN\nSystem health\n\nLive status of this application.\n\nApplication\nAuto-refresh every 30s\nStatus\nOperational\nEnvironment\ndevelopment\nVersion\n"
+        },
+        "sameRealm": true,
+        "canvases": 2,
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "35",
+          "debug": "FPS: 35\nFrame: 28.2 ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:15:45\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-57.3°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n22%\nWind\n4.9 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 21:00\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 37190644
+        }
+      }
+    },
+    {
+      "id": "visible-spa-cycle-1",
+      "result": {
+        "cycle": 2,
+        "health": {
+          "canvasCount": 0,
+          "lang": "en",
+          "url": "/health",
+          "text": "Da Nang 3D Open World\nEN\nSystem health\n\nLive status of this application.\n\nApplication\nAuto-refresh every 30s\nStatus\nOperational\nEnvironment\ndevelopment\nVersion\n"
+        },
+        "sameRealm": true,
+        "canvases": 2,
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "38",
+          "debug": "FPS: 38\nFrame: 26.6 ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:15:47\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-57.3°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n22%\nWind\n4.9 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 21:00\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 29447086
+        }
+      }
+    },
+    {
+      "id": "visible-spa-cycle-2",
+      "result": {
+        "cycle": 3,
+        "health": {
+          "canvasCount": 0,
+          "lang": "en",
+          "url": "/health",
+          "text": "Da Nang 3D Open World\nEN\nSystem health\n\nLive status of this application.\n\nApplication\nAuto-refresh every 30s\nStatus\nOperational\nEnvironment\ndevelopment\nVersion\n"
+        },
+        "sameRealm": true,
+        "canvases": 2,
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "40",
+          "debug": "FPS: 40\nFrame: 25.3 ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:15:50\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-57.3°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n22%\nWind\n4.9 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 21:00\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 29933984
+        }
+      }
+    },
+    {
+      "id": "network-unavailable",
+      "result": {
+        "weather": "DA NANG, VIETNAM\n21:16:32\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-57.5°\n--°C\n\nWeather unavailable\n\nWeather unavailable\n\nWeather service unavailable. Last valid observation is retained when available.\n\nRetry\nWeather unavailable\nOpen-Meteo",
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "37",
+          "debug": "FPS: 37\nFrame: 27.0 ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:16:32\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-57.5°\n--°C\n\nWeather unavailable\n\nWeather unavailable\n\nWeather service unavailable. Last valid observation is retained when available.\n\nRetry\nWeather unavailable\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 51359932
+        }
+      }
+    },
+    {
+      "id": "network-retry-restored",
+      "result": "DA NANG, VIETNAM\n21:16:33\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-57.5°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n22%\nWind\n4.9 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 21:00\nOpen-Meteo"
+    },
+    {
+      "id": "live-weather-api",
+      "result": {
+        "status": 200,
+        "temperature": 26.8,
+        "code": 1,
+        "observed": "21:00",
+        "freshness": "live"
+      }
+    },
+    {
+      "id": "health-api",
+      "result": {
+        "status": 200,
+        "cacheControl": "no-store",
+        "body": {
+          "status": "ok",
+          "timestamp": "2026-11-17T14:16:33.948Z",
+          "uptime": 1200,
+          "version": "0.1.0",
+          "environment": "development"
+        }
+      }
+    },
+    {
+      "id": "map-compact",
+      "result": true
+    },
+    {
+      "id": "map-expanded",
+      "result": true
+    },
+    {
+      "id": "jump-animation-sequence",
+      "result": ["IDLE", "JUMP", "FALL", "LANDING", "IDLE"]
+    },
+    {
+      "id": "gpu-environment",
+      "result": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009B41) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (Intel)"
+      }
+    },
+    {
+      "id": "console-summary",
+      "result": {
+        "all": [
+          {
+            "method": "Runtime.exceptionThrown",
+            "params": {
+              "timestamp": 1794924809519.1,
+              "exceptionDetails": {
+                "exceptionId": 2,
+                "text": "Uncaught",
+                "lineNumber": 365,
+                "columnNumber": 25148,
+                "scriptId": "348",
+                "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+                "stackTrace": {
+                  "callFrames": [
+                    {
+                      "functionName": "",
+                      "scriptId": "348",
+                      "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+                      "lineNumber": 365,
+                      "columnNumber": 25148
+                    }
+                  ]
+                },
+                "exception": {
+                  "type": "object",
+                  "subtype": "error",
+                  "className": "DOMException",
+                  "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+                  "objectId": "-7080098527094389070.19.1",
+                  "preview": {
+                    "type": "object",
+                    "subtype": "error",
+                    "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+                    "overflow": false,
+                    "properties": [
+                      {
+                        "name": "stack",
+                        "type": "string",
+                        "value": "InvalidStateError: Failed to execute 'setPointerCa…1/_next/static/chunks/1anx00-m1qnpf.js:366:25149)"
+                      },
+                      {
+                        "name": "code",
+                        "type": "number",
+                        "value": "11"
+                      },
+                      {
+                        "name": "name",
+                        "type": "string",
+                        "value": "InvalidStateError"
+                      },
+                      {
+                        "name": "message",
+                        "type": "string",
+                        "value": "Failed to execute 'setPointerCapture' on 'Element': InvalidStateError"
+                      }
+                    ]
+                  }
+                },
+                "executionContextId": 19
+              }
+            }
+          }
+        ],
+        "networkNegativeRange": [29, 32]
+      }
+    },
+    {
+      "id": "weather-compact",
+      "result": {
+        "mode": "compact",
+        "text": "21:18:30\n27°C",
+        "icon": true
+      }
+    },
+    {
+      "id": "guide-collapsed",
+      "result": false
+    },
+    {
+      "id": "guide-expanded",
+      "result": true
+    },
+    {
+      "id": "reduced-motion-css",
+      "result": {
+        "matches": true,
+        "duration": "0s"
+      }
+    },
+    {
+      "id": "diagnostics-final",
+      "result": []
+    },
+    {
+      "id": "specs-blocking",
+      "result": {
+        "dialog": "DA NANG 3D — ARCHITECTURE & CONTROLS\nTime & Astronomy\n\nDa Nang wall clock and solar trajectory drive lighting automatically. Weather is based only on validated observations.\n\nSynthetic Test Environment\n\nOriginal Phase 1–10 terrain, character, vegetation, and interaction fixtures. This scene does not represent surveyed city geography.\n\nKeyboard & Touch\n\nE interact · Shift+E environment · F follow · M map · H guide · R reset · F3 diagnostics · ESC close. Touch controls support simultaneous movement and camera gestures.\n\nRendering & Lifecycle\n\nOne WebGL renderer serves the world and Mini Map. HUD samples runtime state at 10 Hz; clock and solar state update at 1 Hz.\n\nClose (ESC)",
+        "speed": "0"
+      }
+    },
+    {
+      "id": "specs-closed",
+      "result": true
+    },
+    {
+      "id": "pointer-lock-second-click",
+      "result": {
+        "locked": "world-canvas",
+        "events": [
+          {
+            "method": "Runtime.exceptionThrown",
+            "params": {
+              "timestamp": 1794925167652.86,
+              "exceptionDetails": {
+                "exceptionId": 4,
+                "text": "Uncaught",
+                "lineNumber": 365,
+                "columnNumber": 25148,
+                "scriptId": "493",
+                "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+                "stackTrace": {
+                  "callFrames": [
+                    {
+                      "functionName": "",
+                      "scriptId": "493",
+                      "url": "http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js",
+                      "lineNumber": 365,
+                      "columnNumber": 25148
+                    }
+                  ]
+                },
+                "exception": {
+                  "type": "object",
+                  "subtype": "error",
+                  "className": "DOMException",
+                  "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+                  "objectId": "-7080098527094389070.26.1",
+                  "preview": {
+                    "type": "object",
+                    "subtype": "error",
+                    "description": "InvalidStateError: Failed to execute 'setPointerCapture' on 'Element': InvalidStateError\n    at HTMLCanvasElement.<anonymous> (http://localhost:3191/_next/static/chunks/1anx00-m1qnpf.js:366:25149)",
+                    "overflow": false,
+                    "properties": [
+                      {
+                        "name": "stack",
+                        "type": "string",
+                        "value": "InvalidStateError: Failed to execute 'setPointerCa…1/_next/static/chunks/1anx00-m1qnpf.js:366:25149)"
+                      },
+                      {
+                        "name": "code",
+                        "type": "number",
+                        "value": "11"
+                      },
+                      {
+                        "name": "name",
+                        "type": "string",
+                        "value": "InvalidStateError"
+                      },
+                      {
+                        "name": "message",
+                        "type": "string",
+                        "value": "Failed to execute 'setPointerCapture' on 'Element': InvalidStateError"
+                      }
+                    ]
+                  }
+                },
+                "executionContextId": 26
+              }
+            }
+          }
+        ],
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "26",
+          "debug": "FPS: 26\nFrame: 37.8 ms\nChecks: 9/9",
+          "weather": "DA NANG, VIETNAM\n21:19:27\nTuesday, November 17, 2026\nGMT+7 · Asia/Ho_Chi_Minh\nNight\n-58.2°\n27°C\nFeels like 32°C\n\nMainly clear\n\nWMO #1\nLIVE\nHumidity\n85%\nCloud cover\n22%\nWind\n4.9 km/h · S\nPrecipitation\n0.0 mm\nSunrise 05:50\nSunset 17:12\nObserved: 21:00\nOpen-Meteo",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "heap": 16853362
+        }
+      }
+    },
+    {
+      "id": "guide-collapse-confirmed",
+      "result": true
+    },
+    {
+      "id": "guide-expand-confirmed",
+      "result": true
+    },
+    {
+      "id": "diagnostics-confirmed",
+      "result": [
+        "DIAG-01: Da Nang timezone\nPASSED",
+        "DIAG-02: Solar trajectory and phase\nPASSED",
+        "DIAG-03: WMO weather mapping\nPASSED",
+        "DIAG-04: Historical sanitizer\nPASSED",
+        "DIAG-05: Joystick input limits\nPASSED",
+        "DIAG-06: Adaptive control guide\nPASSED",
+        "DIAG-07: Map zoom and span\nPASSED",
+        "DIAG-08: Map position and heading\nPASSED",
+        "DIAG-09: Interaction and highlight\nPASSED"
+      ]
+    }
+  ],
+  "networkFailureStart": 29,
+  "networkFailureEnd": 32,
+  "completed": "2026-11-17T14:24:22.260Z"
+}
