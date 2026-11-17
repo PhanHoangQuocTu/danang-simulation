@@ -9,6 +9,8 @@ import type { WorldExplorerModel } from '../hooks/useWorldExplorer';
 import { getActiveControlGuideInstructions } from '../controls';
 import { formatCompassDirection } from '@/integrations/weather/service';
 import { runSystemDiagnosticsSuite } from '../diagnostics';
+import { runGeospatialDiagnosticsSuite } from '../geospatial-diagnostics';
+import { useGeoTelemetry } from '../hooks/useGeoTelemetry';
 import { computeMiniMapVisibleSpanMeters } from '@/engine/spatial/minimap';
 import { GAME_CONFIG } from '@/engine/core/const';
 import {
@@ -379,8 +381,12 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
   const { t } = m;
   const s = m.snapshot;
   const diagnostics = useMemo(() => runSystemDiagnosticsSuite(), []);
+  const geoDiagnostics = useMemo(() => runGeospatialDiagnosticsSuite(), []);
+  const checksPassed = [...diagnostics, ...geoDiagnostics].filter((check) => check.passed).length;
+  const checksTotal = diagnostics.length + geoDiagnostics.length;
   const environment = m.panels.environmentPanel;
   const debug = m.panels.secondaryInfo;
+  const geo = useGeoTelemetry(s, debug === 'expanded');
   const set = (panel: 'environmentPanel' | 'secondaryInfo', value: 'expanded' | 'compact' | 'hidden') =>
     m.setPanels((current) => ({ ...current, [panel]: value }));
   return (
@@ -449,7 +455,7 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
                 {t('frameShort')}: {s?.perf.avgFrameTimeMs.toFixed(1) ?? '--'} ms
               </HudButton>
               <HudButton expanded={false} onClick={() => set('secondaryInfo', 'expanded')}>
-                {t('checks')}: {diagnostics.filter((check) => check.passed).length}/9
+                {t('checks')}: {checksPassed}/{checksTotal}
               </HudButton>
               <HudButton label={t('hide', { panel: t('debug') })} onClick={() => set('secondaryInfo', 'hidden')}>
                 <X />
@@ -496,6 +502,49 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
                   </dd>
                 </div>
               </dl>
+              <div data-testid='geo-telemetry'>
+                <strong>{t('geoReference')}</strong>
+                <p>{t('geoConvention')}</p>
+                <p>{t('geoHeightAssumption')}</p>
+                <p className='world-amber'>{t('geoWarning')}</p>
+                {geo && (
+                  <dl className='world-metrics'>
+                    <div>
+                      <dt>{t('geoLatitude')}</dt>
+                      <dd>{geo.coordinate.latitudeDeg.toFixed(7)}°</dd>
+                    </div>
+                    <div>
+                      <dt>{t('geoLongitude')}</dt>
+                      <dd>{geo.coordinate.longitudeDeg.toFixed(7)}°</dd>
+                    </div>
+                    <div>
+                      <dt>{t('geoHeight')}</dt>
+                      <dd>{geo.coordinate.ellipsoidalHeightMeters.toFixed(3)} m</dd>
+                    </div>
+                    <div>
+                      <dt>{t('geoHeading')}</dt>
+                      <dd>{geo.headingDeg.toFixed(1)}°</dd>
+                    </div>
+                  </dl>
+                )}
+              </div>
+              <details>
+                <summary>
+                  {t('geoDiagnostics')}: {geoDiagnostics.filter((check) => check.passed).length}/{geoDiagnostics.length}
+                </summary>
+                <ul className='world-diagnostics'>
+                  {geoDiagnostics.map((check, index) => (
+                    <li key={check.id} title={check.details}>
+                      <span>
+                        {check.id}: {t(`geoDiag${index + 1}` as CopyKey)}
+                      </span>
+                      <b className={check.passed ? 'world-green' : 'world-amber'}>
+                        {t(check.passed ? 'passed' : 'failed')}
+                      </b>
+                    </li>
+                  ))}
+                </ul>
+              </details>
               <h3>{t('diagnostics')}</h3>
               <ul className='world-diagnostics'>
                 {diagnostics.map((check, index) => (

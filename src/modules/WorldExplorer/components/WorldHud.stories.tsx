@@ -88,6 +88,7 @@ function Preview({
       x: 0,
       y: 0,
       z: 0,
+      rotationY: 0,
       speed: 0,
       grounded: true,
       animation: 'IDLE',

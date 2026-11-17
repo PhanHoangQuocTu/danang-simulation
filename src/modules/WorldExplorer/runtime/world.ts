@@ -59,6 +59,7 @@ export interface WorldSnapshot {
   x: number;
   y: number;
   z: number;
+  rotationY: number;
   speed: number;
   grounded: boolean;
   animation: PlayerRuntimeState['animationState'];
@@ -434,6 +435,7 @@ export function createWorldRuntime(bindings: WorldBindings) {
                 x: state.position.x,
                 y: state.position.y,
                 z: state.position.z,
+                rotationY: state.rotationY,
                 speed: state.horizontalSpeed,
                 grounded: state.isGrounded,
                 animation: state.animationState,

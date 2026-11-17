@@ -1,0 +1,28 @@
+{
+  "mode": "fixtures",
+  "node": "v26.13.1",
+  "started": "2026-11-17T15:04:30.224Z",
+  "checks": [
+    {
+      "name": "fixture-inspect-information-beacon",
+      "status": "PASS",
+      "result": [
+        {
+          "direction": "KeyA",
+          "dialog": "Survey Monolith (Test Fixture)\n\nLocal axis marker (-Z/+X) at X -3.20 m, Z -4.50 m. Interaction range: 4.60 m from player root.\n\nInteractions: 1\nClose (ESC)"
+        },
+        {
+          "direction": "KeyD",
+          "dialog": "Weather Telemetry Station\n\nSynthetic station at X +4.20 m, Z -4.20 m. Displays current Da Nang weather and solar data. Interaction range: 4.80 m.\n\n22:04:45 · 27°C · Mainly clear\n\nSolar altitude: -68.9°\n\nInteractions: 1\nClose (ESC)"
+        },
+        {
+          "direction": null,
+          "feedback": "Calibration beacon activated"
+        }
+      ]
+    }
+  ],
+  "events": [],
+  "screenshots": [],
+  "finished": "2026-11-17T15:04:47.895Z"
+}

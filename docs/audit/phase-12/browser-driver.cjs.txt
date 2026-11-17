@@ -1,0 +1,237 @@
+// Run with Node: node docs/audit/phase-12/browser-driver.cjs.txt baseline|after
+// Uses installed Chrome/CDP and a real production standalone build; no dependencies or fabricated weather.
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawn } = require('node:child_process');
+const assert = require('node:assert/strict');
+const mode = process.argv[2] || 'after';
+const dir = path.resolve('docs/audit/phase-12/evidence');
+fs.mkdirSync(dir, { recursive: true });
+fs.cpSync('.next/static', '.next/standalone/.next/static', { recursive: true });
+fs.cpSync('public', '.next/standalone/public', { recursive: true });
+const output = fs.openSync(path.join(dir, `${mode}-server.txt`), 'w');
+const server = spawn(process.execPath, ['--use-system-ca', '.next/standalone/server.js'], {
+  env: { ...process.env, PORT: '3192', HOSTNAME: '0.0.0.0' }, windowsHide: true, stdio: ['ignore', output, output],
+});
+const chrome = spawn('C:/Program Files/Google/Chrome/Application/chrome.exe', [
+  '--headless=new', '--remote-debugging-port=9342', '--remote-debugging-address=127.0.0.1',
+  `--user-data-dir=${path.resolve('.next/phase12-chrome-' + mode)}`, '--no-first-run', '--no-default-browser-check', 'about:blank',
+], { windowsHide: true, stdio: 'ignore' });
+const report = { mode, node: process.version, started: new Date().toISOString(), checks: [], events: [], screenshots: [] };
+let socket, next = 0;
+const pending = new Map();
+const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+const save = () => fs.writeFileSync(path.join(dir, `${mode}-browser.json`), JSON.stringify(report, null, 2) + '\n');
+async function send(method, params = {}) {
+  const id = ++next;
+  const result = new Promise((resolve, reject) => {
+    pending.set(id, { resolve, reject });
+    setTimeout(() => { if (pending.delete(id)) reject(new Error('Timeout ' + method)); }, 30000).unref();
+  });
+  socket.send(JSON.stringify({ id, method, params }));
+  return result;
+}
+async function evaluate(expression) {
+  const r = await send('Runtime.evaluate', { expression, awaitPromise: true, returnByValue: true });
+  if (r.exceptionDetails) throw new Error(JSON.stringify(r.exceptionDetails));
+  return r.result.value;
+}
+async function waitFor(expression, timeout = 45000) {
+  const end = Date.now() + timeout;
+  while (Date.now() < end) { if (await evaluate(expression)) return; await pause(150); }
+  throw new Error('Condition: ' + expression);
+}
+async function key(code, type = 'keyDown', extra = {}) {
+  await send('Input.dispatchKeyEvent', { type, code, key: code.startsWith('Key') ? code.slice(3).toLowerCase() : code, ...extra });
+}
+async function tap(code) { await key(code); await key(code, 'keyUp'); }
+async function focus() { await evaluate("document.querySelector('.world-canvas').focus()"); }
+async function snapshot() {
+  return evaluate("({...document.querySelector('.world-root').dataset,geo:document.querySelector('[data-testid=geo-telemetry]')?.innerText,map:document.querySelector('.world-map-panel')?.innerText,debug:document.querySelector('.world-debug')?.innerText})");
+}
+async function shot(name) {
+  const image = await send('Page.captureScreenshot', { format: 'png' });
+  fs.writeFileSync(path.join(dir, `${mode}-${name}.png`), Buffer.from(image.data, 'base64'));
+  report.screenshots.push(`${mode}-${name}.png`);
+}
+async function click(selector) {
+  const point = await evaluate(`(()=>{const r=document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2}})()`);
+  await send('Input.dispatchMouseEvent', { type: 'mousePressed', button: 'left', clickCount: 1, ...point });
+  await send('Input.dispatchMouseEvent', { type: 'mouseReleased', button: 'left', clickCount: 1, ...point });
+}
+async function check(name, fn) {
+  if (process.argv[3] && !process.argv[3].split(',').includes(name)) return;
+  try { const result = await fn(); report.checks.push({ name, status: 'PASS', result }); }
+  catch (e) { report.checks.push({ name, status: 'FAIL', error: String(e.stack) }); }
+  save();
+  console.log(name + ': ' + report.checks.at(-1).status);
+}
+async function measure() {
+  return evaluate('new Promise(resolve=>{let start=performance.now(),last=start;const a=[];function frame(now){a.push(now-last);last=now;if(now-start<3000)requestAnimationFrame(frame);else{a.sort((x,y)=>x-y);resolve({fps:1000*a.length/(now-start),averageMs:(now-start)/a.length,p95Ms:a[Math.floor(a.length*.95)],frames:a.length})}}requestAnimationFrame(frame)})');
+}
+async function openDebug() {
+  await focus();
+  for (let i = 0; i < 3; i++) {
+    if (await evaluate("!!document.querySelector('.world-debug.ds-surface-card')")) return;
+    await tap('F3'); await pause(200);
+  }
+  throw new Error('Debug did not expand');
+}
+async function viewport(width, height, touch = false) {
+  await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: touch });
+  await send('Emulation.setTouchEmulationEnabled', { enabled: touch, maxTouchPoints: touch ? 5 : 1 });
+}
+async function navigate(locale = 'en') {
+  await send('Page.navigate', { url: 'http://localhost:3192/' + locale });
+  await waitFor("document.querySelector('.world-root')?.dataset.runtimeStatus==='ready'");
+  await pause(2000);
+}
+async function main() {
+  let targets;
+  for (let i = 0; i < 100; i++) {
+    try { targets = await (await fetch('http://127.0.0.1:9342/json')).json(); if (targets.some(t => t.type === 'page')) break; } catch {}
+    await pause(150);
+  }
+  socket = new WebSocket(targets.find(t => t.type === 'page').webSocketDebuggerUrl);
+  await new Promise(resolve => socket.addEventListener('open', resolve, { once: true }));
+  socket.addEventListener('message', ({ data }) => {
+    const m = JSON.parse(data);
+    if (m.id) { const p = pending.get(m.id); if (p) { pending.delete(m.id); m.error ? p.reject(m.error) : p.resolve(m.result); } }
+    else if (['Runtime.exceptionThrown', 'Runtime.consoleAPICalled', 'Log.entryAdded', 'Network.loadingFailed'].includes(m.method)) report.events.push(m);
+  });
+  for (const method of ['Page.enable', 'Runtime.enable', 'Log.enable', 'Network.enable']) await send(method);
+  await send('Emulation.setFocusEmulationEnabled', { enabled: true });
+  await viewport(1920, 1080);
+  await navigate();
+  await check('production-render', async () => {
+    assert.equal(await evaluate("document.querySelectorAll('canvas').length"), 2);
+    await shot('1920x1080');
+    return snapshot();
+  });
+  await check('desktop-idle-performance', measure);
+  await openDebug();
+  await check('F3-diagnostics', async () => {
+    await pause(600);
+    const checks = await evaluate("[...document.querySelectorAll('.world-diagnostics li')].map(e=>({text:e.innerText,details:e.title,passed:!!e.querySelector('.world-green')}))");
+    assert.equal(checks.length, mode === 'baseline' ? 9 : 25);
+    assert(checks.every(c => c.passed));
+    if (mode !== 'baseline') assert((await snapshot()).geo.includes('NOT GEO-VERIFIED'));
+    await shot('debug');
+    return { checks, snapshot: await snapshot(), performance: await measure() };
+  });
+  await check('walk-east-north-sprint-jump-reset', async () => {
+    await focus(); await tap('KeyR'); await pause(500);
+    const start = await snapshot();
+    await key('KeyD'); await pause(1000); await key('KeyD', 'keyUp'); await pause(700);
+    const east = await snapshot(); assert(Number(east.playerX) > Number(start.playerX));
+    await key('KeyW'); await key('ShiftLeft'); await pause(1000); await key('Space'); await pause(180);
+    const jump = await snapshot();
+    assert(Number(jump.playerZ) < Number(east.playerZ)); assert.equal(jump.playerState, 'JUMP');
+    await key('Space', 'keyUp'); await key('KeyW', 'keyUp'); await key('ShiftLeft', 'keyUp'); await pause(1200);
+    const finish = await snapshot();
+    if (mode !== 'baseline') { assert.notEqual(start.geo, east.geo); assert.notEqual(east.geo, finish.geo); }
+    await tap('KeyR'); await pause(600);
+    assert(Math.abs(Number((await snapshot()).playerX)) < 0.001);
+    return { start, east, jump, finish };
+  });
+  if (mode === 'baseline') return;
+  await check('map-follow-zoom-guide', async () => {
+    await focus(); await tap('KeyF'); await tap('KeyM'); await tap('KeyH'); await pause(300);
+    const before = await snapshot();
+    assert(before.map.toUpperCase().includes('FOLLOW'));
+    await click('.world-map-panel button[aria-label="Zoom in"]'); await pause(300);
+    const after = await snapshot();
+    assert.notEqual(before.map, after.map);
+    return { before, after };
+  });
+  await check('debug-repeated-toggle', async () => {
+    await focus(); for (let i = 0; i < 12; i++) { await tap('F3'); await pause(80); }
+    await openDebug(); await pause(600); return snapshot();
+  });
+  await check('camera-orbit-zoom', async () => {
+    await focus(); const before = await snapshot();
+    await key('KeyJ'); await pause(350); await key('KeyJ', 'keyUp');
+    await tap('PageUp'); await pause(300); const after = await snapshot();
+    assert.notEqual(before.cameraYaw, after.cameraYaw);
+    assert.notEqual(before.cameraDistance, after.cameraDistance);
+    return { before, after };
+  });
+  await check('fixture-inspect-information-beacon', async () => {
+    const records = [];
+    for (const direction of ['KeyA', 'KeyD', null]) {
+      await focus(); await tap('KeyR'); await key('KeyW');
+      await waitFor("Number(document.querySelector('.world-root').dataset.playerZ)<-2.8");
+      await key('KeyW', 'keyUp');
+      if (direction) {
+        await key(direction);
+        await waitFor(direction === 'KeyA' ? "Number(document.querySelector('.world-root').dataset.playerX)<-3" : "Number(document.querySelector('.world-root').dataset.playerX)>4");
+        await key(direction, 'keyUp');
+      }
+      await pause(600); await tap('KeyE'); await pause(350);
+      const record = await evaluate("({dialog:document.querySelector('[role=dialog]')?.innerText,feedback:document.querySelector('.world-feedback')?.innerText})");
+      assert(direction ? !!record.dialog : !!record.feedback, JSON.stringify({ direction, record, snapshot: await snapshot(), interaction: await evaluate("document.querySelector('[data-interaction-status]')?.innerText") }));
+      records.push({ direction, ...record });
+      await tap('Escape');
+    }
+    return records;
+  });
+  for (const [width, height, touch] of [[1366, 768, false], [390, 844, true], [844, 390, true]]) {
+    await check(`viewport-${width}x${height}`, async () => {
+      await viewport(width, height, touch); await navigate(); await openDebug(); await pause(600);
+      const geometry = await evaluate("(()=>{const e=document.querySelector('.world-debug');const r=e.getBoundingClientRect();return{viewport:[innerWidth,innerHeight],debug:[r.x,r.y,r.width,r.height],overflow:document.documentElement.scrollWidth>innerWidth,scrollable:e.scrollHeight>e.clientHeight,geo:!!document.querySelector('[data-testid=geo-telemetry]')}})()");
+      assert(!geometry.overflow); assert(geometry.geo);
+      await shot(`${width}x${height}-debug`);
+      return geometry;
+    });
+  }
+  await check('touch-joystick', async () => {
+    await viewport(390, 844, true); await navigate();
+    const p = await evaluate("(()=>{const r=document.querySelector('.world-joystick').getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2}})()");
+    const start = await snapshot();
+    await send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ ...p, id: 1 }] });
+    await send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: p.x, y: p.y - 35, id: 1 }] });
+    await pause(1200); const moved = await snapshot();
+    await send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] }); await pause(500);
+    assert.notEqual(start.playerZ, moved.playerZ); assert.equal(Number((await snapshot()).speed), 0);
+    return { start, moved, stopped: await snapshot() };
+  });
+  await check('touch-pinch-sprint-jump', async () => {
+    const rect = async selector => evaluate(`(()=>{const r=document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2}})()`);
+    const before = await snapshot();
+    await send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: 240, y: 400, id: 3 }, { x: 300, y: 400, id: 4 }] });
+    await send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: 220, y: 400, id: 3 }, { x: 330, y: 400, id: 4 }] });
+    await send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] }); await pause(500);
+    const pinch = await snapshot(); assert.notEqual(before.cameraDistance, pinch.cameraDistance);
+    const joy = await rect('.world-joystick'); const sprint = await rect('.world-touch-sprint');
+    await send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ ...joy, id: 1 }] });
+    await send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: joy.x, y: joy.y - 44, id: 1 }] });
+    await send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: joy.x, y: joy.y - 44, id: 1 }, { ...sprint, id: 2 }] });
+    await pause(650); const running = await snapshot(); assert.equal(running.playerState, 'RUN');
+    await send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] }); await pause(450);
+    const jump = await rect('.world-touch-jump');
+    await send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ ...jump, id: 5 }] });
+    await pause(150); const jumping = await snapshot();
+    await send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    assert.equal(jumping.playerState, 'JUMP');
+    return { pinch, running, jumping };
+  });
+  await check('vietnamese-F3', async () => {
+    await navigate('vi'); await openDebug(); await pause(600);
+    assert((await snapshot()).geo.includes('CHƯA XÁC MINH ĐỊA LÝ')); await shot('vi-debug'); return snapshot();
+  });
+  await check('weather-real-failure', async () => {
+    report.networkNegativeStart = report.events.length;
+    await send('Network.setBlockedURLs', { urls: ['*api/weather*'] }); await navigate(); await pause(11000);
+    const weather = await evaluate("document.querySelector('.world-weather')?.innerText");
+    assert(!weather.includes('LIVE')); assert(weather.includes('--') || weather.includes('Unavailable'));
+    await send('Network.setBlockedURLs', { urls: [] }); report.networkNegativeEnd = report.events.length;
+    return weather;
+  });
+  await check('health-route', async () => {
+    return evaluate("fetch('/api/health').then(async r=>({status:r.status,body:await r.json()}))");
+  });
+}
+main().catch(error => { report.failure = String(error.stack); process.exitCode = 1; }).finally(() => {
+  report.finished = new Date().toISOString(); save(); socket?.close(); chrome.kill(); server.kill(); fs.closeSync(output);
+  console.log(JSON.stringify({ mode, failures: report.checks.filter(c => c.status === 'FAIL').map(c => c.name), fatal: report.failure }));
+});

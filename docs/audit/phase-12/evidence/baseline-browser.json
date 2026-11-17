@@ -1,0 +1,81 @@
+{
+  "mode": "baseline",
+  "node": "v26.13.1",
+  "started": "2026-11-17T14:54:40.717Z",
+  "checks": [],
+  "events": [
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "5E3F8553569CDC95937EC3C5B0FAA190",
+        "timestamp": 8969.883348,
+        "type": "Document",
+        "errorText": "net::ERR_TOO_MANY_REDIRECTS",
+        "canceled": false
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "C55010CCE58B5151589E422BCB7214A0",
+        "timestamp": 8971.884394,
+        "type": "Document",
+        "errorText": "net::ERR_TOO_MANY_REDIRECTS",
+        "canceled": false
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "C55010CCE58B5151589E422BCB7214A0",
+        "timestamp": 8971.887215,
+        "type": "Document",
+        "errorText": "net::ERR_ABORTED",
+        "canceled": true
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "AEEED81DF554E74F10042BF4E0AA4AD5",
+        "timestamp": 8977.163002,
+        "type": "Document",
+        "errorText": "net::ERR_TOO_MANY_REDIRECTS",
+        "canceled": false
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "AEEED81DF554E74F10042BF4E0AA4AD5",
+        "timestamp": 8977.164405,
+        "type": "Document",
+        "errorText": "net::ERR_ABORTED",
+        "canceled": true
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "F29503D254AE7D597A80736EF3D195DE",
+        "timestamp": 9007.43916,
+        "type": "Document",
+        "errorText": "net::ERR_TOO_MANY_REDIRECTS",
+        "canceled": false
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "F29503D254AE7D597A80736EF3D195DE",
+        "timestamp": 9007.440386,
+        "type": "Document",
+        "errorText": "net::ERR_ABORTED",
+        "canceled": true
+      }
+    }
+  ],
+  "screenshots": [],
+  "failure": "Error: Condition: document.querySelector('.world-root')?.dataset.runtimeStatus==='ready'\n    at waitFor (C:\\Workspace\\Personnel\\danang-simulation\\docs\\audit\\phase-12\\browser-driver.cjs.txt:42:9)\n    at async navigate (C:\\Workspace\\Personnel\\danang-simulation\\docs\\audit\\phase-12\\browser-driver.cjs.txt:85:3)\n    at async main (C:\\Workspace\\Personnel\\danang-simulation\\docs\\audit\\phase-12\\browser-driver.cjs.txt:104:3)",
+  "finished": "2026-11-17T14:55:27.513Z"
+}

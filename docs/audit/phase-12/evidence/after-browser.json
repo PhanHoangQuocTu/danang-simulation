@@ -1,0 +1,576 @@
+{
+  "mode": "after",
+  "node": "v26.13.1",
+  "started": "2026-11-17T15:02:05.363Z",
+  "checks": [
+    {
+      "name": "production-render",
+      "status": "PASS",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "22",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "debug": "FPS: 22\nFrame: 45.2 ms\nChecks: 25/25"
+      }
+    },
+    {
+      "name": "desktop-idle-performance",
+      "status": "PASS",
+      "result": {
+        "fps": 16.33026324384945,
+        "averageMs": 61.23599999997765,
+        "p95Ms": 80,
+        "frames": 50
+      }
+    },
+    {
+      "name": "F3-diagnostics",
+      "status": "PASS",
+      "result": {
+        "checks": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass",
+            "passed": true
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-05: Joystick input limits\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-07: Map zoom and span\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-08: Map position and heading\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight\nPASSED",
+            "details": "",
+            "passed": true
+          }
+        ],
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "19",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n52.4 / 70.1 ms\nDraw calls / triangles\n347 / 76302\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "performance": {
+          "fps": 17.891458485196466,
+          "averageMs": 55.89259259257192,
+          "p95Ms": 80.10000000000218,
+          "frames": 54
+        }
+      }
+    },
+    {
+      "name": "walk-east-north-sprint-jump-reset",
+      "status": "PASS",
+      "result": {
+        "start": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "18",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n55.2 / 70.1 ms\nDraw calls / triangles\n346 / 76158\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "east": {
+          "runtimeStatus": "ready",
+          "playerX": "3.0060286818450797",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "15",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022279°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n90.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n3.01 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n64.5 / 120.1 ms\nDraw calls / triangles\n347 / 76142\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022279°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n90.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "jump": {
+          "runtimeStatus": "ready",
+          "playerX": "3.0060286818450797",
+          "playerY": "1.2227945931165258",
+          "playerZ": "-9.216250618441443",
+          "playerState": "JUMP",
+          "speed": "8.599998534101552",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "17",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544568°\nDerived longitude\n108.2022281°\nSimulated ellipsoid height\n0.006 m\nCompass heading\n0.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n3.01 m, -9.22 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n58.7 / 120.2 ms\nDraw calls / triangles\n324 / 74296\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544568°\nDerived longitude\n108.2022281°\nSimulated ellipsoid height\n0.006 m\nCompass heading\n0.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "finish": {
+          "runtimeStatus": "ready",
+          "playerX": "3.0060286818450797",
+          "playerY": "-0.015148491663880905",
+          "playerZ": "-10.463416967244207",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "22",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544946°\nDerived longitude\n108.2022281°\nSimulated ellipsoid height\n-0.015 m\nCompass heading\n0.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n3.01 m, -10.46 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n45.2 / 70.1 ms\nDraw calls / triangles\n300 / 70962\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544946°\nDerived longitude\n108.2022281°\nSimulated ellipsoid height\n-0.015 m\nCompass heading\n0.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        }
+      }
+    },
+    {
+      "name": "map-follow-zoom-guide",
+      "status": "PASS",
+      "result": {
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "20",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n49.2 / 80.1 ms\nDraw calls / triangles\n347 / 76302\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "19",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n53.9 / 90.1 ms\nDraw calls / triangles\n347 / 76302\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        }
+      }
+    },
+    {
+      "name": "debug-repeated-toggle",
+      "status": "PASS",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "153",
+        "textures": "5",
+        "fps": "17",
+        "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+        "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+        "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n59.0 / 110.1 ms\nDraw calls / triangles\n350 / 76734\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+      }
+    },
+    {
+      "name": "camera-orbit-zoom",
+      "status": "PASS",
+      "result": {
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "17",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n59.0 / 110.1 ms\nDraw calls / triangles\n350 / 76734\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "4.809037472114673",
+          "cameraYaw": "0.08",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "20",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n50.4 / 100.1 ms\nDraw calls / triangles\n348 / 76446\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        }
+      }
+    },
+    {
+      "name": "fixture-inspect-information-beacon",
+      "status": "FAIL",
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(direction ? !!record.dialog : !!record.feedback)\n\n    at C:\\Workspace\\Personnel\\danang-simulation\\docs\\audit\\phase-12\\browser-driver.cjs.txt:171:7\n    at async check (C:\\Workspace\\Personnel\\danang-simulation\\docs\\audit\\phase-12\\browser-driver.cjs.txt:63:24)\n    at async main (C:\\Workspace\\Personnel\\danang-simulation\\docs\\audit\\phase-12\\browser-driver.cjs.txt:158:3)"
+    },
+    {
+      "name": "viewport-1366x768",
+      "status": "PASS",
+      "result": {
+        "viewport": [1366, 768],
+        "debug": [338, 16, 320, 353.265625],
+        "overflow": false,
+        "scrollable": true,
+        "geo": true
+      }
+    },
+    {
+      "name": "viewport-390x844",
+      "status": "PASS",
+      "result": {
+        "viewport": [390, 844],
+        "debug": [12, 110, 320, 337.59375],
+        "overflow": false,
+        "scrollable": true,
+        "geo": true
+      }
+    },
+    {
+      "name": "viewport-844x390",
+      "status": "PASS",
+      "result": {
+        "viewport": [844, 390],
+        "debug": [102, 80, 320, 179.390625],
+        "overflow": false,
+        "scrollable": true,
+        "geo": true
+      }
+    },
+    {
+      "name": "touch-joystick",
+      "status": "PASS",
+      "result": {
+        "start": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "94",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        },
+        "moved": {
+          "runtimeStatus": "ready",
+          "playerX": "2.3039472094494835e-16",
+          "playerY": "0",
+          "playerZ": "-3.7626313334646064",
+          "playerState": "WALK",
+          "speed": "3.4540288155838765",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "94",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        },
+        "stopped": {
+          "runtimeStatus": "ready",
+          "playerX": "2.5990483454193797e-16",
+          "playerY": "0",
+          "playerZ": "-4.24456806195703",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "98",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        }
+      }
+    },
+    {
+      "name": "touch-pinch-sprint-jump",
+      "status": "PASS",
+      "result": {
+        "pinch": {
+          "runtimeStatus": "ready",
+          "playerX": "2.5990483454193797e-16",
+          "playerY": "0",
+          "playerZ": "-4.24456806195703",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "4.154989316020342",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "97",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        },
+        "running": {
+          "runtimeStatus": "ready",
+          "playerX": "5.519761505886237e-16",
+          "playerY": "-0.06795094400078767",
+          "playerZ": "-9.014454632518229",
+          "playerState": "RUN",
+          "speed": "8.59914430681217",
+          "cameraDistance": "4.150000542837162",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "83",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        },
+        "jumping": {
+          "runtimeStatus": "ready",
+          "playerX": "6.197613992740802e-16",
+          "playerY": "1.0478815952596598",
+          "playerZ": "-10.121471753416294",
+          "playerState": "JUMP",
+          "speed": "0",
+          "cameraDistance": "4.150000000095448",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "88",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        }
+      }
+    },
+    {
+      "name": "vietnamese-F3",
+      "status": "PASS",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "80",
+        "geo": "Geo Core: SẴN SÀNG · reference-only\n\nWGS84 / ECEF / ENU · +X Đông / +Y Lên / -Z Bắc\n\nEllipsoid WGS84 · anchor giả định 0m, không phải MSL đã đo\n\nVỊ TRÍ MÔ PHỎNG — CHƯA XÁC MINH ĐỊA LÝ\n\nVĩ độ suy ra\n16.0544000°\nKinh độ suy ra\n108.2022000°\nĐộ cao ellipsoid mô phỏng\n0.000 m\nHướng la bàn\n180.0°",
+        "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+        "debug": "THÔNG SỐ CHẨN ĐOÁN (F3)\nKhung hình TB / P95\n12.5 / 20.1 ms\nLệnh vẽ / tam giác\n301 / 71788\nHình học / kết cấu\n151 / 5\nChất lượng / tỷ lệ điểm ảnh\nCao / 1.00\nGeo Core: SẴN SÀNG · reference-only\n\nWGS84 / ECEF / ENU · +X Đông / +Y Lên / -Z Bắc\n\nEllipsoid WGS84 · anchor giả định 0m, không phải MSL đã đo\n\nVỊ TRÍ MÔ PHỎNG — CHƯA XÁC MINH ĐỊA LÝ\n\nVĩ độ suy ra\n16.0544000°\nKinh độ suy ra\n108.2022000°\nĐộ cao ellipsoid mô phỏng\n0.000 m\nHướng la bàn\n180.0°\nKiểm tra Geo: 16/16\nTự chẩn đoán\nDIAG-01: Múi giờ Đà Nẵng\nĐẠT\nDIAG-02: Quỹ đạo và giai đoạn mặt trời\nĐẠT\nDIAG-03: Ánh xạ thời tiết WMO\nĐẠT\nDIAG-04: Chuẩn hóa dữ liệu lịch sử\nĐẠT\nDIAG-05: Giới hạn cần điều khiển\nĐẠT\nDIAG-06: Hướng dẫn điều khiển thích ứng\nĐẠT\nDIAG-07: Thu phóng và phạm vi bản đồ\nĐẠT\nDIAG-08: Vị trí và hướng trên bản đồ\nĐẠT\nDIAG-09: Tương tác và làm nổi bật\nĐẠT\nThử cô lập nhập liệu: gõ WASD hoặc Space"
+      }
+    },
+    {
+      "name": "weather-real-failure",
+      "status": "PASS",
+      "result": "22:03\n--°C"
+    },
+    {
+      "name": "health-route",
+      "status": "PASS",
+      "result": {
+        "status": 200,
+        "body": {
+          "status": "ok",
+          "timestamp": "2026-11-17T15:03:27.805Z",
+          "uptime": 82,
+          "version": "0.1.0",
+          "environment": "development"
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "600.385",
+        "timestamp": 9481.54871,
+        "type": "XHR",
+        "errorText": "",
+        "canceled": false,
+        "blockedReason": "inspector"
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "600.386",
+        "timestamp": 9483.054914,
+        "type": "XHR",
+        "errorText": "",
+        "canceled": false,
+        "blockedReason": "inspector"
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "600.387",
+        "timestamp": 9485.063101,
+        "type": "XHR",
+        "errorText": "",
+        "canceled": false,
+        "blockedReason": "inspector"
+      }
+    }
+  ],
+  "screenshots": [
+    "after-1920x1080.png",
+    "after-debug.png",
+    "after-1366x768-debug.png",
+    "after-390x844-debug.png",
+    "after-844x390-debug.png",
+    "after-vi-debug.png"
+  ],
+  "networkNegativeStart": 0,
+  "networkNegativeEnd": 3,
+  "finished": "2026-11-17T15:03:27.818Z"
+}

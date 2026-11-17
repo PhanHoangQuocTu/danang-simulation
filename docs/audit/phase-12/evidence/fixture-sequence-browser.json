@@ -1,0 +1,124 @@
+{
+  "mode": "fixture-sequence",
+  "node": "v26.13.1",
+  "started": "2026-11-17T15:06:16.271Z",
+  "checks": [
+    {
+      "name": "map-follow-zoom-guide",
+      "status": "PASS",
+      "result": {
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "21",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n47.7 / 90.0 ms\nDraw calls / triangles\n346 / 76158\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nBalanced / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "20",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n49.5 / 90.2 ms\nDraw calls / triangles\n346 / 76158\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nBalanced / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        }
+      }
+    },
+    {
+      "name": "debug-repeated-toggle",
+      "status": "PASS",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "151",
+        "textures": "5",
+        "fps": "17",
+        "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+        "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+        "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n59.4 / 130.1 ms\nDraw calls / triangles\n346 / 76158\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+      }
+    },
+    {
+      "name": "camera-orbit-zoom",
+      "status": "PASS",
+      "result": {
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "17",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n59.4 / 130.1 ms\nDraw calls / triangles\n346 / 76158\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "4.857573287867675",
+          "cameraYaw": "0.08",
+          "geometries": "151",
+          "textures": "5",
+          "fps": "17",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n60.0 / 130.1 ms\nDraw calls / triangles\n344 / 75870\nGeometries / textures\n151 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nGeo checks: 16/16\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        }
+      }
+    },
+    {
+      "name": "fixture-inspect-information-beacon",
+      "status": "PASS",
+      "result": [
+        {
+          "direction": "KeyA",
+          "dialog": "Survey Monolith (Test Fixture)\n\nLocal axis marker (-Z/+X) at X -3.20 m, Z -4.50 m. Interaction range: 4.60 m from player root.\n\nInteractions: 1\nClose (ESC)"
+        },
+        {
+          "direction": "KeyD",
+          "dialog": "Weather Telemetry Station\n\nSynthetic station at X +4.20 m, Z -4.20 m. Displays current Da Nang weather and solar data. Interaction range: 4.80 m.\n\n22:06:34 · 27°C · Mainly clear\n\nSolar altitude: -69.3°\n\nInteractions: 1\nClose (ESC)"
+        },
+        {
+          "direction": null,
+          "feedback": "Calibration beacon activated"
+        }
+      ]
+    }
+  ],
+  "events": [],
+  "screenshots": [],
+  "finished": "2026-11-17T15:06:37.757Z"
+}

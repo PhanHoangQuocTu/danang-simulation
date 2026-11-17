@@ -6,6 +6,18 @@ import type { WorldExplorerModel } from '../hooks/useWorldExplorer';
 vi.mock('@/hooks', async () => await import('@/hooks/useTranslations'));
 
 describe('HUD button semantics', () => {
+  it('shows read-only geographic confidence and height assumption in expanded F3', () => {
+    const model = {
+      t: (key: string) => key,
+      panels: { environmentPanel: 'hidden', secondaryInfo: 'expanded' },
+      snapshot: null,
+      setPanels: vi.fn(),
+    } as unknown as WorldExplorerModel;
+    render(<InformationPanels model={model} />);
+    expect(screen.getByText('geoWarning')).toBeInTheDocument();
+    expect(screen.getByText('geoHeightAssumption')).toBeInTheDocument();
+    expect(screen.getByText('geoReference')).toBeInTheDocument();
+  });
   it('preserves the Phase 10 FPS, frame time, and checks chips in compact diagnostics', () => {
     const setPanels = vi.fn();
     const model = {
@@ -17,7 +29,7 @@ describe('HUD button semantics', () => {
     render(<InformationPanels model={model} />);
     expect(screen.getByRole('button', { name: 'fps: 60' })).toBeInTheDocument();
     const frame = screen.getByRole('button', { name: 'frameShort: 16.7 ms' });
-    expect(screen.getByRole('button', { name: 'checks: 9/9' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'checks: 25/25' })).toBeInTheDocument();
     fireEvent.click(frame);
     expect(setPanels).toHaveBeenCalledOnce();
   });
