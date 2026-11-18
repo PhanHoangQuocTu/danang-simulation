@@ -139,7 +139,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - The homepage is an immersive WorldExplorer viewport; do not wrap it in MainLayout. Health keeps its existing layout.
 - Generic engine code must not import React, Next.js, or city content. Da Nang composition and atmosphere live in `src/worlds/danang/`.
 - Reuse EngineRuntime, ResourceScope, controller, registries, and extracted helpers. Preserve the historical Phase 10 files unchanged.
-- All current terrain and placements are synthetic local meters, not verified geographic city geometry. Product Phase 11 remains unstarted.
+- All current terrain and placements are synthetic local meters, not verified geographic city geometry. Phase 11 audit and Phases 12–14 foundations are delivered with limitations; consult their reports for acceptance status.
 - Live weather uses the fixed `/api/weather` BFF. Strict live validation runs before the historical normalizer. Never display fabricated defaults as observations.
 - `NEXT_PUBLIC_API_URL` may be empty. No backend rewrite is registered in that case; direct backend requests fail before network.
 - Shared catalogs own geometry/material; instances borrow them. Register owned resources before attaching them to scenes.

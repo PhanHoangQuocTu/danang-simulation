@@ -14,7 +14,7 @@ Ngày: 2026-11-17. Đây là trạng thái theo source và kiểm chứng thực
 | 7–10 | NOT RUN đầy đủ | Có prefab/schema/reuse proof ban đầu; chưa kết luận hoàn thành các milestone |
 | 11–13 | NOT RUN đầy đủ | Chưa cấu hình cross-tool hoặc final product QA |
 
-Product Phase 11: audit delivered, BLOCKED – NOT READY. Product Phase 12: implementation delivered, PARTIAL. Product Phase 13: registry/ingestion implementation delivered, PARTIAL; see `PHASE_13_IMPLEMENTATION_REPORT.md` for current evidence and acceptance. Milestone 11 tooling trong master là khái niệm khác. Product Phase 14 remains NOT STARTED.
+Product Phase 11: audit delivered, BLOCKED – NOT READY. Product Phase 12: implementation delivered, PARTIAL. Product Phase 13: registry/ingestion implementation delivered, PARTIAL; see `PHASE_13_IMPLEMENTATION_REPORT.md` for historical evidence and acceptance. Product Phase 14: raster alignment/trust inspector và stabilization delivered, **PARTIAL**; see `PHASE_14_IMPLEMENTATION_REPORT.md`. Chưa có ảnh satellite/GCP thật được duyệt; Storybook vendor warning và một security advisory chưa có bản vá vẫn còn. Milestone 11 tooling trong master là khái niệm khác. Phase 15 chưa triển khai.
 
 Prompt 02 browser verification: [QA report](migration/evidence/PHASE_1_TO_10_BROWSER_QA_REPORT.md). Chrome and Edge exercised the actual simulation; six viewport screenshots include direct comparisons with the independently executed Phase 10 TSX. Retry resource ownership and adaptive-quality blank-frame defects were fixed. Physical devices, broader browser coverage, and production GPU performance remain unverified.
 

@@ -1,0 +1,25 @@
+// TEST DATA only: invented grid, never satellite observations or survey control.
+export const rasterFixture = {
+  assetId: 'test-raster',
+  sourceId: 'test-source',
+  datasetId: 'test-dataset',
+  version: 'v1',
+  width: 100,
+  height: 100,
+  nativeCrs: 'EPSG:4326',
+  pixelReference: 'pixel-corner',
+  transform: [108.2, 0.00001, 0, 16.06, 0, -0.00001],
+  footprintWgs84: [
+    [108.2, 16.06],
+    [108.201, 16.06],
+    [108.201, 16.059],
+    [108.2, 16.059],
+    [108.2, 16.06],
+  ],
+  captureDate: null,
+  noData: null,
+  cloudFraction: null,
+  noDataFraction: null,
+  orthorectified: true,
+  groundSampleDistanceMeters: 1.1,
+};

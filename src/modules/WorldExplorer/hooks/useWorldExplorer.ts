@@ -87,12 +87,13 @@ export function useWorldExplorer() {
   }, []);
   const interact = useCallback(() => {
     const result = runtime.current?.interact();
-    if (!result) {
+    if (result?.status === 'no-target') {
       toggle('environmentPanel');
       return;
     }
-    if (result.definition?.type === 'activate') setFeedback(result.isActivated);
-    else setDialog(result);
+    if (result?.status !== 'executed') return;
+    if (result.target.definition?.type === 'activate') setFeedback(result.target.isActivated);
+    else setDialog(result.target);
   }, [toggle]);
   const onCommand = useCallback(
     (command: WorldCommand) => {

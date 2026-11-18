@@ -1,0 +1,4721 @@
+{
+  "mode": "after",
+  "node": "v22.23.5",
+  "started": "2026-11-17T20:38:43.065Z",
+  "checks": [
+    {
+      "name": "production-render",
+      "status": "PASS",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "152",
+        "textures": "5",
+        "fps": "20",
+        "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+        "debug": "FPS: 20\nFrame: 49.0 ms\nChecks: 25/25"
+      }
+    },
+    {
+      "name": "desktop-idle-performance",
+      "status": "PASS",
+      "result": {
+        "fps": 20.89136490249664,
+        "averageMs": 47.86666666669032,
+        "p95Ms": 70,
+        "frames": 63
+      }
+    },
+    {
+      "name": "F3-diagnostics",
+      "status": "PASS",
+      "result": {
+        "checks": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation",
+            "passed": true
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass",
+            "passed": true
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-05: Joystick input limits\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-07: Map zoom and span\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-08: Map position and heading\nPASSED",
+            "details": "",
+            "passed": true
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight\nPASSED",
+            "details": "",
+            "passed": true
+          }
+        ],
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "21",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n48.0 / 70.0 ms\nDraw calls / triangles\n352 / 77126\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "performance": {
+          "fps": 19.284479319058395,
+          "averageMs": 51.85517241379308,
+          "p95Ms": 70.09999999999854,
+          "frames": 58
+        }
+      }
+    },
+    {
+      "name": "walk-east-north-sprint-jump-reset",
+      "status": "PASS",
+      "result": {
+        "start": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "20",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n50.2 / 70.1 ms\nDraw calls / triangles\n352 / 77126\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "east": {
+          "runtimeStatus": "ready",
+          "playerX": "4.1020607016842",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "23",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022383°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n90.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n4.10 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n43.0 / 70.1 ms\nDraw calls / triangles\n352 / 76870\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022383°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n90.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "jump": {
+          "runtimeStatus": "ready",
+          "playerX": "4.1020607016842",
+          "playerY": "1.2528436535040948",
+          "playerZ": "-8.982551409722893",
+          "playerState": "JUMP",
+          "speed": "8.599998138183246",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "23",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544711°\nDerived longitude\n108.2022383°\nSimulated ellipsoid height\n0.391 m\nCompass heading\n0.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n4.10 m, -8.98 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n43.7 / 69.9 ms\nDraw calls / triangles\n329 / 74960\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544711°\nDerived longitude\n108.2022383°\nSimulated ellipsoid height\n0.391 m\nCompass heading\n0.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "finish": {
+          "runtimeStatus": "ready",
+          "playerX": "4.1020607016842",
+          "playerY": "0.04846134257168323",
+          "playerZ": "-9.792105163968444",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "23",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544885°\nDerived longitude\n108.2022383°\nSimulated ellipsoid height\n0.048 m\nCompass heading\n0.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n4.10 m, -9.79 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n44.2 / 60.1 ms\nDraw calls / triangles\n306 / 71826\nGeometries / textures\n153 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544885°\nDerived longitude\n108.2022383°\nSimulated ellipsoid height\n0.048 m\nCompass heading\n0.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        }
+      }
+    },
+    {
+      "name": "hud-hit-1920x1080",
+      "status": "PASS",
+      "result": [
+        {
+          "name": "Collapse Mini Map",
+          "rect": [249, 29, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "PLAYER FOLLOW",
+          "rect": [208.296875, 87, 48.890625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"PLAYER FOLLOW\" title=\"PLAYER FOLLOW\" aria-pressed=\"false\">STATIC</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom in",
+          "rect": [179, 201, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom in\" title=\"Zoom in\">+</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom out",
+          "rect": [231.046875, 201, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom out\" title=\"Zoom out\">−</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset 1×",
+          "rect": [179, 234, 77, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" disabled=\"\">Reset 1×</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset (R)",
+          "rect": [16, 292, 60.515625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Reset (R)\" title=\"Reset (R)\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org",
+          "reachable": true
+        },
+        {
+          "name": "Env",
+          "rect": [80.515625, 292, 52.09375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Debug",
+          "rect": [136.609375, 292, 66.375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Specs",
+          "rect": [206.984375, 292, 61.796875, 27],
+          "hit": "<span class=\"world-desktop-label\">Specs</span>",
+          "reachable": true
+        },
+        {
+          "name": "Fullscreen",
+          "rect": [16, 323, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Elevation: 0.00 m",
+          "rect": [16, 357, 99.125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Elevation: 0.00 m</button>",
+          "reachable": true
+        },
+        {
+          "name": "Solar altitude: -31.4°",
+          "rect": [121.125, 357, 113.296875, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Solar altitude: -31.4°</button>",
+          "reachable": true
+        },
+        {
+          "name": "Hide Env",
+          "rect": [240.421875, 357.5, 36, 26],
+          "hit": "<path d=\"m6 6 12 12\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "FPS: 19",
+          "rect": [338, 16, 53.109375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">FPS: 19</button>",
+          "reachable": true
+        },
+        {
+          "name": "Frame: 54.0 ms",
+          "rect": [397.109375, 16, 90.5, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Frame: 54.0 ms</button>",
+          "reachable": true
+        },
+        {
+          "name": "Checks: 25/25",
+          "rect": [493.609375, 16, 85.140625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Checks: 25/25</button>",
+          "reachable": true
+        },
+        {
+          "name": "Hide Debug",
+          "rect": [584.75, 16.5, 36, 26],
+          "hit": "<path d=\"m6 6 12 12\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Controls",
+          "rect": [309, 698.5, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Time & Weather",
+          "rect": [1854.984375, 33, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Character State",
+          "rect": [1855, 1020, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "hud-hit-1366x768",
+      "status": "PASS",
+      "result": [
+        {
+          "name": "Collapse Mini Map",
+          "rect": [249, 29, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "PLAYER FOLLOW",
+          "rect": [208.296875, 87, 48.890625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"PLAYER FOLLOW\" title=\"PLAYER FOLLOW\" aria-pressed=\"false\">STATIC</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom in",
+          "rect": [179, 201, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom in\" title=\"Zoom in\">+</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom out",
+          "rect": [231.046875, 201, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom out\" title=\"Zoom out\">−</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset 1×",
+          "rect": [179, 234, 77, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" disabled=\"\">Reset 1×</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset (R)",
+          "rect": [16, 292, 60.515625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Reset (R)\" title=\"Reset (R)\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org",
+          "reachable": true
+        },
+        {
+          "name": "Env",
+          "rect": [80.515625, 292, 52.09375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Debug",
+          "rect": [136.609375, 292, 66.375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Specs",
+          "rect": [206.984375, 292, 61.796875, 27],
+          "hit": "<span class=\"world-desktop-label\">Specs</span>",
+          "reachable": true
+        },
+        {
+          "name": "Fullscreen",
+          "rect": [16, 323, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Elevation: 0.00 m",
+          "rect": [16, 357, 99.125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Elevation: 0.00 m</button>",
+          "reachable": true
+        },
+        {
+          "name": "Solar altitude: -31.4°",
+          "rect": [121.125, 357, 113.296875, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Solar altitude: -31.4°</button>",
+          "reachable": true
+        },
+        {
+          "name": "Hide Env",
+          "rect": [240.421875, 357.5, 36, 26],
+          "hit": "<path d=\"m6 6 12 12\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "FPS: 35",
+          "rect": [338, 16, 54.609375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">FPS: 35</button>",
+          "reachable": true
+        },
+        {
+          "name": "Frame: 28.7 ms",
+          "rect": [398.609375, 16, 90.109375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Frame: 28.7 ms</button>",
+          "reachable": true
+        },
+        {
+          "name": "Checks: 25/25",
+          "rect": [494.71875, 16, 85.140625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Checks: 25/25</button>",
+          "reachable": true
+        },
+        {
+          "name": "Hide Debug",
+          "rect": [585.859375, 16.5, 36, 26],
+          "hit": "<path d=\"m6 6 12 12\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Controls",
+          "rect": [309, 386.5, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Time & Weather",
+          "rect": [1300.984375, 33, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Character State",
+          "rect": [1301, 708, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "hud-hit-1024x768",
+      "status": "PASS",
+      "result": [
+        {
+          "name": "Collapse Mini Map",
+          "rect": [249, 29, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "PLAYER FOLLOW",
+          "rect": [208.296875, 87, 48.890625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"PLAYER FOLLOW\" title=\"PLAYER FOLLOW\" aria-pressed=\"false\">STATIC</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom in",
+          "rect": [179, 201, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom in\" title=\"Zoom in\">+</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom out",
+          "rect": [231.046875, 201, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom out\" title=\"Zoom out\">−</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset 1×",
+          "rect": [179, 234, 77, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" disabled=\"\">Reset 1×</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset (R)",
+          "rect": [16, 292, 60.515625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Reset (R)\" title=\"Reset (R)\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org",
+          "reachable": true
+        },
+        {
+          "name": "Env",
+          "rect": [80.515625, 292, 52.09375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Debug",
+          "rect": [136.609375, 292, 66.375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Specs",
+          "rect": [206.984375, 292, 61.796875, 27],
+          "hit": "<span class=\"world-desktop-label\">Specs</span>",
+          "reachable": true
+        },
+        {
+          "name": "Fullscreen",
+          "rect": [16, 323, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Elevation: 0.00 m",
+          "rect": [16, 357, 99.125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Elevation: 0.00 m</button>",
+          "reachable": true
+        },
+        {
+          "name": "Solar altitude: -31.4°",
+          "rect": [121.125, 357, 113.296875, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Solar altitude: -31.4°</button>",
+          "reachable": true
+        },
+        {
+          "name": "Hide Env",
+          "rect": [240.421875, 357.5, 36, 26],
+          "hit": "<path d=\"m6 6 12 12\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "FPS: 46",
+          "rect": [16, 392, 54.84375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">FPS: 46</button>",
+          "reachable": true
+        },
+        {
+          "name": "Frame: 21.9 ms",
+          "rect": [76.84375, 392, 88.796875, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Frame: 21.9 ms</button>",
+          "reachable": true
+        },
+        {
+          "name": "Checks: 25/25",
+          "rect": [171.640625, 392, 85.140625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Checks: 25/25</button>",
+          "reachable": true
+        },
+        {
+          "name": "Hide Debug",
+          "rect": [16, 425, 36, 26],
+          "hit": "<path d=\"m6 6 12 12\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Controls",
+          "rect": [309, 474, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Time & Weather",
+          "rect": [958.984375, 33, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Character State",
+          "rect": [959, 554, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Hold or double-tap to latch sprint",
+          "rect": [854, 684, 64, 64],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "JUMP",
+          "rect": [932, 680, 72, 72],
+          "hit": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle>",
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "hud-hit-768x1024",
+      "status": "PASS",
+      "result": [
+        {
+          "name": "Collapse Mini Map",
+          "rect": [249, 29, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "PLAYER FOLLOW",
+          "rect": [208.296875, 87, 48.890625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"PLAYER FOLLOW\" title=\"PLAYER FOLLOW\" aria-pressed=\"false\">STATIC</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom in",
+          "rect": [179, 201, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom in\" title=\"Zoom in\">+</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom out",
+          "rect": [231.046875, 201, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom out\" title=\"Zoom out\">−</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset 1×",
+          "rect": [179, 234, 77, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" disabled=\"\">Reset 1×</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset (R)",
+          "rect": [16, 292, 60.515625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Reset (R)\" title=\"Reset (R)\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org",
+          "reachable": true
+        },
+        {
+          "name": "Env",
+          "rect": [80.515625, 292, 52.09375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Debug",
+          "rect": [136.609375, 292, 66.375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Specs",
+          "rect": [206.984375, 292, 61.796875, 27],
+          "hit": "<span class=\"world-desktop-label\">Specs</span>",
+          "reachable": true
+        },
+        {
+          "name": "Fullscreen",
+          "rect": [16, 323, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Elevation: 0.00 m",
+          "rect": [16, 357, 99.125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Elevation: 0.00 m</button>",
+          "reachable": true
+        },
+        {
+          "name": "Solar altitude: -31.4°",
+          "rect": [121.125, 357, 113.296875, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Solar altitude: -31.4°</button>",
+          "reachable": true
+        },
+        {
+          "name": "Hide Env",
+          "rect": [240.421875, 357.5, 36, 26],
+          "hit": "<path d=\"m6 6 12 12\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "FPS: 48",
+          "rect": [16, 392, 54.828125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">FPS: 48</button>",
+          "reachable": true
+        },
+        {
+          "name": "Frame: 21.0 ms",
+          "rect": [76.828125, 392, 88.765625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Frame: 21.0 ms</button>",
+          "reachable": true
+        },
+        {
+          "name": "Checks: 25/25",
+          "rect": [171.59375, 392, 85.140625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Checks: 25/25</button>",
+          "reachable": true
+        },
+        {
+          "name": "Hide Debug",
+          "rect": [16, 425, 36, 26],
+          "hit": "<path d=\"m6 6 12 12\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Controls",
+          "rect": [309, 474, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Time & Weather",
+          "rect": [702.984375, 33, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Collapse Character State",
+          "rect": [703, 810, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Hold or double-tap to latch sprint",
+          "rect": [598, 940, 64, 64],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "JUMP",
+          "rect": [676, 936, 72, 72],
+          "hit": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle>",
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "hud-hit-390x844",
+      "status": "PASS",
+      "result": [
+        {
+          "name": "Expand Mini Map",
+          "rect": [162, 20, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "PLAYER FOLLOW",
+          "rect": [135.46875, 71, 34.71875, 22],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"PLAYER FOLLOW\" title=\"PLAYER FOLLOW\" aria-pressed=\"false\">STATIC</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom in",
+          "rect": [109, 134.5, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom in\" title=\"Zoom in\">+</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom out",
+          "rect": [139.953125, 134.5, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom out\" title=\"Zoom out\">−</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset (R)",
+          "rect": [12, 205, 60.515625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Reset (R)\" title=\"Reset (R)\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org",
+          "reachable": true
+        },
+        {
+          "name": "Env",
+          "rect": [76.515625, 205, 52.09375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Debug",
+          "rect": [132.609375, 205, 66.375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-pressed=\"false\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"",
+          "reachable": true
+        },
+        {
+          "name": "Specs",
+          "rect": [12, 236, 32, 26],
+          "hit": "<path d=\"M12 16v-4M12 8h.01\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "Fullscreen",
+          "rect": [48, 236, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Elevation: 0.00 m",
+          "rect": [12, 270, 99.125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Elevation: 0.00 m</button>",
+          "reachable": true
+        },
+        {
+          "name": "Solar altitude: -31.4°",
+          "rect": [117.125, 270, 113.296875, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\">Solar altitude: -31.4°</button>",
+          "reachable": true
+        },
+        {
+          "name": "Hide Env",
+          "rect": [12, 303, 36, 26],
+          "hit": "<path d=\"m6 6 12 12\"></path>",
+          "reachable": true
+        },
+        {
+          "name": "Controls\nH",
+          "rect": [12, 337, 112.546875, 29],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=",
+          "reachable": true
+        },
+        {
+          "name": "Expand Time & Weather",
+          "rect": [347, 19, 24, 24],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Expand Character State",
+          "rect": [217.40625, 647, 60.15625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Expand Character State\" title=\"Expand Character State\" aria-expanded=\"false\">",
+          "reachable": true
+        },
+        {
+          "name": "Expand Speed",
+          "rect": [283.5625, 647, 94.4375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Expand Speed\" title=\"Expand Speed\" aria-expanded=\"false\">Speed: 0.00 m/s</but",
+          "reachable": true
+        },
+        {
+          "name": "Hold or double-tap to latch sprint",
+          "rect": [220, 760, 64, 64],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "JUMP",
+          "rect": [298, 756, 72, 72],
+          "hit": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle>",
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "hud-hit-844x390",
+      "status": "PASS",
+      "result": [
+        {
+          "name": "Expand Mini Map",
+          "rect": [166, 25, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "PLAYER FOLLOW",
+          "rect": [124.296875, 77, 48.890625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"PLAYER FOLLOW\" title=\"PLAYER FOLLOW\" aria-pressed=\"false\">STATIC</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom in",
+          "rect": [105, 141.5, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom in\" title=\"Zoom in\">+</button>",
+          "reachable": true
+        },
+        {
+          "name": "Zoom out",
+          "rect": [135.953125, 141.5, 24.953125, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Zoom out\" title=\"Zoom out\">−</button>",
+          "reachable": true
+        },
+        {
+          "name": "Reset (R)",
+          "rect": [16, 208, 54.0625, 24],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Reset (R)\" title=\"Reset (R)\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org",
+          "reachable": true
+        },
+        {
+          "name": "Env",
+          "rect": [74.0625, 208, 46.484375, 24],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button world-active\" aria-pressed=\"true\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg",
+          "reachable": true
+        },
+        {
+          "name": "Debug",
+          "rect": [124.546875, 208, 59.34375, 24],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-pressed=\"false\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"",
+          "reachable": true
+        },
+        {
+          "name": "Specs",
+          "rect": [16, 222, 55.21875, 24],
+          "hit": "<span class=\"world-desktop-label\">Specs</span>",
+          "reachable": true
+        },
+        {
+          "name": "Fullscreen",
+          "rect": [75.21875, 222, 28, 24],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Controls\nH",
+          "rect": [16, 214, 113.640625, 32],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-expanded=\"false\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=",
+          "reachable": true
+        },
+        {
+          "name": "Expand Time & Weather",
+          "rect": [785, 23, 32, 26],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "Expand Character State",
+          "rect": [667.40625, 243, 60.15625, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Expand Character State\" title=\"Expand Character State\" aria-expanded=\"false\">",
+          "reachable": true
+        },
+        {
+          "name": "Expand Speed",
+          "rect": [733.5625, 243, 94.4375, 27],
+          "hit": "<button type=\"button\" class=\"ds-btn world-button \" aria-label=\"Expand Speed\" title=\"Expand Speed\" aria-expanded=\"false\">Speed: 0.00 m/s</but",
+          "reachable": true
+        },
+        {
+          "name": "Hold or double-tap to latch sprint",
+          "rect": [674, 306, 64, 64],
+          "hit": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-lin",
+          "reachable": true
+        },
+        {
+          "name": "JUMP",
+          "rect": [752, 302, 72, 72],
+          "hit": "<circle cx=\"12\" cy=\"12\" r=\"10\"></circle>",
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "source-registry-offline-read",
+      "status": "PASS",
+      "result": "Geographic data sources\n\n6 sources · 5 candidates · 0 metadata verified · 0 approved · 0 ingested · 1 blocked\n\nReal geometry loaded: no. Catalog entries are not loaded datasets. Coverage, rights and accuracy need dataset-specific review.\n\nWikimedia Commons\n\ncommons-ground-reference · Candidate · CRS: Unknown · License: Unknown\n\nCopernicus Data Space\n\ncopernicus-dsm · Candidate · CRS: Unknown · License: Unknown\n\nDa Nang GIS portal\n\ndanang-official-gis · Blocked · CRS: Unknown · License: Unknown\n\nOpenStreetMap contributors\n\nosm-vector · Candidate · CRS: EPSG:4326 · License: ODbL-1.0\n\nCopernicus Data Space\n\nsentinel-imagery · Candidate · CRS: Unknown · License: Unknown\n\nVietnam national spatial data portal\n\nvietnam-official-gis · Candidate · CRS: Unknown · License: Unknown"
+    },
+    {
+      "name": "imagery-inspector",
+      "status": "PASS",
+      "result": {
+        "performance": {
+          "fps": 81.88808628210147,
+          "averageMs": 12.21178861788315,
+          "p95Ms": 20,
+          "frames": 246
+        },
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "82",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n12.2 / 20.1 ms\nDraw calls / triangles\n358 / 77600\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nBalanced / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nImagery alignment\n\nNo verified imagery available. Exploration remains synthetic.\n\nReal-world accuracy NOT VERIFIED. The anchor remains reference-only.\n\nTEST DATA / NOT SATELLITE IMAGERY\n\nEPSG:4326 · 100 × 100 px · nominal GSD 1.1 m\n\nNo authoritative independent checkpoints. Numerical precision does not establish geographic accuracy.\n\nShow alignment preview\nGeo checks: 16/16\nGeographic data sources\n\n6 sources · 5 candidates · 0 metadata verified · 0 approved · 0 ingested · 1 blocked\n\nReal geometry loaded: no. Catalog entries are not loaded datasets. Coverage, rights and accuracy need dataset-specific review.\n\nWikimedia Commons\n\ncommons-ground-reference · Candidate · CRS: Unknown · License: Unknown\n\nCopernicus Data Space\n\ncopernicus-dsm · Candidate · CRS: Unknown · License: Unknown\n\nDa Nang GIS portal\n\ndanang-official-gis · Blocked · CRS: Unknown · License: Unknown\n\nOpenStreetMap contributors\n\nosm-vector · Candidate · CRS: EPSG:4326 · License: ODbL-1.0\n\nCopernicus Data Space\n\nsentinel-imagery · Candidate · CRS: Unknown · License: Unknown\n\nVietnam national spatial data portal\n\nvietnam-official-gis · Candidate · CRS: Unknown · License: Unknown\n\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        }
+      }
+    },
+    {
+      "name": "map-follow-zoom-guide",
+      "status": "PASS",
+      "result": {
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "25",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "FPS: 25\nFrame: 39.9 ms\nChecks: 25/25"
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "24",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "FPS: 24\nFrame: 42.0 ms\nChecks: 25/25"
+        }
+      }
+    },
+    {
+      "name": "debug-repeated-toggle",
+      "status": "PASS",
+      "result": {
+        "runtimeStatus": "ready",
+        "playerX": "0",
+        "playerY": "0",
+        "playerZ": "0",
+        "playerState": "IDLE",
+        "speed": "0",
+        "cameraDistance": "5.4",
+        "cameraYaw": "0",
+        "geometries": "152",
+        "textures": "5",
+        "fps": "22",
+        "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+        "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+        "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n45.7 / 90.3 ms\nDraw calls / triangles\n352 / 77126\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nBalanced / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+      }
+    },
+    {
+      "name": "camera-orbit-zoom",
+      "status": "PASS",
+      "result": {
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "21",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n46.7 / 90.3 ms\nDraw calls / triangles\n352 / 77126\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "4.809037472114674",
+          "cameraYaw": "0.08",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "21",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "PLAYER FOLLOW\nPLAYER FOLLOW\n1.4×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n48.0 / 90.3 ms\nDraw calls / triangles\n350 / 76838\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nPerformance / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        }
+      }
+    },
+    {
+      "name": "fixture-inspect-information-beacon",
+      "status": "PASS",
+      "result": [
+        {
+          "direction": "KeyA",
+          "dialog": "Survey Monolith (Test Fixture)\n\nLocal axis marker (-Z/+X) at X -3.20 m, Z -4.50 m. Interaction range: 4.60 m from player root.\n\nInteractions: 1\nClose (ESC)"
+        },
+        {
+          "direction": "KeyD",
+          "dialog": "Weather Telemetry Station\n\nSynthetic station at X +4.20 m, Z -4.20 m. Displays current Da Nang weather and solar data. Interaction range: 4.80 m.\n\n03:39:45 · 25°C · Overcast\n\nSolar altitude: -31.3°\n\nInteractions: 1\nClose (ESC)"
+        },
+        {
+          "direction": null,
+          "feedback": "Calibration beacon activated"
+        }
+      ]
+    },
+    {
+      "name": "viewport-1366x768",
+      "status": "PASS",
+      "result": {
+        "viewport": [1366, 768],
+        "debug": [338, 16, 320, 353.265625],
+        "overflow": false,
+        "scrollable": true,
+        "geo": true
+      }
+    },
+    {
+      "name": "viewport-768x1024",
+      "status": "PASS",
+      "result": {
+        "viewport": [768, 1024],
+        "debug": [224, 80, 320, 471.03125],
+        "overflow": false,
+        "scrollable": true,
+        "geo": true
+      }
+    },
+    {
+      "name": "viewport-1024x768",
+      "status": "PASS",
+      "result": {
+        "viewport": [1024, 768],
+        "debug": [352, 80, 320, 353.265625],
+        "overflow": false,
+        "scrollable": true,
+        "geo": true
+      }
+    },
+    {
+      "name": "viewport-390x844",
+      "status": "PASS",
+      "result": {
+        "viewport": [390, 844],
+        "debug": [12, 110, 320, 337.59375],
+        "overflow": false,
+        "scrollable": true,
+        "geo": true
+      }
+    },
+    {
+      "name": "viewport-844x390",
+      "status": "PASS",
+      "result": {
+        "viewport": [844, 390],
+        "debug": [102, 80, 320, 179.390625],
+        "overflow": false,
+        "scrollable": true,
+        "geo": true
+      }
+    },
+    {
+      "name": "touch-joystick",
+      "status": "PASS",
+      "result": {
+        "start": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "95",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        },
+        "moved": {
+          "runtimeStatus": "ready",
+          "playerX": "2.4103636905858753e-16",
+          "playerY": "0",
+          "playerZ": "-3.9364226359209264",
+          "playerState": "WALK",
+          "speed": "3.4540288735645035",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "91",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        },
+        "stopped": {
+          "runtimeStatus": "ready",
+          "playerX": "2.601206452379959e-16",
+          "playerY": "0",
+          "playerZ": "-4.248092518089328",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "100",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        }
+      }
+    },
+    {
+      "name": "touch-pinch-sprint-jump",
+      "status": "PASS",
+      "result": {
+        "pinch": {
+          "runtimeStatus": "ready",
+          "playerX": "2.601206452379959e-16",
+          "playerY": "0",
+          "playerZ": "-4.248092518089328",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "4.1527349108252",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "94",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        },
+        "running": {
+          "runtimeStatus": "ready",
+          "playerX": "5.486775391103218e-16",
+          "playerY": "-0.06583690787700072",
+          "playerZ": "-8.960584218932874",
+          "playerState": "RUN",
+          "speed": "8.599008192361364",
+          "cameraDistance": "4.150000611313175",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "87",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        },
+        "jumping": {
+          "runtimeStatus": "ready",
+          "playerX": "6.273827689539854e-16",
+          "playerY": "0.8576939174168905",
+          "playerZ": "-10.245938165857996",
+          "playerState": "JUMP",
+          "speed": "0",
+          "cameraDistance": "4.150000000121192",
+          "cameraYaw": "0",
+          "geometries": "153",
+          "textures": "5",
+          "fps": "91",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−"
+        }
+      }
+    },
+    {
+      "name": "vietnamese-F3",
+      "status": "PASS",
+      "result": {
+        "snapshot": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "80",
+          "geo": "Geo Core: SẴN SÀNG · reference-only\n\nWGS84 / ECEF / ENU · +X Đông / +Y Lên / -Z Bắc\n\nEllipsoid WGS84 · anchor giả định 0m, không phải MSL đã đo\n\nVỊ TRÍ MÔ PHỎNG — CHƯA XÁC MINH ĐỊA LÝ\n\nVĩ độ suy ra\n16.0544000°\nKinh độ suy ra\n108.2022000°\nĐộ cao ellipsoid mô phỏng\n0.000 m\nHướng la bàn\n180.0°",
+          "map": "TOÀN CẢNH THẾ GIỚI\nCỐ ĐỊNH\n1.0×\n-Z\n-X\n+X\n+Z\n+\n−",
+          "debug": "THÔNG SỐ CHẨN ĐOÁN (F3)\nKhung hình TB / P95\n12.5 / 20.1 ms\nLệnh vẽ / tam giác\n307 / 72756\nHình học / kết cấu\n152 / 5\nChất lượng / tỷ lệ điểm ảnh\nCân bằng / 1.00\nGeo Core: SẴN SÀNG · reference-only\n\nWGS84 / ECEF / ENU · +X Đông / +Y Lên / -Z Bắc\n\nEllipsoid WGS84 · anchor giả định 0m, không phải MSL đã đo\n\nVỊ TRÍ MÔ PHỎNG — CHƯA XÁC MINH ĐỊA LÝ\n\nVĩ độ suy ra\n16.0544000°\nKinh độ suy ra\n108.2022000°\nĐộ cao ellipsoid mô phỏng\n0.000 m\nHướng la bàn\n180.0°\nCăn chỉnh ảnh địa lý\nKiểm tra Geo: 16/16\nNguồn dữ liệu địa lý\n\n6 nguồn · 5 ứng viên · 0 xác minh metadata · 0 được duyệt · 0 đã nhập · 1 bị chặn\n\nChưa tải hình học địa lý thật. Mục trong danh mục chưa phải dataset được tải. Phạm vi, quyền và độ chính xác cần được duyệt theo dataset.\n\nWikimedia Commons\n\ncommons-ground-reference · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nCopernicus Data Space\n\ncopernicus-dsm · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nDa Nang GIS portal\n\ndanang-official-gis · Bị chặn · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nOpenStreetMap contributors\n\nosm-vector · Ứng viên · CRS: EPSG:4326 · Giấy phép: ODbL-1.0\n\nCopernicus Data Space\n\nsentinel-imagery · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nVietnam national spatial data portal\n\nvietnam-official-gis · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nTự chẩn đoán\nDIAG-01: Múi giờ Đà Nẵng\nĐẠT\nDIAG-02: Quỹ đạo và giai đoạn mặt trời\nĐẠT\nDIAG-03: Ánh xạ thời tiết WMO\nĐẠT\nDIAG-04: Chuẩn hóa dữ liệu lịch sử\nĐẠT\nDIAG-05: Giới hạn cần điều khiển\nĐẠT\nDIAG-06: Hướng dẫn điều khiển thích ứng\nĐẠT\nDIAG-07: Thu phóng và phạm vi bản đồ\nĐẠT\nDIAG-08: Vị trí và hướng trên bản đồ\nĐẠT\nDIAG-09: Tương tác và làm nổi bật\nĐẠT\nThử cô lập nhập liệu: gõ WASD hoặc Space"
+        },
+        "sources": "Nguồn dữ liệu địa lý\n\n6 nguồn · 5 ứng viên · 0 xác minh metadata · 0 được duyệt · 0 đã nhập · 1 bị chặn\n\nChưa tải hình học địa lý thật. Mục trong danh mục chưa phải dataset được tải. Phạm vi, quyền và độ chính xác cần được duyệt theo dataset.\n\nWikimedia Commons\n\ncommons-ground-reference · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nCopernicus Data Space\n\ncopernicus-dsm · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nDa Nang GIS portal\n\ndanang-official-gis · Bị chặn · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nOpenStreetMap contributors\n\nosm-vector · Ứng viên · CRS: EPSG:4326 · Giấy phép: ODbL-1.0\n\nCopernicus Data Space\n\nsentinel-imagery · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ\n\nVietnam national spatial data portal\n\nvietnam-official-gis · Ứng viên · CRS: Chưa rõ · Giấy phép: Chưa rõ"
+      }
+    },
+    {
+      "name": "weather-real-failure",
+      "status": "PASS",
+      "result": "03:40\n--°C"
+    },
+    {
+      "name": "health-route",
+      "status": "PASS",
+      "result": {
+        "status": 200,
+        "body": {
+          "status": "ok",
+          "timestamp": "2026-11-17T20:40:35.115Z",
+          "uptime": 112,
+          "version": "0.1.0",
+          "environment": "development"
+        }
+      }
+    },
+    {
+      "name": "health-pages-and-root",
+      "status": "PASS",
+      "result": [
+        {
+          "path": "/health",
+          "language": "en",
+          "heading": "System health",
+          "title": "System health | Da Nang 3D Open World",
+          "description": "Live status of this application."
+        },
+        {
+          "path": "/vi/health",
+          "language": "vi",
+          "heading": "Tình trạng hệ thống",
+          "title": "Tình trạng hệ thống | Da Nang 3D Open World",
+          "description": "Trạng thái trực tiếp của ứng dụng."
+        },
+        {
+          "path": "/",
+          "language": "en",
+          "title": "Da Nang 3D Open World — Interactive Simulation"
+        }
+      ]
+    },
+    {
+      "name": "focus-dialog-reduced-motion",
+      "status": "PASS",
+      "result": {
+        "before": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "39",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n25.9 / 39.9 ms\nDraw calls / triangles\n352 / 77126\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nBalanced / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "after": {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "38",
+          "geo": "Geo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "DEBUG TELEMETRY (F3)\nFrame avg / P95\n26.2 / 30.1 ms\nDraw calls / triangles\n352 / 77126\nGeometries / textures\n152 / 5\nQuality / pixel ratio\nBalanced / 1.00\nGeo Core: READY · reference-only\n\nWGS84 / ECEF / ENU · +X East / +Y Up / -Z North\n\nWGS84 ellipsoid · anchor 0m reference assumption, not measured MSL\n\nSIMULATED POSITION — NOT GEO-VERIFIED\n\nDerived latitude\n16.0544000°\nDerived longitude\n108.2022000°\nSimulated ellipsoid height\n0.000 m\nCompass heading\n180.0°\nImagery alignment\nGeo checks: 16/16\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPASSED\nInput isolation test: type WASD or Space"
+        },
+        "duration": "0s"
+      }
+    },
+    {
+      "name": "context-loss-restore",
+      "status": "PASS",
+      "result": {
+        "lost": false,
+        "error": 0
+      }
+    },
+    {
+      "name": "spa-lifecycle",
+      "status": "PASS",
+      "result": [
+        {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "37",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "FPS: 37\nFrame: 27.3 ms\nChecks: 25/25"
+        },
+        {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "36",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "FPS: 36\nFrame: 27.7 ms\nChecks: 25/25"
+        },
+        {
+          "runtimeStatus": "ready",
+          "playerX": "0",
+          "playerY": "0",
+          "playerZ": "0",
+          "playerState": "IDLE",
+          "speed": "0",
+          "cameraDistance": "5.4",
+          "cameraYaw": "0",
+          "geometries": "152",
+          "textures": "5",
+          "fps": "37",
+          "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+          "debug": "FPS: 37\nFrame: 26.8 ms\nChecks: 25/25"
+        }
+      ]
+    },
+    {
+      "name": "known-interaction-cooldown",
+      "status": "PASS"
+    },
+    {
+      "name": "known-pointer-lock-second-click",
+      "status": "PASS"
+    }
+  ],
+  "events": [
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "14360.871",
+        "timestamp": 18031.504414,
+        "type": "XHR",
+        "errorText": "",
+        "canceled": false,
+        "blockedReason": "inspector"
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "14360.872",
+        "timestamp": 18033.10245,
+        "type": "XHR",
+        "errorText": "",
+        "canceled": false,
+        "blockedReason": "inspector"
+      }
+    },
+    {
+      "method": "Network.loadingFailed",
+      "params": {
+        "requestId": "14360.873",
+        "timestamp": 18035.103476,
+        "type": "XHR",
+        "errorText": "",
+        "canceled": false,
+        "blockedReason": "inspector"
+      }
+    },
+    {
+      "method": "Runtime.consoleAPICalled",
+      "params": {
+        "type": "log",
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Lost."
+          }
+        ],
+        "executionContextId": 22,
+        "timestamp": 1794948044134.706,
+        "stackTrace": {
+          "callFrames": [
+            {
+              "functionName": "O",
+              "scriptId": "34",
+              "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+              "lineNumber": 0,
+              "columnNumber": 983
+            },
+            {
+              "functionName": "eH",
+              "scriptId": "34",
+              "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+              "lineNumber": 341,
+              "columnNumber": 25102
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "Runtime.consoleAPICalled",
+      "params": {
+        "type": "log",
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Restored."
+          }
+        ],
+        "executionContextId": 22,
+        "timestamp": 1794948044309.276,
+        "stackTrace": {
+          "callFrames": [
+            {
+              "functionName": "O",
+              "scriptId": "34",
+              "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+              "lineNumber": 0,
+              "columnNumber": 983
+            },
+            {
+              "functionName": "eV",
+              "scriptId": "34",
+              "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+              "lineNumber": 341,
+              "columnNumber": 25156
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg?icon.19y2j-mbj8p8e.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0hx0zafxmjo62.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/?_rsc=1m8VbuWM9-Uw_K5X",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0hx0zafxmjo62.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi?_rsc=jzG0fWaIKkwj1XGm",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi?_rsc=Wzvz2l1Zr8smnprM",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vi?_rsc=6WD_1J-g0QWMbcH1",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/health?_rsc=6wAGqfVmmikKrF_G",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0hx0zafxmjo62.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/health",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/?_rsc=1m8VbuWM9-Uw_K5X",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en?_rsc=JXW-d2GQmh35i_eo",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/?_rsc=InensK8cBxwtzYEb",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/?_rsc=YieuodQ5Vu5yr6n-",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/?_rsc=JXW-d2GQmh35i_eo",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/health?_rsc=6wAGqfVmmikKrF_G",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en?_rsc=JXW-d2GQmh35i_eo",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/?_rsc=JXW-d2GQmh35i_eo",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/health?_rsc=6wAGqfVmmikKrF_G",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en?_rsc=JXW-d2GQmh35i_eo",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/?_rsc=JXW-d2GQmh35i_eo",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/en",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistMonoVF-s.p.1lv5tp2fpjxdz.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/media/GeistVF-s.p.0e569l9b0bre8.woff",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1_r-8meudw96p.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1y6kyxbp0zfni.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/077wnki1qpz8q.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/23nxquhz_qyhu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2pk217evto3tl.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2lmhozi1bvkwn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3qc3mgmd1i4wa.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/07szz6tflq3of.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1duze3vm01s7l.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/20wgn2j6hflqr.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0-pee2sgfl6zc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/41u89-gnov7-n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/3juu9xne_smf7.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/350babile7iz-.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/24q720ofgk8cg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2-kp8q0tavzrg.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2fv7mq4k51z19.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/0tyw3spj42136.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1m5l2yr4kjihj.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/manifest.webmanifest",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2j0hso4a8fwx9.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/1-wcgyz21mu4_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/_next/static/chunks/2o5q57qbxfdt0.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/api/weather",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/icon.svg",
+      "method": "GET"
+    }
+  ],
+  "screenshots": [
+    "after-1920x1080.png",
+    "after-debug.png",
+    "after-hud-1920x1080.png",
+    "after-hud-1366x768.png",
+    "after-hud-1024x768.png",
+    "after-hud-768x1024.png",
+    "after-hud-390x844.png",
+    "after-hud-844x390.png",
+    "after-source-registry.png",
+    "after-imagery-inspector.png",
+    "after-1366x768-debug.png",
+    "after-768x1024-debug.png",
+    "after-1024x768-debug.png",
+    "after-390x844-debug.png",
+    "after-844x390-debug.png",
+    "after-vi-debug.png",
+    "after-context-restored.png"
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/132.0.6834.110",
+    "revision": "@df453a35f099772fdb954e33551388add2ca3cde",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/132.0.0.0 Safari/537.36",
+    "jsVersion": "13.2.1010152"
+  },
+  "gpu": {
+    "vendor": "Google Inc. (Intel)",
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009B41) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "dpr": 1,
+    "viewport": [1920, 1080],
+    "heap": 16318154
+  },
+  "networkNegativeStart": 0,
+  "networkNegativeEnd": 3,
+  "contextNegativeStart": 3,
+  "contextNegativeEnd": 5,
+  "cooldown": {
+    "before": {
+      "expanded": false,
+      "compact": true
+    },
+    "after": {
+      "expanded": false,
+      "compact": true
+    }
+  },
+  "pointerNegativeStart": 5,
+  "pointerNegativeEnd": 5,
+  "pointerErrors": [],
+  "finished": "2026-11-17T20:41:09.669Z"
+}

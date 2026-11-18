@@ -10,4 +10,4 @@ Trang chủ `src/app/[locale]/page.tsx` giữ `generateMetadata` và `buildMetad
 
 Runtime retry tạo một generation mới, dispose instance cũ trước instance mới và áp dụng lại map, weather, dialog state. Reset chỉ đặt lại gameplay/camera; giữ pointer-lock và quality telemetry đồng bộ với browser và renderer.
 
-Rollback các sửa đổi của batch này bằng diff theo file, không đụng user changes hay archive. Không có persisted-data migration. Browser instances độc lập giữa các deployments. Geographic streaming và Product Phase 11 chưa bắt đầu; không gọi nền tảng này là thành phố đã kiểm chứng địa lý.
+Rollback các sửa đổi của batch này bằng diff theo file, không đụng user changes hay archive. Không có persisted-data migration. Browser instances độc lập giữa các deployments. Geographic streaming chưa triển khai; Phase 11 audit và Phase 12–14 foundations có báo cáo riêng với giới hạn nghiệm thu. Không gọi nền tảng này là thành phố đã kiểm chứng địa lý.

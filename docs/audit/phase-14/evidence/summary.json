@@ -1,0 +1,162 @@
+{
+  "node": "v22.23.5",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/132.0.6834.110",
+    "revision": "@df453a35f099772fdb954e33551388add2ca3cde",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/132.0.0.0 Safari/537.36",
+    "jsVersion": "13.2.1010152"
+  },
+  "gpu": {
+    "vendor": "Google Inc. (Intel)",
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00009B41) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "dpr": 1,
+    "viewport": [1920, 1080],
+    "heap": 16318154
+  },
+  "afterChecks": 32,
+  "afterFailures": [],
+  "releaseChecks": 7,
+  "releaseFailures": [],
+  "storyChecks": 3,
+  "storyEvents": [],
+  "baselineIdle": {
+    "fps": 16.784597663320717,
+    "averageMs": 59.57843137254902,
+    "p95Ms": 80.10000000000036,
+    "frames": 51
+  },
+  "afterIdle": {
+    "fps": 20.89136490249664,
+    "averageMs": 47.86666666669032,
+    "p95Ms": 70,
+    "frames": 63
+  },
+  "afterDebug": {
+    "fps": 19.284479319058395,
+    "averageMs": 51.85517241379308,
+    "p95Ms": 70.09999999999854,
+    "frames": 58
+  },
+  "afterFixture": {
+    "fps": 81.88808628210147,
+    "averageMs": 12.21178861788315,
+    "p95Ms": 20,
+    "frames": 246
+  },
+  "releaseProfile": {
+    "performance": {
+      "fps": 24.177789553870102,
+      "averageMs": 41.36027397260274,
+      "p95Ms": 60.099999999999454,
+      "frames": 73
+    },
+    "topSelfSamples": [
+      {
+        "function": "(idle)",
+        "url": "",
+        "hits": 1101
+      },
+      {
+        "function": "(program)",
+        "url": "",
+        "hits": 62
+      },
+      {
+        "function": "is",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 54
+      },
+      {
+        "function": "intersectTriangle",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 34
+      },
+      {
+        "function": "_computeIntersections",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 24
+      },
+      {
+        "function": "getVertexPosition",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 24
+      },
+      {
+        "function": "fromBufferAttribute",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 13
+      },
+      {
+        "function": "",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 12
+      },
+      {
+        "function": "renderBufferDirect",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 9
+      },
+      {
+        "function": "update",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 8
+      },
+      {
+        "function": "aM",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 8
+      },
+      {
+        "function": "eZ",
+        "url": "http://localhost:3192/_next/static/chunks/2wlzr4th_k0qz.js",
+        "hits": 7
+      }
+    ],
+    "snapshot": {
+      "runtimeStatus": "ready",
+      "playerX": "0",
+      "playerY": "0",
+      "playerZ": "0",
+      "playerState": "IDLE",
+      "speed": "0",
+      "cameraDistance": "5.4",
+      "cameraYaw": "0",
+      "geometries": "152",
+      "textures": "5",
+      "fps": "23",
+      "map": "WORLD OVERVIEW\nSTATIC\n1.0×\n-Z\n-X\n+X\n+Z\nPosition (XZ)\n0.00 m, 0.00 m\nSpan: 144 m\n+\n−\nReset 1×",
+      "debug": "FPS: 23\nFrame: 43.2 ms\nChecks: 25/25"
+    }
+  },
+  "spaCycles": [
+    {
+      "geometries": "152",
+      "textures": "5"
+    },
+    {
+      "geometries": "152",
+      "textures": "5"
+    },
+    {
+      "geometries": "152",
+      "textures": "5"
+    }
+  ],
+  "normalUnexpectedEvents": [],
+  "bundle": {
+    "files": 23,
+    "uncompressedJsBytes": 1821168,
+    "baseline": null,
+    "comparable": false
+  },
+  "matrix": {
+    "AUTOMATED_PASS": 47,
+    "BROWSER_PASS": 15,
+    "NOT_VERIFIED": 2,
+    "MANUAL_PASS": 6,
+    "FAIL": 1,
+    "BLOCKED": 1
+  }
+}

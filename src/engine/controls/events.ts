@@ -37,7 +37,9 @@ export function bindWorldInput(
   const release = () => {
     pressed.clear();
     sync();
+    const mouse = mouseId;
     mouseId = null;
+    if (mouse !== null && canvas.hasPointerCapture?.(mouse)) canvas.releasePointerCapture(mouse);
     pinch = null;
     for (const id of touches.keys()) {
       if (canvas.hasPointerCapture?.(id)) canvas.releasePointerCapture(id);
@@ -122,12 +124,14 @@ export function bindWorldInput(
   }) as EventListener);
   listen(document, 'pointerlockchange', () => {
     state.isPointerLocked = document.pointerLockElement === canvas;
+    release();
   });
   listen(canvas, 'pointerdown', ((event: PointerEvent) => {
     if (options.blocked() || event.button > 0) return;
     canvas.focus();
     options.device(event.pointerType === 'touch' ? 'touch' : 'mouse');
-    canvas.setPointerCapture?.(event.pointerId);
+    // Pointer Lock owns mouse motion; capture is invalid while any element holds the lock.
+    if (!document.pointerLockElement) canvas.setPointerCapture?.(event.pointerId);
     if (event.pointerType === 'mouse') {
       mouseId = event.pointerId;
       return;

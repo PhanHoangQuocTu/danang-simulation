@@ -4,7 +4,9 @@ import { createPlayerState } from '@/modules/WorldExplorer/runtime/world';
 
 const cleanups: (() => void)[] = [];
 afterEach(() => {
+  Reflect.deleteProperty(document, 'pointerLockElement');
   for (const cleanup of cleanups.splice(0)) cleanup();
+  Reflect.deleteProperty(document, 'pointerLockElement');
   document.body.replaceChildren();
 });
 function setup() {
@@ -42,6 +44,31 @@ function setup() {
 const key = (type: string, code: string, target: EventTarget = window) =>
   target.dispatchEvent(new KeyboardEvent(type, { code, bubbles: true, cancelable: true }));
 describe('input lifecycle', () => {
+  it('IMG-48 skips capture on a locked second click and releases mouse drag on blur', () => {
+    const { canvas, binding } = setup();
+    const capture = vi.fn();
+    const release = vi.fn();
+    canvas.setPointerCapture = capture;
+    canvas.hasPointerCapture = () => true;
+    canvas.releasePointerCapture = release;
+    const down = () => {
+      const event = new Event('pointerdown');
+      Object.defineProperties(event, {
+        pointerType: { value: 'mouse' },
+        pointerId: { value: 1 },
+        button: { value: 0 },
+      });
+      canvas.dispatchEvent(event);
+    };
+    Object.defineProperty(document, 'pointerLockElement', { configurable: true, value: canvas });
+    down();
+    expect(capture).not.toHaveBeenCalled();
+    Reflect.deleteProperty(document, 'pointerLockElement');
+    down();
+    expect(capture).toHaveBeenCalledWith(1);
+    binding.release();
+    expect(release).toHaveBeenCalledWith(1);
+  });
   it('orbits and tilts the camera from the keyboard without moving the player', () => {
     const { state, keyboard } = setup();
     const pitch = state.cameraPitch;

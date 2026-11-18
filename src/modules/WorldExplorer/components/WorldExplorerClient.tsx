@@ -10,7 +10,7 @@ import {
   Interactions,
   HudButton,
 } from './WorldHud';
-import '../styles/world.css';
+import '@/styles/world-explorer.css';
 
 export default function WorldExplorerClient() {
   const model = useWorldExplorer();
@@ -42,12 +42,12 @@ export default function WorldExplorerClient() {
         <div className='world-top-left'>
           <MiniMap model={model} />
           <InformationPanels model={model} />
+          <div className='world-bottom-left'>
+            <MovementGuide model={model} />
+          </div>
         </div>
         <div className='world-top-right'>
           <TimeWeather model={model} />
-        </div>
-        <div className='world-bottom-left'>
-          <MovementGuide model={model} />
         </div>
         <div className='world-bottom-right'>
           <CharacterStatus model={model} />

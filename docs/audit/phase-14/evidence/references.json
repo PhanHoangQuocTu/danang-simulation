@@ -1,0 +1,69 @@
+[
+  {
+    "url": "https://gdal.org/en/stable/user/raster_data_model.html",
+    "checkedAt": "2026-11-17T20:34:26.803Z",
+    "status": 200,
+    "bytes": 55698,
+    "excerpts": [
+      "ons API Tutorials How to develop GDAL? Community Sponsors How to contribute? FAQ Glossary License Thanks GDAL GDAL documentation &raquo; User oriented documentation &raquo; Raster Data Model Edit on GitHub Next Previous Raster Data Model  This document attempts to describe th",
+      "T(4) coefficients are zero, and the GT(1) is pixel width, and GT(5) is pixel height. The (GT(0),GT(3)) position is the top left corner of the top left pixel of the raster. Note that the pixel/line coordinates in the above are from (0.0,0.0) at the top left corner of the top ",
+      " in pixels and lines. This is the same as that defined for the dataset, if this is a full resolution band. A datatype (GDALDataType). One of UInt8 (since 3.13, also available as Byte in all versions), Int8, UInt16, Int16, UInt32, Int32, UInt64, Int64, Float16, Float32, Float64, a",
+      "nd] range. A color table , if available. A raster attribute table , if available. Reduced resolution overviews (pyramids) , if available. Color Table  A color table consists of zero or more color entries described in C by the following structure: typedef struct { /* gray , red ,",
+      "underlying raster, but the geographic region covered by overviews is the same as the full resolution band. The overviews are used to display reduced resolution overviews more quickly than could be done by reading all the full resolution data and downsampling. Bands also have a Ha",
+      "sArbitraryOverviews property which is TRUE if the raster can be read at any resolution efficiently but with no distinct overview levels. This applies to some FFT encoded images, or images pulled through gateways where downsampling can be done efficiently at the remo"
+    ]
+  },
+  {
+    "url": "https://gdal.org/en/stable/drivers/raster/gtiff.html",
+    "checkedAt": "2026-11-17T20:34:27.531Z",
+    "status": 200,
+    "bytes": 126887,
+    "excerpts": [
+      "datasets MFF -- Vexcel MFF Raster MFF2 -- Vexcel MFF2 Image MiraMon Raster MrSID -- Multi-resolution Seamless Image Database MSG -- Meteosat Second Generation MSGN -- Meteosat Second Generation (MSG) Native Archive Format (.nat) NDF -- NLAPS Data Format NetCDF: Network Common Dat",
+      "ser API Tutorials How to develop GDAL? Community Sponsors How to contribute? FAQ Glossary License Thanks GDAL GDAL documentation &raquo; Raster drivers &raquo; GTiff -- GeoTIFF File Format Edit on GitHub Next Previous GTiff -- GeoTIFF File Format  Driver short name GTiff Driv",
+      "y masks contain 1 sample of 1-bit data. Although the TIFF specification allows for higher resolutions for the internal transparency mask, the GeoTIFF driver only supports internal transparency masks of the same dimensions as the main image. Transparency masks of internal overview",
+      "e dataset to update is a (Geo)TIFF file, in which case the compression method of its full resolution layer will be used. JPEG should generally only be used with Byte data (8 bit per channel). Better compression for RGB images can be obtained by using the PHOTOMETRIC=YCBCR colorsp",
+      "y 16 and a power-of-two value between 64 and 4096. By default, the block size of the full resolution layer (if tiled) is used, otherwise it defaults to 128. This can also be set with the GDAL_TIFF_OVR_BLOCKSIZE configuration option. NUM_THREADS=[&lt;integer&gt;​/​ALL_CPUS]: Defau",
+      "_SOFTWARE TIFFTAG_DATETIME TIFFTAG_ARTIST TIFFTAG_HOSTCOMPUTER TIFFTAG_COPYRIGHT TIFFTAG_XRESOLUTION TIFFTAG_YRESOLUTION TIFFTAG_RESOLUTIONUNIT TIFFTAG_MINSAMPLEVALUE (read only) TIFFTAG_MAXSAMPLEVALUE (read only) GEO_METADATA : This tag may be used for embedding XML-encoded inst",
+      "REA_OR_POINT (&quot;AREA_OR_POINT&quot;) metadata item is stored in the GeoTIFF key RasterPixelIsPoint for GDALGeoTIFF or GeoTIFF profiles. XMP metadata can be extracted from the file, and will be reported as XML raw content in the xml:XMP metadata domain. EXIF metadata can be extr",
+      " Can be set to TRUE to revert back to the behavior of ancient GDAL versions regarding how PixelIsPoint is interpreted w.r.t geotransform. See RFC 33: GTiff - Fixing PixelIsPoint Interpretation for more details. GTIFF_REPORT_COMPD_CS=[TRUE​/​FALSE]: Can be set to TRUE to avoid strip"
+    ]
+  },
+  {
+    "url": "https://dataspace.copernicus.eu/terms-and-conditions",
+    "checkedAt": "2026-11-17T20:34:27.997Z",
+    "status": 200,
+    "bytes": 78559,
+    "excerpts": [
+      "onitoring, disaster response, and climate analysis. Copernicus Contributing Missions High-resolution data complements Sentinel for better Earth observation coverage. Federated Data Sets New datasets from European providers enrich the Copernicus Data Space Ecosystem. Complementary",
+      " Access complementary data collections that enhance Earth observation workflows with high-resolution imagery and curated datasets. STAC Browser Discover and search Earth observation data in the comprehensive and searchable STAC-compliant catalog. ANALYSIS APIs Use APIs like openE",
+      " web portal for non-commercial use. ESA and T-Systems do not grant the right to resell or redistribute any information, documents, images or material from its web portal or to compile or create derivative works from material on its web portal. Copyright of information, images, doc",
+      "personal information. By using the forum the user accepts that all user contributions are licensed under a Creative Commons Attribution-ShareAlike 4.0 International ( CC BY-SA 4.0 ) License. Related news November 17, 2026 Copernicus Sentinel-2C Data Unavailability on 17 Novemb"
+    ]
+  },
+  {
+    "url": "https://dataspace.copernicus.eu/data-collections/copernicus-sentinel-missions/sentinel-2",
+    "checkedAt": "2026-11-17T20:34:32.664Z",
+    "status": 200,
+    "bytes": 87282,
+    "excerpts": [
+      "onitoring, disaster response, and climate analysis. Copernicus Contributing Missions High-resolution data complements Sentinel for better Earth observation coverage. Federated Data Sets New datasets from European providers enrich the Copernicus Data Space Ecosystem. Complementary",
+      " Access complementary data collections that enhance Earth observation workflows with high-resolution imagery and curated datasets. STAC Browser Discover and search Earth observation data in the comprehensive and searchable STAC-compliant catalog. ANALYSIS APIs Use APIs like openE",
+      "ng of changes on the Earth's surface. Explore Sentinel-2 data A European wide-swath, high-resolution, multi-spectral imaging mission Sentinel-2 is a European mission that utilizes wide-swath, high-resolution, multi-spectral imaging. Dedicated to Europe’s Copernicus programme, the",
+      "ectral bands, including: four bands at 10 m six bands at 20 m three bands at 60 m spatial resolution The orbital swath width is 290 km. The Sentinel-2 twin satellites provide image data that largely contribute to existing and ongoing multispectral observations. These satellites s"
+    ]
+  },
+  {
+    "url": "https://www.usgs.gov/centers/eros/data-citation",
+    "checkedAt": "2026-11-17T20:34:32.947Z",
+    "status": 403,
+    "bytes": 919,
+    "excerpts": []
+  },
+  {
+    "url": "https://www.ogc.org/standards/stac/",
+    "checkedAt": "2026-11-17T20:34:33.167Z",
+    "status": 200,
+    "error": "Error: Documentation byte budget exceeded"
+  }
+]

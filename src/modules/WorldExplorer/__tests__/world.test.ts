@@ -123,6 +123,11 @@ describe('scene composition and browser runtime', () => {
     window.dispatchEvent(new KeyboardEvent('keydown', { code: 'KeyW' }));
     for (let time = 16; time <= 1200; time += 16) frame(time);
     expect(snapshots.at(-1)!.z).toBeLessThan(-1);
+    const now = vi.spyOn(performance, 'now').mockReturnValue(1000);
+    expect(runtime.interact().status).toBe('executed');
+    now.mockReturnValue(1100);
+    expect(runtime.interact()).toEqual({ status: 'rejected', reason: 'cooldown' });
+    now.mockRestore();
     expect(queue.size).toBe(1);
     const camera = renderer.render.mock.calls.at(-1)![1] as { aspect: number };
     expect(camera.aspect).toBe(800 / 600);
@@ -143,11 +148,12 @@ describe('scene composition and browser runtime', () => {
     Reflect.deleteProperty(document, 'pointerLockElement');
     runtime.setMap(1, true);
     runtime.joystick({ x: 0, y: 1, magnitude: 1, active: true });
-    for (let time = 4650; time <= 10000; time += 50) frame(time);
+    // A short follow interval establishes the same map/lifecycle state without redundant coverage-instrumented frames.
+    for (let time = 4650; time <= 6000; time += 50) frame(time);
     runtime.setMap(1, false);
-    frame(10050);
+    frame(6050);
     const captures = renderer.captureOverview.mock.calls.length;
-    for (let time = 10100; time <= 10500; time += 50) frame(time);
+    for (let time = 6100; time <= 6500; time += 50) frame(time);
     expect(renderer.captureOverview.mock.calls.length - captures).toBeGreaterThan(3);
     const lost = new Event('webglcontextlost', { cancelable: true });
     canvas.dispatchEvent(lost);
@@ -155,7 +161,7 @@ describe('scene composition and browser runtime', () => {
     expect(queue.size).toBe(0);
     canvas.dispatchEvent(new Event('webglcontextrestored'));
     expect(queue.size).toBe(1);
-    frame(11000);
+    frame(7000);
     expect(snapshots.at(-1)!.speed).toBeLessThan(5);
     runtime.dispose();
     runtime.dispose();

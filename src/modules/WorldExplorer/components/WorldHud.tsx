@@ -14,6 +14,8 @@ import { useGeoTelemetry } from '../hooks/useGeoTelemetry';
 import { computeMiniMapVisibleSpanMeters } from '@/engine/spatial/minimap';
 import { GAME_CONFIG } from '@/engine/core/const';
 import { danangSourceRegistry } from '@/worlds/danang/data-sources';
+import { DANANG_GEO_REFERENCE } from '@/worlds/danang/georeference';
+import { ImageryInspector } from './ImageryInspector';
 import {
   Compass,
   ChevronDown,
@@ -539,6 +541,7 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
                   </dl>
                 )}
               </div>
+              <ImageryInspector registry={danangSourceRegistry} reference={DANANG_GEO_REFERENCE.reference} />
               <details>
                 <summary>
                   {t('geoDiagnostics')}: {geoDiagnostics.filter((check) => check.passed).length}/{geoDiagnostics.length}

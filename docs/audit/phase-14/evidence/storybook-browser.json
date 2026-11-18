@@ -1,0 +1,503 @@
+{
+  "mode": "storybook",
+  "node": "v22.23.5",
+  "started": "2026-11-17T21:00:16.016Z",
+  "checks": [
+    {
+      "name": "no-approved-imagery-1366",
+      "status": "PASS",
+      "result": "Imagery alignment\n\nNo verified imagery available. Exploration remains synthetic.\n\nReal-world accuracy NOT VERIFIED. The anchor remains reference-only.\n\nTEST DATA / NOT SATELLITE IMAGERY\n\nEPSG:4326 · 100 × 100 px · nominal GSD 1.1 m\n\nNo authoritative independent checkpoints. Numerical precision does not establish geographic accuracy.\n\nHide alignment preview\nN ↑ · E →\n100 × 100 synthetic pixel grid"
+    },
+    {
+      "name": "no-approved-imagery-390",
+      "status": "PASS",
+      "result": "Imagery alignment\n\nNo verified imagery available. Exploration remains synthetic.\n\nReal-world accuracy NOT VERIFIED. The anchor remains reference-only.\n\nTEST DATA / NOT SATELLITE IMAGERY\n\nEPSG:4326 · 100 × 100 px · nominal GSD 1.1 m\n\nNo authoritative independent checkpoints. Numerical precision does not establish geographic accuracy.\n\nHide alignment preview\nN ↑ · E →\n100 × 100 synthetic pixel grid"
+    },
+    {
+      "name": "rejected-asset-390",
+      "status": "PASS",
+      "result": "Imagery alignment\n\nPreview requires current source approval, licensed local bytes and valid registration.\n\nReal-world accuracy NOT VERIFIED. The anchor remains reference-only.\n\nHide alignment preview\n\nPreview unavailable. Check the approved asset and metadata, then retry.\n\nRetry"
+    }
+  ],
+  "events": [],
+  "requests": [
+    {
+      "url": "http://localhost:3192/iframe.html?id=modules-worldexplorer-imagery--no-approved-imagery&viewMode=story",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vite-inject-mocker-entry.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/iframe-CJioaz_d.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/rolldown-runtime-2s6bX4vc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/preload-helper-0TbE23ZY.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/react-C7Icd8fu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/chunk-7PIQR4A3-BRrgxE8n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/chunk-IMSF75WX-mRJxbqao.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/esm-C2oGAgJS.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/react-dom-qBXZUrFy.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/jsx-runtime-BxfXuubT.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/chunk-UAWMPV5J-Dsq9DvcU.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/utils-DcZBOCDd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-D_OpuV9i.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-B0agaa99.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BDazaY1u.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-Cp023XQn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BpWrIoGY.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-r86zl3cz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-B0_5lTDF.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-D3CacQlx.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-C9t7Cshp.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-P5aEaGBE.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-DM7xvX2L.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BtnfnuYA.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-Ch4r59Bc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/floating-ui.react-dom-BDsy8TX8.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BPgTGWBw.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/iframe-B0d2Xn--.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/iframe-BaSE0WOI.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/index.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/favicon.ico",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/ImageryInspector.stories-B1FUhl9R.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/world-explorer-DhiSeke1.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/hooks-B2tZX3bU.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/use-mobile-BB6e8wyp.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/schemas-BlgLiO46.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/world-explorer-mFnqljx_.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/react-18-mQvaX4pw.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/axe-C7pk9Kxd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/iframe.html?id=modules-worldexplorer-imagery--no-approved-imagery&viewMode=story",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vite-inject-mocker-entry.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/iframe-CJioaz_d.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/rolldown-runtime-2s6bX4vc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/preload-helper-0TbE23ZY.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/react-C7Icd8fu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/chunk-7PIQR4A3-BRrgxE8n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/chunk-IMSF75WX-mRJxbqao.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/esm-C2oGAgJS.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/react-dom-qBXZUrFy.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/jsx-runtime-BxfXuubT.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/chunk-UAWMPV5J-Dsq9DvcU.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/utils-DcZBOCDd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-D_OpuV9i.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-B0agaa99.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BDazaY1u.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-Cp023XQn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BpWrIoGY.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-r86zl3cz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-B0_5lTDF.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-D3CacQlx.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-C9t7Cshp.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-P5aEaGBE.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-DM7xvX2L.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BtnfnuYA.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-Ch4r59Bc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/floating-ui.react-dom-BDsy8TX8.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BPgTGWBw.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/iframe-B0d2Xn--.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/iframe-BaSE0WOI.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/index.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/ImageryInspector.stories-B1FUhl9R.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/world-explorer-DhiSeke1.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/hooks-B2tZX3bU.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/use-mobile-BB6e8wyp.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/schemas-BlgLiO46.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/world-explorer-mFnqljx_.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/react-18-mQvaX4pw.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/axe-C7pk9Kxd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/iframe.html?id=modules-worldexplorer-imagery--rejected-asset&viewMode=story",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/vite-inject-mocker-entry.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/iframe-CJioaz_d.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/rolldown-runtime-2s6bX4vc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/preload-helper-0TbE23ZY.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/react-C7Icd8fu.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/chunk-7PIQR4A3-BRrgxE8n.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/chunk-IMSF75WX-mRJxbqao.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/esm-C2oGAgJS.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/react-dom-qBXZUrFy.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/jsx-runtime-BxfXuubT.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/chunk-UAWMPV5J-Dsq9DvcU.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/utils-DcZBOCDd.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-D_OpuV9i.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-B0agaa99.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BDazaY1u.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-Cp023XQn.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BpWrIoGY.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-r86zl3cz.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-B0_5lTDF.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-D3CacQlx.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-C9t7Cshp.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-P5aEaGBE.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-DM7xvX2L.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BtnfnuYA.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-Ch4r59Bc.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/floating-ui.react-dom-BDsy8TX8.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/dist-BPgTGWBw.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/iframe-B0d2Xn--.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/iframe-BaSE0WOI.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/index.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/ImageryInspector.stories-B1FUhl9R.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/world-explorer-DhiSeke1.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/hooks-B2tZX3bU.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/use-mobile-BB6e8wyp.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/schemas-BlgLiO46.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/world-explorer-mFnqljx_.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/react-18-mQvaX4pw.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3192/assets/axe-C7pk9Kxd.js",
+      "method": "GET"
+    }
+  ],
+  "screenshots": [
+    "storybook-no-approved-imagery-1366.png",
+    "storybook-no-approved-imagery-390.png",
+    "storybook-rejected-asset-390.png"
+  ],
+  "finished": "2026-11-17T21:00:20.713Z"
+}

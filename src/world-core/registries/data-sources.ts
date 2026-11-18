@@ -105,14 +105,16 @@ export const sourceSchema = provenanceSchema
     if (source.captureDate && source.verifiedDate && source.captureDate > source.verifiedDate)
       fail('Invalid source dates');
     if (source.reviewStatus === 'approved-for-ingestion' || source.reviewStatus === 'ingested') {
-      if (ingestionDenials(source, 'download').length)
+      const imagery = source.category === 'satellite-imagery' || source.category === 'ortho-imagery';
+      if ((imagery ? dataUseDenials(source, 'download') : ingestionDenials(source, 'download')).length)
         fail('Approval requires complete rights, CRS, extent and review');
       if (source.confidence === 'S') fail('Synthetic source cannot receive production approval');
     }
   });
 export type DataSource = z.infer<typeof sourceSchema>;
 
-function ingestionDenials(source: DataSource, use: DataUse): string[] {
+/** Shared source governance; each format adapter owns its supported CRS, datum and payload checks. */
+export function dataUseDenials(source: DataSource, use: DataUse): string[] {
   const reasons: string[] = [];
   if (!['approved-for-ingestion', 'ingested'].includes(source.reviewStatus)) reasons.push('source-not-approved');
   const rights = source.rights;
@@ -140,10 +142,15 @@ function ingestionDenials(source: DataSource, use: DataUse): string[] {
     !source.geographic.coverageEvidence
   )
     reasons.push('metadata-incomplete');
+  if (use === 'download' && !source.capabilities.download) reasons.push('download-unavailable');
+  return reasons;
+}
+
+function ingestionDenials(source: DataSource, use: DataUse): string[] {
+  const reasons = dataUseDenials(source, use);
   if (source.horizontalCrs !== 'EPSG:4326') reasons.push('requires-conversion');
   if (source.category !== 'vector-osm') reasons.push('unsupported-dataset-kind');
   if (source.category !== 'vector-osm' && !source.verticalDatum) reasons.push('vertical-datum-unknown');
-  if (use === 'download' && !source.capabilities.download) reasons.push('download-unavailable');
   return reasons;
 }
 

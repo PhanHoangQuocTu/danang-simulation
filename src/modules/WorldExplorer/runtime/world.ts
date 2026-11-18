@@ -539,18 +539,20 @@ export function createWorldRuntime(bindings: WorldBindings) {
         mapDirty = true;
       },
       interact() {
-        if (blocked) return null;
+        if (blocked) return { status: 'rejected' as const, reason: 'blocked' as const };
         selectTarget();
         const now = performance.now();
-        if (target.status !== 'eligible' || !target.targetId || now - lastInteraction < 320) return null;
+        if (!target.targetId) return { status: 'no-target' as const };
+        if (target.status !== 'eligible') return { status: 'rejected' as const, reason: 'ineligible' as const };
+        if (now - lastInteraction < 320) return { status: 'rejected' as const, reason: 'cooldown' as const };
         const entry = registry.get(target.targetId);
-        if (!entry) return null;
+        if (!entry) return { status: 'rejected' as const, reason: 'missing' as const };
         lastInteraction = now;
         if (entry.definition.type === 'activate') registry.toggleActivated(entry.definition.id);
         else registry.recordInteraction(entry.definition.id);
         mapDirty = true;
         selectTarget();
-        return { ...target };
+        return { status: 'executed' as const, target: { ...target } };
       },
       dispose() {
         if (disposed) return;

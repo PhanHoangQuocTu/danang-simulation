@@ -1,5 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+import { NextIntlClientProvider } from 'next-intl';
+import { messages } from '@/messages';
 import { HudButton, InformationPanels } from '../components/WorldHud';
 import type { WorldExplorerModel } from '../hooks/useWorldExplorer';
 
@@ -13,7 +15,11 @@ describe('HUD button semantics', () => {
       snapshot: null,
       setPanels: vi.fn(),
     } as unknown as WorldExplorerModel;
-    render(<InformationPanels model={model} />);
+    render(
+      <NextIntlClientProvider locale='en' messages={messages.en}>
+        <InformationPanels model={model} />
+      </NextIntlClientProvider>
+    );
     expect(screen.getByText('geoWarning')).toBeInTheDocument();
     expect(screen.getByText('geoHeightAssumption')).toBeInTheDocument();
     expect(screen.getByText('geoReference')).toBeInTheDocument();

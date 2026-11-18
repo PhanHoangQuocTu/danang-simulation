@@ -1,0 +1,14 @@
+// Audit-only static server. No production route or dependency.
+const http=require('node:http'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve('storybook-static');
+const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.woff2':'font/woff2'};
+http.createServer((req,res)=>{
+  try {
+    if(req.method!=='GET'){res.writeHead(405).end();return;}
+    const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+    // Direct iframe navigation requests the conventional favicon; serve the actual generated Storybook icon.
+    const file=path.resolve(root,'.'+(pathname==='/'?'/index.html':pathname==='/favicon.ico'?'/favicon.svg':pathname));
+    if(!file.startsWith(root+path.sep)){res.writeHead(403).end();return;}
+    fs.readFile(file,(error,data)=>{if(error){res.writeHead(404).end();return;}res.setHeader('Content-Type',mime[path.extname(file)]||'application/octet-stream');res.end(data);});
+  }catch{res.writeHead(400).end();}
+}).listen(3192,'127.0.0.1');

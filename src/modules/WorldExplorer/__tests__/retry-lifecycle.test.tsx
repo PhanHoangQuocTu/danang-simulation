@@ -20,6 +20,8 @@ function Harness() {
       <div ref={model.cone} />
       <span ref={model.edge} />
       <output>{model.status}</output>
+      <div data-testid='env-mode'>{model.panels.environmentPanel}</div>
+      <div data-testid='dialog-open'>{String(model.dialog !== null)}</div>
       <button type='button' onClick={model.retry}>
         Retry
       </button>
@@ -55,6 +57,23 @@ beforeEach(() => {
   mocks.fetch.mockRejectedValue(new Error('offline'));
 });
 describe('runtime retry lifecycle', () => {
+  it('IMG-49 consumes a cooldown rejection without toggling Env', async () => {
+    const runtime = instance();
+    runtime.interact.mockReturnValue({ status: 'rejected', reason: 'cooldown' });
+    mocks.create.mockImplementation((bindings: WorldBindings) => {
+      bindings.status('ready');
+      return runtime;
+    });
+    await act(async () => {
+      render(<Harness />, { wrapper });
+    });
+    const before = screen.getByTestId('env-mode').textContent;
+    act(() => (mocks.create.mock.calls[0][0] as WorldBindings).command('interact'));
+    expect(screen.getByTestId('env-mode')).toHaveTextContent(before!);
+    expect(screen.getByTestId('dialog-open')).toHaveTextContent('false');
+    act(() => (mocks.create.mock.calls[0][0] as WorldBindings).command('environment'));
+    expect(screen.getByTestId('env-mode').textContent).not.toBe(before);
+  });
   it('ignores callbacks from the disposed Strict Mode mount within the same generation', async () => {
     const lifetimes: ReturnType<typeof instance>[] = [];
     mocks.create.mockImplementation((bindings: WorldBindings) => {

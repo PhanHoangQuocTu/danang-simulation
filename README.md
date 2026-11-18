@@ -2,7 +2,7 @@
 
 Ứng dụng Next.js 16 tích hợp mô phỏng Three.js Phase 1–10: nhân vật góc nhìn thứ ba, địa hình thử nghiệm tổng hợp, Mini Map, tương tác, đồng hồ Đà Nẵng và thời tiết Open-Meteo.
 
-Mở `/` hoặc `/vi` để khám phá. Địa hình hiện tại là synthetic local meters, không phải bản dựng địa lý thành phố đã đo đạc. Product Phase 11 chưa bắt đầu.
+Mở `/` hoặc `/vi` để khám phá. Địa hình hiện tại là synthetic local meters, không phải bản dựng địa lý thành phố đã đo đạc. Phase 12–14 có Geospatial Core, source registry và imagery alignment inspector; chưa có ảnh hoặc GCP thật được duyệt. Xem [báo cáo Phase 14](PHASE_14_IMPLEMENTATION_REPORT.md) cho trạng thái **PARTIAL** và giới hạn.
 
 Xem [báo cáo browser QA và ảnh so sánh Phase 10](docs/migration/evidence/PHASE_1_TO_10_BROWSER_QA_REPORT.md) cho kiểm thử Chrome/Edge, sáu kích thước viewport, kết quả đo và giới hạn đã xác minh.
 
@@ -46,7 +46,7 @@ Trên Windows host gặp lỗi weather `UNABLE_TO_VERIFY_LEAF_SIGNATURE`, Node 2
 - HUD lấy mẫu 10 Hz; clock/solar 1 Hz; interaction targeting 20 Hz. Mini Map dùng viewport/scissor của cùng renderer, không tạo renderer thứ hai.
 - `src/engine/` giữ khả năng dùng lại. `src/worlds/danang/` giữ scene và placements tổng hợp. Catalog và PrefabRegistry quản lý shared assets và zone rollback.
 - Weather BFF có fixed upstream, timeout 10 giây, giới hạn 256 KiB, strict validation và cache kết quả hợp lệ 15 phút. Lỗi refresh giữ quan trắc cũ và đánh dấu stale.
-- Không có GIS đã kiểm chứng, first-person, city streaming hoặc Phase 11 mới. FPS và browser coverage được ghi theo bằng chứng thực trong báo cáo migration.
+- Chưa có geographic world đã kiểm chứng, first-person hoặc city streaming. F3 có telemetry địa lý tham chiếu và preview footprint TEST DATA; không phải ảnh vệ tinh thật. FPS và browser coverage được ghi theo bằng chứng thực trong báo cáo Phase 14.
 - Giữ providers, Query, Zustand, i18n, UI, SEO, Health, Docker, Nginx và CI.
 
 Xem [báo cáo integration và bằng chứng hiện tại](docs/migration/INTEGRATION_REPORT_2026_11_17.md), [báo cáo migration](docs/migration/MIGRATION_REPORT.md), [vòng đời engine](docs/architecture/ENGINE_LIFECYCLE.md) và [API patterns](docs/API_INTEGRATIONS.md). Browser coverage không thay pixel-perfect reference comparison hoặc GPU profiling dài hạn.

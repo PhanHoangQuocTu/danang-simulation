@@ -18,7 +18,7 @@ import {
 } from './WorldHud';
 import { normalizeLiveWeather } from '@/integrations/weather/validation';
 import { INITIAL_INTERACTABLE_FIXTURES } from '@/worlds/danang/zones/fixtures';
-import '../styles/world.css';
+import '@/styles/world-explorer.css';
 
 function Preview({
   variant = 'expanded',
@@ -150,12 +150,12 @@ function Preview({
         <div className='world-top-left'>
           <MiniMap model={model} />
           <InformationPanels model={model} />
+          <div className='world-bottom-left'>
+            <MovementGuide model={model} />
+          </div>
         </div>
         <div className='world-top-right'>
           <TimeWeather model={model} />
-        </div>
-        <div className='world-bottom-left'>
-          <MovementGuide model={model} />
         </div>
         <div className='world-bottom-right'>
           <CharacterStatus model={model} />
