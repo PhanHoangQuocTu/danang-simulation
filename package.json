@@ -1,7 +1,7 @@
 {
-  "name": "frontend-boilerplate",
+  "name": "da-nang-3d-open-world",
   "version": "0.1.0",
-  "description": "Production-ready Next.js frontend boilerplate",
+  "description": "Da Nang 3D Open World — interactive 3D exploration of Da Nang (Next.js)",
   "license": "MIT",
   "private": true,
   "engines": {

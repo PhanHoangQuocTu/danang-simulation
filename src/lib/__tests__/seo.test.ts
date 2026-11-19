@@ -9,7 +9,10 @@ import {
 } from '../seo';
 
 vi.mock('@/hooks/useTranslationsServer', () => ({
-  useTranslationsServer: async () => ({ t: (key: string) => (key === 'siteName' ? 'Boilerplate' : key), locale: 'en' }),
+  useTranslationsServer: async () => ({
+    t: (key: string) => (key === 'siteName' ? 'Da Nang 3D Open World' : key),
+    locale: 'en',
+  }),
 }));
 
 describe('seo helpers', () => {
@@ -43,11 +46,11 @@ describe('seo helpers', () => {
 
     expect(metadata.alternates?.canonical).toBe('http://localhost:3000/vi/health');
     expect(metadata.openGraph).toMatchObject({
-      title: 'Health | Boilerplate',
+      title: 'Health | Da Nang 3D Open World',
       locale: 'vi_VN',
-      siteName: 'Boilerplate',
+      siteName: 'Da Nang 3D Open World',
     });
-    expect(metadata.twitter).toMatchObject({ card: 'summary_large_image', title: 'Health | Boilerplate' });
+    expect(metadata.twitter).toMatchObject({ card: 'summary_large_image', title: 'Health | Da Nang 3D Open World' });
   });
 
   it('keeps the absolute title untouched', async () => {

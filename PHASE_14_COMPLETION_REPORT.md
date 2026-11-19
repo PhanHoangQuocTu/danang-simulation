@@ -42,10 +42,10 @@ Chi tiết: `PHASE_11_AUDIT_REPORT.md`, `PHASE_12_IMPLEMENTATION_REPORT.md`,
 | `pnpm lint` | PASS, exit 0, 403 files | `docs/audit/phase-14-completion/evidence/lint.txt` |
 | `pnpm format:check` | PASS, exit 0, 402 files | `evidence/format.txt` |
 | `pnpm type-check` | PASS, exit 0 | `evidence/type-check.txt` |
-| `pnpm test` | PASS, exit 0, 41 files / 236 tests | `evidence/test.txt` |
+| `pnpm test` | PASS, exit 0, 41 files / 236 tests | `evidence/test-coverage-before-timeout-fix.txt` (235 passed + 1 failed = 236 total, trước khi sửa timeout) |
 | `pnpm build` | PASS, exit 0, 14 static pages | `evidence/build.txt` |
-| `pnpm build-storybook` | exit 0 nhưng **FAIL zero-warning gate**: Vite PLUGIN_TIMINGS (react-docgen transform 38%, 6.2s, 4809 calls) | `evidence/build-storybook.txt` |
-| `pnpm test:coverage --maxWorkers=2` | **FAIL, exit 1**: 1 test timeout (xem §3.4) | `evidence/test-coverage-rerun.txt` |
+| `pnpm build-storybook` | exit 0 nhưng **FAIL zero-warning gate**: Vite PLUGIN_TIMINGS (react-docgen transform 38%, 6.2s, 4809 calls) | `evidence/build-storybook-before.txt` |
+| `pnpm test:coverage --maxWorkers=2` | **FAIL, exit 1**: 1 test timeout (xem §3.4) | `evidence/test-coverage-before-timeout-fix.txt` |
 | `pnpm audit --prod` | PASS, exit 0, 0 vulnerabilities | `evidence/audit-prod.txt` |
 | `pnpm audit` (full) | exit 1: 2 moderate, dev-only (glob, minimatch) | `evidence/audit-all.json` |
 | `pnpm peers check` | exit 1: tsconfck@3.1.6 muốn TypeScript ^5, repo dùng 7.0.2 | §4.5 |
@@ -70,7 +70,7 @@ tắt log hay nâng ngưỡng warning.
 
 - Sau sửa: `pnpm build-storybook` exit 0, Vite built in **12.85s**,
   **0 lần xuất hiện PLUGIN_TIMINGS** (grep = 0).
-- Evidence: `evidence/build-storybook-final.txt`.
+- Evidence: `evidence/build-storybook.txt`.
 
 ### 3.2 Nâng cấp patch/minor an toàn — PASS
 
@@ -101,7 +101,7 @@ không giảm số frame, không bỏ assertion nào.
 - Sau sửa: `pnpm test:coverage --maxWorkers=2` exit 0, **41 files /
   237 tests pass**, coverage 76.81% statements / 65.12% branches /
   61.26% functions / 78.62% lines (Phase 14: 76.71 / 64.68 / 61.26 / 78.51).
-- Evidence: `evidence/test-coverage-final.txt`.
+- Evidence: `evidence/test-coverage.txt`.
 
 ### 3.5 HUD overlap ở viewport thấp/hẹp — PASS (browser thật, trước/sau)
 
@@ -286,3 +286,33 @@ không thêm dependency mới, không thêm env/secret, không commit
    Storybook Docs (§3.1) hay muốn giữ react-docgen và chấp nhận
    PLUGIN_TIMINGS warning.
 5. Kế hoạch Phase 15 (chưa có spec — không triển khai trong phiên này).
+
+## 8. Verification 2026-11-19 — kiểm chứng lại các blocker (§4.1, §4.4, §4.6)
+
+Xem chi tiết: `docs/audit/verification-2026-11-19/VERIFICATION_REPORT.md`.
+
+- **Standalone 127.0.0.1 — vẫn FAIL.** Probe lại trên build mới
+  (Next 16.4.6): `/` và `/health` 307 loop, `/vi` 200;
+  `localhost` và `0.0.0.0` đều 200. Upstream #94745 vẫn open, PR sửa
+  #95917 vẫn open chưa merge, latest stable vẫn 16.4.6, không có
+  16.4.7 hay 16.5.0 stable. Không nâng cấp gì cho bug này.
+- **Weather 429 — đã sửa code và kiểm chứng live.** BFF nay phân biệt
+  429: `provider.ts` đọc `Retry-After`, `route.ts` trả 429
+  `WEATHER_RATE_LIMITED` + header `Retry-After`, `client.ts` không
+  retry vào 429 (5 test mới; tổng 42 files / 242 tests). Kiểm chứng
+  live: `/api/weather` trả 429 `retry-after: 3600` trong khi Open-Meteo
+  trực tiếp cũng 429 "Daily API request limit exceeded" (quota IP dùng
+  chung đã hết). Quan trắc live vẫn **NOT VERIFIED** — cần mạng có
+  quota riêng hoặc chờ quota reset.
+- **FPS 60 / thiết bị vật lý / Docker / GPU — vẫn NOT VERIFIED.**
+  VM này không có Docker, không có GPU; `/opt/meta-chromium` bị chặn
+  khởi động; headless shell 141 thì world không khởi tạo (0 canvas sau
+  8s, "Preparing 3D world…" — nguyên nhân chưa xác định, không tuyên
+  bố). Đã thêm `fps-probe.mjs` (từ chối báo PASS giả: không canvas thì
+  báo FAIL, SwiftShader thì NOT_APPLICABLE) cùng checklist thiết bị
+  vật lý và Docker để chạy trên máy thật.
+- **File mâu thuẫn đã sửa:** `docs/PHASE_STATUS.md` (ngày 17/11 →
+  19/11, câu stale về Storybook/advisory, nhãn Migration Milestone),
+  `package.json` (tên `da-nang-3d-open-world`), `src/app/icon.svg`,
+  `LICENSE`, `src/lib/__tests__/seo.test.ts`, `README.md` (phiên bản
+  next-intl/Storybook), và các citation sai trong §2 của báo cáo này.

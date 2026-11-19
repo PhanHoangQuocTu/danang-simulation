@@ -1,8 +1,19 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-const mocks = vi.hoisted(() => ({ value: {} as unknown, error: false, calls: 0, cache: [] as unknown[] }));
+const mocks = vi.hoisted(() => {
+  class RateLimited extends Error {
+    retryAfterSeconds: number | null;
+    constructor(retryAfterSeconds: number | null = null) {
+      super('Weather upstream rate limited');
+      this.name = 'WeatherUpstreamRateLimitedError';
+      this.retryAfterSeconds = retryAfterSeconds;
+    }
+  }
+  return { value: {} as unknown, error: false, rateLimited: false, calls: 0, cache: [] as unknown[], RateLimited };
+});
 vi.mock('../provider', () => ({
   fetchWeatherObservation: async () => {
     mocks.calls++;
+    if (mocks.rateLimited) throw new mocks.RateLimited(90);
     if (mocks.error) throw new Error('private network details');
     return mocks.value;
   },
@@ -17,6 +28,7 @@ import { GET } from '@/app/api/weather/route';
 beforeEach(() => {
   mocks.value = {};
   mocks.error = false;
+  mocks.rateLimited = false;
   mocks.calls = 0;
 });
 describe('weather BFF', () => {
@@ -32,6 +44,18 @@ describe('weather BFF', () => {
     const response = await GET(new Request('http://localhost/api/weather?url=https://example.com'));
     expect(response.status).toBe(400);
     expect(mocks.calls).toBe(0);
+  });
+  it('returns 429 with Retry-After when the upstream is rate limited', async () => {
+    mocks.rateLimited = true;
+    const response = await GET(new Request('http://localhost/api/weather'));
+    expect(response.status).toBe(429);
+    expect(response.headers.get('Retry-After')).toBe('90');
+    expect(await response.json()).toEqual({
+      status: 429,
+      code: 'WEATHER_RATE_LIMITED',
+      message: 'Weather service rate limited, try again later',
+    });
+    expect(response.headers.get('Cache-Control')).toBe('no-store');
   });
   it('returns normalized unavailable response without leaking upstream details', async () => {
     mocks.error = true;

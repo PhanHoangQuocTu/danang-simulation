@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { isWeatherStale } from '../freshness';
 import { normalizeLiveWeather } from '../validation';
 import { fetchWeatherObservation, WEATHER_BODY_LIMIT } from '../provider';
+import { WeatherUpstreamRateLimitedError } from '../errors';
 
 const sampleObservation = () => ({
   current: {
@@ -70,6 +71,20 @@ describe('live weather boundary', () => {
     expect(url.startsWith('https://api.open-meteo.com/v1/forecast?')).toBe(true);
     expect(options.redirect).toBe('error');
     expect(options.cache).toBe('no-store');
+  });
+  it('turns an upstream 429 into a typed rate-limit error with Retry-After', async () => {
+    const fetcher = vi.fn(
+      async () => new Response('{"error":true}', { status: 429, headers: { 'Retry-After': '120' } })
+    );
+    const error = await fetchWeatherObservation(fetcher).catch((caught: unknown) => caught);
+    expect(error).toBeInstanceOf(WeatherUpstreamRateLimitedError);
+    expect((error as WeatherUpstreamRateLimitedError).retryAfterSeconds).toBe(120);
+  });
+  it('turns an upstream 429 without Retry-After into a rate-limit error with null delay', async () => {
+    const fetcher = vi.fn(async () => new Response('{"error":true}', { status: 429 }));
+    const error = await fetchWeatherObservation(fetcher).catch((caught: unknown) => caught);
+    expect(error).toBeInstanceOf(WeatherUpstreamRateLimitedError);
+    expect((error as WeatherUpstreamRateLimitedError).retryAfterSeconds).toBeNull();
   });
   it('enforces response size even without a content-length header', async () => {
     const oversized = new Response(new Uint8Array(WEATHER_BODY_LIMIT + 1));

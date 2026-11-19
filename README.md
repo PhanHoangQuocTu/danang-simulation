@@ -16,10 +16,10 @@ Xem [báo cáo browser QA và ảnh so sánh Phase 10](docs/migration/evidence/P
 | State | Zustand (+ `auto-zustand-selectors-hook`), cookie-persisted session store |
 | Forms and validation | React Hook Form, Zod v4, `@hookform/resolvers` |
 | Decimal arithmetic | bignumber.js for precision-sensitive decimal calculations |
-| i18n | next-intl v4.15: `en` and `vi`, typed message keys, common client and server translation hooks |
+| i18n | next-intl v4.15.1: `en` and `vi`, typed message keys, common client and server translation hooks |
 | SEO | Per-page metadata, canonical and hreflang, Open Graph and Twitter images, JSON-LD, sitemap, robots, web manifest |
 | Theming | First-party ThemeProvider (light, dark, system, no flash on load) |
-| Components workbench | Storybook 10.6 (`@storybook/nextjs-vite`): theme and locale switchers, a11y addon. Auto prop tables (react-docgen) are disabled because the docgen transform tripped Vite PLUGIN_TIMINGS on every build; see `.storybook/main.ts`. |
+| Components workbench | Storybook 10.6.7 (`@storybook/nextjs-vite`): theme and locale switchers, a11y addon. Auto prop tables (react-docgen) are disabled because the docgen transform tripped Vite PLUGIN_TIMINGS on every build; see `.storybook/main.ts`. |
 | Quality | Biome (lint and format), Husky, lint-staged, commitlint (Conventional Commits) |
 | Testing | Vitest 5, Testing Library, jsdom |
 | Ops | Multi-stage Docker image, docker-compose with nginx, GitHub Actions, GitLab CI |

@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "tool": "fps-probe.mjs",
+  "url": "http://localhost:3195/",
+  "viewport": "1024x768",
+  "durationSeconds": 0,
+  "warmupSeconds": 8,
+  "renderer": null,
+  "softwareRenderer": true,
+  "status": "FAIL (world did not initialize — no canvas after warmup)",
+  "canvases": 0,
+  "bodyText": "Da Nang 3D Open World\n\nExplore a synthetic test environment with a third-person character, Da Nang time, astronomical sunlight, and live weather. This scene is not surveyed city geometry.\n\nPreparing 3",
+  "frames": 0,
+  "consoleErrors": [],
+  "timestampUtc": "2026-11-19T10:37:54.401Z"
+}

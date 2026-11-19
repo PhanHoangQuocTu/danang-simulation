@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import { requestInternal } from '@/api/axios';
 import type { NormalizedWeatherState } from './type';
 
@@ -16,6 +18,10 @@ export async function fetchWeather(signal: AbortSignal): Promise<NormalizedWeath
       return data;
     } catch (error) {
       signal.throwIfAborted();
+      // A rate-limited BFF (429) must not be retried: retrying only burns
+      // the shared upstream quota further. Surface it immediately so the
+      // hook keeps the last observation marked stale instead.
+      if (axios.isAxiosError(error) && error.response?.status === 429) throw error;
       if (attempt === 2) throw error;
       await new Promise<void>((resolve, reject) => {
         const abort = () => {

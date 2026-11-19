@@ -1,5 +1,6 @@
 import { buildDaNangOpenMeteoUrl } from './service';
 import { normalizeLiveWeather } from './validation';
+import { WeatherUpstreamRateLimitedError } from './errors';
 
 export const WEATHER_BODY_LIMIT = 256 * 1024;
 /** Fixed provider and query. No user-supplied URL, location, credentials, or redirect target. */
@@ -13,7 +14,17 @@ export async function fetchWeatherObservation(fetcher: typeof fetch = fetch) {
       cache: 'no-store',
       headers: { Accept: 'application/json' },
     });
-    if (!response.ok) throw new Error('Weather upstream unavailable');
+    if (!response.ok) {
+      if (response.status === 429) {
+        // Preserve the upstream Retry-After so callers can back off instead
+        // of retrying into a rate-limited upstream. Clamp to 1s..1h.
+        const raw = response.headers.get('retry-after');
+        const parsed = raw === null ? Number.NaN : Number(raw);
+        const retryAfterSeconds = Number.isFinite(parsed) ? Math.min(Math.max(Math.floor(parsed), 1), 3600) : null;
+        throw new WeatherUpstreamRateLimitedError(retryAfterSeconds);
+      }
+      throw new Error('Weather upstream unavailable');
+    }
     if (Number(response.headers.get('content-length')) > WEATHER_BODY_LIMIT)
       throw new Error('Weather payload exceeds limit');
     if (!response.body) throw new Error('Weather payload missing');
