@@ -1,0 +1,261 @@
+{
+  "base": "http://localhost:3195",
+  "at": "2026-11-19T09:34:57.199Z",
+  "results": [
+    {
+      "viewport": "1024x768",
+      "total": 21,
+      "pass": 17,
+      "covered": [
+        {
+          "label": "FPS: 60",
+          "status": "COVERED",
+          "atPoint": "STRONG.",
+          "x": 16,
+          "y": 392,
+          "w": 59,
+          "h": 27
+        },
+        {
+          "label": "Frame: 16.6 ms",
+          "status": "COVERED",
+          "atPoint": "STRONG.",
+          "x": 81,
+          "y": 392,
+          "w": 95,
+          "h": 27
+        },
+        {
+          "label": "Checks: 25/25",
+          "status": "COVERED",
+          "atPoint": "STRONG.",
+          "x": 182,
+          "y": 392,
+          "w": 89,
+          "h": 27
+        },
+        {
+          "label": "Hide Debug",
+          "status": "COVERED",
+          "atPoint": "SMALL.world-sky",
+          "x": 16,
+          "y": 425,
+          "w": 36,
+          "h": 26
+        }
+      ],
+      "offscreen": [],
+      "consoleEvents": [
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        "502 http://localhost:3195/api/weather",
+        "502 http://localhost:3195/api/weather",
+        "502 http://localhost:3195/api/weather"
+      ]
+    },
+    {
+      "viewport": "844x390",
+      "total": 18,
+      "pass": 9,
+      "covered": [
+        {
+          "label": "Reset 1×",
+          "status": "COVERED",
+          "atPoint": "STRONG.",
+          "x": 179,
+          "y": 234,
+          "w": 84,
+          "h": 27
+        },
+        {
+          "label": "Reset (R)",
+          "status": "COVERED",
+          "atPoint": "DIV.world-wasd",
+          "x": 16,
+          "y": 292,
+          "w": 63,
+          "h": 27
+        },
+        {
+          "label": "Env",
+          "status": "COVERED",
+          "atPoint": "DIV.world-wasd",
+          "x": 83,
+          "y": 292,
+          "w": 54,
+          "h": 27
+        },
+        {
+          "label": "Debug",
+          "status": "COVERED",
+          "atPoint": "LI.",
+          "x": 142,
+          "y": 292,
+          "w": 67,
+          "h": 27
+        },
+        {
+          "label": "Specs",
+          "status": "COVERED",
+          "atPoint": "LI.",
+          "x": 213,
+          "y": 292,
+          "w": 65,
+          "h": 27
+        },
+        {
+          "label": "Fullscreen",
+          "status": "COVERED",
+          "atPoint": "LI.",
+          "x": 16,
+          "y": 323,
+          "w": 32,
+          "h": 26
+        },
+        {
+          "label": "FPS: 15",
+          "status": "COVERED",
+          "atPoint": "LI.",
+          "x": 16,
+          "y": 357,
+          "w": 59,
+          "h": 27
+        },
+        {
+          "label": "Frame: 66.8 ms",
+          "status": "COVERED",
+          "atPoint": "LI.",
+          "x": 81,
+          "y": 357,
+          "w": 95,
+          "h": 27
+        },
+        {
+          "label": "Checks: 25/25",
+          "status": "COVERED",
+          "atPoint": "LI.",
+          "x": 182,
+          "y": 357,
+          "w": 89,
+          "h": 27
+        }
+      ],
+      "offscreen": [],
+      "consoleEvents": [
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        "502 http://localhost:3195/api/weather",
+        "502 http://localhost:3195/api/weather",
+        "502 http://localhost:3195/api/weather"
+      ]
+    },
+    {
+      "viewport": "390x844",
+      "total": 21,
+      "pass": 14,
+      "covered": [
+        {
+          "label": "Collapse Mini Map",
+          "status": "COVERED",
+          "atPoint": "STRONG.world-sky",
+          "x": 196,
+          "y": 20,
+          "w": 32,
+          "h": 26
+        },
+        {
+          "label": "PLAYER FOLLOW",
+          "status": "COVERED",
+          "atPoint": "SMALL.",
+          "x": 165,
+          "y": 71,
+          "w": 38,
+          "h": 22
+        },
+        {
+          "label": "Zoom in",
+          "status": "COVERED",
+          "atPoint": "DIV.ds-surface-elevated world-weather-summary",
+          "x": 141,
+          "y": 159,
+          "w": 24,
+          "h": 27
+        },
+        {
+          "label": "Zoom out",
+          "status": "COVERED",
+          "atPoint": "P.",
+          "x": 185,
+          "y": 159,
+          "w": 24,
+          "h": 27
+        },
+        {
+          "label": "Reset 1×",
+          "status": "COVERED",
+          "atPoint": "ASIDE.ds-surface-card world-weather ",
+          "x": 141,
+          "y": 190,
+          "w": 67,
+          "h": 27
+        },
+        {
+          "label": "Env",
+          "status": "COVERED",
+          "atPoint": "ASIDE.ds-surface-card world-weather ",
+          "x": 79,
+          "y": 237,
+          "w": 54,
+          "h": 27
+        },
+        {
+          "label": "Debug",
+          "status": "COVERED",
+          "atPoint": "DIV.world-weather-error",
+          "x": 138,
+          "y": 237,
+          "w": 67,
+          "h": 27
+        }
+      ],
+      "offscreen": [],
+      "consoleEvents": [
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        "502 http://localhost:3195/api/weather",
+        "502 http://localhost:3195/api/weather",
+        "502 http://localhost:3195/api/weather"
+      ]
+    },
+    {
+      "viewport": "1920x1080",
+      "total": 21,
+      "pass": 21,
+      "covered": [],
+      "offscreen": [],
+      "consoleEvents": [
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "error: Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        "502 http://localhost:3195/api/weather",
+        "502 http://localhost:3195/api/weather",
+        "502 http://localhost:3195/api/weather"
+      ]
+    }
+  ]
+}

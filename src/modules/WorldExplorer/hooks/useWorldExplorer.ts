@@ -28,7 +28,16 @@ export function useWorldExplorer() {
   const [snapshot, setSnapshot] = useState<WorldSnapshot | null>(null);
   const [profile, setProfile] = useState(() => evaluateAdaptiveDeviceProfile(null));
   const [panels, setPanels] = useState<HUDPanelState>(() => {
-    const mobile = evaluateAdaptiveDeviceProfile(null).formFactor === 'mobile';
+    // `mobile` needs touch capability, so a narrow mouse-only window
+    // (e.g. 390px wide on desktop) still started with expanded panels
+    // that overlap each other — verified 2026-11-19 with a real headless
+    // Chromium hit-test at 390x844 (7 controls covered by the weather
+    // panel). A window narrower than 600px cannot fit the expanded
+    // panels side by side regardless of input type, so it starts with
+    // the same compact defaults as a phone. See
+    // PHASE_14_COMPLETION_REPORT.md.
+    const narrow = typeof window !== 'undefined' && window.innerWidth < 600;
+    const mobile = evaluateAdaptiveDeviceProfile(null).formFactor === 'mobile' || narrow;
     return {
       miniMap: mobile ? 'compact' : 'expanded',
       statusWidget: mobile ? 'compact' : 'expanded',

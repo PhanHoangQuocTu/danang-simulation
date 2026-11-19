@@ -2,7 +2,7 @@
 
 Ứng dụng Next.js 16 tích hợp mô phỏng Three.js Phase 1–10: nhân vật góc nhìn thứ ba, địa hình thử nghiệm tổng hợp, Mini Map, tương tác, đồng hồ Đà Nẵng và thời tiết Open-Meteo.
 
-Mở `/` hoặc `/vi` để khám phá. Địa hình hiện tại là synthetic local meters, không phải bản dựng địa lý thành phố đã đo đạc. Phase 12–14 có Geospatial Core, source registry và imagery alignment inspector; chưa có ảnh hoặc GCP thật được duyệt. Xem [báo cáo Phase 14](PHASE_14_IMPLEMENTATION_REPORT.md) cho trạng thái **PARTIAL** và giới hạn.
+Mở `/` hoặc `/vi` để khám phá. Địa hình hiện tại là synthetic local meters, không phải bản dựng địa lý thành phố đã đo đạc. Phase 12–14 có Geospatial Core, source registry và imagery alignment inspector; chưa có ảnh hoặc GCP thật được duyệt. Xem [báo cáo Phase 14](PHASE_14_IMPLEMENTATION_REPORT.md) cho trạng thái **PARTIAL** và giới hạn, và [báo cáo hoàn thiện Phase 14](PHASE_14_COMPLETION_REPORT.md) (19/11/2026) cho các mục đã hoàn thiện có bằng chứng chạy thật và các blocker còn lại.
 
 Xem [báo cáo browser QA và ảnh so sánh Phase 10](docs/migration/evidence/PHASE_1_TO_10_BROWSER_QA_REPORT.md) cho kiểm thử Chrome/Edge, sáu kích thước viewport, kết quả đo và giới hạn đã xác minh.
 
@@ -10,16 +10,16 @@ Xem [báo cáo browser QA và ảnh so sánh Phase 10](docs/migration/evidence/P
 
 | Area | Choice |
 | --- | --- |
-| Framework | Next.js 16 (App Router, Turbopack, `output: 'standalone'`, `proxy.ts`), React 19, TypeScript 7 (strict) |
+| Framework | Next.js 16.4.6 (App Router, Turbopack, `output: 'standalone'`, `proxy.ts`), React 19, TypeScript 7 (strict) |
 | UI | Tailwind CSS v4, shadcn/ui (new-york, all 61 components), Radix UI, Base UI, lucide-react, Framer Motion, Recharts, Sonner |
 | Data | Axios (server and BFF clients), TanStack Query v5 (+ devtools), Route Handlers as BFF proxy, `/proxy/*` rewrite |
 | State | Zustand (+ `auto-zustand-selectors-hook`), cookie-persisted session store |
 | Forms and validation | React Hook Form, Zod v4, `@hookform/resolvers` |
 | Decimal arithmetic | bignumber.js for precision-sensitive decimal calculations |
-| i18n | next-intl v4: `en` and `vi`, typed message keys, common client and server translation hooks |
+| i18n | next-intl v4.15: `en` and `vi`, typed message keys, common client and server translation hooks |
 | SEO | Per-page metadata, canonical and hreflang, Open Graph and Twitter images, JSON-LD, sitemap, robots, web manifest |
 | Theming | First-party ThemeProvider (light, dark, system, no flash on load) |
-| Components workbench | Storybook 10 (`@storybook/nextjs-vite`): theme and locale switchers, a11y addon |
+| Components workbench | Storybook 10.6 (`@storybook/nextjs-vite`): theme and locale switchers, a11y addon. Auto prop tables (react-docgen) are disabled because the docgen transform tripped Vite PLUGIN_TIMINGS on every build; see `.storybook/main.ts`. |
 | Quality | Biome (lint and format), Husky, lint-staged, commitlint (Conventional Commits) |
 | Testing | Vitest 5, Testing Library, jsdom |
 | Ops | Multi-stage Docker image, docker-compose with nginx, GitHub Actions, GitLab CI |
@@ -39,6 +39,8 @@ pnpm storybook           # http://localhost:6006
 Mở `/` để chạy mô phỏng, `/vi` cho tiếng Việt. `/health` và `/vi/health` giữ thông tin vận hành; `/api/health` phục vụ Docker liveness và không gọi dịch vụ ngoài.
 
 Trên Windows host gặp lỗi weather `UNABLE_TO_VERIFY_LEAF_SIGNATURE`, Node 22 có thể dùng certificate store đã cấu hình của hệ điều hành: `node --use-system-ca node_modules/next/dist/bin/next dev`. Đây là runtime option của Node; không thêm biến môi trường ứng dụng hoặc tắt TLS verification. Production QA đã kiểm tra live observation với cấu hình này.
+
+Khi chạy production standalone (`node .next/standalone/server.js`), **không bind `HOSTNAME=127.0.0.1`**: middleware rewrite của Next.js bị network-proxy ở loopback và `/` sẽ redirect loop 307 (upstream Next.js issue #94745, vẫn còn ở Next 16.4.6). Dùng `HOSTNAME=localhost` hoặc `HOSTNAME=0.0.0.0` (Docker đã dùng `0.0.0.0`). Xem [báo cáo hoàn thiện Phase 14](PHASE_14_COMPLETION_REPORT.md).
 
 ## Trạng thái và kiến trúc
 

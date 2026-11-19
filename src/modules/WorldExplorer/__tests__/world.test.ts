@@ -54,6 +54,10 @@ describe('scene composition and browser runtime', () => {
     expect(disposeInstances).toHaveBeenCalledTimes(1);
     expect(rocks[0].parent).toBeNull();
   });
+  // Timeout is a hang guard only: this test drives ~200 frames synchronously.
+  // Under v8 coverage the same test takes ~7.7s (789ms without coverage),
+  // so the default 5000ms guard trips on instrumented runs, not on a product
+  // hang. Assertions are unchanged. Verified 2026-11-19, Node 22.23.5.
   it('owns one loop, resizes camera, clears input on hidden context, and disposes listeners/resources', () => {
     canvasContext();
     const queue = new Map<number, FrameRequestCallback>();
@@ -168,7 +172,7 @@ describe('scene composition and browser runtime', () => {
     expect(queue.size).toBe(0);
     expect(disconnect).toHaveBeenCalledTimes(1);
     expect(renderer.dispose).toHaveBeenCalledTimes(1);
-  });
+  }, 10000);
   it('keeps Mini Map failure unavailable while restoring scene visibility', () => {
     canvasContext();
     let callback: FrameRequestCallback = () => {

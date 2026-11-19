@@ -1215,3 +1215,24 @@
 .world-touch .world-bottom-left {
   position: static;
 }
+
+/* Short viewports (desktop): the fixed bottom-left guide overlaps the
+   top-left debug chips and toolbar when the viewport is too short for
+   both columns — verified 2026-11-19 with a real headless Chromium
+   hit-test at 1024x768 (4 controls covered) and 844x390 (9 covered).
+   Below 1000px height, stack the guide into the same scrollable left
+   column as touch already does, so every control stays scroll-reachable
+   and no panel covers another. Tall desktops keep the bottom-anchored
+   guide unchanged. See PHASE_14_COMPLETION_REPORT.md. */
+@media (max-height: 1000px) {
+  .world-top-left {
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    pointer-events: auto;
+  }
+  .world-bottom-left {
+    position: static;
+  }
+}

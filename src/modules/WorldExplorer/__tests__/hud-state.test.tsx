@@ -49,6 +49,24 @@ describe('HUD state and weather ownership', () => {
     act(() => result.current.toggle('statusWidget'));
     expect(result.current.panels.statusWidget).toBe('expanded');
   });
+  it('starts with compact panels on a narrow mouse-only window', async () => {
+    // Regression: at 390px wide without touch, panels used to start
+    // expanded and the weather panel covered the minimap/toolbar
+    // (real headless-Chromium hit-test, 2026-11-19, 7 controls covered).
+    const width = window.innerWidth;
+    Object.defineProperty(window, 'innerWidth', { configurable: true, value: 390 });
+    try {
+      const { result } = renderHook(() => useWorldExplorer(), { wrapper });
+      await waitFor(() => expect(result.current.weatherStatus).toBe('ready'));
+      expect(result.current.panels.miniMap).toBe('compact');
+      expect(result.current.panels.statusWidget).toBe('compact');
+      expect(result.current.panels.movementGuide).toBe('collapsed');
+      expect(result.current.panels.secondaryInfo).toBe('hidden');
+      expect(result.current.panels.playerStatus).toBe('compact');
+    } finally {
+      Object.defineProperty(window, 'innerWidth', { configurable: true, value: width });
+    }
+  });
   it('preserves last valid observation as stale when refresh fails', async () => {
     const { result } = renderHook(() => useWorldExplorer(), { wrapper });
     await waitFor(() => expect(result.current.weather).not.toBeNull());

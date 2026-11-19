@@ -5,8 +5,13 @@ const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(ts|tsx)'],
   addons: ['@storybook/addon-docs', '@storybook/addon-a11y', '@storybook/addon-themes'],
   staticDirs: ['../public'],
-  // `react-docgen-typescript` needs the TypeScript JS API, which TypeScript 7 (native) does not expose.
-  typescript: { reactDocgen: 'react-docgen' },
+  // Disabled 2026-11-19 (phase-14 completion): the react-docgen transform
+  // ran 4809 times / 6.2s and tripped Vite PLUGIN_TIMINGS on every
+  // `build-storybook`, failing the repo zero-warning gate. Prop tables in
+  // Docs lose auto-generated argTypes; stories themselves are unchanged.
+  // Re-enable when Storybook ships a docgen plugin that does not time out
+  // the build (see PHASE_14_COMPLETION_REPORT.md).
+  typescript: { reactDocgen: false },
   core: { disableTelemetry: true },
   viteFinal: (config) => ({
     ...config,
