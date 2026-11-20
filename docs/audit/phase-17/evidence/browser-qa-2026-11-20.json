@@ -1,0 +1,5409 @@
+{
+  "tool": "qa-phase17.mjs v2",
+  "at": "2026-11-20T09:00:44.749Z",
+  "finishedAt": "2026-11-20T09:14:37.815Z",
+  "base": "http://localhost:3000",
+  "head": "986baab+phase17-uncommitted",
+  "results": [
+    {
+      "mode": "synthetic",
+      "viewport": "1920x1080",
+      "url": "http://localhost:3000/",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 4.2,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cssW": 1920,
+            "cssH": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": "0.00",
+        "fpsChip": "0",
+        "frameChip": "0.0",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs Elevation: 0.00 m Solar altitude: 15.2° FPS: 0 Frame: 0.0 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space whi",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "shot": "browser-synthetic-1920x1080.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cssW": 1920,
+            "cssH": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider synthetic-danang-phase-10 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 0"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 68 m inside coverage -90..90 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is synthetic-danang-phase-10 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 0 m equals sampled elevation 0"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS off (default — use ?gis=real with ?terrain=dem for the pilot layer)"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 0.000 m Compass heading 180.0°",
+        "geoHeight": "0.000",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "0.00 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "50.1 / 83.5 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs WORLD & TERRAIN TELEMETRY Position (XZ) 0.00, 0.00 Elevation 0.00 m Solar altitude 15.1° / 244.0° Camera distance 5.40 m Synthetic local meters. Not geographic coordinates. DEBUG TELEMETRY (F3) Frame avg / P95 50.1 / 83.5 ms Draw calls / triangles 353 / 77062 Geometr",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "f3Shot": "browser-synthetic-1920x1080-f3.png",
+      "f3GisShot": "browser-synthetic-1920x1080-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "IDLE",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.12",
+        "afterGeo": ["16.0544011", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.12,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "270.6"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 0,
+        "spawnGeoHeight": 0,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.7 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "270.6"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "1366x768",
+      "url": "http://localhost:3000/",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 2.9,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cssW": 1366,
+            "cssH": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": "0.00",
+        "fpsChip": "0",
+        "frameChip": "0.0",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs Elevation: 0.00 m Solar altitude: 15.0° FPS: 0 Frame: 0.0 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space whi",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "shot": "browser-synthetic-1366x768.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cssW": 1366,
+            "cssH": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider synthetic-danang-phase-10 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 0"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 68 m inside coverage -90..90 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is synthetic-danang-phase-10 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 0 m equals sampled elevation 0"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS off (default — use ?gis=real with ?terrain=dem for the pilot layer)"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 0.000 m Compass heading 180.0°",
+        "geoHeight": "0.000",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "0.00 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "25.0 / 33.3 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs WORLD & TERRAIN TELEMETRY Position (XZ) 0.00, 0.00 Elevation 0.00 m Solar altitude 14.9° / 244.1° Camera distance 5.40 m Synthetic local meters. Not geographic coordinates. DEBUG TELEMETRY (F3) Frame avg / P95 25.0 / 33.3 ms Draw calls / triangles 353 / 77062 Geometr",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "f3Shot": "browser-synthetic-1366x768-f3.png",
+      "f3GisShot": "browser-synthetic-1366x768-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "WALK",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.17",
+        "afterGeo": ["16.0544011", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.17,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "270.6"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 0,
+        "spawnGeoHeight": 0,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.7 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "270.6"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "1024x768",
+      "url": "http://localhost:3000/",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 2.8,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cssW": 1024,
+            "cssH": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": "0.00",
+        "fpsChip": "0",
+        "frameChip": "0.0",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs Elevation: 0.00 m Solar altitude: 14.8° FPS: 0 Frame: 0.0 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space whi",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "shot": "browser-synthetic-1024x768.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cssW": 1024,
+            "cssH": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider synthetic-danang-phase-10 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 0"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 68 m inside coverage -90..90 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is synthetic-danang-phase-10 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 0 m equals sampled elevation 0"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS off (default — use ?gis=real with ?terrain=dem for the pilot layer)"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 0.000 m Compass heading 180.0°",
+        "geoHeight": "0.000",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "0.00 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "33.4 / 33.4 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs WORLD & TERRAIN TELEMETRY Position (XZ) 0.00, 0.00 Elevation 0.00 m Solar altitude 14.7° / 244.2° Camera distance 5.40 m Synthetic local meters. Not geographic coordinates. DEBUG TELEMETRY (F3) Frame avg / P95 33.4 / 33.4 ms Draw calls / triangles 344 / 76420 Geometr",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "f3Shot": "browser-synthetic-1024x768-f3.png",
+      "f3GisShot": "browser-synthetic-1024x768-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "WALK",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.29",
+        "afterGeo": ["16.0544027", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.29,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "315.6"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 0,
+        "spawnGeoHeight": 0,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.5 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "315.6"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "768x1024",
+      "url": "http://localhost:3000/",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 2.7,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cssW": 768,
+            "cssH": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": "0.00",
+        "fpsChip": "0",
+        "frameChip": "0.0",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs Elevation: 0.00 m Solar altitude: 14.6° FPS: 0 Frame: 0.0 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space whi",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "shot": "browser-synthetic-768x1024.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cssW": 768,
+            "cssH": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider synthetic-danang-phase-10 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 0"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 68 m inside coverage -90..90 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is synthetic-danang-phase-10 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 0 m equals sampled elevation 0"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS off (default — use ?gis=real with ?terrain=dem for the pilot layer)"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 0.000 m Compass heading 180.0°",
+        "geoHeight": "0.000",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "0.00 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "88.9 / 233.4 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs WORLD & TERRAIN TELEMETRY Position (XZ) 0.00, 0.00 Elevation 0.00 m Solar altitude 14.6° / 244.2° Camera distance 5.40 m Synthetic local meters. Not geographic coordinates. DEBUG TELEMETRY (F3) Frame avg / P95 88.9 / 233.4 ms Draw calls / triangles 325 / 74880 Geomet",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "f3Shot": "browser-synthetic-768x1024-f3.png",
+      "f3GisShot": "browser-synthetic-768x1024-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "IDLE",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.29",
+        "afterGeo": ["16.0544027", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.29,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "315.6"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 0,
+        "spawnGeoHeight": 0,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.5 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "315.6"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "390x844",
+      "url": "http://localhost:3000/",
+      "log": [
+        "f3 attempt 1: pressed F3 (was hidden)",
+        "f3 attempt 2: clicked Debug toolbar button -> true (was compact)"
+      ],
+      "timeToInitSec": 2.4,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cssW": 390,
+            "cssH": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 78,
+            "cssH": 78
+          }
+        ],
+        "checksChip": null,
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": null,
+        "elevationChip": "0.00",
+        "fpsChip": null,
+        "frameChip": null,
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": null,
+        "weatherLive": false,
+        "weatherUnavailable": false,
+        "weatherText": null,
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "hidden",
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "shot": "browser-synthetic-390x844.png",
+      "f3open": {
+        "attempts": 2,
+        "method": "Debug-button-click"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cssW": 390,
+            "cssH": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 78,
+            "cssH": 78
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider synthetic-danang-phase-10 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 0"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 68 m inside coverage -90..90 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is synthetic-danang-phase-10 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 0 m equals sampled elevation 0"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS off (default — use ?gis=real with ?terrain=dem for the pilot layer)"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 0.000 m Compass heading 180.0°",
+        "geoHeight": "0.000",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": null,
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "0.00 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "55.5 / 100.0 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": null,
+        "weatherLive": false,
+        "weatherUnavailable": false,
+        "weatherText": null,
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "f3Shot": "browser-synthetic-390x844-f3.png",
+      "f3GisShot": "browser-synthetic-390x844-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "WALK",
+        "midSpeed": "3.50",
+        "midGrounded": null,
+        "afterPosition": "0.00, -0.49",
+        "afterGeo": ["16.0544045", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": "4.03",
+        "movedMeters": 0.49,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "338.0"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 0,
+        "spawnGeoHeight": 0,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "0.000"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.3 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "338.0"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "844x390",
+      "url": "http://localhost:3000/",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 49.6,
+      "worldInitialised": false,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cssW": 844,
+            "cssH": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": "12",
+        "frameChip": "83.3",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "hidden",
+        "perf": null,
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs FPS: 12 Frame: 83.3 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space while grounded SPACE Orbit camera Drag or",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "shot": "browser-synthetic-844x390.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cssW": 844,
+            "cssH": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider synthetic-danang-phase-10 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 0"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 68 m inside coverage -90..90 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is synthetic-danang-phase-10 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 0 m equals sampled elevation 0"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS off (default — use ?gis=real with ?terrain=dem for the pilot layer)"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Not applicable — GIS layer off"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 0.000 m Compass heading 180.0°",
+        "geoHeight": "0.000",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "0.00 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "72.2 / 183.3 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "144 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 144 m + − Reset 1× Reset Env Debug Specs DEBUG TELEMETRY (F3) Frame avg / P95 72.2 / 183.3 ms Draw calls / triangles 358 / 77392 Geometries / textures 152 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m refer",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "f3Shot": "browser-synthetic-844x390-f3.png",
+      "f3GisShot": "browser-synthetic-844x390-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "WALK",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.49",
+        "afterGeo": ["16.0544045", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.49,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "338.0"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 0,
+        "spawnGeoHeight": 0,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "0.000"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.3 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "338.0"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "gis",
+      "viewport": "1920x1080",
+      "url": "http://localhost:3000/?terrain=dem&gis=real",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 2.9,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cssW": 1920,
+            "cssH": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": "6.05",
+        "fpsChip": "0",
+        "frameChip": "0.0",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": "3000 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs Elevation: 6.05 m Solar altitude: 14.0° FPS: 0 Frame: 0.0 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space wh",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "shot": "browser-gis-1920x1080.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cssW": 1920,
+            "cssH": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider copernicus-dem-glo30-danang-pilot-v1 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "EPSG:4326 / ORTHOMETRIC_EGM2008 / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 6.045524001121521"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 1500 m inside coverage -1500..1500 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is copernicus-dem-glo30-danang-pilot-v1 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "REAL DEM (pilot — orthometric, ellipsoid alignment NOT VERIFIED) — copernicus-dem-glo30-danang-pilot-v1 @ 30 m, datum ORTHOMETRIC_EGM2008, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 6.045524001121521 m equals sampled elevation 6.045524001121521"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS real — osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "1830 road runs / 418 buildings decoded from osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Runtime normalization rejected 0 features (ingest rejected 5, recorded separately)"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "525 junctions merged from coincident road endpoints"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "1830/1830 road runs draped on terrain"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "418/418 buildings placed on terrain"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Heights known 1 / estimated 7 / unknown 410 (footprint-only 410)"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Road widths: source 0 / estimated (class default) 1830"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 6.046 m Compass heading 180.0°",
+        "geoHeight": "6.046",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "6.05 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "16.6 / 16.6 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "3000 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs WORLD & TERRAIN TELEMETRY Position (XZ) 0.00, 0.00 Elevation 6.05 m Solar altitude 14.0° / 244.5° Camera distance 5.40 m Synthetic local meters. Not geographic coordinates. DEBUG TELEMETRY (F3) Frame avg / P95 16.6 / 16.6 ms Draw calls / triangles 195 / 113042 Geome",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "f3Shot": "browser-gis-1920x1080-f3.png",
+      "f3GisShot": "browser-gis-1920x1080-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "WALK",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.17",
+        "afterGeo": ["16.0544011", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.17,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "270.6"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 6.046,
+        "spawnGeoHeight": 6.046,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.044"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.7 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "270.6"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "gis",
+      "viewport": "1366x768",
+      "url": "http://localhost:3000/?terrain=dem&gis=real",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 3.2,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cssW": 1366,
+            "cssH": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": "6.05",
+        "fpsChip": "0",
+        "frameChip": "0.0",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": "3000 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs Elevation: 6.05 m Solar altitude: 13.8° FPS: 0 Frame: 0.0 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space wh",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "shot": "browser-gis-1366x768.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cssW": 1366,
+            "cssH": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider copernicus-dem-glo30-danang-pilot-v1 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "EPSG:4326 / ORTHOMETRIC_EGM2008 / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 6.045524001121521"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 1500 m inside coverage -1500..1500 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is copernicus-dem-glo30-danang-pilot-v1 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "REAL DEM (pilot — orthometric, ellipsoid alignment NOT VERIFIED) — copernicus-dem-glo30-danang-pilot-v1 @ 30 m, datum ORTHOMETRIC_EGM2008, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 6.045524001121521 m equals sampled elevation 6.045524001121521"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS real — osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "1830 road runs / 418 buildings decoded from osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Runtime normalization rejected 0 features (ingest rejected 5, recorded separately)"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "525 junctions merged from coincident road endpoints"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "1830/1830 road runs draped on terrain"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "418/418 buildings placed on terrain"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Heights known 1 / estimated 7 / unknown 410 (footprint-only 410)"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Road widths: source 0 / estimated (class default) 1830"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 6.046 m Compass heading 180.0°",
+        "geoHeight": "6.046",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "6.05 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "33.3 / 33.3 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "3000 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs WORLD & TERRAIN TELEMETRY Position (XZ) 0.00, 0.00 Elevation 6.05 m Solar altitude 13.8° / 244.6° Camera distance 5.40 m Synthetic local meters. Not geographic coordinates. DEBUG TELEMETRY (F3) Frame avg / P95 33.3 / 33.3 ms Draw calls / triangles 195 / 113042 Geome",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "f3Shot": "browser-gis-1366x768-f3.png",
+      "f3GisShot": "browser-gis-1366x768-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "WALK",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.29",
+        "afterGeo": ["16.0544027", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.29,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "315.6"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 6.046,
+        "spawnGeoHeight": 6.046,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.5 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "315.6"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "gis",
+      "viewport": "1024x768",
+      "url": "http://localhost:3000/?terrain=dem&gis=real",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 2.9,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cssW": 1024,
+            "cssH": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": "6.05",
+        "fpsChip": "0",
+        "frameChip": "0.0",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": "3000 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs Elevation: 6.05 m Solar altitude: 13.6° FPS: 0 Frame: 0.0 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space wh",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "shot": "browser-gis-1024x768.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cssW": 1024,
+            "cssH": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider copernicus-dem-glo30-danang-pilot-v1 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "EPSG:4326 / ORTHOMETRIC_EGM2008 / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 6.045524001121521"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 1500 m inside coverage -1500..1500 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is copernicus-dem-glo30-danang-pilot-v1 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "REAL DEM (pilot — orthometric, ellipsoid alignment NOT VERIFIED) — copernicus-dem-glo30-danang-pilot-v1 @ 30 m, datum ORTHOMETRIC_EGM2008, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 6.045524001121521 m equals sampled elevation 6.045524001121521"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS real — osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "1830 road runs / 418 buildings decoded from osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Runtime normalization rejected 0 features (ingest rejected 5, recorded separately)"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "525 junctions merged from coincident road endpoints"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "1830/1830 road runs draped on terrain"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "418/418 buildings placed on terrain"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Heights known 1 / estimated 7 / unknown 410 (footprint-only 410)"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Road widths: source 0 / estimated (class default) 1830"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 6.046 m Compass heading 180.0°",
+        "geoHeight": "6.046",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "6.05 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "16.7 / 16.7 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "3000 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs WORLD & TERRAIN TELEMETRY Position (XZ) 0.00, 0.00 Elevation 6.05 m Solar altitude 13.6° / 244.6° Camera distance 5.40 m Synthetic local meters. Not geographic coordinates. DEBUG TELEMETRY (F3) Frame avg / P95 16.7 / 16.7 ms Draw calls / triangles 193 / 112754 Geome",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "f3Shot": "browser-gis-1024x768-f3.png",
+      "f3GisShot": "browser-gis-1024x768-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "IDLE",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.29",
+        "afterGeo": ["16.0544027", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.29,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "315.6"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 6.046,
+        "spawnGeoHeight": 6.046,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.5 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "315.6"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "gis",
+      "viewport": "768x1024",
+      "url": "http://localhost:3000/?terrain=dem&gis=real",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 3.1,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cssW": 768,
+            "cssH": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": "6.05",
+        "fpsChip": "0",
+        "frameChip": "0.0",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": "3000 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs Elevation: 6.05 m Solar altitude: 13.5° FPS: 0 Frame: 0.0 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space wh",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "shot": "browser-gis-768x1024.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cssW": 768,
+            "cssH": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider copernicus-dem-glo30-danang-pilot-v1 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "EPSG:4326 / ORTHOMETRIC_EGM2008 / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 6.045524001121521"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 1500 m inside coverage -1500..1500 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is copernicus-dem-glo30-danang-pilot-v1 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "REAL DEM (pilot — orthometric, ellipsoid alignment NOT VERIFIED) — copernicus-dem-glo30-danang-pilot-v1 @ 30 m, datum ORTHOMETRIC_EGM2008, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 6.045524001121521 m equals sampled elevation 6.045524001121521"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS real — osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "1830 road runs / 418 buildings decoded from osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Runtime normalization rejected 0 features (ingest rejected 5, recorded separately)"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "525 junctions merged from coincident road endpoints"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "1830/1830 road runs draped on terrain"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "418/418 buildings placed on terrain"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Heights known 1 / estimated 7 / unknown 410 (footprint-only 410)"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Road widths: source 0 / estimated (class default) 1830"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 6.046 m Compass heading 180.0°",
+        "geoHeight": "6.046",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "6.05 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "0.0 / 0.0 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "3000 m",
+        "weatherLive": true,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs WORLD & TERRAIN TELEMETRY Position (XZ) 0.00, 0.00 Elevation 6.05 m Solar altitude 13.4° / 244.7° Camera distance 5.40 m Synthetic local meters. Not geographic coordinates. DEBUG TELEMETRY (F3) Frame avg / P95 0.0 / 0.0 ms Draw calls / triangles 185 / 111750 Geometr",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "f3Shot": "browser-gis-768x1024-f3.png",
+      "f3GisShot": "browser-gis-768x1024-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "WALK",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.29",
+        "afterGeo": ["16.0544027", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.29,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "315.6"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 6.046,
+        "spawnGeoHeight": 6.046,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.043"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.5 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "315.6"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "gis",
+      "viewport": "390x844",
+      "url": "http://localhost:3000/?terrain=dem&gis=real",
+      "log": [
+        "f3 attempt 1: pressed F3 (was hidden)",
+        "f3 attempt 2: clicked Debug toolbar button -> true (was compact)"
+      ],
+      "timeToInitSec": 2.8,
+      "worldInitialised": true,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cssW": 390,
+            "cssH": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 78,
+            "cssH": 78
+          }
+        ],
+        "checksChip": null,
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": null,
+        "elevationChip": "6.05",
+        "fpsChip": null,
+        "frameChip": null,
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "compact",
+        "perf": null,
+        "span": null,
+        "weatherLive": false,
+        "weatherUnavailable": false,
+        "weatherText": null,
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "hidden",
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "shot": "browser-gis-390x844.png",
+      "f3open": {
+        "attempts": 2,
+        "method": "Debug-button-click"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cssW": 390,
+            "cssH": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 78,
+            "cssH": 78
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider copernicus-dem-glo30-danang-pilot-v1 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "EPSG:4326 / ORTHOMETRIC_EGM2008 / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 6.045524001121521"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 1500 m inside coverage -1500..1500 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is copernicus-dem-glo30-danang-pilot-v1 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "REAL DEM (pilot — orthometric, ellipsoid alignment NOT VERIFIED) — copernicus-dem-glo30-danang-pilot-v1 @ 30 m, datum ORTHOMETRIC_EGM2008, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 6.045524001121521 m equals sampled elevation 6.045524001121521"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS real — osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "1830 road runs / 418 buildings decoded from osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Runtime normalization rejected 0 features (ingest rejected 5, recorded separately)"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "525 junctions merged from coincident road endpoints"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "1830/1830 road runs draped on terrain"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "418/418 buildings placed on terrain"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Heights known 1 / estimated 7 / unknown 410 (footprint-only 410)"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Road widths: source 0 / estimated (class default) 1830"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 6.046 m Compass heading 180.0°",
+        "geoHeight": "6.046",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": null,
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "6.05 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "72.2 / 100.0 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": null,
+        "weatherLive": false,
+        "weatherUnavailable": false,
+        "weatherText": null,
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "f3Shot": "browser-gis-390x844-f3.png",
+      "f3GisShot": "browser-gis-390x844-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "WALK",
+        "midSpeed": "3.50",
+        "midGrounded": null,
+        "afterPosition": "0.00, -0.58",
+        "afterGeo": ["16.0544045", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": "1.64",
+        "movedMeters": 0.58,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "338.0"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 6.046,
+        "spawnGeoHeight": 6.046,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": null,
+            "geoHeight": "6.042"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": null,
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": null,
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": null,
+            "geoHeight": "6.041"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.3 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "338.0"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    },
+    {
+      "mode": "gis",
+      "viewport": "844x390",
+      "url": "http://localhost:3000/?terrain=dem&gis=real",
+      "log": ["f3 attempt 1: pressed F3 (was compact)"],
+      "timeToInitSec": 48.6,
+      "worldInitialised": false,
+      "spawn": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cssW": 844,
+            "cssH": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": "43/43",
+        "geoDet": null,
+        "terDet": null,
+        "gisDet": null,
+        "geoText": null,
+        "geoHeight": null,
+        "geoLat": null,
+        "geoLon": null,
+        "geoHeading": null,
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": "9",
+        "frameChip": "116.7",
+        "position": null,
+        "cameraDist": null,
+        "elevationExpanded": null,
+        "envState": "hidden",
+        "perf": null,
+        "span": "3000 m",
+        "weatherLive": false,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs FPS: 9 Frame: 116.7 ms Checks: 43/43 MOVEMENT & CAMERA GUIDE Keyboard & Mouse Active Move relative to camera W forward · S backward · A left · D right · Arrow keys W A S D SPRINT Hold Shift while moving SHIFT JUMP Press Space while grounded SPACE Orbit camera Drag o",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": false,
+        "debugState": "compact",
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "shot": "browser-gis-844x390.png",
+      "f3open": {
+        "attempts": 1,
+        "method": "F3-key"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cssW": 844,
+            "cssH": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cssW": 142,
+            "cssH": 142
+          }
+        ],
+        "checksChip": null,
+        "geoDet": {
+          "summary": "Geo checks: 16/16",
+          "checks": [
+            {
+              "id": "GEO-01",
+              "label": "GEO-01: Anchor originPASSED",
+              "passed": "PASSED",
+              "details": "Anchor residual 0 m"
+            },
+            {
+              "id": "GEO-02",
+              "label": "GEO-02: World originPASSED",
+              "passed": "PASSED",
+              "details": "World origin residual 6.780130685568339e-9 m"
+            },
+            {
+              "id": "GEO-03",
+              "label": "GEO-03: EPSG golden vectorPASSED",
+              "passed": "PASSED",
+              "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+            },
+            {
+              "id": "GEO-04",
+              "label": "GEO-04: ECEF / ENU inversePASSED",
+              "passed": "PASSED",
+              "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+            },
+            {
+              "id": "GEO-05",
+              "label": "GEO-05: World axesPASSED",
+              "passed": "PASSED",
+              "details": "ENU 1,2,3 = World 1,3,-2"
+            },
+            {
+              "id": "GEO-06",
+              "label": "GEO-06: East +XPASSED",
+              "passed": "PASSED",
+              "details": "East X=10.700537735774152 m"
+            },
+            {
+              "id": "GEO-07",
+              "label": "GEO-07: North -ZPASSED",
+              "passed": "PASSED",
+              "details": "North Z=-11.065924930947537 m"
+            },
+            {
+              "id": "GEO-08",
+              "label": "GEO-08: Up +YPASSED",
+              "passed": "PASSED",
+              "details": "Up Y=10.00000000020203 m"
+            },
+            {
+              "id": "GEO-09",
+              "label": "GEO-09: Compass / yawPASSED",
+              "passed": "PASSED",
+              "details": "N/E/S/W heading/yaw round-trip"
+            },
+            {
+              "id": "GEO-10",
+              "label": "GEO-10: Mini Map consistencyPASSED",
+              "passed": "PASSED",
+              "details": "East right; North up; marker heading consistent"
+            },
+            {
+              "id": "GEO-11",
+              "label": "GEO-11: 5km numerical residualPASSED",
+              "passed": "PASSED",
+              "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+            },
+            {
+              "id": "GEO-12",
+              "label": "GEO-12: Invalid input rejectedPASSED",
+              "passed": "PASSED",
+              "details": "5/5 invalid coordinates rejected"
+            },
+            {
+              "id": "GEO-13",
+              "label": "GEO-13: Date linePASSED",
+              "passed": "PASSED",
+              "details": "Date line canonical longitude -180 degrees"
+            },
+            {
+              "id": "GEO-14",
+              "label": "GEO-14: Polar inversePASSED",
+              "passed": "PASSED",
+              "details": "Pole height residual 0 m"
+            },
+            {
+              "id": "GEO-15",
+              "label": "GEO-15: Height datum / confidencePASSED",
+              "passed": "PASSED",
+              "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+            },
+            {
+              "id": "GEO-16",
+              "label": "GEO-16: Phase 1–10 diagnosticsPASSED",
+              "passed": "PASSED",
+              "details": "9/9 historical diagnostics pass"
+            }
+          ]
+        },
+        "terDet": {
+          "summary": "Terrain checks: 10/10",
+          "checks": [
+            {
+              "id": "TER-01",
+              "label": "TER-01: Provider activePASSED",
+              "passed": "PASSED",
+              "details": "Provider copernicus-dem-glo30-danang-pilot-v1 v1 is active"
+            },
+            {
+              "id": "TER-02",
+              "label": "TER-02: CRS / datumPASSED",
+              "passed": "PASSED",
+              "details": "EPSG:4326 / ORTHOMETRIC_EGM2008 / production"
+            },
+            {
+              "id": "TER-03",
+              "label": "TER-03: Spawn elevationPASSED",
+              "passed": "PASSED",
+              "details": "Spawn elevation 6.045524001121521"
+            },
+            {
+              "id": "TER-04",
+              "label": "TER-04: Boundary in coveragePASSED",
+              "passed": "PASSED",
+              "details": "Boundary 1500 m inside coverage -1500..1500 m"
+            },
+            {
+              "id": "TER-05",
+              "label": "TER-05: Outside coveragePASSED",
+              "passed": "PASSED",
+              "details": "Outside coverage returns outside-coverage, never a silent zero"
+            },
+            {
+              "id": "TER-06",
+              "label": "TER-06: Invalid inputPASSED",
+              "passed": "PASSED",
+              "details": "Invalid input returns invalid-input"
+            },
+            {
+              "id": "TER-07",
+              "label": "TER-07: Support surfacePASSED",
+              "passed": "PASSED",
+              "details": "Support surface is terrain or higher, from one evaluation"
+            },
+            {
+              "id": "TER-08",
+              "label": "TER-08: Production providerPASSED",
+              "passed": "PASSED",
+              "details": "Production provider is copernicus-dem-glo30-danang-pilot-v1 (production)"
+            },
+            {
+              "id": "TER-09",
+              "label": "TER-09: Terrain modePASSED",
+              "passed": "PASSED",
+              "details": "REAL DEM (pilot — orthometric, ellipsoid alignment NOT VERIFIED) — copernicus-dem-glo30-danang-pilot-v1 @ 30 m, datum ORTHOMETRIC_EGM2008, production-ready: no"
+            },
+            {
+              "id": "TER-10",
+              "label": "TER-10: Spawn groundingPASSED",
+              "passed": "PASSED",
+              "details": "Spawn Y 6.045524001121521 m equals sampled elevation 6.045524001121521"
+            }
+          ]
+        },
+        "gisDet": {
+          "summary": "GIS checks: 8/8",
+          "checks": [
+            {
+              "id": "GIS-01",
+              "label": "GIS-01: GIS modePASSED",
+              "passed": "PASSED",
+              "details": "GIS real — osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-02",
+              "label": "GIS-02: Asset decodedPASSED",
+              "passed": "PASSED",
+              "details": "1830 road runs / 418 buildings decoded from osm-vector-danang-pilot-v1"
+            },
+            {
+              "id": "GIS-03",
+              "label": "GIS-03: Normalization cleanPASSED",
+              "passed": "PASSED",
+              "details": "Runtime normalization rejected 0 features (ingest rejected 5, recorded separately)"
+            },
+            {
+              "id": "GIS-04",
+              "label": "GIS-04: Junctions mergedPASSED",
+              "passed": "PASSED",
+              "details": "525 junctions merged from coincident road endpoints"
+            },
+            {
+              "id": "GIS-05",
+              "label": "GIS-05: Roads drapedPASSED",
+              "passed": "PASSED",
+              "details": "1830/1830 road runs draped on terrain"
+            },
+            {
+              "id": "GIS-06",
+              "label": "GIS-06: Buildings placedPASSED",
+              "passed": "PASSED",
+              "details": "418/418 buildings placed on terrain"
+            },
+            {
+              "id": "GIS-07",
+              "label": "GIS-07: Height provenancePASSED",
+              "passed": "PASSED",
+              "details": "Heights known 1 / estimated 7 / unknown 410 (footprint-only 410)"
+            },
+            {
+              "id": "GIS-08",
+              "label": "GIS-08: Width provenancePASSED",
+              "passed": "PASSED",
+              "details": "Road widths: source 0 / estimated (class default) 1830"
+            }
+          ]
+        },
+        "geoText": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2022000° Simulated ellipsoid height 6.046 m Compass heading 180.0°",
+        "geoHeight": "6.046",
+        "geoLat": "16.0544000",
+        "geoLon": "108.2022000",
+        "geoHeading": "180.0",
+        "anim": "IDLE",
+        "speed": null,
+        "grounded": "Grounded",
+        "elevationChip": null,
+        "fpsChip": null,
+        "frameChip": null,
+        "position": "0.00, 0.00",
+        "cameraDist": "5.40 m",
+        "elevationExpanded": "6.05 m",
+        "envState": "expanded",
+        "perf": {
+          "frame": "113.9 / 200.0 ms",
+          "draws": null,
+          "resources": null,
+          "quality": "Ultra / 1.00"
+        },
+        "span": "3000 m",
+        "weatherLive": false,
+        "weatherUnavailable": false,
+        "weatherText": "DA NANG 3D Desktop · Keyboard & mouse WORLD OVERVIEW STATIC 1.0× -Z -X +X +Z Position (XZ) 0.00 m, 0.00 m Span: 3000 m + − Reset 1× Reset Env Debug Specs DEBUG TELEMETRY (F3) Frame avg / P95 113.9 / 200.0 ms Draw calls / triangles 194 / 112898 Geometries / textures 84 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m ref",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "minimapText": true,
+        "debugState": "expanded",
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "f3Shot": "browser-gis-844x390-f3.png",
+      "f3GisShot": "browser-gis-844x390-f3-gis.png",
+      "walk": {
+        "before": {
+          "position": "0.00, 0.00",
+          "geoLat": "16.0544000",
+          "geoLon": "108.2022000",
+          "heading": "180.0"
+        },
+        "midAnim": "WALK",
+        "midSpeed": null,
+        "midGrounded": "Grounded",
+        "afterPosition": "0.00, -0.49",
+        "afterGeo": ["16.0544045", "108.2022000"],
+        "afterAnim": "WALK",
+        "afterSpeed": null,
+        "movedMeters": 0.49,
+        "movedBy": "position-xz",
+        "moved": true,
+        "cameraDistAfter": "5.40 m",
+        "headingAfter": "338.0"
+      },
+      "jump": {
+        "airborne": false,
+        "landed": true,
+        "peakGeoHeight": 6.046,
+        "spawnGeoHeight": 6.046,
+        "peakDeltaM": 0,
+        "timeline": [
+          {
+            "t": "+0.7s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.042"
+          },
+          {
+            "t": "+1.4s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.042"
+          },
+          {
+            "t": "+2.1s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+2.8s",
+            "anim": "WALK",
+            "grounded": "Grounded",
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+3.5s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+4.2s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+4.9s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+5.6s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+6.3s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "+7.0s",
+            "anim": "IDLE",
+            "grounded": "Grounded",
+            "geoHeight": "6.041"
+          }
+        ]
+      },
+      "interact": {
+        "envStateBeforeE": "expanded",
+        "envStateAfterE": "expanded",
+        "interactionTextAfterE": "6.3 m / max 5.0 m — move closer",
+        "animAfterE": "IDLE"
+      },
+      "camera": {
+        "distAtF3": "5.40 m",
+        "distAfterWalk": "5.40 m",
+        "distAfterJump": "5.40 m",
+        "headingAtF3": "180.0",
+        "headingAfterWalk": "338.0"
+      },
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0
+    }
+  ],
+  "lookAround": {
+    "headingBefore": null,
+    "headingAfterYaw": null,
+    "headingAfterPitch": null,
+    "pageErrors": []
+  },
+  "contextLoss": {
+    "mode": "gis",
+    "viewport": "1024x768",
+    "before": {
+      "position": null,
+      "geoHeight": null,
+      "anim": "IDLE",
+      "canvases": 2
+    },
+    "loseContext": {
+      "ok": true
+    },
+    "duringLoss": {
+      "bodyHasContextText": true,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    "restoreContext": {
+      "ok": false,
+      "reason": "no-lose-context-ext"
+    },
+    "afterRestore": {
+      "position": null,
+      "geoHeight": null,
+      "anim": "IDLE",
+      "canvases": 2
+    },
+    "afterRestoreWalk": {
+      "position": null,
+      "anim": "IDLE",
+      "speed": null
+    },
+    "stillResponsive": false,
+    "consoleErrorsTotal": 0,
+    "pageErrorsTotal": 0,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "gisNoop": {
+    "mode": "gis-noop (?gis=real only)",
+    "viewport": "1024x768",
+    "f3open": {
+      "attempts": 1,
+      "method": "F3-key"
+    },
+    "checksChip": null,
+    "terDet": {
+      "summary": "Terrain checks: 10/10",
+      "checks": [
+        {
+          "id": "TER-01",
+          "label": "TER-01: Provider activePASSED",
+          "passed": "PASSED",
+          "details": "Provider synthetic-danang-phase-10 v1 is active"
+        },
+        {
+          "id": "TER-02",
+          "label": "TER-02: CRS / datumPASSED",
+          "passed": "PASSED",
+          "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+        },
+        {
+          "id": "TER-03",
+          "label": "TER-03: Spawn elevationPASSED",
+          "passed": "PASSED",
+          "details": "Spawn elevation 0"
+        },
+        {
+          "id": "TER-04",
+          "label": "TER-04: Boundary in coveragePASSED",
+          "passed": "PASSED",
+          "details": "Boundary 68 m inside coverage -90..90 m"
+        },
+        {
+          "id": "TER-05",
+          "label": "TER-05: Outside coveragePASSED",
+          "passed": "PASSED",
+          "details": "Outside coverage returns outside-coverage, never a silent zero"
+        },
+        {
+          "id": "TER-06",
+          "label": "TER-06: Invalid inputPASSED",
+          "passed": "PASSED",
+          "details": "Invalid input returns invalid-input"
+        },
+        {
+          "id": "TER-07",
+          "label": "TER-07: Support surfacePASSED",
+          "passed": "PASSED",
+          "details": "Support surface is terrain or higher, from one evaluation"
+        },
+        {
+          "id": "TER-08",
+          "label": "TER-08: Production providerPASSED",
+          "passed": "PASSED",
+          "details": "Production provider is synthetic-danang-phase-10 (production)"
+        },
+        {
+          "id": "TER-09",
+          "label": "TER-09: Terrain modePASSED",
+          "passed": "PASSED",
+          "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+        },
+        {
+          "id": "TER-10",
+          "label": "TER-10: Spawn groundingPASSED",
+          "passed": "PASSED",
+          "details": "Spawn Y 0 m equals sampled elevation 0"
+        }
+      ]
+    },
+    "gisDet": {
+      "summary": "GIS checks: 7/8",
+      "checks": [
+        {
+          "id": "GIS-01",
+          "label": "GIS-01: GIS modeFAILED",
+          "passed": "FAILED",
+          "details": "GIS requested (?gis=real) but the layer was not built (needs ?terrain=dem)"
+        },
+        {
+          "id": "GIS-02",
+          "label": "GIS-02: Asset decodedPASSED",
+          "passed": "PASSED",
+          "details": "Not applicable — GIS layer off"
+        },
+        {
+          "id": "GIS-03",
+          "label": "GIS-03: Normalization cleanPASSED",
+          "passed": "PASSED",
+          "details": "Not applicable — GIS layer off"
+        },
+        {
+          "id": "GIS-04",
+          "label": "GIS-04: Junctions mergedPASSED",
+          "passed": "PASSED",
+          "details": "Not applicable — GIS layer off"
+        },
+        {
+          "id": "GIS-05",
+          "label": "GIS-05: Roads drapedPASSED",
+          "passed": "PASSED",
+          "details": "Not applicable — GIS layer off"
+        },
+        {
+          "id": "GIS-06",
+          "label": "GIS-06: Buildings placedPASSED",
+          "passed": "PASSED",
+          "details": "Not applicable — GIS layer off"
+        },
+        {
+          "id": "GIS-07",
+          "label": "GIS-07: Height provenancePASSED",
+          "passed": "PASSED",
+          "details": "Not applicable — GIS layer off"
+        },
+        {
+          "id": "GIS-08",
+          "label": "GIS-08: Width provenancePASSED",
+          "passed": "PASSED",
+          "details": "Not applicable — GIS layer off"
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  }
+}

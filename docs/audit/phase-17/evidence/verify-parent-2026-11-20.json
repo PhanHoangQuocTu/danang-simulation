@@ -1,0 +1,59 @@
+{
+  "tool": "parent-verify (p17-verify3.py + p17-verify4.py, Python Playwright, Chromium 1194/SwiftShader)",
+  "note": "Run 1 of verify2 measured a BROKEN server (500s) because a parallel pnpm build had wiped .next/standalone/.next mid-probe; those numbers were discarded and are NOT in this file. The server was re-synced and re-verified (root 200, GIS 200, JS chunk 200) before the runs below.",
+  "cases": {
+    "A_844x390_gis_init": {
+      "checks_43_43_after_s": 3.3,
+      "canvases": 2,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "verdict": "PASS - resolves the QA agent's worldInitialised=false flag (probe artifact: their init signal never arrived at this viewport, yet checks 43/43, walk and camera all worked there)."
+    },
+    "B_390x844_gis_f3": {
+      "checks_43_43_after_s": null,
+      "note": "The probe's textContent poll never saw 'Checks: 43/43' in 120s at spawn, BUT the screenshot verify-gis-390x844-f3.png (taken by the same probe run after its F3 attempts) VISIBLY shows the 'Checks: 43/43' chip, Elevation 6.05 m, Mini Map and the grounded character on the GIS road ring. Explanation: at 390x844 the debug/chips UI starts hidden and only renders after the panel is opened at least once (same behaviour as Phase 16). World initialised: YES (screenshot evidence).",
+      "consoleErrors": 3,
+      "consoleErrorTexts": "NOT CAPTURED (count only). The same screenshot shows the weather widget as '-- degC' (unavailable), consistent with the known shared-IP Open-Meteo 429 pattern (3x 429 per mode in the 2026-11-20 follow-up QA) - stated as consistent-with, not proven.",
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "verdict": "PASS with observation - world initialised, checks 43/43 visible, 0 page/failed-request errors; 3 console errors, most likely weather 429s."
+    },
+    "C_1024x768_gis_jump_context": {
+      "checks_43_43_after_s": 3.4,
+      "f3_taps_to_expanded": -1,
+      "gis_lines": [],
+      "jump_elevations": "all '6.05' - sampled the static terrain-elevation chip, not the character geoHeight; jump arc NOT captured by this probe",
+      "loseContext": {
+        "ok": true
+      },
+      "restoreContext": {
+        "ok": true
+      },
+      "checks_back_after_restore_s": null,
+      "canvases_after_restore": 2,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "verdict": "PARTIAL - lose/restore calls both returned ok and 2 canvases persist with 0 errors, but the 'Checks: 43/43' HUD text did not reappear within 30s of polling after restore. Whether the world resumes rendering or only the HUD chip stays hidden is NOT established."
+    },
+    "D_1024x768_gis_f3_jump_context_v4": {
+      "checks_43_43_after_s": 3.7,
+      "f3_debug_clicks": -1,
+      "gis_lines": [],
+      "jump_arc_geoHeight": "no Jump button found by text scan (scan itself too slow under SwiftShader); jump NOT exercised",
+      "loseContext": {
+        "ok": true
+      },
+      "restoreContext": {
+        "ok": true
+      },
+      "checks_back_after_s": null,
+      "verdict": "PARTIAL - same context-restore observation as case C. F3 expansion by this probe failed in headless (bare F3 key and Debug-button scan did not expand the panel); the QA agent's screenshots prove the panel itself works."
+    }
+  },
+  "findings": [
+    "Bare keyboard Space does NOT trigger a jump unless the on-screen Jump button is focused (useWorldExplorer.ts actionHandlers onKeyDown is bound to the button element). Both probes pressed bare Space, so no jump arc was captured in GIS mode. Jump code is unchanged from Phase 16, where the arc 6.046 -> 7.718 -> 6.038 m WAS captured.",
+    "The QA agent's browser-qa-2026-11-20.json records jump peakDeltaM 0 in all 12 combos for the same reason."
+  ]
+}

@@ -104,7 +104,48 @@ export const danangDataSources: DataSource[] = [
 
 // Attempt dates are not metadata verification or legal approval. Evidence is retained in phase-13/metadata.json.
 for (const source of danangDataSources) {
-  if (source.id === 'osm-vector') source.documentationCheckedAt = '2026-11-17T19:28:14.336Z';
+  if (source.id === 'osm-vector') {
+    source.documentationCheckedAt = '2026-11-20T08:25:00.000Z';
+    source.license = 'ODbL-1.0 — attribution "© OpenStreetMap contributors" and derived-database share-alike';
+    source.captureDate = '2026-11-20';
+    source.verifiedDate = '2026-11-20';
+    source.reviewStatus = 'approved-for-ingestion';
+    source.metadataReview = {
+      reviewer: 'Phase 17 GIS research (live verification 2026-11-20)',
+      reviewedAt: '2026-11-20T08:25:00.000Z',
+      evidenceUrl: 'https://www.openstreetmap.org/copyright',
+      decision:
+        'OSM vector approved for ingestion as a pilot: 1,830 road runs and 418 buildings retrieved 2026-11-20 via the official OSM API map call over the DEM pilot bbox (raw XML SHA-256 b4bf752fab45898631449b837e329c5d0b64d38addfc81671c190f634848d94d); ODbL-1.0 with attribution; no road carries a width tag (all widths are estimated class defaults) and only 1 building carries a height tag (410 are footprint-only); positional accuracy is NOT certified (no GCPs).',
+    };
+    source.rights = {
+      licenseId: 'ODbL-1.0',
+      licenseUrl: 'https://www.openstreetmap.org/copyright',
+      attribution: '© OpenStreetMap contributors',
+      attributionUrl: 'https://www.openstreetmap.org/copyright',
+      copyrightHolder: 'OpenStreetMap contributors',
+      permittedUses: ['download', 'display', 'derived-geometry'],
+      redistributionAllowed: true,
+      restrictions: [
+        'Attribution "© OpenStreetMap contributors" must accompany any display',
+        'Redistribution of the derived asset only under ODbL-1.0 (share-alike)',
+        'Road widths are estimated class defaults, not measurements; building heights are known for 1, estimated for 7, unknown (footprint-only) for 410',
+        'Positional accuracy is NOT certified; no surveyed GCPs yet',
+      ],
+      review: source.metadataReview,
+    };
+    source.geographic = {
+      bounds: [108.188181, 16.040844, 108.216217, 16.067955],
+      coordinateOrder: 'longitude-latitude',
+      units: 'degree',
+      coverageEvidence:
+        'OSM API map call 2026-11-20 over the pilot bbox returned 14,176 nodes, 2,740 ways, 126 relations; ingest kept 1,830 road runs and 418 buildings (see docs/audit/phase-17/evidence/ingest-report.json)',
+    };
+    source.capabilities = { download: true, api: true, view: true };
+    source.notes = [
+      'OSM vector pilot (Phase 17): roads and buildings for the 3 km x 3 km DEM pilot window only, never full-city coverage. Heights and positional accuracy are unknown; no tiles or Vietnam PBF downloaded. Overpass was NOT used (it times out from this environment); the official OSM API map call is the acquisition route.',
+      'Pilot asset: src/worlds/danang/data/danang-gis-pilot.ts (compact, delta-encoded, ~193 KB); raw 4.1 MB XML stays outside the repo with SHA-256 b4bf752fab45898631449b837e329c5d0b64d38addfc81671c190f634848d94d.',
+    ];
+  }
   if (source.id === 'copernicus-dsm') {
     source.documentationCheckedAt = '2026-11-20T02:57:00.000Z';
     source.license =

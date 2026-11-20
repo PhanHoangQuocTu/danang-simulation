@@ -78,11 +78,11 @@ describe('HUD terrain mode (Phase 16 browser QA follow-up)', () => {
     expect(spawn).toMatch(/Spawn Y 6\.045524001121521 m equals sampled elevation 6\.045524001121521/);
   });
 
-  it('keeps the checks chip at 35/35 after the provider switches to DEM', () => {
+  it('keeps the checks chip at 43/43 after the provider switches to DEM', () => {
     mockActiveProvider.current = demProvider;
     const model = panelsModel({ panels: { environmentPanel: 'hidden', secondaryInfo: 'compact' } });
     render(<InformationPanels model={model} />);
-    expect(screen.getByRole('button', { name: 'checks: 35/35' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'checks: 43/43' })).toBeInTheDocument();
   });
 
   it('labels the Mini Map span from the active mode half-extent, not the synthetic 72 m', () => {

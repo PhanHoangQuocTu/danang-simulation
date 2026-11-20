@@ -11,7 +11,13 @@ import { formatCompassDirection } from '@/integrations/weather/service';
 import { runSystemDiagnosticsSuite } from '../diagnostics';
 import { runGeospatialDiagnosticsSuite } from '../geospatial-diagnostics';
 import { runTerrainDiagnosticsSuite } from '../terrain-diagnostics';
-import { getActiveTerrainProvider, resolveMiniMapHalfExtentMeters } from '../runtime/world';
+import { runGisDiagnosticsSuite } from '../gis-diagnostics';
+import {
+  getActiveGisLayer,
+  getActiveGisMode,
+  getActiveTerrainProvider,
+  resolveMiniMapHalfExtentMeters,
+} from '../runtime/world';
 import { useGeoTelemetry } from '../hooks/useGeoTelemetry';
 import { computeMiniMapVisibleSpanMeters } from '@/engine/spatial/minimap';
 import { GAME_CONFIG } from '@/engine/core/const';
@@ -410,10 +416,19 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
   // synthetic default forever and mislabels the DEM world in F3.
   const activeTerrainProvider = getActiveTerrainProvider();
   const terrainDiagnostics = useMemo(() => runTerrainDiagnosticsSuite(activeTerrainProvider), [activeTerrainProvider]);
-  const checksPassed = [...diagnostics, ...geoDiagnostics, ...terrainDiagnostics].filter(
+  // Phase 17: same keying rule as the terrain suite — the GIS layer is
+  // set by createWorldRuntime in an effect, after this component first
+  // mounts, so the diagnostics must be keyed on the layer identity.
+  const activeGisLayer = getActiveGisLayer();
+  const activeGisMode = getActiveGisMode();
+  const gisDiagnostics = useMemo(
+    () => runGisDiagnosticsSuite(activeGisLayer, activeGisMode),
+    [activeGisLayer, activeGisMode]
+  );
+  const checksPassed = [...diagnostics, ...geoDiagnostics, ...terrainDiagnostics, ...gisDiagnostics].filter(
     (check) => check.passed
   ).length;
-  const checksTotal = diagnostics.length + geoDiagnostics.length + terrainDiagnostics.length;
+  const checksTotal = diagnostics.length + geoDiagnostics.length + terrainDiagnostics.length + gisDiagnostics.length;
   const environment = m.panels.environmentPanel;
   const debug = m.panels.secondaryInfo;
   const geo = useGeoTelemetry(s, debug === 'expanded');
@@ -586,6 +601,23 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
                     <li key={check.id} title={check.details}>
                       <span>
                         {check.id}: {t(`terrainDiag${index + 1}` as CopyKey)}
+                      </span>
+                      <b className={check.passed ? 'world-green' : 'world-amber'}>
+                        {t(check.passed ? 'passed' : 'failed')}
+                      </b>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+              <details>
+                <summary>
+                  {t('gisDiagnostics')}: {gisDiagnostics.filter((check) => check.passed).length}/{gisDiagnostics.length}
+                </summary>
+                <ul className='world-diagnostics'>
+                  {gisDiagnostics.map((check, index) => (
+                    <li key={check.id} title={check.details}>
+                      <span>
+                        {check.id}: {t(`gisDiag${index + 1}` as CopyKey)}
                       </span>
                       <b className={check.passed ? 'world-green' : 'world-amber'}>
                         {t(check.passed ? 'passed' : 'failed')}

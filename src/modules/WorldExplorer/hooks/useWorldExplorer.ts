@@ -13,6 +13,7 @@ import { fetchWeather } from '@/integrations/weather/client';
 import type { HUDPanelState, PanelDisplayMode } from '../type';
 import { createWorldRuntime, type WorldRuntime, type WorldSnapshot, type RuntimeStatus } from '../runtime/world';
 import { resolveTerrainMode } from '@/worlds/danang/terrain-mode';
+import { resolveGisMode } from '@/worlds/danang/gis-mode';
 
 export function useWorldExplorer() {
   const { t } = useTranslations('worldExplorer');
@@ -147,6 +148,8 @@ export function useWorldExplorer() {
     try {
       // Phase 16: `?terrain=dem` opts into the real-DEM pilot; anything
       // else (including no parameter) keeps the synthetic production world.
+      // Phase 17: `?gis=real` opts into the real-OSM roads & buildings
+      // pilot layer, which only builds on a geographic (DEM) terrain.
       const instance = createWorldRuntime(
         {
           canvas: canvas.current,
@@ -166,7 +169,7 @@ export function useWorldExplorer() {
             if (active && runtimeGeneration.current === generation) setStatus(value);
           },
         },
-        { terrainMode: resolveTerrainMode(window.location.search) }
+        { terrainMode: resolveTerrainMode(window.location.search), gisMode: resolveGisMode(window.location.search) }
       );
       runtime.current = instance;
       return () => {

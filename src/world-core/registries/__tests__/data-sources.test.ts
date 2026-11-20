@@ -100,7 +100,13 @@ describe('data source trust boundary', () => {
       // Phase 16: only copernicus-dsm is approved for ingestion, after live
       // verification of its licence, tile and checksum; every other source
       // stays denied until its own dataset-specific review.
-      expect(registry.canIngest(source.id, 'download').allowed).toBe(source.id === 'copernicus-dsm');
+      // Phase 17: osm-vector joins it, after live verification of its
+      // ODbL licence, OSM API response and checksum (see
+      // src/worlds/danang/data-sources.ts). Sentinel-2 stays denied for
+      // ingestion here: its category is not an ingestible dataset kind.
+      expect(registry.canIngest(source.id, 'download').allowed).toBe(
+        source.id === 'copernicus-dsm' || source.id === 'osm-vector'
+      );
     }
     expect(registry.getSource('osm-vector')?.license).toContain('ODbL');
   });
@@ -119,8 +125,13 @@ describe('data source trust boundary', () => {
   });
 
   it('DS-05/06/07 rejects status escalation without reviewed evidence', () => {
+    // Phase 17: osm-vector now carries real review evidence, so the
+    // no-evidence escalation case uses a source that is still a plain
+    // candidate (commons-ground-reference).
+    const unevidenced = danangDataSources.find((source) => source.id === 'commons-ground-reference');
+    if (!unevidenced) throw new Error('Missing candidate source');
     for (const reviewStatus of ['metadata-verified', 'approved-for-ingestion', 'ingested']) {
-      expect(() => createDataSourceRegistry([{ ...danangDataSources[0], reviewStatus }])).toThrow();
+      expect(() => createDataSourceRegistry([{ ...unevidenced, reviewStatus }])).toThrow();
     }
     for (const reviewStatus of ['blocked', 'rejected']) {
       const registry = createDataSourceRegistry([{ ...danangDataSources[0], reviewStatus }]);
@@ -134,7 +145,9 @@ describe('data source trust boundary', () => {
     const first = registry.getSource('osm-vector');
     if (!first) throw new Error('Missing source');
     first.rights.permittedUses.push('download');
-    expect(registry.getSource('osm-vector')?.rights.permittedUses).toEqual([]);
+    // Phase 17: osm-vector is approved-for-ingestion with download,
+    // display and derived-geometry permitted (ODbL-1.0, attribution).
+    expect(registry.getSource('osm-vector')?.rights.permittedUses).toEqual(['download', 'display', 'derived-geometry']);
     expect(registry.getSource('missing')).toBeUndefined();
     expect(registry.listSources({ category: 'vector-osm' }).map((s) => s.id)).toEqual(['osm-vector']);
     expect(registry.getReadinessSummary().realGeometryLoaded).toBe(false);

@@ -14,12 +14,14 @@ import type { TerrainProvider } from '@/engine/terrain/type';
 import { requireElevation } from '@/engine/terrain/type';
 import { buildTerrainMesh } from './terrain-mesh';
 import { PLATFORM_COLLIDERS, TREE_COLLIDERS, syntheticTerrainProvider } from './zones/synthetic-terrain';
+import { buildGisLayer, type GisLayerResult } from './gis-layer';
 
 /** The archived test environment uses synthetic local meters, not surveyed city geometry. */
 export function createDaNangScene(
   registry: InteractableRegistry,
   scope: ResourceScope,
-  terrain: TerrainProvider = syntheticTerrainProvider
+  terrain: TerrainProvider = syntheticTerrainProvider,
+  options: { gisEnabled?: boolean } = {}
 ) {
   const scene = new THREE.Scene();
   // Phase 16: a geographic DEM world is kilometres across, so its fog must
@@ -246,6 +248,18 @@ export function createDaNangScene(
   );
   const { mesh: terrainMesh } = buildTerrainMesh(scope, terrain, terrainMat);
   scene.add(terrainMesh);
+
+  // 10.5 Real GIS roads & buildings (Phase 17, additive only). Built
+  // only when explicitly opted in (?gis=real) AND the terrain is
+  // geographic (the DEM pilot): kilometre-scale OSM features have no
+  // meaning on the 180 m synthetic world. No synthetic content is
+  // hidden or removed for GIS — there are no synthetic buildings or
+  // roads in the scene; the layer adds real features on top.
+  let gisLayer: GisLayerResult | null = null;
+  if (options.gisEnabled === true && terrain.metadata.isGeographic) {
+    gisLayer = buildGisLayer(scope, terrain);
+    scene.add(gisLayer.group);
+  }
 
   // 11. Origin Compass Plaza & Winding Cobblestone Trail
   const envGroup = new THREE.Group();
@@ -697,5 +711,6 @@ export function createDaNangScene(
     dustParticles,
     beaconRingGroups,
     blockerMeshes,
+    gisLayer,
   };
 }

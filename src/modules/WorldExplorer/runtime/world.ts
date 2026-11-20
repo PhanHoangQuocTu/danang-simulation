@@ -18,6 +18,8 @@ import type { TerrainMode } from '@/worlds/danang/terrain-mode';
 import type { TerrainProvider } from '@/engine/terrain/type';
 import { getDaNangClockData, calculateDaNangSolarData } from '@/worlds/danang/environment/solar';
 import type { NormalizedWeatherState } from '@/integrations/weather/type';
+import type { GisMode } from '@/worlds/danang/gis-mode';
+import type { GisLayerResult } from '@/worlds/danang/gis-layer';
 
 export const idleTarget = (): ActiveInteractionTargetState => ({
   targetId: null,
@@ -91,6 +93,9 @@ export interface WorldRuntimeOptions {
    * only; an invalid DEM asset fails the runtime instead of silently
    * falling back to synthetic. */
   terrainMode?: TerrainMode;
+  /** Phase 17: 'real' opts into the OSM roads & buildings pilot layer
+   * (`?gis=real`); it only builds on a geographic (DEM) terrain. */
+  gisMode?: GisMode;
 }
 
 /** The provider the most recently created runtime is using (synthetic by
@@ -100,6 +105,25 @@ let activeTerrainProvider: TerrainProvider = syntheticTerrainProvider;
 
 export function getActiveTerrainProvider(): TerrainProvider {
   return activeTerrainProvider;
+}
+
+/** The GIS layer the most recently created runtime built, or null when
+ * GIS is off (the default) or the terrain is not geographic. The HUD
+ * diagnostics read the layer through this getter. */
+let activeGisLayer: GisLayerResult | null = null;
+
+export function getActiveGisLayer(): GisLayerResult | null {
+  return activeGisLayer;
+}
+
+/** The GIS mode the most recently created runtime was asked for
+ * (`?gis=real` or the default `off`). The HUD reads this so a requested
+ * layer that was not built (no DEM terrain) reports as a failure
+ * instead of silently looking like "GIS off". */
+let activeGisMode: GisMode = 'off';
+
+export function getActiveGisMode(): GisMode {
+  return activeGisMode;
 }
 
 /**
@@ -130,6 +154,8 @@ export function createWorldRuntime(bindings: WorldBindings, options: WorldRuntim
       : syntheticTerrainProvider;
   activeTerrainProvider = terrain;
   const isDem = terrain.metadata.isGeographic;
+  const gisMode = options.gisMode ?? 'off';
+  activeGisMode = gisMode;
   const state = createPlayerState(terrain);
   const keyboard: KeyboardInputState = {
     forward: false,
@@ -154,7 +180,8 @@ export function createWorldRuntime(bindings: WorldBindings, options: WorldRuntim
   const releases: (() => void)[] = [];
   try {
     const renderer = scope.own(createWebGlRenderer(bindings.canvas));
-    const world = createDaNangScene(registry, scope, terrain);
+    const world = createDaNangScene(registry, scope, terrain, { gisEnabled: gisMode === 'real' });
+    activeGisLayer = world.gisLayer;
     const { scene, characterRig, dustParticles } = world;
     const environment = createEnvironmentSystem(world);
     const camera = new THREE.PerspectiveCamera(
@@ -623,6 +650,8 @@ export function createWorldRuntime(bindings: WorldBindings, options: WorldRuntim
         // provider is a shared singleton and must never be disposed here.
         if (terrain !== syntheticTerrainProvider) terrain.dispose();
         if (activeTerrainProvider === terrain) activeTerrainProvider = syntheticTerrainProvider;
+        if (activeGisLayer === world.gisLayer) activeGisLayer = null;
+        if (activeGisMode === gisMode) activeGisMode = 'off';
       },
     };
   } catch (error) {

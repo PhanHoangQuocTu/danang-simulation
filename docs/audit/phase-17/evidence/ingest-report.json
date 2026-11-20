@@ -1,0 +1,113 @@
+{
+  "rawSha256": "b4bf752fab45898631449b837e329c5d0b64d38addfc81671c190f634848d94d",
+  "rawBytes": 4128354,
+  "rawNodes": 14176,
+  "rawWays": 2740,
+  "rawRelations": 126,
+  "retrieved": "2026-11-20",
+  "url": "https://api.openstreetmap.org/api/0.6/map?bbox=108.188181,16.040844,108.216217,16.067955",
+  "bbox": [108.188181, 16.040844, 108.216217, 16.067955],
+  "clipWorld": [-1500.21, -1500.04, 1500.0, 1500.05],
+  "roadsKept": 1830,
+  "roadRuns": 1830,
+  "roadClasses": {
+    "footway": 173,
+    "living_street": 3,
+    "path": 1,
+    "pedestrian": 1,
+    "primary": 96,
+    "primary_link": 25,
+    "residential": 619,
+    "secondary": 21,
+    "secondary_link": 1,
+    "service": 772,
+    "steps": 8,
+    "tertiary": 97,
+    "tertiary_link": 5,
+    "track": 3,
+    "unclassified": 5
+  },
+  "roadTagCoverage": {
+    "bridge": 20,
+    "lanes": 251,
+    "name": 685,
+    "oneway": 257,
+    "surface": 956,
+    "tunnel": 2
+  },
+  "roadWidthProvenance": {
+    "estimated": 1830
+  },
+  "roadPointsTotal": 8952,
+  "roadWaysSplitByClipping": [118674634, 698768064, 1551312087],
+  "buildingsKept": 418,
+  "buildingKinds": {
+    "apartments": 5,
+    "church": 2,
+    "commercial": 2,
+    "florist": 1,
+    "hangar": 2,
+    "hospital": 3,
+    "hotel": 1,
+    "house": 1,
+    "navigationaid": 1,
+    "residential": 6,
+    "retail": 1,
+    "roof": 7,
+    "ruins": 1,
+    "school": 1,
+    "temple": 11,
+    "tower": 1,
+    "transportation": 2,
+    "university": 4,
+    "yes": 366
+  },
+  "buildingTagCoverage": {
+    "building:levels": 9,
+    "height": 1,
+    "name": 59
+  },
+  "buildingHeightProvenance": {
+    "estimated": 7,
+    "known": 1,
+    "unknown": 410
+  },
+  "buildingAreaM2": {
+    "min": 13.7,
+    "max": 24356.1
+  },
+  "rejected": [
+    {
+      "id": 1423189984,
+      "kind": "road",
+      "reason": "highway=proposed is not built"
+    },
+    {
+      "id": 1423222203,
+      "kind": "road",
+      "reason": "highway=proposed is not built"
+    },
+    {
+      "id": 1330673710,
+      "kind": "building",
+      "reason": "clipped area 379.3 m^2 < 25% of 1651.5 m^2 original"
+    },
+    {
+      "id": 1394803648,
+      "kind": "building",
+      "reason": "clipped area 34.9 m^2 < 25% of 323.6 m^2 original"
+    },
+    {
+      "id": 1561346721,
+      "kind": "building",
+      "reason": "clipped area 42.9 m^2 < 25% of 561.8 m^2 original"
+    }
+  ],
+  "rejectedCount": 5,
+  "rejectedReasons": {
+    "clipped area 34.9 m^2 < 25% of 323.6 m^2 original": 1,
+    "clipped area 379.3 m^2 < 25% of 1651.5 m^2 original": 1,
+    "clipped area 42.9 m^2 < 25% of 561.8 m^2 original": 1,
+    "highway=proposed is not built": 2
+  }
+}

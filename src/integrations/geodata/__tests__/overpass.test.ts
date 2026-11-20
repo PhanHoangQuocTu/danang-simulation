@@ -111,8 +111,10 @@ describe('opt-in fixed Overpass transport', () => {
     vi.stubGlobal('fetch', () => {
       throw new Error('Network must not run');
     });
+    // Phase 17: osm-vector is approved-for-ingestion, so the denial case
+    // uses a source that is still a candidate.
     await expect(
-      fetchExploratoryNodes(danangSourceRegistry, 'osm-vector', [108.2, 16.05, 108.201, 16.051])
+      fetchExploratoryNodes(danangSourceRegistry, 'commons-ground-reference', [108.2, 16.05, 108.201, 16.051])
     ).rejects.toThrow('Source not eligible');
   });
 });
