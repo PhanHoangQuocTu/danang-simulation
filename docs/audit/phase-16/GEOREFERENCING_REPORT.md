@@ -10,6 +10,7 @@
 
 - Horizontal: EPSG:4326 (WGS84 geographic). The COG GeoKeys confirm EPSG:4326; pixel scale 1/3600°, tiepoint (0,0) → (lon 108.0, lat 17.0); RasterPixelIsArea per the file GeoKeys (the official dataspace page says DGED alignment is RasterPixelIsPoint — a half-pixel, ~15 m, interpretation difference, flagged, not a blocker).
 - Vertical: EPSG:3855 (EGM2008 geoid), i.e. **orthometric heights**. Kept as-is; world Y = orthometric height. **No geoid conversion applied, no offset invented. Absolute WGS84-ellipsoid alignment is NOT VERIFIED.**
+- **Update 2026-11-20 — EGM2008 undulation VERIFIED:** the geoid undulation N for the pilot was read from the official NGA EGM2008 model via GeographicLib GeoidEval v2.5.2 (1-arc-minute grid, cubic interpolation; cross-checked the same day at Everest: N = -28.4939 m vs the published -28.49 m). Anchor (16.0544, 108.2022): **N = -10.8043 m**; corners NW -10.8704 m, NE -10.8571 m, SW -10.7470 m, SE -10.7383 m; spread across the pilot 0.132 m. Conversion helpers + bilinear interpolation over the pilot bbox now live in `src/engine/geospatial/egm2008.ts` (tested, `egm2008.test.ts`). **Decision ("giữ orthometric"):** the DEM pilot stays orthometric by default — world Y = orthometric height; conversion to ellipsoidal is available explicitly (spawn H = 6.0455 m orthometric ↔ h = -4.759 m ellipsoidal at the anchor). The DEM is still not certified as production-ready: no independent checkpoints / RMSE yet.
 - The Phase 15 contract requires a known vertical datum and `isProductionReady` true only for WGS84-ellipsoidal data. The pilot therefore validates as a labelled pilot with `isProductionReady === false` (see `DATASET_VALIDATION.md`).
 
 ## Pilot grid geometry
@@ -27,5 +28,5 @@ The ingestion script (`evidence/ingest_pilot.py`) projected the source tile onto
 ## What is NOT established
 
 - No independent ground control points, no surveyed checkpoints, no RMSE. Geographic accuracy certification is **NOT VERIFIED**.
-- No verified geoid undulation value for Da Nang was sourced; no EGM2008→ellipsoid conversion exists in the repo.
+- ~~No verified geoid undulation value for Da Nang was sourced; no EGM2008→ellipsoid conversion exists in the repo.~~ **Superseded 2026-11-20:** verified EGM2008 undulation values sourced (anchor N = -10.8043 m, corners -10.8704 / -10.8571 / -10.7470 / -10.7383 m) and conversion helpers added in `src/engine/geospatial/egm2008.ts` — see the update note under "Source CRS and datum" above. What is still missing is independent ground truth (checkpoints/RMSE), not the geoid value.
 - The pilot covers flat coastal urban terrain (mean 8.47 m, range 1.79–25.68 m). Steep-slope behaviour (the same tile reaches 1408.79 m in the western mountains) is untested — a mountain pilot is the natural follow-up.
