@@ -45,7 +45,7 @@ software rendering only; no GPU/physical device in this VM).
 ## 3. Baseline
 
 Measured before any change; raw outputs in `docs/audit/phase-15/evidence/*-baseline.txt`.
-Full detail: `docs/audit/phase-15/BASELINE_REPORT.md`.
+Full detail: `PHASE_15_IMPLEMENTATION_REPORT.md` (Appendix: BASELINE_REPORT.md).
 
 | Gate | Baseline result |
 |---|---|
@@ -223,7 +223,7 @@ measured under SwiftShader (see §15).
 ## 14. Tests
 
 Full suite: **47 files / 280 tests, all passing** (baseline 42 / 242). Coverage
-77.83% / 67.3% / 63.03% / 79.64%. Detail: `docs/audit/phase-15/TEST_MATRIX.md`.
+77.83% / 67.3% / 63.03% / 79.64%. Detail: `PHASE_15_IMPLEMENTATION_REPORT.md` (Appendix: TEST_MATRIX.md).
 
 New tests (38 tests, 5 files): `validation.test.ts`, `grid.test.ts`,
 `synthetic.test.ts`, `selection.test.ts`, `terrain-diagnostics.test.ts`.
@@ -249,7 +249,7 @@ setup error, not an app defect. The `fps-probe.mjs` usage notes should gain the
 copy step (follow-up, not done here).
 
 Results after the fix (evidence: `docs/audit/phase-15/evidence/browser-*.json`,
-`browser-context-restore-1024x768.txt`):
+[`browser-context-restore-1024x768.txt`](docs/audit/phase-15/evidence/EVIDENCE.md#browser-context-restore-1024x768txt)):
 
 | Viewport | Canvases | World | Checks chip | Console errors | Horiz. overflow |
 |---|---|---|---|---|---|
@@ -330,7 +330,7 @@ could not be checked in this environment; no item is marked PASS without evidenc
 
 ## 19. Known issues, limitations & next steps
 
-Known issues: `docs/audit/phase-15/KNOWN_ISSUES.md`. Headlines:
+Known issues: `PHASE_15_IMPLEMENTATION_REPORT.md` (Appendix: KNOWN_ISSUES.md). Headlines:
 
 - Scene mesh dimensions remain synthetic-specific (180 m / 128 segments); a DEM
   provider that does not cover ±90 m throws at scene build via `requireElevation`.
@@ -384,3 +384,316 @@ Deleted: `src/worlds/danang/zones/synthetic.ts`.
 **Push authorization needed:** nothing was committed or pushed in this task.
 The parent/user must explicitly authorize push before these Phase 15 changes go
 to `main`.
+
+---
+
+## Appendix: ARCHITECTURE_REPORT.md
+
+Merged from docs/audit/phase-15/ARCHITECTURE_REPORT.md on 2026-11-20 — file removed as part of Option A docs consolidation.
+
+## Phase 15 — Architecture Report: Terrain Provider & DEM Readiness
+
+Date: 2026-11-19. Scope: Phase 15 only. No Phase 16–20 work. No new backend,
+no new GIS server/DB/NestJS/proxy/microservice, no new dependencies (Zod and the
+Phase 13 registry infrastructure were reused).
+
+### Placement decisions (boundaries)
+
+| Piece | Location | Why |
+|---|---|---|
+| `TerrainProvider` contract, `ElevationSample`, resource limits | `src/engine/terrain/` (`type.ts`, `const.ts`) | Pure TypeScript; no React/Next/Three imports. The contract lives in engine (not world-core) so the engine can consume it without importing world-core — the documented direction is world-core → engine (`docs/architecture/CONFIG_OWNERSHIP.md`). This placement was corrected after the read-only architecture audit arrived: the contract was first written in `src/world-core/terrain/` and moved before delivery. |
+| Metadata validation, grid provider, selection, test fixtures | `src/world-core/terrain/` (`validation.ts`, `grid.ts`, `selection.ts`, `fixtures.ts`) | World-core is the schema/registry layer; these import the contract from `src/engine/terrain/`, matching world-core → engine. |
+| Synthetic provider + colliders + terrain constants | `src/worlds/danang/zones/synthetic-terrain.ts` | Da Nang-specific data stays in `src/worlds/danang/`. |
+| Character grounding / collision / camera consumption | `src/engine/character/controller.ts`, `src/modules/WorldExplorer/runtime/world.ts` | Engine consumes the injected provider; it does not import Da Nang content. |
+| Diagnostics suite | `src/modules/WorldExplorer/terrain-diagnostics.ts` | Module-owned, mirrors the existing geo diagnostics suite. |
+
+`src/world-core/terrain/` imports only `zod`, relative files and the engine contract.
+`src/engine/character/` imports the contract type from `../terrain/type` (relative,
+type-only); no engine file imports world-core. `src/worlds/danang/zones/synthetic.ts`
+was deleted; its only Three.js use was `THREE.MathUtils.smoothstep`, replaced by a
+plain-JS `smoothstep` in the provider.
+
+### Contract (`src/engine/terrain/type.ts`, limits in `src/engine/terrain/const.ts`)
+
+`TerrainProvider`: `metadata`, `coverage`, `boundaryRadiusMeters`, `spawnPosition`,
+`sampleElevation(x, z)`, `sampleSupportSurface(x, z)`, `resolveHorizontalCollisions(...)`,
+`dispose()`. `ElevationSample` is a discriminated union — `ok` / `outside-coverage` /
+`no-data` / `invalid-input` / `unsupported-crs` — with `elevationMeters: number | null`
+and a `reason` string. A provider never returns 0 as a silent fallback and never
+manufactures elevation. `requireElevation()` throws where elevation must exist
+(scene build). `describeTerrainProvider()` renders the diagnostics summary.
+
+### Metadata & validation (`const.ts`, `validation.ts`)
+
+`TerrainDatasetMetadata`: dataset ID, source ID (registry ref), version, checksum
+(SHA-256), CRS, vertical datum (mandatory), unit, coverage bounds, width/height,
+resolution, NoData value, capture date, accuracy, license, attribution, processing
+history. `TERRAIN_LIMITS`: max dimension 4096, max samples 4,194,304, max bytes
+16,777,216, max span 100,000 m, max cell size 1000 m.
+
+`validateTerrainDatasetMetadata()` (Zod) rejects: unknown datum; orthometric heights
+without a verified geoid transformation (no invented geoid conversion — Phase 12 uses
+WGS84 ellipsoidal); unsupported CRS; inverted bounds; missing checksum / capture date /
+accuracy for production geographic data; mismatched raster dimensions; unsupported
+units; excessive resources; invalid resolution. Synthetic production data is allowed
+with null checksum/capture/accuracy but requires processing history.
+
+### Grid DEM provider (`grid.ts`)
+
+`GridDemProvider`: regular grid, row 0 = north edge (min Z), rows increase toward +Z
+(south), columns east (+X). Bilinear interpolation (refuses to interpolate across any
+NoData neighbour) and nearest-neighbour sampling. Edge clamping only at the coverage
+edge; no silent clamping of missing data. Accepts only validated geographic metadata
+with `WGS84_ELLIPSOID` datum; elevations are already transformed to world meters by
+preprocessing — no CRS conversion at sample time. Resource limits enforced at
+construction. `dispose()` marks the provider disposed; sampling afterwards throws.
+
+### Synthetic provider (`src/worlds/danang/zones/synthetic-terrain.ts`)
+
+`SyntheticTerrainProvider` + singleton `syntheticTerrainProvider`. The Phase 1–10
+formula is preserved verbatim (same constants, same `smoothstep` shape). Constants
+now named: `SYNTHETIC_TERRAIN_SIZE_METERS = 180`, `SYNTHETIC_TERRAIN_SEGMENTS = 128`,
+`SYNTHETIC_BOUNDARY_RADIUS_METERS = 68`, coverage ±90 m. Collider arrays moved here:
+`PLATFORM_COLLIDERS` (5), `ROCK_COLLIDERS` (8), `TREE_COLLIDERS` (18). The provider
+is the production default and stays the default until a real dataset passes all
+approval/verification. Its metadata declares `synthetic` provenance, ellipsoidal
+datum, meters, and `isTestOnly: false` with an explicit "not surveyed geography" note.
+
+### Selection & lifecycle (`selection.ts`)
+
+`selectTerrainProvider()`: synthetic default; a DEM provider is constructed only from
+validated grid input (`validateTerrainDatasetMetadata` + `GridDemProvider`).
+Switching means constructing a new provider and disposing the old one — no stale
+references, no shared mutable state. Providers reuse a single internal collision-result
+object when no output object is supplied (callers must consume immediately, not
+retain); `ALL_CYLINDERS` is module-level, not rebuilt per call.
+
+### Consumer integration (one elevation owner)
+
+- `src/worlds/danang/scene.ts` — `createDaNangScene(registry, scope, terrain = syntheticTerrainProvider)`;
+  all 7 former `getTerrainElevation` call sites now use `requireElevation(terrain.sampleElevation(...))`.
+- `src/engine/character/controller.ts` — `CharacterEnvironment` is now
+  `{ terrain: TerrainProvider; onLanding? }`; one elevation evaluation per tick via
+  `sampleSupportSurface` (returns both surface and raw terrain height); boundary from
+  `terrain.boundaryRadiusMeters`.
+- `src/modules/WorldExplorer/runtime/world.ts` — one shared `syntheticTerrainProvider`
+  instance passed to scene, controller and camera clamp; `createPlayerState(terrain = syntheticTerrainProvider)`
+  uses `terrain.spawnPosition`; camera clamp skips when the sample is not `ok`.
+- `src/worlds/danang/zones/manifest.ts` — rock Y via the singleton provider + `requireElevation`.
+- Mesh, grounding and collision now read the same provider at the same coordinate.
+
+### Diagnostics
+
+`runTerrainDiagnosticsSuite()` (TER-01..08, same style as the geo suite): provider active,
+CRS/datum, spawn elevation, boundary in coverage, outside coverage rejected, invalid
+input rejected, support surface, production provider. Wired into `WorldHud.tsx` checks
+count (now 33 = 9 system + 16 geo + 8 terrain) and a details block mirroring the geo
+diagnostics. New translation keys `terrainDiagnostics`, `terrainDiag1`–`terrainDiag8`
+in both `en` and `vi` `worldExplorer.json`. TEST-ONLY providers are never presented as
+approved production terrain (TER-08 fails for them by design).
+
+### What Phase 15 deliberately does NOT do
+
+- No real DEM downloaded or invented; the only DEM data is the 5×5 deterministic
+  test fixture (`fixtures.ts`), explicitly marked `TEST-ONLY — NOT REAL DA NANG
+  GEOGRAPHIC DATA`, never referenced by production world config.
+- No mesh rebuild from a DEM: the scene terrain dimensions (180 m / 128 segments)
+  remain synthetic-specific; building a world mesh from a DEM provider of different
+  size/coverage is Phase 16 work. A DEM provider whose coverage does not cover the
+  180 m mesh correctly throws at scene build via `requireElevation` instead of
+  silently producing wrong terrain.
+- No CRS conversion at sample time, no geoid model, no remote URL loading, no new
+  backend service.
+
+---
+
+## Appendix: BASELINE_REPORT.md
+
+Merged from docs/audit/phase-15/BASELINE_REPORT.md on 2026-11-20 — file removed as part of Option A docs consolidation.
+
+## Phase 15 — Baseline Report
+
+Date: 2026-11-19. Environment: Node 22.23.5, pnpm 12.14.0, Linux VM.
+Local checkout head at baseline: `5e7eca6` (`fix(weather): distinguish upstream 429 and verify blocked items`),
+mirroring GitHub `main` head `4c427d0d87c7063d5657eab0bccb54dd18b21e1a`. Tree clean at baseline.
+Raw outputs: `docs/audit/phase-15/evidence/*-baseline.txt`.
+
+### Baseline gates (all exit 0)
+
+| Gate | Result |
+|---|---|
+| `pnpm lint` | exit 0 |
+| `pnpm format:check` | exit 0 |
+| `pnpm type-check` | exit 0 |
+| `pnpm test` | exit 0 — 42 files / 242 tests |
+| `pnpm build` | exit 0 — 14 static pages |
+| `pnpm build-storybook` | exit 0 — 0 PLUGIN_TIMINGS |
+| `pnpm audit --prod` | exit 0 — 0 vulnerabilities |
+
+`pnpm test:coverage` was not run at baseline; final coverage is 77.83% statements /
+67.3% branches / 63.03% functions / 79.64% lines (see `docs/audit/phase-15/evidence/EVIDENCE.md#test-coverage-aftertxt`).
+
+### Baseline terrain state (verified against source, not the prompt)
+
+- Exactly one terrain-elevation formula, in `src/worlds/danang/zones/synthetic.ts:43-49`
+  (`getTerrainElevation`): spawn flatten `smoothstep(dist, 5.5, 17.0)`; rolling hills
+  `sin(x*0.055)*cos(z*0.055)*1.35 + sin(x*0.13+z*0.09)*0.42`; outer rim
+  `smoothstep(dist, 38.0, 68.0)*3.2`. Elevation at origin is exactly 0.
+- Terrain mesh 180 m × 180 m, 128 segments/side (16,641 vertices) — `src/worlds/danang/scene.ts:223-224`.
+- Character boundary radius 68 m (`src/engine/core/const.ts:44`); spawn implicit `(0, 0, 0)`,
+  no named spawn constant; camera initial `(0, 3, 5.4)`.
+- No `TerrainProvider` type existed; no `getHeight` / `heightAt` / `terrainHeight` /
+  `groundHeight` symbols anywhere.
+- Consumers (all calling the same formula directly, no caching, no mesh raycast): terrain
+  mesh (`scene.ts:239`), stepping stones (`:318`), lanterns (`:355`), trees (`:453`),
+  bushes (`:523`), fixtures (`:541`), grass (`:660`), rocks via `manifest.ts:45`, character
+  grounding via `controller.ts:119` (`getSupportSurfaceHeight`), camera clamp
+  (`world.ts:339`). Mini Map is ground-plane only (no elevation). HUD shows
+  `state.surfaceHeight` as "elevation". Geo-telemetry converts actual Y (including jumps)
+  via `worldToGeo`.
+- Duplication measured: character controller re-evaluated elevation up to 3× per frame
+  (`controller.ts:119,130,131`); camera a 4th evaluation per frame; 10+ independent call
+  sites; winding-path centre formula triplicated (`scene.ts:242,317,657`); boundary 68
+  written twice unlinked (playable clamp vs outer-rim end); implicit "elevation at
+  origin = 0" assumed in ≥5 places.
+- Boundaries: engine must not import React/Next/Da Nang content; world-core must not
+  depend on React/Next/Three; Da Nang-specific data stays in `src/worlds/danang/`;
+  `src/engine/geospatial/core.ts` is already clean pure WGS84/ECEF/ENU math;
+  `src/worlds/danang/zones/synthetic.ts` depended on `three` only for
+  `THREE.MathUtils.smoothstep`.
+
+### Baseline browser state (pre-existing, not a Phase 15 regression)
+
+The previous verification session (2026-11-19, commit `4c427d0`) reported the 3D world
+did not initialize in this VM's headless browser (0 canvases, root cause not established).
+Phase 15 re-investigated and found the root cause: the standalone server was started
+without the required `.next/static` (and `public`) copy, so every `/_next/static/...`
+subresource failed (33 requests `net::ERR_ABORTED`, only the HTML document finished).
+WebGL2 itself was available (SwiftShader ANGLE). After copying `.next/static` and
+`public` into `.next/standalone/` and restarting, the world initializes with 2 canvases.
+See `PHASE_15_IMPLEMENTATION_REPORT.md` §12 and `evidence/browser-*.json`.
+
+---
+
+## Appendix: KNOWN_ISSUES.md
+
+Merged from docs/audit/phase-15/KNOWN_ISSUES.md on 2026-11-20 — file removed as part of Option A docs consolidation.
+
+## Phase 15 — Known Issues
+
+Date: 2026-11-19. Status of the overall product remains **PARTIAL** (see
+`PHASE_15_IMPLEMENTATION_REPORT.md` acceptance matrix).
+
+### Phase 15 limitations (introduced or confirmed by this phase)
+
+1. **Scene mesh dimensions are still synthetic-specific.** `createDaNangScene`
+   builds a 180 m × 180 m / 128-segment mesh and samples the provider at every
+   vertex via `requireElevation`. A DEM provider whose coverage does not cover
+   ±90 m throws at scene build instead of silently producing wrong terrain.
+   Building a world mesh from a DEM of arbitrary size/coverage is Phase 16 work.
+2. **No real DEM exists in this repo.** The only DEM data is the 5×5 deterministic
+   test fixture, marked TEST-ONLY. No real dataset has passed approval/verification,
+   so the synthetic provider remains the production default by design.
+3. **No CRS conversion at sample time.** Elevations must already be transformed to
+   world meters by preprocessing. Orthometric heights without a verified geoid
+   transformation are rejected at validation; no geoid model is bundled.
+4. **Checks chip not surfaced in the compact mobile HUD.** At 390×844 the `33/33`
+   chip text was not found in the visible body text (compact HUD hides it). The
+   diagnostics themselves exist and pass; this is an observation, not a defect
+   found by Phase 15, and was not changed in this phase.
+5. **Performance measured in Node only.** Sampling cost: synthetic ≈163 ns/call,
+   grid DEM ≈62 ns/call (mixed in/out of coverage) over 200,000 calls in Vitest.
+   Per-frame elevation evaluations dropped from up to 4 (controller 3× + camera 1×)
+   to 2 (controller 1× via `sampleSupportSurface` + camera 1×). No browser-side
+   frame-cost measurement was possible under SwiftShader; no speculative
+   optimisation was introduced.
+
+### Pre-existing issues NOT resolved by Phase 15 (carried over)
+
+- Standalone `127.0.0.1` bind still FAIL (upstream Next.js #94745, PR #95917
+  unmerged; latest Next 16.4.6). Workaround: `localhost` or `0.0.0.0`.
+  **New finding:** the standalone server also requires `.next/static` and `public`
+  to be copied into `.next/standalone/` (Next.js standalone deployment requirement);
+  without that copy every `/_next/static/...` subresource fails and the world never
+  initializes in a browser. That was the root cause of the "0 canvases" result in
+  the 2026-11-19 verification session — a test-harness setup error, not an app
+  defect. The repo's `fps-probe.mjs` usage notes should be updated to include the
+  copy step (follow-up, not done in this phase).
+- FPS 60 / physical device / Docker / GPU long-term profiling: NOT VERIFIED
+  (no Docker, no GPU in this VM; headless rendering is SwiftShader software only).
+- Live weather observation: NOT VERIFIED (Open-Meteo 429 daily limit on shared
+  egress IP; BFF 429 handling already landed in `4c427d0`).
+- No real satellite imagery / GCP / legal approval; Overpass at capacity;
+  collision/occlusion, storm, day-sweep, screen reader / 200% zoom, Gemini Preview
+  remain NOT VERIFIED (see Phase 14 reports).
+
+### Risks
+
+- The internal collision-result object reuse (no-allocation design) requires
+  callers to consume the result immediately and not retain it. This is documented
+  on the interface; a future caller retaining it would read stale values.
+- `selectTerrainProvider` disposal is deterministic, but no UI exists yet to switch
+  providers at runtime; provider switching is a code-level operation until a later
+  phase adds an approved flow.
+
+---
+
+## Appendix: TEST_MATRIX.md
+
+Merged from docs/audit/phase-15/TEST_MATRIX.md on 2026-11-20 — file removed as part of Option A docs consolidation.
+
+## Phase 15 — Test Matrix
+
+Date: 2026-11-19. Runner: Vitest, Node 22.23.5. Full suite: **47 files / 280 tests,
+all passing** (baseline: 42 files / 242 tests). No existing test was weakened; no
+timeout was increased. One existing test was updated to the new truthful total:
+`hud-semantics.test.tsx` pins the diagnostics chip at `33/33` (was `25/25`; the 8
+new terrain checks are now counted). Raw output: `docs/audit/phase-15/evidence/EVIDENCE.md#test-aftertxt`;
+coverage: `docs/audit/phase-15/evidence/EVIDENCE.md#test-coverage-aftertxt` (77.83% stmts / 67.3% branches /
+63.03% funcs / 79.64% lines).
+
+### New tests (38 new tests, 5 new files)
+
+| File | Coverage |
+|---|---|
+| `src/world-core/terrain/__tests__/validation.test.ts` | Metadata validation: valid synthetic + geographic metadata; rejects unknown datum, orthometric without verified geoid, unsupported CRS, inverted bounds, missing checksum/capture/accuracy for production geographic data, mismatched raster dimensions, unsupported units, excessive resources, invalid resolution; synthetic production data allowed with null checksum/capture/accuracy + processing history. |
+| `src/world-core/terrain/__tests__/grid.test.ts` | Grid provider: valid sampling, bilinear (exact values + no interpolation across NoData neighbours), nearest, edge clamping, outside-coverage, NoData, invalid input, unsupported CRS/datum rejection, resource limits, disposal. |
+| `src/world-core/terrain/__tests__/synthetic.test.ts` | Synthetic provider: formula preserved verbatim (origin = 0, known values at fixed coordinates), spawn, boundary 68 m, coverage ±90 m, support surface with platform colliders, collision resolution, disposal. |
+| `src/world-core/terrain/__tests__/selection.test.ts` | Provider selection: synthetic default; DEM only from validated grid input; invalid input rejected; switching disposes the old provider; disposed provider sampling throws. |
+| `src/modules/WorldExplorer/__tests__/terrain-diagnostics.test.ts` | Diagnostics suite: 8/8 pass for the synthetic production provider; TER-08 fails for a test-only DEM provider. |
+
+### Updated tests
+
+| File | Change |
+|---|---|
+| `src/engine/character/__tests__/controller.test.ts` | Stub environment now uses `syntheticTerrainProvider`; added a counting-stub test proving **one elevation evaluation per tick over 10 updates** (was up to 3×/tick). |
+| `src/modules/WorldExplorer/__tests__/world.test.ts` | Import updated from `zones/synthetic` to `zones/synthetic-terrain`. |
+| `src/modules/WorldExplorer/__tests__/hud-semantics.test.tsx` | Checks chip expectation `25/25` → `33/33` (9 system + 16 geo + 8 terrain). |
+
+### Regression
+
+All 42 baseline test files still pass unchanged (except the two truthful updates
+above). Phase 01–14 behaviour is covered by the existing suite; the full run is
+green with no skips added.
+
+### Browser verification (not unit tests — see `evidence/browser-*.json`)
+
+| Check | Result |
+|---|---|
+| World loads, 2 canvases (world + Mini Map) | PASS at 1024×768, 1920×1080, 1366×768, 768×1024, 390×844, 844×390 |
+| Spawn at (0, 0) | PASS (1024×768) |
+| Walk (W, 3 s) → position (0, −0.61) | PASS (1024×768) |
+| Jump → JUMP state observed | PASS (1024×768) |
+| F3 diagnostics → "Terrain checks: 8/8" | PASS (1024×768) |
+| Checks chip 33/33 | PASS (all desktop/tablet viewports; not surfaced in the compact mobile HUD at 390×844 — observation, not a defect) |
+| WebGL context loss → recovery UI; restore → world back, 2 canvases | PASS (1024×768) |
+| Console errors / exceptions | 0 at every viewport probed |
+| Horizontal overflow | None at any viewport probed |
+| FPS 60 | NOT_APPLICABLE — SwiftShader software renderer only in this VM (0.79 FPS over 20 s at 1024×768); software rendering is a regression baseline only, never a 60 FPS certification. Physical device + GPU still NOT VERIFIED. |
+
+### Not covered by tests (honest gaps)
+
+- No end-to-end test builds a world mesh from a real DEM provider (no real DEM
+  exists; scene dimensions remain synthetic-specific — see `KNOWN_ISSUES.md`).
+- No physical-device, Docker, or long-session GPU profiling (not available in this VM).
+- No screen-reader / 200% zoom verification in this phase.

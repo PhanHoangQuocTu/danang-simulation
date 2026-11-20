@@ -1,2 +1,0 @@
-$ biome lint .
-Checked 333 files in 851ms. No fixes applied.

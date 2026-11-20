@@ -42,7 +42,7 @@ Không tuyên bố repository bug-free hoặc tất cả 72 mục PASS.
 
 Baseline source chưa sửa: lint/format exit 0; **36 files/176 tests** đạt. Types/build/Storybook
 bị sandbox SWC chặn; retry ngoài sandbox types/build exit 0. Storybook exit 0 nhưng Node 26
-DEP0205 và Vite PLUGIN_TIMINGS. Raw logs: `docs/audit/phase-14/evidence/baseline-*.txt`.
+DEP0205 và Vite PLUGIN_TIMINGS. Raw logs: `docs/audit/phase-14/evidence/EVIDENCE.md` (sections `baseline-*.txt`).
 
 `baseline-browser.json`: bốn checks render/performance/F3/movement đạt; WebGL thật, 25 diagnostics.
 `baseline-ui-browser.json`: desktop/mobile portrait/tablet portrait đạt hit-tests;
@@ -53,11 +53,11 @@ fresh failing unit test xác nhận capture sai precondition. Historical Phase 1
 
 | Defect | Root cause và thay đổi | Regression / verification |
 |---|---|---|
-| DEF-01 | `engine/controls/events.ts` capture vô điều kiện khi lock; bỏ capture khi document đang lock, release mouse capture và input khi lock đổi | `input-red.txt` → `input-green.txt`; events.test.ts IMG-48; B known-pointer-lock-second-click đạt native lock/second click/escape |
+| DEF-01 | `engine/controls/events.ts` capture vô điều kiện khi lock; bỏ capture khi document đang lock, release mouse capture và input khi lock đổi | [`input-red.txt`](docs/audit/phase-14/evidence/EVIDENCE.md#input-redtxt) → [`input-green.txt`](docs/audit/phase-14/evidence/EVIDENCE.md#input-greentxt); events.test.ts IMG-48; B known-pointer-lock-second-click đạt native lock/second click/escape |
 | DEF-02 | Runtime trả null cho cả no-target/cooldown; hook null đổi Env. Trả discriminated executed/rejected/no-target; chỉ no-target giữ fallback | retry-lifecycle.test.tsx IMG-49, world.test.ts actual executed→cooldown; B known-interaction-cooldown đạt; Shift+E giữ command riêng |
 | DEF-03 | Guide/toolbar dùng fixed corner không chung budget | Chuyển touch guide vào cùng left column, scroll budget; desktop giữ lower-left. B sáu hud-hit scenarios đều đạt |
 | Review-01 | Canvas giữ pixels khi revalidation thất bại, attribution đã mất | Clear trước load, khi lỗi và cleanup; close bitmap. imagery-lifecycle.test.tsx load→reject→retry đạt |
-| Review-02 | Horizontal RMSE tính trong world ENU ở xa làm giảm sai số | Tangent frame tại predicted GCP, reject disagreement ngoài 1°; `review-gcp-red.txt` chứng minh >10m bị nhận nhầm dưới 3m, `review-green.txt` đạt |
+| Review-02 | Horizontal RMSE tính trong world ENU ở xa làm giảm sai số | Tangent frame tại predicted GCP, reject disagreement ngoài 1°; [`review-gcp-red.txt`](docs/audit/phase-14/evidence/EVIDENCE.md#review-gcp-redtxt) chứng minh >10m bị nhận nhầm dưới 3m, [`review-green.txt`](docs/audit/phase-14/evidence/EVIDENCE.md#review-greentxt) đạt |
 | CSS diagnostic | Selector shared touch được đặt trước base declaration gây descending-specificity warning | Đổi thứ tự declarations, không suppress; release lint không warning |
 | QA diagnostics | Canvas mock bị restore trước unmount; coverage test chạy nhiều follow frames dư thừa | Explicit unmount trước restore; giảm đoạn follow không có assertion riêng, giữ mọi assertions/5000ms timeout; clean focused test và full suite/coverage rerun |
 | Security | Next cache disclosure và follow-redirects credentials advisory | Minimal package patches, audit 4 advisories → còn 1; xem dependencies |
@@ -127,7 +127,7 @@ Source quan trọng: engine/imagery/{alignment,const}.ts; world-core/registries/
 WorldExplorer/{imagery-diagnostics,imagery-preview}.ts; ImageryInspector và story;
 input/runtime/hook, HUD integration, styles, en/vi messages và regression tests tương ứng.
 README/AGENTS/PHASE_STATUS/architecture được sửa stale status, không đổi historical reports.
-Full diff/new-file inventory: `docs/audit/phase-14/evidence/file-inventory.txt`.
+Full diff/new-file inventory: `docs/audit/phase-14/evidence/EVIDENCE.md#file-inventorytxt`.
 CSS/config mapping: [STYLE_ARCHITECTURE](docs/architecture/STYLE_ARCHITECTURE.md),
 [CONFIG_OWNERSHIP](docs/architecture/CONFIG_OWNERSHIP.md).
 
@@ -163,16 +163,16 @@ Các lệnh pnpm dùng `.cmd` trên host; PATH trỏ Node 22.23.5.
 
 | Command | Kết quả | Evidence |
 |---|---|---|
-| pnpm lint | Exit 0, zero diagnostics ở final source/docs | final-document-lint.txt |
-| pnpm format:check | Exit 0 sau format generated JSON, không suppress | final-document-format.txt |
-| pnpm type-check | Exit 0; Next route typegen + TS strict | final-type-check.txt |
-| pnpm test | **41 files / 236 tests**, thêm 60 test cases so với baseline; final không canvas diagnostic | clean-test.txt |
-| pnpm test:coverage --maxWorkers=2 | Full suite exit 0 sau giảm test frames dư; không tăng timeout | clean-coverage.txt; lần fail trước ở final-coverage.txt |
-| pnpm build | Exit 0, Next 16.4.5/14 static pages/standalone | release-build.txt |
-| pnpm build-storybook | Exit 0, **zero-warning gate FAIL**: PLUGIN_TIMINGS | release-build-storybook.txt |
-| pnpm audit --prod --json | Exit 1; còn 1 unpublished high advisory | dependency-audit-after.json.txt |
-| pnpm peers check | Exit 1; tsconfck TypeScript ^5 mismatch | peer-dependencies.txt |
-| docker version | Exit 1; client 28.3.2, không có docker_engine pipe/daemon | docker.txt |
+| pnpm lint | Exit 0, zero diagnostics ở final source/docs | [final-document-lint.txt](docs/audit/phase-14/evidence/EVIDENCE.md#final-document-linttxt) |
+| pnpm format:check | Exit 0 sau format generated JSON, không suppress | [final-document-format.txt](docs/audit/phase-14/evidence/EVIDENCE.md#final-document-formattxt) |
+| pnpm type-check | Exit 0; Next route typegen + TS strict | [final-type-check.txt](docs/audit/phase-14/evidence/EVIDENCE.md#final-type-checktxt) |
+| pnpm test | **41 files / 236 tests**, thêm 60 test cases so với baseline; final không canvas diagnostic | [clean-test.txt](docs/audit/phase-14/evidence/EVIDENCE.md#clean-testtxt) |
+| pnpm test:coverage --maxWorkers=2 | Full suite exit 0 sau giảm test frames dư; không tăng timeout | [clean-coverage.txt](docs/audit/phase-14/evidence/EVIDENCE.md#clean-coveragetxt); lần fail trước ở [final-coverage.txt](docs/audit/phase-14/evidence/EVIDENCE.md#final-coveragetxt) |
+| pnpm build | Exit 0, Next 16.4.5/14 static pages/standalone | [release-build.txt](docs/audit/phase-14/evidence/EVIDENCE.md#release-buildtxt) |
+| pnpm build-storybook | Exit 0, **zero-warning gate FAIL**: PLUGIN_TIMINGS | [release-build-storybook.txt](docs/audit/phase-14/evidence/EVIDENCE.md#release-build-storybooktxt) |
+| pnpm audit --prod --json | Exit 1; còn 1 unpublished high advisory | [dependency-audit-after.json.txt](docs/audit/phase-14/evidence/EVIDENCE.md#dependency-audit-afterjsontxt) |
+| pnpm peers check | Exit 1; tsconfck TypeScript ^5 mismatch | [peer-dependencies.txt](docs/audit/phase-14/evidence/EVIDENCE.md#peer-dependenciestxt) |
+| docker version | Exit 1; client 28.3.2, không có docker_engine pipe/daemon | [docker.txt](docs/audit/phase-14/evidence/EVIDENCE.md#dockertxt) |
 
 Next standalone Windows copy từng lỗi ENOTDIR ở React target; không sửa vendor hoặc disable standalone.
 Lượt build Node 22 với `UV_THREADPOOL_SIZE=1` thành công; đây là process-only workaround cho
@@ -181,7 +181,7 @@ Node 22 loại được DEP0205 của Node 26; PLUGIN_TIMINGS vẫn chỉ ra Sto
 Không tắt logging, không đổi warning limits/filter, không nâng hàng loạt package để che timing warning.
 
 Matrix đầy đủ 72 IDs, từng phương pháp/kết quả/giới hạn:
-[TEST_MATRIX.md](docs/audit/phase-14/TEST_MATRIX.md).
+[TEST_MATRIX.md](PHASE_14_IMPLEMENTATION_REPORT.md#appendix-test_matrixmd).
 
 ## Browser, responsive và lifecycle evidence
 
@@ -288,3 +288,166 @@ khuyến nghị downgrade vào advisory để rollback UI.
 Phase 15 chỉ là handoff tương lai, **không triển khai hoặc deploy trong phiên này**.
 Owner đã yêu cầu commit và push phần Phase 14 lên `main` sau implementation batch;
 yêu cầu Git integration không thay đổi verdict **PARTIAL** hoặc cấp phép triển khai Phase 15.
+
+---
+
+## Appendix: BASELINE_AND_PLAN.md
+
+Merged from docs/audit/phase-14/BASELINE_AND_PLAN.md on 2026-11-20 — file removed as part of Option A docs consolidation.
+
+## Phase 14 — Baseline và kế hoạch thực thi
+
+Ngày: 2026-11-18, Asia/Bangkok. HEAD ban đầu `1296e6f`, branch `main`.
+Thay đổi ban đầu duy nhất: prompt Phase 14 chưa tracked; bảo toàn nguyên nội dung.
+
+### Thiết kế và giới hạn
+
+Thực thi trực tiếp theo master spec và yêu cầu triển khai ngay, không mở vòng duyệt lại.
+Tái sử dụng Phase 12 WGS84/ECEF/ENU và Phase 13 registry. Chỉ hỗ trợ raster EPSG:4326
+đã preprocess, affine GDAL, height ellipsoid do caller chỉ định. Không tự viết UTM/VN-2000.
+Không có raster hoặc GCP thật được duyệt. F3 cung cấp inspector và preview footprint
+TEST DATA riêng; không thay scene, camera, collision hoặc terrain.
+
+Chọn pure TypeScript + Zod hiện hữu thay vì thêm proj4/GeoTIFF khi chưa có asset cần chúng.
+Preview 2D tránh thêm renderer/GPU ownership. Local PNG đã kiểm checksum là định dạng
+preview duy nhất; không thêm proxy hay provider fetch. Registry vẫn là nguồn quyền duy nhất.
+
+### Baseline
+
+Host Windows, Node 26.13.1, pnpm 12.14.0; target `.nvmrc` là 22.
+RTK bị sandbox từ chối; dùng native executable. pnpm.ps1 bị execution policy chặn;
+dùng pnpm.cmd. Không sửa chính sách máy hoặc global config.
+Lint/format/test baseline exit 0. Type/build/Storybook sandbox bị SWC cache chặn;
+retry ngoài sandbox lưu riêng. Log trong `docs/audit/phase-14/evidence/EVIDENCE.md` (sections `baseline-*.txt`).
+
+### Công việc và acceptance
+
+- [x] Baseline: sáu gates, browser trước sửa, metrics cùng máy; ghi lỗi và giới hạn.
+- [x] DEF-01: regression pointer lock/capture; sửa engine input; kiểm tra drag/touch/release.
+- [x] DEF-02: regression cooldown; phân biệt recognized/rejected với no target; giữ Shift+E.
+- [x] Raster: schema/limits, affine inverse, center/corner, footprint, CRS/world, no-data.
+- [x] GCP: IDs/version/roles, distribution, independent residual statistics và thresholds.
+- [x] Trust: dùng rights/source registry; checksum/dimension/local-path gate; không fetch tùy ý.
+- [x] Inspector: F3, i18n, fixture label, reversible preview; story và component tests.
+- [x] CSS: tách tokens về src/styles, scope world, sửa overlap có bằng chứng; không đổi Health.
+- [x] Verify: focused proof, full gates, browser responsive/lifecycle, security/performance review.
+- [x] Report: IMG-01–72 có evidence hoặc lý do NOT_VERIFIED/BLOCKED; inventory/rollback.
+
+### Rủi ro phải kiểm tra
+
+Near-singular affine và half-pixel; antimeridian/axis flip; GCP calibration bị nhầm holdout;
+quyền nguồn thay đổi sau khi load; asset bị hỏng/oversized; stale async preview sau unmount.
+Không coi round-trip là survey accuracy. Không coi headless là thiết bị thật.
+
+### Defect ledger
+
+Các bước thực thi đã hoàn thành; checkmarks không đồng nghĩa mọi acceptance gate PASS.
+Verdict và blockers cuối nằm trong `PHASE_14_IMPLEMENTATION_REPORT.md` và IMG matrix.
+
+| ID | Evidence ban đầu | Owner | Acceptance |
+|---|---|---|---|
+| DEF-01 | events.ts gọi setPointerCapture vô điều kiện trước mouse handling | engine/controls/events.ts | Không capture khi pointer lock; browser second click sạch |
+| DEF-02 | runtime null cả cooldown; hook null đổi Env | runtime/world.ts + hook | Cooldown không đổi Env; no-target fallback giữ nguyên |
+| DEF-03 | Phase 11 ghi guide che toolbar, cần tái hiện mới | world CSS/HUD | Center hit-test các controls ở sáu viewport |
+| DEF-04 | Node 26/SWC cache, chưa phải lỗi app | Runtime/vendor | Phân loại output; không suppress |
+| DEF-05 | FPS lịch sử thấp; chưa có sample mới | Renderer/runtime | Đo trước/sau; không tối ưu suy đoán |
+
+---
+
+## Appendix: TEST_MATRIX.md
+
+Merged from docs/audit/phase-14/TEST_MATRIX.md on 2026-11-20 — file removed as part of Option A docs consolidation.
+
+## Phase 14 — IMG-01–IMG-72
+
+Ngày 2026-11-18, Asia/Bangkok. Không đồng nhất unit fixture với dữ liệu satellite thật.
+AUTOMATED_PASS chỉ áp dụng input/assumptions được test. BROWSER_PASS là Chrome headless
+trên Windows/Intel, không chứng nhận thiết bị thật. Một row có thể ghi giới hạn nhỏ hơn full acceptance.
+
+Evidence aliases:
+
+- A: `src/engine/imagery/__tests__/alignment.test.ts`, `docs/audit/phase-14/evidence/EVIDENCE.md#review-greentxt`.
+- R: `src/world-core/registries/__tests__/imagery.test.ts`, `docs/audit/phase-14/evidence/EVIDENCE.md#trust-preview-latesttxt`.
+- T: `src/modules/WorldExplorer/__tests__/imagery-preview.test.ts` (decoder mocked; không ảnh thật).
+- C: `imagery.test.tsx`, `imagery-lifecycle.test.tsx`, `docs/audit/phase-14/evidence/EVIDENCE.md#stale-preview-greentxt`.
+- B: `evidence/after-browser.json`, production build Next 16.4.5; scenario names ở từng row.
+- S: `evidence/storybook-browser.json`, ba story scenarios.
+- G: `docs/audit/phase-14/evidence/EVIDENCE.md` (sections `final-*.txt`), `docs/audit/phase-14/evidence/EVIDENCE.md#coverage-retrytxt`; xem report cho command/exit và warnings.
+
+| ID | Status | Phép kiểm và evidence / giới hạn |
+|---|---|---|
+| IMG-01 | AUTOMATED_PASS | A/R: metadata hợp lệ với source/legal fixture được chấp nhận; không có real asset |
+| IMG-02 | AUTOMATED_PASS | A: zero/negative/fractional/nonfinite/over-limit dimensions |
+| IMG-03 | AUTOMATED_PASS | A: NaN/Infinity coefficients |
+| IMG-04 | AUTOMATED_PASS | A: singular và near-singular matrix; condition limit |
+| IMG-05 | AUTOMATED_PASS | A: identity forward/inverse independently fixed vector |
+| IMG-06 | AUTOMATED_PASS | A: negative row Y north-up corner; explicit floating tolerance |
+| IMG-07 | AUTOMATED_PASS | A: rotated affine with signed off-diagonals |
+| IMG-08 | AUTOMATED_PASS | A: shear inverse ở projected-like large numeric magnitudes; không phải supported projected CRS |
+| IMG-09 | AUTOMATED_PASS | A: exact half-pixel center/edge normalization |
+| IMG-10 | AUTOMATED_PASS | A: TL/TR/BR/BL/TL edge footprint |
+| IMG-11 | AUTOMATED_PASS | A: missing/unknown CRS fails closed |
+| IMG-12 | AUTOMATED_PASS | A: lon/lat orientation, height separate; inverted input rejected |
+| IMG-13 | AUTOMATED_PASS | A: projected CRS unsupported fails explicitly; không real approved projected asset cần transform |
+| IMG-14 | AUTOMATED_PASS | A/C: East-right/North-up, nonzero origin applied once |
+| IMG-15 | AUTOMATED_PASS | A: pixel→world→pixel error <1e-6 px under explicit common ellipsoid height |
+| IMG-16 | AUTOMATED_PASS | A: bow-tie/order/range/affine footprint mismatch |
+| IMG-17 | AUTOMATED_PASS | A: wrapping/polar unsupported extents rejected |
+| IMG-18 | AUTOMATED_PASS | A: mirror/upside-down rejected by documented orientation policy |
+| IMG-19 | AUTOMATED_PASS | A: extent/GSD mismatch/resource policy |
+| IMG-20 | AUTOMATED_PASS | A: no-data marker including zero, nonfinite sample unavailable; no manufactured content |
+| IMG-21 | AUTOMATED_PASS | A/C: no implicit altitude, immutable reference, no physics writeback |
+| IMG-22 | BROWSER_PASS | B F3-diagnostics: GEO-01–16 + DIAG-01–09; unchanged meanings, full suite G |
+| IMG-23 | AUTOMATED_PASS | R: approved display/redistribution legal fixture; real permission BLOCKED |
+| IMG-24 | AUTOMATED_PASS | R/T: unknown/rejected/missing rights; no fetch on denial |
+| IMG-25 | AUTOMATED_PASS | R/C: attribution preserved; successful mocked preview displays accessible link |
+| IMG-26 | AUTOMATED_PASS | A/R/T: source/asset/version checks, GCP version mismatch, content-addressed hash path; no cache |
+| IMG-27 | AUTOMATED_PASS | R/T: arbitrary URL, encoded traversal and non-approved local paths blocked |
+| IMG-28 | AUTOMATED_PASS | R: malformed record, missing provenance/unknown source |
+| IMG-29 | AUTOMATED_PASS | A: three non-collinear matched fixture points accepted, authority false remains unverified |
+| IMG-30 | AUTOMATED_PASS | A: duplicate/collinear/near-collinear/clustered/out-of-bounds/wrong-version controls |
+| IMG-31 | AUTOMATED_PASS | A: calibration kept separate; calibration-only has zero holdout and no certification |
+| IMG-32 | AUTOMATED_PASS | A: known offset RMSE/max; distant-anchor regression fails then passes after local residual fix |
+| IMG-33 | AUTOMATED_PASS | A: outlier remains in max and RMSE, no smoothing |
+| IMG-34 | AUTOMATED_PASS | A/R: source-record thresholds change decision; UI keeps accuracy caveat |
+| IMG-35 | AUTOMATED_PASS | A/C: absent or nonauthoritative holdout remains NOT VERIFIED |
+| IMG-36 | AUTOMATED_PASS | A: unavailable CRS/datum pipeline fails closed, no approximate VN-2000/UTM |
+| IMG-37 | AUTOMATED_PASS | R: capture date null preserved |
+| IMG-38 | AUTOMATED_PASS | R/C: candidate/blocked/rejected source denied; stale canvas cleared on rejection/retry |
+| IMG-39 | AUTOMATED_PASS | R/T: checksum/header/decoded dimensions and corrupt/truncated asset checks; PNG decoder mocked |
+| IMG-40 | AUTOMATED_PASS | R: deterministic adapter and immutable registry, no duplicate catalog on retry |
+| IMG-41 | BROWSER_PASS | B production-render: real synthetic WebGL scene; no satellite bytes/provider fetch |
+| IMG-42 | BROWSER_PASS | B imagery-inspector + S: reversible labeled fixture footprint; real raster preview BLOCKED by missing asset |
+| IMG-43 | AUTOMATED_PASS | C/A: pure read-only preview geometry; no terrain/controller dependency or scene mutation |
+| IMG-44 | BROWSER_PASS | B imagery-inspector/production-render: original two canvases, one WebGL renderer; Mini Map retained |
+| IMG-45 | AUTOMATED_PASS | T/C: cancellation/bitmap close/unmount/retry; no textures/materials allocated by 2D harness |
+| IMG-46 | AUTOMATED_PASS | T/C + S rejected-asset: offline/MIME/404/corrupt fallback localized, no uncaught stack trace |
+| IMG-47 | BROWSER_PASS | B context-loss-restore: native extension, ready recovery, GL error=0; real raster restoration unavailable |
+| IMG-48 | BROWSER_PASS | B known-pointer-lock-second-click + events.test.ts: native lock, second click, Escape; touch/drag covered separately |
+| IMG-49 | BROWSER_PASS | B known-interaction-cooldown + runtime/hook tests: repeat E consumed, Shift+E intentional route preserved |
+| IMG-50 | BROWSER_PASS | B focus-dialog-reduced-motion, fixture dialogs; input lifecycle tests block focus/repeat/modifiers |
+| IMG-51 | BROWSER_PASS | B hud-hit-1920x1080/hud-hit-1366x768: every visible button scroll/hit-tested |
+| IMG-52 | BROWSER_PASS | B hud-hit-1024x768/hud-hit-768x1024: shared touch column, no guide occlusion |
+| IMG-53 | BROWSER_PASS | B hud-hit-390x844/hud-hit-844x390: touch targets reachable; emulation only |
+| IMG-54 | BROWSER_PASS | B vietnamese-F3; translation parity/placeholders in full suite G; source catalog en/vi |
+| IMG-55 | NOT_VERIFIED | Reduced motion/focus labels tested; physical screen reader, actual 200% browser zoom, cutouts not fully verified |
+| IMG-56 | BROWSER_PASS | B health-pages-and-root/health-route/weather-real-failure; metadata helpers/API/locale tests G; no exhaustive SEO crawl |
+| IMG-57 | BROWSER_PASS | B: zero unexpected console warnings/exceptions; three blocked weather requests and two context lifecycle logs separated |
+| IMG-58 | NOT_VERIFIED | Before/after short samples present; NOT COMPARABLE for causal performance claim; 60 FPS target not reached |
+| IMG-59 | MANUAL_PASS | STYLE_ARCHITECTURE.md, unchanged token values/scoped names; B Health routes + screenshot review |
+| IMG-60 | BROWSER_PASS | G Next/Storybook compile split CSS; B actual rendered scene and Health |
+| IMG-61 | MANUAL_PASS | CONFIG_OWNERSHIP.md; one raster safety owner and per-asset accuracy thresholds; no monolithic config |
+| IMG-62 | MANUAL_PASS | No new env/secret/server transport in client imports; browser network inspected; not universal secret scanning certification |
+| IMG-63 | MANUAL_PASS | Independent review/import trace: engine/world-core have no React/Next/city imports; same source registry |
+| IMG-64 | AUTOMATED_PASS | R/T: local content-addressed path, no redirects/credentials/proxy, timeout and bounded stream |
+| IMG-65 | AUTOMATED_PASS | A/R/T: huge metadata/pixels/bytes, invalid PNG header and truncated/corrupt stream |
+| IMG-66 | AUTOMATED_PASS | T: PNG-only exact path/content type/header/hash/dimensions; no persistent cache |
+| IMG-67 | MANUAL_PASS | Dependency diff: security patches only; no warning suppression/new runtime framework; residual vendor issues reported |
+| IMG-68 | AUTOMATED_PASS | Final lint/format evidence; zero diagnostic requirement read from output, not exit alone |
+| IMG-69 | AUTOMATED_PASS | G strict types, 236 tests/41 files, full V8 coverage rerun exit 0 |
+| IMG-70 | FAIL | Next production build exit 0; Storybook exit 0 but PLUGIN_TIMINGS persists on Node 22 |
+| IMG-71 | BLOCKED | Frozen lockfile validated; Node 22 gates exercised. Docker client exists, daemon unavailable; Linux CI image not run |
+| IMG-72 | MANUAL_PASS | Report/inventory/limitations match logs; Phase 15 not implemented, no commit/push |
+
+Overall **PARTIAL**. Source bytes, real legal approval, authoritative GCPs, physical-device QA,
+unpublished dependency fix, warning-free Storybook and available Docker daemon remain prerequisites.

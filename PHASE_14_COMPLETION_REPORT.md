@@ -39,18 +39,18 @@ Chi tiết: `PHASE_11_AUDIT_REPORT.md`, `PHASE_12_IMPLEMENTATION_REPORT.md`,
 
 | Gate | Kết quả | Evidence |
 | --- | --- | --- |
-| `pnpm lint` | PASS, exit 0, 403 files | `docs/audit/phase-14-completion/evidence/lint.txt` |
-| `pnpm format:check` | PASS, exit 0, 402 files | `evidence/format.txt` |
-| `pnpm type-check` | PASS, exit 0 | `evidence/type-check.txt` |
-| `pnpm test` | PASS, exit 0, 41 files / 236 tests | `evidence/test-coverage-before-timeout-fix.txt` (235 passed + 1 failed = 236 total, trước khi sửa timeout) |
-| `pnpm build` | PASS, exit 0, 14 static pages | `evidence/build.txt` |
-| `pnpm build-storybook` | exit 0 nhưng **FAIL zero-warning gate**: Vite PLUGIN_TIMINGS (react-docgen transform 38%, 6.2s, 4809 calls) | `evidence/build-storybook-before.txt` |
-| `pnpm test:coverage --maxWorkers=2` | **FAIL, exit 1**: 1 test timeout (xem §3.4) | `evidence/test-coverage-before-timeout-fix.txt` |
-| `pnpm audit --prod` | PASS, exit 0, 0 vulnerabilities | `evidence/audit-prod.txt` |
+| `pnpm lint` | PASS, exit 0, 403 files | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#linttxt` |
+| `pnpm format:check` | PASS, exit 0, 402 files | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#formattxt` |
+| `pnpm type-check` | PASS, exit 0 | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#type-checktxt` |
+| `pnpm test` | PASS, exit 0, 41 files / 236 tests | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#test-coverage-before-timeout-fixtxt` (235 passed + 1 failed = 236 total, trước khi sửa timeout) |
+| `pnpm build` | PASS, exit 0, 14 static pages | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#buildtxt` |
+| `pnpm build-storybook` | exit 0 nhưng **FAIL zero-warning gate**: Vite PLUGIN_TIMINGS (react-docgen transform 38%, 6.2s, 4809 calls) | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#build-storybook-beforetxt` |
+| `pnpm test:coverage --maxWorkers=2` | **FAIL, exit 1**: 1 test timeout (xem §3.4) | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#test-coverage-before-timeout-fixtxt` |
+| `pnpm audit --prod` | PASS, exit 0, 0 vulnerabilities | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#audit-prodtxt` |
 | `pnpm audit` (full) | exit 1: 2 moderate, dev-only (glob, minimatch) | `evidence/audit-all.json` |
 | `pnpm peers check` | exit 1: tsconfck@3.1.6 muốn TypeScript ^5, repo dùng 7.0.2 | §4.5 |
-| Standalone bind 127.0.0.1 | **FAIL**: `/` và `/health` 307 loop về chính nó (5 redirects vẫn 307); `/vi` 200 | `evidence/redirect-probe.txt` |
-| Standalone bind localhost / 0.0.0.0 | PASS: `/` 200, `/health` 200, `/en` một 307 đúng về `/` | `evidence/redirect-probe.txt` |
+| Standalone bind 127.0.0.1 | **FAIL**: `/` và `/health` 307 loop về chính nó (5 redirects vẫn 307); `/vi` 200 | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#redirect-probetxt` |
+| Standalone bind localhost / 0.0.0.0 | PASS: `/` 200, `/health` 200, `/en` một 307 đúng về `/` | `docs/audit/phase-14-completion/evidence/EVIDENCE.md#redirect-probetxt` |
 | Browser HUD hit-test (trước sửa) | **FAIL**: 1024×768 17/21 pass, 4 covered; 844×390 9/18 pass, 9 covered; 390×844 14/21 pass, 7 covered; 1920×1080 21/21 | `evidence/hud-probe-before.json` |
 
 Việc này xác minh lại trên Node 22 các gate của Phase 11/12/13: lint,
@@ -70,7 +70,7 @@ tắt log hay nâng ngưỡng warning.
 
 - Sau sửa: `pnpm build-storybook` exit 0, Vite built in **12.85s**,
   **0 lần xuất hiện PLUGIN_TIMINGS** (grep = 0).
-- Evidence: `evidence/build-storybook.txt`.
+- Evidence: `docs/audit/phase-14-completion/evidence/EVIDENCE.md#build-storybooktxt`.
 
 ### 3.2 Nâng cấp patch/minor an toàn — PASS
 
@@ -101,7 +101,7 @@ không giảm số frame, không bỏ assertion nào.
 - Sau sửa: `pnpm test:coverage --maxWorkers=2` exit 0, **41 files /
   237 tests pass**, coverage 76.81% statements / 65.12% branches /
   61.26% functions / 78.62% lines (Phase 14: 76.71 / 64.68 / 61.26 / 78.51).
-- Evidence: `evidence/test-coverage.txt`.
+- Evidence: `docs/audit/phase-14-completion/evidence/EVIDENCE.md#test-coveragetxt`.
 
 ### 3.5 HUD overlap ở viewport thấp/hẹp — PASS (browser thật, trước/sau)
 

@@ -1,9 +1,0 @@
-pnpm.CMD : $ biome lint .
-At line:6 char:3
-+   & pnpm.cmd $check *> $log
-+   ~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: ($ biome lint .:String) [], RemoteException
-    + FullyQualifiedErrorId : NativeCommandError
- 
-Checked 368 files in 398ms. No fixes applied.
-EXIT_CODE=0

@@ -71,13 +71,13 @@ Commands use `pnpm.cmd` because PowerShell rejects the unsigned pnpm.ps1 shim. G
 
 | Check | Result | Evidence |
 |---|---|---|
-| Lint | PASS, no lint warnings/errors | [lint.txt](docs/audit/phase-12/evidence/lint.txt) |
-| Formatting | PASS after formatting generated evidence JSON | [format-check.txt](docs/audit/phase-12/evidence/format-check.txt) |
-| Strict types + Next route generation | PASS | [type-check.txt](docs/audit/phase-12/evidence/type-check.txt) |
-| Complete repository suite | PASS, 33 files / 151 tests | [test.txt](docs/audit/phase-12/evidence/test.txt) |
-| Production build | PASS, all 14 static pages generated | [build.txt](docs/audit/phase-12/evidence/build.txt) |
-| Storybook build | Output generated, exit 0; **zero-warning gate FAIL** | [storybook.txt](docs/audit/phase-12/evidence/storybook.txt) |
-| Focused geographic suites | PASS, 23 tests | [geospatial.txt](docs/audit/phase-12/evidence/geospatial.txt) |
+| Lint | PASS, no lint warnings/errors | [lint.txt](docs/audit/phase-12/evidence/EVIDENCE.md#linttxt) |
+| Formatting | PASS after formatting generated evidence JSON | [format-check.txt](docs/audit/phase-12/evidence/EVIDENCE.md#format-checktxt) |
+| Strict types + Next route generation | PASS | [type-check.txt](docs/audit/phase-12/evidence/EVIDENCE.md#type-checktxt) |
+| Complete repository suite | PASS, 33 files / 151 tests | [test.txt](docs/audit/phase-12/evidence/EVIDENCE.md#testtxt) |
+| Production build | PASS, all 14 static pages generated | [build.txt](docs/audit/phase-12/evidence/EVIDENCE.md#buildtxt) |
+| Storybook build | Output generated, exit 0; **zero-warning gate FAIL** | [storybook.txt](docs/audit/phase-12/evidence/EVIDENCE.md#storybooktxt) |
+| Focused geographic suites | PASS, 23 tests | [geospatial.txt](docs/audit/phase-12/evidence/EVIDENCE.md#geospatialtxt) |
 
 Storybook still emits Node 26 DEP0205 (`module.register()` deprecation) and Vite `PLUGIN_TIMINGS`, matching the earlier audit. Host Node is 26.13.1; supported Node 22 rerun is **NOT VERIFIED**. Warnings were not suppressed.
 

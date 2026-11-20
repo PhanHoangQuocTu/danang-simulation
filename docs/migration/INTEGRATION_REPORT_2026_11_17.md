@@ -61,12 +61,12 @@ All final checks used Node 22.22.3. Existing 121 tests passed before these fixes
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| `pnpm lint` | PASS, zero errors/warnings | `evidence/2026-11-17/lint-node22.txt` |
-| `pnpm format:check` | PASS after adding final newlines to new evidence JSON | `evidence/2026-11-17/format-check-node22.txt` |
-| `pnpm type-check` | PASS, route generation and nonincremental TypeScript | `evidence/2026-11-17/type-check-node22.txt` |
-| `pnpm test` | PASS, 31 files, 124 tests | `evidence/2026-11-17/test-node22.txt` |
-| Production build | PASS, final isolated source copy | `evidence/2026-11-17/build-node22.txt` |
-| `pnpm build-storybook` | Build PASS; existing `PLUGIN_TIMINGS` warning | `evidence/2026-11-17/build-storybook-node22.txt`; corrected during Prompt 02 QA |
+| `pnpm lint` | PASS, zero errors/warnings | `evidence/2026-11-17/EVIDENCE.md#lint-node22txt` |
+| `pnpm format:check` | PASS after adding final newlines to new evidence JSON | `evidence/2026-11-17/EVIDENCE.md#format-check-node22txt` |
+| `pnpm type-check` | PASS, route generation and nonincremental TypeScript | `evidence/2026-11-17/EVIDENCE.md#type-check-node22txt` |
+| `pnpm test` | PASS, 31 files, 124 tests | `evidence/2026-11-17/EVIDENCE.md#test-node22txt` |
+| Production build | PASS, final isolated source copy | `evidence/2026-11-17/EVIDENCE.md#build-node22txt` |
+| `pnpm build-storybook` | Build PASS; existing `PLUGIN_TIMINGS` warning | `evidence/2026-11-17/EVIDENCE.md#build-storybook-node22txt`; corrected during Prompt 02 QA |
 | Desktop/mobile production browser | PASS, zero console errors/warnings | `evidence/2026-11-17/complete-report.json` |
 | Minimap settling, inspect/information dialogs, runtime Retry, fresh-cookie locale Health | PASS, zero console errors/warnings | `evidence/2026-11-17/focused-report.json` |
 | Actual live weather via BFF and browser | PASS with Node system certificate store, zero console errors/warnings | `evidence/2026-11-17/live-report.json` |

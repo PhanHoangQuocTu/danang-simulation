@@ -1,1 +1,0 @@
-Baseline top-level chunks: 26 files; 2019866 bytes; aggregate uncompressed, not per-route

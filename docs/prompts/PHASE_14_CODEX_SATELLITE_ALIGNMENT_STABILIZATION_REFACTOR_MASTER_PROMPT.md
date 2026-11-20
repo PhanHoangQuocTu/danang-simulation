@@ -118,7 +118,7 @@ If a reported bug is no longer reproducible, record reproduction attempt and obs
 
 ## 04 — REQUIRED DISCOVERY, BASELINE AND WORK PLAN
 
-Perform a lightweight, executable plan and immediately implement its stages. Recommended output `docs/audit/phase-14/BASELINE_AND_PLAN.md`, but reuse existing planning conventions; do not create duplicate plans.
+Perform a lightweight, executable plan and immediately implement its stages. Recommended output `../../PHASE_14_IMPLEMENTATION_REPORT.md` (Appendix: BASELINE_AND_PLAN.md), but reuse existing planning conventions; do not create duplicate plans.
 
 ### 04.1 Record reproducible baseline
 
@@ -817,8 +817,8 @@ When a gate fails: reproduce → isolate owner → add failing test → implemen
 Integrate with existing docs structure. Do not write five duplicative reports with the same information. Suggested artifacts:
 
 1. `PHASE_14_IMPLEMENTATION_REPORT.md` at repo root — single source of status.
-2. `docs/audit/phase-14/BASELINE_AND_PLAN.md` — baseline/defect ledger, task order, owner/acceptance.
-3. `docs/audit/phase-14/TEST_MATRIX.md` — IMG-01–72, method, actual result/evidence, blockers.
+2. `../../PHASE_14_IMPLEMENTATION_REPORT.md` (Appendix: BASELINE_AND_PLAN.md) — baseline/defect ledger, task order, owner/acceptance.
+3. `../../PHASE_14_IMPLEMENTATION_REPORT.md` (Appendix: TEST_MATRIX.md) — IMG-01–72, method, actual result/evidence, blockers.
 4. `docs/audit/phase-14/evidence/` — raw script outputs/screenshots/benchmark. Keep artifacts compact; do not commit huge binary raster/source data by default.
 5. `docs/architecture/IMAGERY_ALIGNMENT.md` — geospatial data flow, CRS/datum, pixel reference, transforms, GCPs, data trust, optional preview.
 6. `docs/architecture/STYLE_ARCHITECTURE.md` — CSS ownership, tokens, scoped rules and import diagram.

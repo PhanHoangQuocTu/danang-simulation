@@ -70,7 +70,7 @@ Live Open-Meteo observation was separately verified through the final production
 
 ## D. Quality checks
 
-Final command results are recorded after the final source edits. Exact command logs are retained in the dated evidence directory. Production build uses an isolated copy to avoid the user's existing `.next/audit-chrome` profile. An initial nested-CWD standalone packaging failure is retained as `build-isolation-failed.txt`; it is an environment/setup failure, not a passing build. Running pnpm inside the copy automatically installed a second dependency tree there; that temporary tree was removed. Final builds run `pnpm build verification-tmp` from the real repository with its existing dependencies. No root dependency or lockfile changes were made.
+Final command results are recorded after the final source edits. Exact command logs are retained in the dated evidence directory. Production build uses an isolated copy to avoid the user's existing `.next/audit-chrome` profile. An initial nested-CWD standalone packaging failure is retained as [`build-isolation-failed.txt`](prompt-02-2026-11-17/EVIDENCE.md#build-isolation-failedtxt); it is an environment/setup failure, not a passing build. Running pnpm inside the copy automatically installed a second dependency tree there; that temporary tree was removed. Final builds run `pnpm build verification-tmp` from the real repository with its existing dependencies. No root dependency or lockfile changes were made.
 
 Saved terminal logs use UTF-8 with trailing terminal whitespace and excess EOF blank lines removed. Diagnostic messages and exit statuses are preserved.
 
@@ -78,12 +78,12 @@ The production harness also exposed a hostname mismatch: binding the standalone 
 
 | Command | Result | Details |
 | --- | --- | --- |
-| `pnpm lint` | PASS | `lint.txt`; exit 0, no diagnostics |
-| `pnpm format:check` | PASS | `format-check.txt`; exit 0 |
-| `pnpm type-check` | PASS | `type-check.txt`; Next type generation and strict TypeScript, exit 0 |
-| `pnpm test` | PASS | `test.txt`; 31 files, 127 tests passed, exit 0 |
-| `pnpm build` | PASS | `build.txt`; `pnpm build verification-tmp`, isolated source/output, exit 0 |
-| `pnpm build-storybook` | BUILD PASS; warning remains | `build-storybook.txt`; exit 0, existing `PLUGIN_TIMINGS` warning |
+| `pnpm lint` | PASS | [`lint.txt`](prompt-02-2026-11-17/EVIDENCE.md#linttxt); exit 0, no diagnostics |
+| `pnpm format:check` | PASS | [`format-check.txt`](prompt-02-2026-11-17/EVIDENCE.md#format-checktxt); exit 0 |
+| `pnpm type-check` | PASS | [`type-check.txt`](prompt-02-2026-11-17/EVIDENCE.md#type-checktxt); Next type generation and strict TypeScript, exit 0 |
+| `pnpm test` | PASS | [`test.txt`](prompt-02-2026-11-17/EVIDENCE.md#testtxt); 31 files, 127 tests passed, exit 0 |
+| `pnpm build` | PASS | [`build.txt`](prompt-02-2026-11-17/EVIDENCE.md#buildtxt); `pnpm build verification-tmp`, isolated source/output, exit 0 |
+| `pnpm build-storybook` | BUILD PASS; warning remains | [`build-storybook.txt`](prompt-02-2026-11-17/EVIDENCE.md#build-storybooktxt); exit 0, existing `PLUGIN_TIMINGS` warning |
 
 Storybook was rerun without competing test workers. It completed in 11.55s but Rolldown still reported 9.0s in JavaScript plugin callbacks, including 4.1s in `storybook:react-docgen-plugin`. The retained earlier integration log also contains `PLUGIN_TIMINGS`; it was previously overlooked in the narrative. The zero-warning criterion is therefore **not met**, despite successful builds. No warning filters, dependency versions, or Storybook features were changed to hide it. Vitest also emits an environment startup performance hint; all 127 tests pass.
 

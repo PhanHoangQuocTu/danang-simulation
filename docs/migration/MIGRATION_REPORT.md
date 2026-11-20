@@ -104,12 +104,12 @@ Context7 Next docs v16.4.5 gần installed 16.4.2; chỉ dùng semantics dynamic
 
 | Check | Kết quả | Evidence |
 |---|---|---|
-| pnpm lint | PASS | evidence/node22-lint.txt; zero warnings |
-| pnpm format:check | PASS | evidence/node22-format.txt |
-| pnpm type-check | PASS | evidence/node22-types.txt; next typegen + incremental false |
-| pnpm test | PASS | 21 files, 74 tests; evidence/node22-tests.txt |
-| pnpm build | PASS | evidence/node22-build.txt |
-| pnpm build-storybook | PASS | evidence/node22-storybook.txt; zero warnings trên Node22 |
+| pnpm lint | PASS | evidence/EVIDENCE.md#node22-linttxt; zero warnings |
+| pnpm format:check | PASS | evidence/EVIDENCE.md#node22-formattxt |
+| pnpm type-check | PASS | evidence/EVIDENCE.md#node22-typestxt; next typegen + incremental false |
+| pnpm test | PASS | 21 files, 74 tests; evidence/EVIDENCE.md#node22-teststxt |
+| pnpm build | PASS | evidence/EVIDENCE.md#node22-buildtxt |
+| pnpm build-storybook | PASS | evidence/EVIDENCE.md#node22-storybooktxt; zero warnings trên Node22 |
 | DIAG-01–09 | PASS helper scope | phase-regression.test.ts |
 | Existing page browser smoke | PASS trong observation window | Chrome/CDP; browser evidence bổ sung bên dưới |
 | New engine browser gameplay | NOT RUN | chưa có consumer route |
@@ -137,7 +137,7 @@ Source này review được như **batch extraction/foundation đầu tiên**; c
 
 ## Browser evidence bổ sung
 
-`evidence/browser.json`: Chrome 157.0.8103.78, Linux headless; `/` en, `/vi` vi, `/health` en, `/vi/health` vi. Xóa cookies trước từng navigation. Không có console error/warning hoặc network error quan sát trong 3s mỗi route. Canonical localhost:3000 là APP_URL mặc định; QA server port3187 không đổi env. Health HTTP200, Cache-Control no-store. Driver CDP trong browser-driver.txt, log lifecycle browser.txt. Đây là smoke test, không interaction/accessibility/mobile/full network-idle proof.
+`evidence/browser.json`: Chrome 157.0.8103.78, Linux headless; `/` en, `/vi` vi, `/health` en, `/vi/health` vi. Xóa cookies trước từng navigation. Không có console error/warning hoặc network error quan sát trong 3s mỗi route. Canonical localhost:3000 là APP_URL mặc định; QA server port3187 không đổi env. Health HTTP200, Cache-Control no-store. Driver CDP trong [browser-driver.txt](evidence/EVIDENCE.md#browser-drivertxt), log lifecycle [browser.txt](evidence/EVIDENCE.md#browsertxt). Đây là smoke test, không interaction/accessibility/mobile/full network-idle proof.
 
 Lệnh reproduce trong phiên: `python3 /home/phuonglt/.codex/skills/webapp-testing/scripts/with_server.py --server 'exec /home/phuonglt/.nvm/versions/node/v22.22.3/bin/node node_modules/next/dist/bin/next start --port 3187' --port 3187 -- /home/phuonglt/.nvm/versions/node/v22.22.3/bin/node /tmp/danang-browser.cjs`. Đường dẫn phụ thuộc host; driver artifact cần copy về /tmp hoặc sửa output paths trước chạy lại.
 
