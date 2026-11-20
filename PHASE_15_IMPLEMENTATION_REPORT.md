@@ -2,9 +2,7 @@
 
 Date: 2026-11-19. Repo: `PhanHoangQuocTu/danang-simulation`, branch `main`.
 Local checkout head at start: `5e7eca6` (mirrors GitHub `main` `4c427d0d87c7063d5657eab0bccb54dd18b21e1a`).
-**Status: implementation complete locally, NOT pushed. No commit was made in this
-task and nothing was pushed — push authorization from the Project Owner is required
-(see §2). Overall product verdict stays PARTIAL.**
+**Status: implementation complete and PUSHED to `main` on 2026-11-20. GitHub commits `b0722d87` (`feat(terrain): add phase 15 terrain provider architecture and dem readiness`, 48 files) and `5fc908a` (`refactor(terrain): remove superseded synthetic.ts replaced by synthetic-terrain.ts`), parent `4c427d0`. Overall product verdict stays PARTIAL.**
 
 ## 1. Overview
 
@@ -30,9 +28,10 @@ software rendering only; no GPU/physical device in this VM).
 
 ## 2. Scope & constraints
 
-- **No commit / no push.** Prompt §21: do not commit or push unless explicitly
-  authorized by the Project Owner. The user has not authorized push for Phase 15.
-  Work is in the working copy only; this report lists every changed file (§19).
+- **No commit / no push at implementation time.** Prompt §21: do not commit or push unless explicitly
+  authorized by the Project Owner. The user had not authorized push for Phase 15 at that time.
+  Work was in the working copy only; this report lists every changed file (§19).
+  **Update 2026-11-20: push was authorized by the Project Owner and landed on `main` as `b0722d87` + `5fc908a`.**
 - Phase 15 only. No Phase 16–20 work was started.
 - User's strict rule applied throughout: verify carefully, ensure a real pass, do
   not self-mark PASS. Every PASS below cites independently run evidence.
