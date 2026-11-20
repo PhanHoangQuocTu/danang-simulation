@@ -3,7 +3,7 @@ import { Mesh } from 'three';
 import { ResourceScope } from '@/engine/core/resources';
 import { InteractableRegistry } from '@/engine/interactions/registry';
 import { createDaNangScene } from '@/worlds/danang/scene';
-import { ROCK_COLLIDERS } from '@/worlds/danang/zones/synthetic';
+import { ROCK_COLLIDERS } from '@/worlds/danang/zones/synthetic-terrain';
 import { createWorldRuntime, type WorldBindings, type WorldSnapshot } from '../runtime/world';
 
 const renderer = vi.hoisted(() => ({

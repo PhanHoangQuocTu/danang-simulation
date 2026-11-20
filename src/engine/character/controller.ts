@@ -2,18 +2,17 @@ import { Vector3 } from 'three';
 import * as THREE from 'three';
 import { GAME_CONFIG } from '../core/const';
 import type { PlayerRuntimeState, KeyboardInputState, JoystickInput } from '../core/type';
+import type { TerrainProvider } from '../terrain/type';
 
 export interface CharacterEnvironment {
-  boundaryRadius: number;
-  getTerrainElevation(x: number, z: number): number;
-  getSupportSurfaceHeight(x: number, z: number, currentY: number, radius: number): number;
-  resolveHorizontalCollisions(x: number, z: number, currentY: number, radius: number): { x: number; z: number };
+  /** Single elevation owner: mesh, grounding and collision read it, never a formula. */
+  terrain: TerrainProvider;
   onLanding?(x: number, y: number, z: number): void;
 }
 
 /** Phase 1 controller; world geometry is injected rather than imported. */
 export function createCharacterController(state: PlayerRuntimeState, environment: CharacterEnvironment) {
-  if (!Number.isFinite(environment.boundaryRadius) || environment.boundaryRadius <= 0) {
+  if (!Number.isFinite(environment.terrain.boundaryRadiusMeters) || environment.terrain.boundaryRadiusMeters <= 0) {
     throw new Error('Invalid movement boundary');
   }
   const forwardVec = new Vector3();
@@ -105,18 +104,25 @@ export function createCharacterController(state: PlayerRuntimeState, environment
       let nextZ = state.position.z + state.velocity.z * dt;
       let nextY = state.position.y + state.velocity.y * dt;
 
-      const resolvedXZ = environment.resolveHorizontalCollisions(nextX, nextZ, nextY, physics.playerRadius);
+      const resolvedXZ = environment.terrain.resolveHorizontalCollisions(nextX, nextZ, nextY, physics.playerRadius);
       nextX = resolvedXZ.x;
       nextZ = resolvedXZ.z;
 
       const distFromCenter = Math.hypot(nextX, nextZ);
-      if (distFromCenter > environment.boundaryRadius) {
-        const clampScale = environment.boundaryRadius / distFromCenter;
+      if (distFromCenter > environment.terrain.boundaryRadiusMeters) {
+        const clampScale = environment.terrain.boundaryRadiusMeters / distFromCenter;
         nextX *= clampScale;
         nextZ *= clampScale;
       }
 
-      const surfaceY = environment.getSupportSurfaceHeight(nextX, nextZ, prevY, physics.playerRadius);
+      // One elevation evaluation per tick: the support sample carries both
+      // the walkable surface and the raw terrain height underneath it.
+      const support = environment.terrain.sampleSupportSurface(nextX, nextZ, prevY, physics.playerRadius);
+      if (support.status !== 'ok' || support.elevationMeters === null) {
+        throw new Error(`No terrain support surface at (${nextX}, ${nextZ}): ${support.status}`);
+      }
+      const surfaceY = support.elevationMeters;
+      const terrainY = support.terrainElevationMeters ?? surfaceY;
       state.surfaceHeight = surfaceY;
 
       if (nextY <= surfaceY + 0.04 && state.velocity.y <= 0 && prevY >= surfaceY - 0.55) {
@@ -127,8 +133,8 @@ export function createCharacterController(state: PlayerRuntimeState, environment
         }
         state.velocity.y = 0;
         state.isGrounded = true;
-      } else if (nextY < environment.getTerrainElevation(nextX, nextZ)) {
-        nextY = environment.getTerrainElevation(nextX, nextZ);
+      } else if (nextY < terrainY) {
+        nextY = terrainY;
         state.velocity.y = 0;
         state.isGrounded = true;
       } else {

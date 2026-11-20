@@ -11,11 +11,8 @@ import { bindWorldInput, type WorldCommand } from '@/engine/controls/events';
 import { clampMiniMapZoom, projectWorldToMiniMap } from '@/engine/spatial/minimap';
 import { createDaNangScene } from '@/worlds/danang/scene';
 import { createEnvironmentSystem } from '@/worlds/danang/environment/simulation';
-import {
-  getTerrainElevation,
-  getSupportSurfaceHeight,
-  resolveHorizontalCollisions,
-} from '@/worlds/danang/zones/synthetic';
+import { syntheticTerrainProvider } from '@/worlds/danang/zones/synthetic-terrain';
+import type { TerrainProvider } from '@/engine/terrain/type';
 import { getDaNangClockData, calculateDaNangSolarData } from '@/worlds/danang/environment/solar';
 import type { NormalizedWeatherState } from '@/integrations/weather/type';
 
@@ -27,9 +24,10 @@ export const idleTarget = (): ActiveInteractionTargetState => ({
   isActivated: false,
   interactionCount: 0,
 });
-export function createPlayerState(): PlayerRuntimeState {
+export function createPlayerState(terrain: TerrainProvider = syntheticTerrainProvider): PlayerRuntimeState {
+  const spawn = terrain.spawnPosition;
   return {
-    position: new THREE.Vector3(),
+    position: new THREE.Vector3(spawn[0], spawn[1], spawn[2]),
     velocity: new THREE.Vector3(),
     horizontalSpeed: 0,
     rotationY: 0,
@@ -110,8 +108,11 @@ export function createWorldRuntime(bindings: WorldBindings) {
   let lastInteraction = Number.NEGATIVE_INFINITY;
   const releases: (() => void)[] = [];
   try {
+    // Phase 15: one terrain provider instance, shared by scene, controller
+    // and camera. Synthetic is the default until a real DEM passes approval.
+    const terrain: TerrainProvider = syntheticTerrainProvider;
     const renderer = scope.own(createWebGlRenderer(bindings.canvas));
-    const world = createDaNangScene(registry, scope);
+    const world = createDaNangScene(registry, scope, terrain);
     const { scene, characterRig, dustParticles } = world;
     const environment = createEnvironmentSystem(world);
     const camera = new THREE.PerspectiveCamera(
@@ -134,13 +135,9 @@ export function createWorldRuntime(bindings: WorldBindings) {
     const center = new THREE.Vector2();
     const hits: THREE.Intersection[] = [];
     const blockerHits: THREE.Intersection[] = [];
-    const collisionResult = { x: 0, z: 0 };
     const mapProjection = { u: 0, v: 0, clampedU: 0, clampedV: 0, isOutOfBounds: false, screenRotationDeg: 0 };
     const controller = createCharacterController(state, {
-      boundaryRadius: GAME_CONFIG.worldBoundaryRadius,
-      getTerrainElevation,
-      getSupportSurfaceHeight,
-      resolveHorizontalCollisions: (x, z, y, radius) => resolveHorizontalCollisions(x, z, y, radius, collisionResult),
+      terrain,
       onLanding(x, y, z) {
         dustParticles.spawnBurst(x, y, z, 6);
       },
@@ -334,10 +331,13 @@ export function createWorldRuntime(bindings: WorldBindings) {
               lookAt.y + state.cameraDistance * Math.sin(state.cameraPitch),
               lookAt.z + Math.cos(state.cameraYaw) * horizontal
             );
-            cameraPosition.y = Math.max(
-              cameraPosition.y,
-              getTerrainElevation(cameraPosition.x, cameraPosition.z) + GAME_CONFIG.camera.groundClearance
-            );
+            const cameraSample = terrain.sampleElevation(cameraPosition.x, cameraPosition.z);
+            if (cameraSample.status === 'ok' && cameraSample.elevationMeters !== null) {
+              cameraPosition.y = Math.max(
+                cameraPosition.y,
+                cameraSample.elevationMeters + GAME_CONFIG.camera.groundClearance
+              );
+            }
             camera.position.lerp(cameraPosition, smoothing);
             camera.lookAt(lookAt);
             environment.update(dt, now, state, solar, weather, rainQuality);

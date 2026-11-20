@@ -10,6 +10,8 @@ import { getActiveControlGuideInstructions } from '../controls';
 import { formatCompassDirection } from '@/integrations/weather/service';
 import { runSystemDiagnosticsSuite } from '../diagnostics';
 import { runGeospatialDiagnosticsSuite } from '../geospatial-diagnostics';
+import { runTerrainDiagnosticsSuite } from '../terrain-diagnostics';
+import { syntheticTerrainProvider } from '@/worlds/danang/zones/synthetic-terrain';
 import { useGeoTelemetry } from '../hooks/useGeoTelemetry';
 import { computeMiniMapVisibleSpanMeters } from '@/engine/spatial/minimap';
 import { GAME_CONFIG } from '@/engine/core/const';
@@ -395,8 +397,11 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
   const s = m.snapshot;
   const diagnostics = useMemo(() => runSystemDiagnosticsSuite(), []);
   const geoDiagnostics = useMemo(() => runGeospatialDiagnosticsSuite(), []);
-  const checksPassed = [...diagnostics, ...geoDiagnostics].filter((check) => check.passed).length;
-  const checksTotal = diagnostics.length + geoDiagnostics.length;
+  const terrainDiagnostics = useMemo(() => runTerrainDiagnosticsSuite(syntheticTerrainProvider), []);
+  const checksPassed = [...diagnostics, ...geoDiagnostics, ...terrainDiagnostics].filter(
+    (check) => check.passed
+  ).length;
+  const checksTotal = diagnostics.length + geoDiagnostics.length + terrainDiagnostics.length;
   const environment = m.panels.environmentPanel;
   const debug = m.panels.secondaryInfo;
   const geo = useGeoTelemetry(s, debug === 'expanded');
@@ -551,6 +556,24 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
                     <li key={check.id} title={check.details}>
                       <span>
                         {check.id}: {t(`geoDiag${index + 1}` as CopyKey)}
+                      </span>
+                      <b className={check.passed ? 'world-green' : 'world-amber'}>
+                        {t(check.passed ? 'passed' : 'failed')}
+                      </b>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+              <details>
+                <summary>
+                  {t('terrainDiagnostics')}: {terrainDiagnostics.filter((check) => check.passed).length}/
+                  {terrainDiagnostics.length}
+                </summary>
+                <ul className='world-diagnostics'>
+                  {terrainDiagnostics.map((check, index) => (
+                    <li key={check.id} title={check.details}>
+                      <span>
+                        {check.id}: {t(`terrainDiag${index + 1}` as CopyKey)}
                       </span>
                       <b className={check.passed ? 'world-green' : 'world-amber'}>
                         {t(check.passed ? 'passed' : 'failed')}

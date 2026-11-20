@@ -10,10 +10,16 @@ import { createSyntheticRockCatalog } from '@/world-assets/catalog/synthetic-roc
 import { PrefabRegistry } from '@/world-core/registries/prefabs';
 import { syntheticManifest } from './zones/manifest';
 import { INITIAL_INTERACTABLE_FIXTURES } from './zones/fixtures';
-import { PLATFORM_COLLIDERS, TREE_COLLIDERS, getTerrainElevation } from './zones/synthetic';
+import type { TerrainProvider } from '@/engine/terrain/type';
+import { requireElevation } from '@/engine/terrain/type';
+import { PLATFORM_COLLIDERS, TREE_COLLIDERS, syntheticTerrainProvider } from './zones/synthetic-terrain';
 
 /** The archived test environment uses synthetic local meters, not surveyed city geometry. */
-export function createDaNangScene(registry: InteractableRegistry, scope: ResourceScope) {
+export function createDaNangScene(
+  registry: InteractableRegistry,
+  scope: ResourceScope,
+  terrain: TerrainProvider = syntheticTerrainProvider
+) {
   const scene = new THREE.Scene();
   const fog = new THREE.FogExp2(0xbae6fd, 0.0055);
   scene.fog = fog;
@@ -236,7 +242,7 @@ export function createDaNangScene(registry: InteractableRegistry, scope: Resourc
   for (let i = 0; i < posAttr.count; i++) {
     const vx = posAttr.getX(i);
     const vz = posAttr.getZ(i);
-    const vy = getTerrainElevation(vx, vz);
+    const vy = requireElevation(terrain.sampleElevation(vx, vz), vx, vz);
     posAttr.setY(i, vy);
 
     const pathCenterX = Math.sin(vz * 0.08) * 3.5;
@@ -315,7 +321,7 @@ export function createDaNangScene(registry: InteractableRegistry, scope: Resourc
   for (let z = -48; z <= 48; z += 2.6) {
     if (Math.abs(z) < 4) continue;
     const sx = Math.sin(z * 0.08) * 3.5 + (((z * 13) % 3) - 1) * 0.25;
-    const sy = getTerrainElevation(sx, z);
+    const sy = requireElevation(terrain.sampleElevation(sx, z), sx, z);
     const stone = new THREE.Mesh(stepStoneGeo, stepStoneMat);
     stone.position.set(sx, sy + 0.03, z);
     stone.rotation.y = z * 0.5;
@@ -352,7 +358,7 @@ export function createDaNangScene(registry: InteractableRegistry, scope: Resourc
   const lanternLights: THREE.PointLight[] = [];
 
   lanternPositions.forEach(([lx, lz], idx) => {
-    const ly = getTerrainElevation(lx, lz);
+    const ly = requireElevation(terrain.sampleElevation(lx, lz), lx, lz);
     const lanternGroup = new THREE.Group();
     lanternGroup.position.set(lx, ly, lz);
 
@@ -450,7 +456,7 @@ export function createDaNangScene(registry: InteractableRegistry, scope: Resourc
   }[] = [];
 
   TREE_COLLIDERS.forEach((tree, idx) => {
-    const ty = getTerrainElevation(tree.x, tree.z);
+    const ty = requireElevation(terrain.sampleElevation(tree.x, tree.z), tree.x, tree.z);
     const treeGroup = new THREE.Group();
     treeGroup.position.set(tree.x, ty, tree.z);
 
@@ -520,7 +526,7 @@ export function createDaNangScene(registry: InteractableRegistry, scope: Resourc
     const radius = 8 + Math.sqrt(i) * 6.8;
     const bx = Math.cos(angle) * radius;
     const bz = Math.sin(angle) * radius;
-    const by = getTerrainElevation(bx, bz);
+    const by = requireElevation(terrain.sampleElevation(bx, bz), bx, bz);
 
     const bush = new THREE.Mesh(bushGeo, bushMat);
     const s = 0.7 + (i % 4) * 0.25;
@@ -538,7 +544,7 @@ export function createDaNangScene(registry: InteractableRegistry, scope: Resourc
 
   INITIAL_INTERACTABLE_FIXTURES.forEach((def) => {
     const [fxX, , fxZ] = def.worldPosition;
-    const groundY = getTerrainElevation(fxX, fxZ);
+    const groundY = requireElevation(terrain.sampleElevation(fxX, fxZ), fxX, fxZ);
     const fixtureGroup = new THREE.Group();
     fixtureGroup.position.set(fxX, groundY, fxZ);
     fixtureGroup.name = def.id;
@@ -657,7 +663,7 @@ export function createDaNangScene(registry: InteractableRegistry, scope: Resourc
     const pathCenterX = Math.sin(gz * 0.08) * 3.5;
     if (Math.abs(gx - pathCenterX) < 2.2) continue;
 
-    const gy = getTerrainElevation(gx, gz);
+    const gy = requireElevation(terrain.sampleElevation(gx, gz), gx, gz);
     const scaleY = 0.75 + Math.random() * 0.85;
     const rotY = Math.random() * Math.PI;
 

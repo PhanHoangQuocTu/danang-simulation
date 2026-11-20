@@ -1,0 +1,6 @@
+canvases: 2
+lose: [true,false]
+afterLoss body has recovery?: {"recovery":true,"canvases":2}
+restore: restored
+afterRestore: {"canvases":2,"world":true,"recoveryGone":true}
+exceptions: []

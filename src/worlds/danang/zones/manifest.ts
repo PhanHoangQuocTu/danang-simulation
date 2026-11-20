@@ -1,5 +1,6 @@
 import type { WorldManifest } from '@/world-core/schemas/manifest';
-import { ROCK_COLLIDERS, getTerrainElevation } from './synthetic';
+import { requireElevation } from '@/engine/terrain/type';
+import { ROCK_COLLIDERS, syntheticTerrainProvider } from './synthetic-terrain';
 export const syntheticManifest: WorldManifest = {
   version: 1,
   sources: [
@@ -42,7 +43,12 @@ export const syntheticManifest: WorldManifest = {
         prefabId: 'rock',
         sourceId: 'phase-10',
         transform: {
-          position: [rock.x, getTerrainElevation(rock.x, rock.z) + rock.height * 0.42, rock.z],
+          position: [
+            rock.x,
+            requireElevation(syntheticTerrainProvider.sampleElevation(rock.x, rock.z), rock.x, rock.z) +
+              rock.height * 0.42,
+            rock.z,
+          ],
           rotation: [index * 0.4, index * 1.1, index * 0.3],
           scale: [rock.radius * 1.08, rock.height * 0.65, rock.radius * 0.96],
         },

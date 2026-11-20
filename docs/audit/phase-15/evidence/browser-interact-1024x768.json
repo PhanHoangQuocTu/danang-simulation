@@ -1,0 +1,21 @@
+{
+  "viewport": "1024x768",
+  "canvasesInitial": 2,
+  "spawnPos": [0, 0],
+  "checksChip": "33/33",
+  "movedPos": [0, -0.61],
+  "moved": true,
+  "midJumpState": "JUMP",
+  "f3TerrainSection": "Terrain checks: 8/8\nGeographic data sources\nSelf-Diagnostics\nDIAG-01: Da Nang timezone\nPASSED\nDIAG-02: Solar trajectory and phase\nPASSED\nDIAG-03: WMO weather mapping\nPASSED\nDIAG-04: Historical sanitizer\nPASSED\nDIAG-05: Joystick input limits\nPASSED\nDIAG-06: Adaptive control guide\nPASSED\nDIAG-07: Map zoom and span\nPASSED\nDIAG-08: Map position and heading\nPASSED\nDIAG-09: Interaction and highlight\nPAS",
+  "contextLoss": {
+    "lost": true
+  },
+  "canvasesAfterLoss": 2,
+  "restore": {
+    "error": "evaluate-undefined"
+  },
+  "canvasesAfterRestore": 2,
+  "bodyAfterRestoreHasWorld": true,
+  "consoleErrors": [],
+  "exceptions": []
+}

@@ -37,7 +37,8 @@ describe('HUD button semantics', () => {
     render(<InformationPanels model={model} />);
     expect(screen.getByRole('button', { name: 'fps: 60' })).toBeInTheDocument();
     const frame = screen.getByRole('button', { name: 'frameShort: 16.7 ms' });
-    expect(screen.getByRole('button', { name: 'checks: 25/25' })).toBeInTheDocument();
+    // 9 system + 16 geospatial + 8 terrain (Phase 15) diagnostics.
+    expect(screen.getByRole('button', { name: 'checks: 33/33' })).toBeInTheDocument();
     fireEvent.click(frame);
     expect(setPanels).toHaveBeenCalledOnce();
   });

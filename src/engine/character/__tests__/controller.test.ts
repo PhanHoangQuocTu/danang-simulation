@@ -34,14 +34,29 @@ function player(): PlayerRuntimeState {
 const noJoystick = { x: 0, y: 0, magnitude: 0, active: false };
 const noTouch = { sprint: false, sprintLatched: false, jump: false };
 const keys = { forward: false, backward: false, left: false, right: false, sprint: false, jump: false };
+import { syntheticTerrainProvider } from '@/worlds/danang/zones/synthetic-terrain';
+import type { TerrainProvider } from '@/engine/terrain/type';
+
 function environment(): CharacterEnvironment {
   return {
-    boundaryRadius: 68,
-    getTerrainElevation: () => 0,
-    getSupportSurfaceHeight: () => 0,
-    resolveHorizontalCollisions: (x, z) => ({ x, z }),
+    terrain: syntheticTerrainProvider,
     onLanding: vi.fn(),
   };
+}
+
+/** Counting stub: proves the controller evaluates elevation once per tick. */
+function countingEnvironment(counter: { calls: number }): CharacterEnvironment {
+  const terrain = Object.assign(
+    Object.create(Object.getPrototypeOf(syntheticTerrainProvider)),
+    syntheticTerrainProvider,
+    {
+      sampleSupportSurface: (...args: Parameters<TerrainProvider['sampleSupportSurface']>) => {
+        counter.calls += 1;
+        return syntheticTerrainProvider.sampleSupportSurface(...args);
+      },
+    }
+  ) as TerrainProvider;
+  return { terrain, onLanding: vi.fn() };
 }
 
 describe('Phase 1 character physics', () => {
@@ -83,5 +98,15 @@ describe('Phase 1 character physics', () => {
     expect(state.position.length()).toBe(0);
     controller.update(10, { ...keys, forward: true, sprint: true }, noJoystick, noTouch);
     expect(state.position.length()).toBeLessThan(0.43);
+  });
+
+  it('evaluates terrain elevation once per tick (Phase 15: single owner)', () => {
+    const state = player();
+    const counter = { calls: 0 };
+    const controller = createCharacterController(state, countingEnvironment(counter));
+    for (let index = 0; index < 10; index++) {
+      controller.update(1 / 60, { ...keys, forward: true }, noJoystick, noTouch);
+    }
+    expect(counter.calls).toBe(10);
   });
 });
