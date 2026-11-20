@@ -212,12 +212,12 @@ The work is committed as `f10d98c` on `main` (2026-11-20). To roll back, `git re
 ## 20. Phase 17 dependencies
 
 1. Browser verification at 6 viewports (see §15) — **done 2026-11-20** (12/12 PASS, full re-QA after the fix).
-2. Independent checkpoints / GCPs and an RMSE measurement for geographic certification.
-3. A verified geoid undulation value for Da Nang (or a documented decision to stay orthometric) before the DEM can be called production-ready.
+2. Independent checkpoints / GCPs and an RMSE measurement for geographic certification. — **Still open 2026-11-20** (no surveyed checkpoints; ICESat-2 ATL08 via IVERT is the free route identified, not yet run).
+3. A verified geoid undulation value for Da Nang (or a documented decision to stay orthometric) before the DEM can be called production-ready. — **Done 2026-11-20:** N verified (anchor -10.8043 m, corners -10.8704 / -10.8571 / -10.7470 / -10.7383 m, GeographicLib GeoidEval v2.5.2) and the decision is documented as "giữ orthometric" (`src/engine/geospatial/egm2008.ts` + `GEOREFERENCING_REPORT.md`). The DEM is still not production-ready — that needs checkpoints/RMSE (item 2).
 4. Mountain pilot (steep terrain) and, if approved, a larger-area DEM with tiling/LOD.
 5. Re-placing colliders (platforms/rocks/trees) from DEM heights; FABDEM cross-check and its licence decision.
 6. Production asset delivery decision for anything larger than the embedded 40 KB pilot (no Git LFS without approval).
-7. Coverage re-measurement (Phase 15 baseline: 77.83% / 67.3% / 63.03% / 79.64%) — **done 2026-11-20: 78.67% / 69.18% / 63.72% / 80.52%** (verification audit, all gates exit 0).
+7. Coverage re-measurement (Phase 15 baseline: 77.83% / 67.3% / 63.03% / 79.64%) — **done 2026-11-20: 78.67% / 69.18% / 63.72% / 80.52%** (verification audit, all gates exit 0). **Re-measured again after the 2026-11-20 follow-up (EGM2008 + Sentinel-2): 78.87% / 69.41% / 64.07% / 80.73%, 55 files / 313 tests, all gates exit 0.**
 8. Cleanup of dead code carried over from Phase 15 (`unsupported-crs` never returned; `GAME_CONFIG.worldBoundaryRadius: 68` dead duplicate).
 
 ## 21. Push authorisation

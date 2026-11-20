@@ -1,0 +1,26 @@
+[
+  {
+    "mode": "synthetic",
+    "canvases": 2,
+    "checks35": true,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    ],
+    "failedRequests": [],
+    "ter09": []
+  },
+  {
+    "mode": "dem",
+    "canvases": 2,
+    "checks35": true,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    ],
+    "failedRequests": [],
+    "ter09": []
+  }
+]
