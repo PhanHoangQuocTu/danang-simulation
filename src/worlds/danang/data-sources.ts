@@ -106,9 +106,54 @@ export const danangDataSources: DataSource[] = [
 for (const source of danangDataSources) {
   if (source.id === 'osm-vector') source.documentationCheckedAt = '2026-11-17T19:28:14.336Z';
   if (source.id === 'copernicus-dsm') {
-    source.documentationCheckedAt = '2026-11-17T19:28:18.406Z';
+    source.documentationCheckedAt = '2026-11-20T02:57:00.000Z';
+    source.license =
+      'Copernicus DEM licence: free use including commercial use, with attribution. Raw-data redistribution is not claimed.';
+    source.horizontalCrs = 'EPSG:4326';
+    source.verticalDatum = 'EGM2008 (EPSG:3855)';
+    source.captureDate = '2015-12-31';
+    source.verifiedDate = '2026-11-20';
+    source.accuracyMeters = 4;
+    source.reviewStatus = 'approved-for-ingestion';
+    source.metadataReview = {
+      reviewer: 'Phase 16 DEM research (live verification 2026-11-20)',
+      reviewedAt: '2026-11-20T02:57:00.000Z',
+      evidenceUrl:
+        'https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM',
+      decision:
+        'Copernicus DEM GLO-30 approved for ingestion as a pilot: tile Copernicus_DSM_COG_10_N16_00_E108_00_DEM downloaded anonymously from the public AWS S3 bucket and verified (SHA-256 f4f95dc5677eaaca9a967230a676bb8a39025ab79d28b89e225a7e822acbdde6); DSM, not bare-earth DTM; orthometric EGM2008, absolute ellipsoid alignment NOT VERIFIED.',
+    };
+    source.rights = {
+      licenseId: 'Copernicus DEM licence',
+      licenseUrl:
+        'https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM',
+      attribution:
+        '© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved',
+      attributionUrl:
+        'https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM',
+      copyrightHolder: 'DLR e.V. and Airbus Defence and Space GmbH (Copernicus programme)',
+      permittedUses: ['download', 'display', 'derived-geometry'],
+      redistributionAllowed: false,
+      restrictions: [
+        'Raw-data redistribution is not claimed; only derived geometry (the cropped 100x100 pilot grid) is used in the app',
+        'DSM, not bare-earth DTM: buildings and vegetation are included in the heights',
+        'Orthometric EGM2008 heights; absolute WGS84-ellipsoid alignment is NOT VERIFIED',
+      ],
+      review: source.metadataReview,
+    };
+    source.geographic = {
+      bounds: [108.188181, 16.040844, 108.216217, 16.067955],
+      coordinateOrder: 'longitude-latitude',
+      units: 'degree',
+      coverageEvidence:
+        'Tile Copernicus_DSM_COG_10_N16_00_E108_00_DEM (1 deg, SW corner N16 E108) downloaded and verified 2026-11-20; pilot window 100x100 cells around lat 16.0544 lon 108.2022, bbox lon 108.188181-108.216217 lat 16.040844-16.067955',
+    };
+    source.resolutionMeters = 30;
+    source.updateCadence = 'Annual releases; latest 2024_1';
+    source.capabilities = { download: true, api: false, view: true };
     source.notes = [
-      'Product documentation describes a DSM including buildings and vegetation. The 2026-08-25 GLO-30 View Service update restricts access to authorized categories; no tile-specific license, datum or coverage reviewed.',
+      'Copernicus DEM GLO-30 (COP-DEM_GLO-30-DGED): 30 m DSM from TanDEM-X 2011-2015; published absolute vertical accuracy <4 m (90% LE), horizontal <6 m (90% CE); capture date 2015-12-31 is the end of the acquisition window (multi-year composite, not a single-date capture).',
+      'Pilot asset: cropped 100x100-cell, 30 m ENU grid (src/worlds/danang/data/danang-dem-pilot.ts); source tile SHA-256 f4f95dc5677eaaca9a967230a676bb8a39025ab79d28b89e225a7e822acbdde6; raw 2.8 MB COG is not in the repo.',
     ];
   }
   if (source.id === 'danang-official-gis') {

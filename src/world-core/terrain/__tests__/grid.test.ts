@@ -107,12 +107,12 @@ describe('grid DEM provider', () => {
     expect(() => createProvider({ width: 4 })).toThrow(/dimensions do not match/i);
   });
 
-  it('rejects orthometric metadata', () => {
-    expect(() =>
-      createProvider({
-        metadata: testMetadata({ verticalDatum: 'ORTHOMETRIC_EGM2008' }),
-      })
-    ).toThrow(/geoid transformation/i);
+  it('accepts orthometric metadata as a labelled pilot provider', () => {
+    const provider = createProvider({
+      metadata: testMetadata({ verticalDatum: 'ORTHOMETRIC_EGM2008' }),
+    });
+    expect(provider.metadata.verticalDatum).toBe('ORTHOMETRIC_EGM2008');
+    expect(provider.sampleElevation(0, 0).status).toBe('ok');
   });
 
   it('rejects an unsupported CRS', () => {

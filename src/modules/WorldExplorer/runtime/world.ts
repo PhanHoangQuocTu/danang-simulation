@@ -12,6 +12,9 @@ import { clampMiniMapZoom, projectWorldToMiniMap } from '@/engine/spatial/minima
 import { createDaNangScene } from '@/worlds/danang/scene';
 import { createEnvironmentSystem } from '@/worlds/danang/environment/simulation';
 import { syntheticTerrainProvider } from '@/worlds/danang/zones/synthetic-terrain';
+import { danangDemPilotGridInput } from '@/worlds/danang/data/danang-dem-pilot';
+import { selectTerrainProvider } from '@/world-core/terrain/selection';
+import type { TerrainMode } from '@/worlds/danang/terrain-mode';
 import type { TerrainProvider } from '@/engine/terrain/type';
 import { getDaNangClockData, calculateDaNangSolarData } from '@/worlds/danang/environment/solar';
 import type { NormalizedWeatherState } from '@/integrations/weather/type';
@@ -82,10 +85,52 @@ export interface WorldBindings {
   status(status: RuntimeStatus): void;
 }
 
-export function createWorldRuntime(bindings: WorldBindings) {
+export interface WorldRuntimeOptions {
+  /** Phase 16: 'synthetic' (default production world) or 'dem-pilot' (the
+   * real Copernicus DEM pilot, 3 km across). DEM selection is explicit
+   * only; an invalid DEM asset fails the runtime instead of silently
+   * falling back to synthetic. */
+  terrainMode?: TerrainMode;
+}
+
+/** The provider the most recently created runtime is using (synthetic by
+ * default). The HUD diagnostics read the active provider through this
+ * getter so F3 shows the world the player is actually standing on. */
+let activeTerrainProvider: TerrainProvider = syntheticTerrainProvider;
+
+export function getActiveTerrainProvider(): TerrainProvider {
+  return activeTerrainProvider;
+}
+
+/**
+ * Mini Map half-extent for a provider: the synthetic world's 72 m, or half
+ * the geographic coverage span for a DEM provider (1500 m for the pilot).
+ * The Mini Map camera and its Span label must both read this one value.
+ */
+export function resolveMiniMapHalfExtentMeters(terrain: TerrainProvider): number {
+  if (!terrain.metadata.isGeographic) return GAME_CONFIG.miniMap.orthoHalfExtent;
+  return (
+    Math.max(
+      terrain.coverage.maxXMeters - terrain.coverage.minXMeters,
+      terrain.coverage.maxZMeters - terrain.coverage.minZMeters
+    ) / 2
+  );
+}
+
+export function createWorldRuntime(bindings: WorldBindings, options: WorldRuntimeOptions = {}) {
   const scope = new ResourceScope();
   const registry = new InteractableRegistry();
-  const state = createPlayerState();
+  const terrainMode = options.terrainMode ?? 'synthetic';
+  // Phase 16: one terrain provider instance, shared by scene, controller
+  // and camera. Synthetic is the default until a real DEM passes approval;
+  // the DEM pilot is an explicit opt-in (see terrain-mode.ts).
+  const terrain: TerrainProvider =
+    terrainMode === 'dem-pilot'
+      ? selectTerrainProvider({ kind: 'dem', grid: danangDemPilotGridInput() }, syntheticTerrainProvider)
+      : syntheticTerrainProvider;
+  activeTerrainProvider = terrain;
+  const isDem = terrain.metadata.isGeographic;
+  const state = createPlayerState(terrain);
   const keyboard: KeyboardInputState = {
     forward: false,
     backward: false,
@@ -108,9 +153,6 @@ export function createWorldRuntime(bindings: WorldBindings) {
   let lastInteraction = Number.NEGATIVE_INFINITY;
   const releases: (() => void)[] = [];
   try {
-    // Phase 15: one terrain provider instance, shared by scene, controller
-    // and camera. Synthetic is the default until a real DEM passes approval.
-    const terrain: TerrainProvider = syntheticTerrainProvider;
     const renderer = scope.own(createWebGlRenderer(bindings.canvas));
     const world = createDaNangScene(registry, scope, terrain);
     const { scene, characterRig, dustParticles } = world;
@@ -119,13 +161,30 @@ export function createWorldRuntime(bindings: WorldBindings) {
       GAME_CONFIG.camera.fov,
       1,
       GAME_CONFIG.camera.near,
-      GAME_CONFIG.camera.far
+      // Phase 16: a 3 km DEM world needs a far plane far beyond the
+      // synthetic world's 320 m, or the terrain is clipped at 320 m.
+      isDem ? 6000 : GAME_CONFIG.camera.far
     );
-    camera.position.set(0, 3, 5.4);
-    const mapCamera = new THREE.OrthographicCamera(-72, 72, 72, -72, GAME_CONFIG.miniMap.near, GAME_CONFIG.miniMap.far);
+    camera.position.set(terrain.spawnPosition[0], terrain.spawnPosition[1] + 3, terrain.spawnPosition[2] + 5.4);
+    // Mini Map extent follows the provider coverage: 72 m for the synthetic
+    // world, half the DEM span (1500 m) for the pilot.
+    const mapHalfExtent = resolveMiniMapHalfExtentMeters(terrain);
+    const mapCameraHeight = isDem ? 1600 : GAME_CONFIG.miniMap.cameraHeight;
+    const mapCamera = new THREE.OrthographicCamera(
+      -mapHalfExtent,
+      mapHalfExtent,
+      mapHalfExtent,
+      -mapHalfExtent,
+      GAME_CONFIG.miniMap.near,
+      isDem ? 3200 : GAME_CONFIG.miniMap.far
+    );
     mapCamera.up.set(0, 0, -1);
     const mapCenter = new THREE.Vector2();
-    const lookAt = new THREE.Vector3(0, GAME_CONFIG.camera.lookAtHeightOffset, 0);
+    const lookAt = new THREE.Vector3(
+      terrain.spawnPosition[0],
+      terrain.spawnPosition[1] + GAME_CONFIG.camera.lookAtHeightOffset,
+      terrain.spawnPosition[2]
+    );
     const desired = new THREE.Vector3();
     const cameraPosition = new THREE.Vector3();
     const forward = new THREE.Vector3();
@@ -365,7 +424,7 @@ export function createWorldRuntime(bindings: WorldBindings) {
               dt
             );
             const mapCenterMoved = Math.hypot(mapCenter.x - previousMapX, mapCenter.y - previousMapZ) > 0.04;
-            mapCamera.position.set(mapCenter.x, 140, mapCenter.y);
+            mapCamera.position.set(mapCenter.x, mapCameraHeight, mapCenter.y);
             mapCamera.lookAt(mapCenter.x, 0, mapCenter.y);
             mapCamera.zoom = zoom;
             mapCamera.updateProjectionMatrix();
@@ -382,7 +441,7 @@ export function createWorldRuntime(bindings: WorldBindings) {
               mapCenter.x,
               mapCenter.y,
               zoom,
-              72,
+              mapHalfExtent,
               mapCamera,
               mapProjection
             );
@@ -532,10 +591,10 @@ export function createWorldRuntime(bindings: WorldBindings) {
       reset() {
         input.release();
         const { perf, isPointerLocked } = state;
-        Object.assign(state, createPlayerState(), { perf, isPointerLocked });
+        Object.assign(state, createPlayerState(terrain), { perf, isPointerLocked });
         targetDistance = GAME_CONFIG.camera.defaultDistance;
-        lookAt.set(0, 1.48, 0);
-        camera.position.set(0, 3, 5.4);
+        lookAt.set(terrain.spawnPosition[0], terrain.spawnPosition[1] + 1.48, terrain.spawnPosition[2]);
+        camera.position.set(terrain.spawnPosition[0], terrain.spawnPosition[1] + 3, terrain.spawnPosition[2] + 5.4);
         mapDirty = true;
       },
       interact() {
@@ -560,6 +619,10 @@ export function createWorldRuntime(bindings: WorldBindings) {
         runtime.stop();
         for (const cleanup of releases.reverse()) cleanup();
         runtime.dispose();
+        // Phase 16: dispose a runtime-owned DEM provider. The synthetic
+        // provider is a shared singleton and must never be disposed here.
+        if (terrain !== syntheticTerrainProvider) terrain.dispose();
+        if (activeTerrainProvider === terrain) activeTerrainProvider = syntheticTerrainProvider;
       },
     };
   } catch (error) {

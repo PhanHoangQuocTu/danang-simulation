@@ -11,7 +11,7 @@ import { formatCompassDirection } from '@/integrations/weather/service';
 import { runSystemDiagnosticsSuite } from '../diagnostics';
 import { runGeospatialDiagnosticsSuite } from '../geospatial-diagnostics';
 import { runTerrainDiagnosticsSuite } from '../terrain-diagnostics';
-import { syntheticTerrainProvider } from '@/worlds/danang/zones/synthetic-terrain';
+import { getActiveTerrainProvider, resolveMiniMapHalfExtentMeters } from '../runtime/world';
 import { useGeoTelemetry } from '../hooks/useGeoTelemetry';
 import { computeMiniMapVisibleSpanMeters } from '@/engine/spatial/minimap';
 import { GAME_CONFIG } from '@/engine/core/const';
@@ -216,7 +216,14 @@ export function MiniMap({ model: m }: { model: WorldExplorerModel }) {
                 <strong data-testid='minimap-player-coords'>
                   {m.snapshot?.x.toFixed(2) ?? '0.00'} m, {m.snapshot?.z.toFixed(2) ?? '0.00'} m
                 </strong>
-                <small>{t('span', { value: computeMiniMapVisibleSpanMeters(m.map.zoom) })}</small>
+                <small>
+                  {t('span', {
+                    value: computeMiniMapVisibleSpanMeters(
+                      m.map.zoom,
+                      resolveMiniMapHalfExtentMeters(getActiveTerrainProvider())
+                    ),
+                  })}
+                </small>
               </>
             )}
             <div className='world-inline'>
@@ -397,7 +404,12 @@ export function InformationPanels({ model: m }: { model: WorldExplorerModel }) {
   const s = m.snapshot;
   const diagnostics = useMemo(() => runSystemDiagnosticsSuite(), []);
   const geoDiagnostics = useMemo(() => runGeospatialDiagnosticsSuite(), []);
-  const terrainDiagnostics = useMemo(() => runTerrainDiagnosticsSuite(syntheticTerrainProvider), []);
+  // The active provider is set by createWorldRuntime in an effect, after
+  // this component first mounts — so the diagnostics must be keyed on the
+  // provider identity, not computed once with []. A [] memo reads the
+  // synthetic default forever and mislabels the DEM world in F3.
+  const activeTerrainProvider = getActiveTerrainProvider();
+  const terrainDiagnostics = useMemo(() => runTerrainDiagnosticsSuite(activeTerrainProvider), [activeTerrainProvider]);
   const checksPassed = [...diagnostics, ...geoDiagnostics, ...terrainDiagnostics].filter(
     (check) => check.passed
   ).length;

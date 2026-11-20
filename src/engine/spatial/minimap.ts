@@ -7,9 +7,12 @@ export function clampMiniMapZoom(rawZoom: number): number {
   return Number(THREE.MathUtils.clamp(rawZoom, minZoom, maxZoom).toFixed(2));
 }
 
-export function computeMiniMapVisibleSpanMeters(zoom: number): number {
+export function computeMiniMapVisibleSpanMeters(
+  zoom: number,
+  orthoHalfExtent: number = GAME_CONFIG.miniMap.orthoHalfExtent
+): number {
   const safeZoom = clampMiniMapZoom(zoom);
-  return Math.round((GAME_CONFIG.miniMap.orthoHalfExtent * 2) / safeZoom);
+  return Math.round((orthoHalfExtent * 2) / safeZoom);
 }
 
 /**

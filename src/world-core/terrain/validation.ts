@@ -89,17 +89,18 @@ export function validateTerrainDatasetMetadata(raw: unknown): ValidatedTerrainDa
     fail('Geographic terrain cannot use the SYNTHETIC_LOCAL vertical datum');
   }
   // Orthometric heights must never be passed off as ellipsoidal heights:
-  // Phase 12 uses ellipsoidal heights, and no verified geoid transformation
-  // exists in this codebase. Reject until one is documented and verified.
-  if (metadata.verticalDatum === 'ORTHOMETRIC_EGM2008') {
-    fail('Orthometric DEM requires a verified geoid transformation; none is available');
-  }
+  // Phase 12 uses ellipsoidal heights. An ORTHOMETRIC_EGM2008 dataset is
+  // accepted for ingestion (Phase 16) only as what it is — its datum stays
+  // ORTHOMETRIC_EGM2008 in the metadata, world Y equals the orthometric
+  // height, and `isProductionReady` below stays false, because no verified
+  // geoid transformation to WGS84_ELLIPSOID exists in this codebase.
+  // Production geographic terrain still requires WGS84_ELLIPSOID.
   if (metadata.purpose === 'production' && metadata.isGeographic) {
     if (metadata.checksumSha256 === null) fail('Production terrain datasets require a SHA-256 checksum');
     if (metadata.captureDate === null) fail('Production terrain datasets require a capture date');
     if (metadata.sourceAccuracyMeters === null) fail('Production terrain datasets require a source accuracy');
     if (metadata.processingHistory.length === 0) fail('Production terrain datasets require processing history');
-    if (metadata.verticalDatum !== 'WGS84_ELLIPSOID') {
+    if (metadata.verticalDatum !== 'WGS84_ELLIPSOID' && metadata.verticalDatum !== 'ORTHOMETRIC_EGM2008') {
       fail('Production geographic terrain must use the WGS84_ELLIPSOID vertical datum');
     }
   }

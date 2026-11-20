@@ -1,0 +1,5298 @@
+{
+  "at": "2026-11-20T03:38:45.943Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "mode": "synthetic",
+      "viewport": "1920x1080",
+      "url": "http://localhost:3000/",
+      "initial": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 0",
+        "debugVisible": true,
+        "debugText": "FPS: 0 Frame: 0.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 4,
+        "seconds": 5,
+        "fps": 0.8
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.13 m, 0.10 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 30",
+        "debugVisible": true,
+        "debugText": "FPS: 30 Frame: 33.4 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 0.97 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.16 m, 0.12 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 30",
+        "debugVisible": true,
+        "debugText": "FPS: 30 Frame: 33.4 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.16 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.16 m, 0.12 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 30",
+        "debugVisible": true,
+        "debugText": "FPS: 30 Frame: 33.4 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.16 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.17 m, 0.12 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 33.4 / 33.4 ms Draw calls / triangles 339 / 76820 Geometries / textures 152 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0543989° Derived longitude 108.2021985° Simulated ellipsoid height 1.095 m Compass heading 206.9° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.04 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "no context mention in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.17 m, 0.12 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 33.4 / 33.4 ms Draw calls / triangles 340 / 76884 Geometries / textures 152 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0543989° Derived longitude 108.2021984° Simulated ellipsoid height 1.005 m Compass heading 206.9° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE FALL ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "1366x768",
+      "url": "http://localhost:3000/",
+      "initial": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.6 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 3,
+        "seconds": 5,
+        "fps": 0.6
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.19 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 10",
+        "debugVisible": true,
+        "debugText": "FPS: 10 Frame: 100.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 0.39 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.19 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 10",
+        "debugVisible": true,
+        "debugText": "FPS: 10 Frame: 100.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.16 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.19 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 10",
+        "debugVisible": true,
+        "debugText": "FPS: 10 Frame: 100.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.16 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.21 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 100.0 / 200.0 ms Draw calls / triangles 349 / 77990 Geometries / textures 152 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2021981° Simulated ellipsoid height 1.513 m Compass heading 225.3° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.03 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "no context mention in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.21 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 100.0 / 200.0 ms Draw calls / triangles 346 / 77494 Geometries / textures 152 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2021981° Simulated ellipsoid height 0.298 m Compass heading 225.3° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE FALL ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "1024x768",
+      "url": "http://localhost:3000/",
+      "initial": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 12",
+        "debugVisible": true,
+        "debugText": "FPS: 12 Frame: 83.3 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 3,
+        "seconds": 5,
+        "fps": 0.6
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.37 m, -0.16 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 20",
+        "debugVisible": true,
+        "debugText": "FPS: 20 Frame: 50.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.23 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.38 m, -0.16 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 20",
+        "debugVisible": true,
+        "debugText": "FPS: 20 Frame: 50.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.10 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.38 m, -0.16 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 15",
+        "debugVisible": true,
+        "debugText": "FPS: 15 Frame: 66.6 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.04 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.38 m, -0.16 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 66.6 / 99.9 ms Draw calls / triangles 330 / 75986 Geometries / textures 153 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544014° Derived longitude 108.2021964° Simulated ellipsoid height 1.670 m Compass heading 264.8° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE FALL ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "no context mention in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.38 m, -0.16 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 66.6 / 99.9 ms Draw calls / triangles 334 / 76058 Geometries / textures 153 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544014° Derived longitude 108.2021964° Simulated ellipsoid height 0.000 m Compass heading 264.8° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE LANDING ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "768x1024",
+      "url": "http://localhost:3000/",
+      "initial": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.8 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 4,
+        "seconds": 5,
+        "fps": 0.8
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.30 m, -0.25 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.8 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 0.58 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.31 m, -0.26 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.8 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.23 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.32 m, -0.26 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.8 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.10 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.32 m, -0.26 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 16.8 / 16.8 ms Draw calls / triangles 316 / 74602 Geometries / textures 153 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544024° Derived longitude 108.2021970° Simulated ellipsoid height 0.000 m Compass heading 277.5° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "context mentioned in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.32 m, -0.26 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 22.3 / 33.3 ms Draw calls / triangles 316 / 74602 Geometries / textures 153 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544024° Derived longitude 108.2021970° Simulated ellipsoid height 0.000 m Compass heading 277.5° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "390x844",
+      "url": "http://localhost:3000/",
+      "initial": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": null,
+        "fps": null,
+        "debugVisible": false,
+        "debugText": null,
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 7,
+        "seconds": 5,
+        "fps": 1.4
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": null,
+        "fps": null,
+        "debugVisible": false,
+        "debugText": null,
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": null,
+        "fps": null,
+        "debugVisible": false,
+        "debugText": null,
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": null,
+        "fps": null,
+        "debugVisible": false,
+        "debugText": null,
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 9",
+        "debugVisible": true,
+        "debugText": "FPS: 9 Frame: 110.4 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "context mentioned in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 8",
+        "debugVisible": true,
+        "debugText": "FPS: 8 Frame: 122.2 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "844x390",
+      "url": "http://localhost:3000/",
+      "initial": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 7",
+        "debugVisible": true,
+        "debugText": "FPS: 7 Frame: 133.3 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 7,
+        "seconds": 5,
+        "fps": 1.4
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.32 m, -0.22 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 7",
+        "debugVisible": true,
+        "debugText": "FPS: 7 Frame: 136.1 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 0.58 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.34 m, -0.23 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 7",
+        "debugVisible": true,
+        "debugText": "FPS: 7 Frame: 136.1 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.10 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.34 m, -0.23 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 7",
+        "debugVisible": true,
+        "debugText": "FPS: 7 Frame: 136.1 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.04 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.34 m, -0.23 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 136.1 / 216.7 ms Draw calls / triangles 375 / 81448 Geometries / textures 153 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544021° Derived longitude 108.2021968° Simulated ellipsoid height 0.000 m Compass heading 273.7° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "context mentioned in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.34 m, -0.23 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 136.1 / 216.7 ms Draw calls / triangles 374 / 81304 Geometries / textures 153 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544021° Derived longitude 108.2021968° Simulated ellipsoid height 0.000 m Compass heading 273.7° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "dem",
+      "viewport": "1920x1080",
+      "url": "http://localhost:3000/?terrain=dem",
+      "initial": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 0",
+        "debugVisible": true,
+        "debugText": "FPS: 0 Frame: 0.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 5,
+        "seconds": 5,
+        "fps": 1
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.13 m, 0.10 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.6 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 0.97 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.15 m, 0.11 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.6 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 0.39 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.15 m, 0.11 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.6 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 0.39 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.16 m, 0.12 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 16.6 / 16.6 ms Draw calls / triangles 190 / 56906 Geometries / textures 80 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0543989° Derived longitude 108.2021985° Simulated ellipsoid height 6.046 m Compass heading 206.9° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.06 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "context mentioned in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 1920,
+            "h": 1080,
+            "cw": 1920,
+            "ch": 1080
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.16 m, 0.12 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 16.6 / 16.6 ms Draw calls / triangles 190 / 56906 Geometries / textures 80 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0543989° Derived longitude 108.2021985° Simulated ellipsoid height 6.046 m Compass heading 206.9° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1920,
+        "innerWidth": 1920,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "dem",
+      "viewport": "1366x768",
+      "url": "http://localhost:3000/?terrain=dem",
+      "initial": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 12",
+        "debugVisible": true,
+        "debugText": "FPS: 12 Frame: 83.3 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 5,
+        "seconds": 5,
+        "fps": 1
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.36 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 20",
+        "debugVisible": true,
+        "debugText": "FPS: 20 Frame: 50.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 1.42 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.41 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 20",
+        "debugVisible": true,
+        "debugText": "FPS: 20 Frame: 50.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.38 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.42 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 20",
+        "debugVisible": true,
+        "debugText": "FPS: 20 Frame: 50.0 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.24 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.44 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 50.0 / 83.3 ms Draw calls / triangles 200 / 58762 Geometries / textures 80 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2021959° Simulated ellipsoid height 7.557 m Compass heading 247.8° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.07 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "context mentioned in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 1366,
+            "h": 768,
+            "cw": 1366,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.44 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 50.0 / 83.3 ms Draw calls / triangles 201 / 58402 Geometries / textures 81 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544000° Derived longitude 108.2021959° Simulated ellipsoid height 6.342 m Compass heading 247.8° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE LANDING ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1366,
+        "innerWidth": 1366,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "dem",
+      "viewport": "1024x768",
+      "url": "http://localhost:3000/?terrain=dem",
+      "initial": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 15",
+        "debugVisible": true,
+        "debugText": "FPS: 15 Frame: 66.7 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 6,
+        "seconds": 5,
+        "fps": 1.2
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.15 m, -0.06 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 24",
+        "debugVisible": true,
+        "debugText": "FPS: 24 Frame: 41.6 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 0.97 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.18 m, -0.08 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 24",
+        "debugVisible": true,
+        "debugText": "FPS: 24 Frame: 41.6 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.25 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.20 m, -0.08 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 24",
+        "debugVisible": true,
+        "debugText": "FPS: 24 Frame: 41.6 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.11 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.20 m, -0.08 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 41.6 / 66.7 ms Draw calls / triangles 183 / 56314 Geometries / textures 81 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544007° Derived longitude 108.2021981° Simulated ellipsoid height 7.557 m Compass heading 236.6° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.07 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "context mentioned in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 1024,
+            "h": 768,
+            "cw": 1024,
+            "ch": 768
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.20 m, -0.08 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 41.6 / 66.7 ms Draw calls / triangles 182 / 56170 Geometries / textures 80 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544008° Derived longitude 108.2021981° Simulated ellipsoid height 7.050 m Compass heading 236.6° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE FALL ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 1024,
+        "innerWidth": 1024,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "dem",
+      "viewport": "768x1024",
+      "url": "http://localhost:3000/?terrain=dem",
+      "initial": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.7 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 6,
+        "seconds": 5,
+        "fps": 1.2
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.31 m, -0.26 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.7 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.23 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.31 m, -0.26 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.7 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.23 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.32 m, -0.26 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 60",
+        "debugVisible": true,
+        "debugText": "FPS: 60 Frame: 16.7 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.04 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.32 m, -0.26 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 16.7 / 16.7 ms Draw calls / triangles 172 / 54730 Geometries / textures 81 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544024° Derived longitude 108.2021970° Simulated ellipsoid height 6.043 m Compass heading 277.5° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "context mentioned in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 768,
+            "h": 1024,
+            "cw": 768,
+            "ch": 1024
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.32 m, -0.26 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 16.7 / 16.7 ms Draw calls / triangles 172 / 54730 Geometries / textures 80 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544024° Derived longitude 108.2021970° Simulated ellipsoid height 6.043 m Compass heading 277.5° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 768,
+        "innerWidth": 768,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "dem",
+      "viewport": "390x844",
+      "url": "http://localhost:3000/?terrain=dem",
+      "initial": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": null,
+        "fps": null,
+        "debugVisible": false,
+        "debugText": null,
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 11,
+        "seconds": 5,
+        "fps": 2.2
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": null,
+        "fps": null,
+        "debugVisible": false,
+        "debugText": null,
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": null,
+        "fps": null,
+        "debugVisible": false,
+        "debugText": null,
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": null,
+        "fps": null,
+        "debugVisible": false,
+        "debugText": null,
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 14",
+        "debugVisible": true,
+        "debugText": "FPS: 14 Frame: 70.8 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "no context mention in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 390,
+            "h": 844,
+            "cw": 390,
+            "ch": 844
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 78,
+            "ch": 78
+          }
+        ],
+        "canvasCount": 2,
+        "coords": null,
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 14",
+        "debugVisible": true,
+        "debugText": "FPS: 14 Frame: 70.8 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": null,
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "dem",
+      "viewport": "844x390",
+      "url": "http://localhost:3000/?terrain=dem",
+      "initial": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "0.00 m, 0.00 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 9",
+        "debugVisible": true,
+        "debugText": "FPS: 9 Frame: 116.7 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "fps": {
+        "frames": 10,
+        "seconds": 5,
+        "fps": 2
+      },
+      "afterWalk": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.15 m, -0.11 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 12",
+        "debugVisible": true,
+        "debugText": "FPS: 12 Frame: 83.3 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE WALK ● SPEED 0.39 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "midJump": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.16 m, -0.11 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 12",
+        "debugVisible": true,
+        "debugText": "FPS: 12 Frame: 83.3 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.06 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "afterJump": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.16 m, -0.11 m",
+        "surfaceElevation": null,
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "fps": "FPS: 12",
+        "debugVisible": true,
+        "debugText": "FPS: 12 Frame: 83.3 ms Checks: 35/35",
+        "terrainItems": [],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "f3": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.16 m, -0.11 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 83.3 / 183.3 ms Draw calls / triangles 207 / 60482 Geometries / textures 81 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544010° Derived longitude 108.2021985° Simulated ellipsoid height 7.724 m Compass heading 242.6° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE JUMP ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "contextLoss": {
+        "lostText": "context mentioned in UI",
+        "canvasesAfterLoss": 2,
+        "canvasesAfterRestore": 2,
+        "restored": true
+      },
+      "afterRestore": {
+        "canvases": [
+          {
+            "w": 844,
+            "h": 390,
+            "cw": 844,
+            "ch": 390
+          },
+          {
+            "w": 256,
+            "h": 256,
+            "cw": 142,
+            "ch": 142
+          }
+        ],
+        "canvasCount": 2,
+        "coords": "-0.16 m, -0.11 m",
+        "surfaceElevation": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "fps": null,
+        "debugVisible": true,
+        "debugText": "DEBUG TELEMETRY (F3) Frame avg / P95 83.3 / 183.3 ms Draw calls / triangles 214 / 60986 Geometries / textures 82 / 5 Quality / pixel ratio Ultra / 1.00 Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL SIMULATED POSITION — NOT GEO-VERIFIED Derived latitude 16.0544010° Derived longitude 108.2021985° Simulated ellipsoid height 6.342 m Compass heading 242.6° Imagery alignment Geo checks: 16/16 Terrain checks: 10/10 Geographic data sources Self-Diagnostics DIAG-01: Da Nang timezone PASSED DIAG-02: Solar trajectory and phase PASSED DIAG-03: WMO weather mapping PASSED DIAG-04: Historical sanitizer PASSED DIAG-05: Joystick input limits PASSED DIAG-06: Adaptive control guide PASSED DIAG-07: Map zoom and span PASSED DIAG-08: Map position and heading PASSED DIAG-09: Interaction and highlight PASSED Input isolation test: type WASD or Space",
+        "terrainItems": [
+          {
+            "text": "",
+            "details": "Anchor residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "World origin residual 6.780130685568339e-9 m"
+          },
+          {
+            "text": "",
+            "details": "EPSG golden residual 0.0030970181388314585 m; threshold 0.01 m"
+          },
+          {
+            "text": "",
+            "details": "ECEF/ENU residual 2.0372681319713593e-10 m"
+          },
+          {
+            "text": "",
+            "details": "ENU 1,2,3 = World 1,3,-2"
+          },
+          {
+            "text": "",
+            "details": "East X=10.700537735774152 m"
+          },
+          {
+            "text": "",
+            "details": "North Z=-11.065924930947537 m"
+          },
+          {
+            "text": "",
+            "details": "Up Y=10.00000000020203 m"
+          },
+          {
+            "text": "",
+            "details": "N/E/S/W heading/yaw round-trip"
+          },
+          {
+            "text": "",
+            "details": "East right; North up; marker heading consistent"
+          },
+          {
+            "text": "",
+            "details": "Maximum world residual 9.18977803700484e-9 m; threshold 0.01 m; 175 points within 5km"
+          },
+          {
+            "text": "",
+            "details": "5/5 invalid coordinates rejected"
+          },
+          {
+            "text": "",
+            "details": "Date line canonical longitude -180 degrees"
+          },
+          {
+            "text": "",
+            "details": "Pole height residual 0 m"
+          },
+          {
+            "text": "",
+            "details": "WGS84_ELLIPSOID; 0m reference assumption; not measured terrain elevation"
+          },
+          {
+            "text": "",
+            "details": "9/9 historical diagnostics pass"
+          },
+          {
+            "text": "",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          },
+          {
+            "text": "DIAG-01: Da Nang timezone PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-02: Solar trajectory and phase PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-03: WMO weather mapping PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-04: Historical sanitizer PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-05: Joystick input limits PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-06: Adaptive control guide PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-07: Map zoom and span PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-08: Map position and heading PASSED",
+            "details": ""
+          },
+          {
+            "text": "DIAG-09: Interaction and highlight PASSED",
+            "details": ""
+          }
+        ],
+        "character": "CHARACTER STATE LANDING ● SPEED 0.00 m/s",
+        "mapLoading": false,
+        "overflowX": false,
+        "scrollWidth": 844,
+        "innerWidth": 844,
+        "title": "Da Nang 3D Open World — Interactive Simulation"
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

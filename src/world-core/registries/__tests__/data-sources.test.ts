@@ -97,7 +97,10 @@ describe('data source trust boundary', () => {
     expect(registry.listSources().length).toBeGreaterThanOrEqual(5);
     for (const source of registry.listSources()) {
       expect(sourceSchema.safeParse({ ...source, unexpected: true }).success).toBe(false);
-      expect(registry.canIngest(source.id, 'download').allowed).toBe(false);
+      // Phase 16: only copernicus-dsm is approved for ingestion, after live
+      // verification of its licence, tile and checksum; every other source
+      // stays denied until its own dataset-specific review.
+      expect(registry.canIngest(source.id, 'download').allowed).toBe(source.id === 'copernicus-dsm');
     }
     expect(registry.getSource('osm-vector')?.license).toContain('ODbL');
   });

@@ -1,0 +1,1363 @@
+{
+  "at": "2026-11-20T03:46:53.136Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "mode": "dem",
+      "viewport": "1024x768",
+      "probe": "p3",
+      "spawn": {
+        "canvases": 2,
+        "coords": "0.00 m, 0.00 m",
+        "elevationChip": "6.05",
+        "envPanel": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "groundedTitle": "Grounded",
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "spawnEnv": {
+        "canvases": 2,
+        "coords": "0.00 m, 0.00 m",
+        "elevationChip": null,
+        "envPanel": ["0.00, 0.00", "6.05 m", "52.3° / 160.2°", "5.40 m"],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "groundedTitle": "Grounded",
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "afterWalk": {
+        "canvases": 2,
+        "coords": "-0.38 m, -0.16 m",
+        "elevationChip": null,
+        "envPanel": ["-0.38, -0.16", "6.04 m", "52.3° / 160.3°", "5.40 m"],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.07 m/s",
+        "groundedTitle": "Grounded",
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "jumpTimeline": [
+        {
+          "t": 0.4,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 0.8,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 1.2,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 1.6,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 2,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 2.4,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 2.8,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 3.2,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 3.6,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 4,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 4.4,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 4.8,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 5.2,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 5.6,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 6,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 6.4,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 6.8,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 7.2,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 7.6,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 8,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 8.4,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 8.8,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 9.2,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 9.6,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 10,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 10.4,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 10.8,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 11.2,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 11.6,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 12,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 12.4,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 12.8,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 13.2,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 13.6,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 14,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 14.4,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 14.8,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 15.2,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 15.6,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 16,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        }
+      ],
+      "jumpSeen": false,
+      "f3": {
+        "canvases": 2,
+        "coords": "-0.38 m, -0.16 m",
+        "elevationChip": null,
+        "envPanel": ["-0.38, -0.16", "6.04 m", "52.4° / 160.6°", "5.40 m"],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "groundedTitle": "Grounded",
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "terrainItems": [
+          {
+            "text": "TER-01: Provider activePASSED",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "TER-02: CRS / datumPASSED",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "TER-03: Spawn elevationPASSED",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "TER-04: Boundary in coveragePASSED",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "TER-05: Outside coveragePASSED",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "TER-06: Invalid inputPASSED",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "TER-07: Support surfacePASSED",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "TER-08: Production providerPASSED",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "TER-09: Terrain modePASSED",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "TER-10: Spawn groundingPASSED",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          }
+        ],
+        "overflowX": false
+      },
+      "contextLoss": {
+        "canvases": 2,
+        "canvasesAfterRestore": 2
+      },
+      "afterRestoreWalk": {
+        "canvases": 2,
+        "coords": "-0.84 m, -0.35 m",
+        "elevationChip": null,
+        "envPanel": ["-0.84, -0.35", "6.04 m", "52.4° / 160.8°", "5.40 m"],
+        "character": "CHARACTER STATE WALK ● SPEED 4.03 m/s",
+        "groundedTitle": "Grounded",
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "terrainItems": [
+          {
+            "text": "TER-01: Provider activePASSED",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "TER-02: CRS / datumPASSED",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "TER-03: Spawn elevationPASSED",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "TER-04: Boundary in coveragePASSED",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "TER-05: Outside coveragePASSED",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "TER-06: Invalid inputPASSED",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "TER-07: Support surfacePASSED",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "TER-08: Production providerPASSED",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "TER-09: Terrain modePASSED",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "TER-10: Spawn groundingPASSED",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          }
+        ],
+        "overflowX": false
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "1024x768",
+      "probe": "p3",
+      "spawn": {
+        "canvases": 2,
+        "coords": "0.00 m, 0.00 m",
+        "elevationChip": "0.00",
+        "envPanel": [],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "groundedTitle": "Grounded",
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "spawnEnv": {
+        "canvases": 2,
+        "coords": "0.00 m, 0.00 m",
+        "elevationChip": null,
+        "envPanel": ["0.00, 0.00", "0.00 m", "52.5° / 160.9°", "5.40 m"],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "groundedTitle": "Grounded",
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "afterWalk": {
+        "canvases": 2,
+        "coords": "-0.36 m, -0.15 m",
+        "elevationChip": null,
+        "envPanel": ["-0.36, -0.15", "0.00 m", "52.5° / 161.0°", "5.40 m"],
+        "character": "CHARACTER STATE WALK ● SPEED 0.58 m/s",
+        "groundedTitle": "Grounded",
+        "checks": "Checks: 35/35",
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "jumpTimeline": [
+        {
+          "t": 0.4,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 0.8,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 1.2,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 1.6,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 2,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 2.4,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 2.8,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 3.2,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 3.6,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 4,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 4.4,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 4.8,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 5.2,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 5.6,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 6,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 6.4,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 6.8,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 7.2,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 7.6,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 8,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 8.4,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 8.8,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 9.2,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 9.6,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 10,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 10.4,
+          "anim": "CHARACTER STATE LANDING",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 10.8,
+          "anim": "CHARACTER STATE LANDING",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 11.2,
+          "anim": "CHARACTER STATE LANDING",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 11.6,
+          "anim": "CHARACTER STATE LANDING",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        },
+        {
+          "t": 12,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "coords": "-0.38 m, -0.16 m"
+        }
+      ],
+      "jumpSeen": true,
+      "f3": {
+        "canvases": 2,
+        "coords": "-0.38 m, -0.16 m",
+        "elevationChip": null,
+        "envPanel": ["-0.38, -0.16", "0.00 m", "52.5° / 161.3°", "5.40 m"],
+        "character": "CHARACTER STATE IDLE ● SPEED 0.00 m/s",
+        "groundedTitle": "Grounded",
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "terrainItems": [
+          {
+            "text": "TER-01: Provider activePASSED",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "TER-02: CRS / datumPASSED",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "TER-03: Spawn elevationPASSED",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "TER-04: Boundary in coveragePASSED",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "TER-05: Outside coveragePASSED",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "TER-06: Invalid inputPASSED",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "TER-07: Support surfacePASSED",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "TER-08: Production providerPASSED",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "TER-09: Terrain modePASSED",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "TER-10: Spawn groundingPASSED",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          }
+        ],
+        "overflowX": false
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "dem",
+      "viewport": "390x844",
+      "probe": "p3",
+      "spawn": {
+        "canvases": 2,
+        "coords": null,
+        "elevationChip": "6.05",
+        "envPanel": [],
+        "character": null,
+        "groundedTitle": null,
+        "checks": null,
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "spawnEnv": {
+        "canvases": 2,
+        "coords": null,
+        "elevationChip": null,
+        "envPanel": ["0.00, 0.00", "6.05 m", "52.6° / 161.4°", "5.40 m"],
+        "character": null,
+        "groundedTitle": null,
+        "checks": null,
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "afterWalk": {
+        "canvases": 2,
+        "coords": null,
+        "elevationChip": null,
+        "envPanel": ["0.00, -1.52", "6.04 m", "52.6° / 161.5°", "5.40 m"],
+        "character": null,
+        "groundedTitle": null,
+        "checks": null,
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "jumpTimeline": [
+        {
+          "t": 0.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 0.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 1.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 1.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 2.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 2.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 3.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 3.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 4.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 4.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 5.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 5.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 6.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 6.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 7.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 7.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 8.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 8.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 9.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 9.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 10,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 10.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 10.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 11.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 11.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 12,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 12.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 12.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 13.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 13.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 14,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 14.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 14.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 15.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 15.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 16,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        }
+      ],
+      "jumpSeen": false,
+      "f3": {
+        "canvases": 2,
+        "coords": null,
+        "elevationChip": null,
+        "envPanel": ["0.00, -1.53", "6.03 m", "52.6° / 161.6°", "5.40 m"],
+        "character": null,
+        "groundedTitle": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "terrainItems": [
+          {
+            "text": "TER-01: Provider activePASSED",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "TER-02: CRS / datumPASSED",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "TER-03: Spawn elevationPASSED",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "TER-04: Boundary in coveragePASSED",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "TER-05: Outside coveragePASSED",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "TER-06: Invalid inputPASSED",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "TER-07: Support surfacePASSED",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "TER-08: Production providerPASSED",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "TER-09: Terrain modePASSED",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "TER-10: Spawn groundingPASSED",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          }
+        ],
+        "overflowX": false
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "390x844",
+      "probe": "p3",
+      "spawn": {
+        "canvases": 2,
+        "coords": null,
+        "elevationChip": "0.00",
+        "envPanel": [],
+        "character": null,
+        "groundedTitle": null,
+        "checks": null,
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "spawnEnv": {
+        "canvases": 2,
+        "coords": null,
+        "elevationChip": null,
+        "envPanel": ["0.00, 0.00", "0.00 m", "52.6° / 161.7°", "5.40 m"],
+        "character": null,
+        "groundedTitle": null,
+        "checks": null,
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "afterWalk": {
+        "canvases": 2,
+        "coords": null,
+        "elevationChip": null,
+        "envPanel": ["0.00, -1.30", "0.00 m", "52.6° / 161.7°", "5.40 m"],
+        "character": null,
+        "groundedTitle": null,
+        "checks": null,
+        "terrainChecks": null,
+        "terrainItems": [],
+        "overflowX": false
+      },
+      "jumpTimeline": [
+        {
+          "t": 0.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 0.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 1.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 1.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 2.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 2.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 3.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 3.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 4.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 4.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 5.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 5.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 6.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 6.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 7.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 7.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 8.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 8.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 9.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 9.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 10,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 10.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 10.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 11.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 11.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 12,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 12.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 12.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 13.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 13.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 14,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 14.4,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 14.8,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 15.2,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 15.6,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        },
+        {
+          "t": 16,
+          "anim": "",
+          "grounded": null,
+          "coords": null
+        }
+      ],
+      "jumpSeen": false,
+      "f3": {
+        "canvases": 2,
+        "coords": null,
+        "elevationChip": null,
+        "envPanel": ["0.00, -1.30", "0.00 m", "52.6° / 161.8°", "5.40 m"],
+        "character": null,
+        "groundedTitle": null,
+        "checks": null,
+        "terrainChecks": "Terrain checks: 10/10",
+        "terrainItems": [
+          {
+            "text": "TER-01: Provider activePASSED",
+            "details": "Provider synthetic-danang-phase-10 v1 is active"
+          },
+          {
+            "text": "TER-02: CRS / datumPASSED",
+            "details": "synthetic-local-meters / SYNTHETIC_LOCAL / production"
+          },
+          {
+            "text": "TER-03: Spawn elevationPASSED",
+            "details": "Spawn elevation 0"
+          },
+          {
+            "text": "TER-04: Boundary in coveragePASSED",
+            "details": "Boundary 68 m inside coverage -90..90 m"
+          },
+          {
+            "text": "TER-05: Outside coveragePASSED",
+            "details": "Outside coverage returns outside-coverage, never a silent zero"
+          },
+          {
+            "text": "TER-06: Invalid inputPASSED",
+            "details": "Invalid input returns invalid-input"
+          },
+          {
+            "text": "TER-07: Support surfacePASSED",
+            "details": "Support surface is terrain or higher, from one evaluation"
+          },
+          {
+            "text": "TER-08: Production providerPASSED",
+            "details": "Production provider is synthetic-danang-phase-10 (production)"
+          },
+          {
+            "text": "TER-09: Terrain modePASSED",
+            "details": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+          },
+          {
+            "text": "TER-10: Spawn groundingPASSED",
+            "details": "Spawn Y 0 m equals sampled elevation 0"
+          }
+        ],
+        "overflowX": false
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

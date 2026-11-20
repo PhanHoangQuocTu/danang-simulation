@@ -36,10 +36,10 @@ describe('terrain metadata validation', () => {
     );
   });
 
-  it('rejects orthometric heights without a verified geoid transformation', () => {
-    expect(() => validateTerrainDatasetMetadata({ ...baseMetadata, verticalDatum: 'ORTHOMETRIC_EGM2008' })).toThrow(
-      /geoid transformation/i
-    );
+  it('accepts orthometric heights as a labelled pilot, not production-ready', () => {
+    const validated = validateTerrainDatasetMetadata({ ...baseMetadata, verticalDatum: 'ORTHOMETRIC_EGM2008' });
+    expect(validated.isProductionReady).toBe(false);
+    expect(validated.metadata.verticalDatum).toBe('ORTHOMETRIC_EGM2008');
   });
 
   it('rejects unsupported CRS', () => {

@@ -209,6 +209,8 @@
   "terrainDiag6": "Dữ liệu sai",
   "terrainDiag7": "Bề mặt đỡ",
   "terrainDiag8": "Provider production",
+  "terrainDiag9": "Chế độ địa hình",
+  "terrainDiag10": "Spawn bám đất",
   "dataSources": "Nguồn dữ liệu địa lý",
   "sourceSummary": "{total} nguồn · {candidate} ứng viên · {metadataVerified} xác minh metadata · {approved} được duyệt · {ingested} đã nhập · {blocked} bị chặn",
   "sourceNotLoaded": "Chưa tải hình học địa lý thật. Mục trong danh mục chưa phải dataset được tải. Phạm vi, quyền và độ chính xác cần được duyệt theo dataset.",

@@ -12,6 +12,7 @@ import { isWeatherStale } from '@/integrations/weather/freshness';
 import { fetchWeather } from '@/integrations/weather/client';
 import type { HUDPanelState, PanelDisplayMode } from '../type';
 import { createWorldRuntime, type WorldRuntime, type WorldSnapshot, type RuntimeStatus } from '../runtime/world';
+import { resolveTerrainMode } from '@/worlds/danang/terrain-mode';
 
 export function useWorldExplorer() {
   const { t } = useTranslations('worldExplorer');
@@ -144,24 +145,29 @@ export function useWorldExplorer() {
     let active = true;
     runtimeGeneration.current = generation;
     try {
-      const instance = createWorldRuntime({
-        canvas: canvas.current,
-        mapCanvas: mapCanvas.current,
-        marker: marker.current,
-        cone: cone.current,
-        edge: edge.current,
-        release: () => {
-          if (active && runtimeGeneration.current === generation) resetTouch();
+      // Phase 16: `?terrain=dem` opts into the real-DEM pilot; anything
+      // else (including no parameter) keeps the synthetic production world.
+      const instance = createWorldRuntime(
+        {
+          canvas: canvas.current,
+          mapCanvas: mapCanvas.current,
+          marker: marker.current,
+          cone: cone.current,
+          edge: edge.current,
+          release: () => {
+            if (active && runtimeGeneration.current === generation) resetTouch();
+          },
+          command: (command) => onCommandRef.current(command),
+          device: (input) => setProfile(evaluateAdaptiveDeviceProfile(input)),
+          snapshot: (value) => {
+            if (active && runtimeGeneration.current === generation) setSnapshot(value);
+          },
+          status: (value) => {
+            if (active && runtimeGeneration.current === generation) setStatus(value);
+          },
         },
-        command: (command) => onCommandRef.current(command),
-        device: (input) => setProfile(evaluateAdaptiveDeviceProfile(input)),
-        snapshot: (value) => {
-          if (active && runtimeGeneration.current === generation) setSnapshot(value);
-        },
-        status: (value) => {
-          if (active && runtimeGeneration.current === generation) setStatus(value);
-        },
-      });
+        { terrainMode: resolveTerrainMode(window.location.search) }
+      );
       runtime.current = instance;
       return () => {
         active = false;

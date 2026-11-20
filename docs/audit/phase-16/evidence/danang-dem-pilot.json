@@ -1,0 +1,110 @@
+{
+  "datasetId": "copernicus-dem-glo30-danang-pilot-v1",
+  "sourceId": "copernicus-dsm",
+  "version": "1",
+  "sourceTile": "Copernicus_DSM_COG_10_N16_00_E108_00_DEM",
+  "sourceTileSha256": "f4f95dc5677eaaca9a967230a676bb8a39025ab79d28b89e225a7e822acbdde6",
+  "sourceUrl": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N16_00_E108_00_DEM/Copernicus_DSM_COG_10_N16_00_E108_00_DEM.tif",
+  "sourceFormat": "COG GeoTIFF, Float32, 3600x3600, 1 arc-second",
+  "sourceCrs": "EPSG:4326",
+  "sourceVerticalDatum": "EGM2008 (EPSG:3855)",
+  "worldVerticalDatum": "ORTHOMETRIC_EGM2008 (no geoid conversion applied; absolute ellipsoid alignment NOT VERIFIED)",
+  "anchorLat": 16.0544,
+  "anchorLon": 108.2022,
+  "cellSizeMeters": 30.0,
+  "widthCells": 100,
+  "heightCells": 100,
+  "originXMeters": -1500.0,
+  "originZMeters": -1500.0,
+  "coverageMeters": {
+    "minX": -1500.0,
+    "maxX": 1500.0,
+    "minZ": -1500.0,
+    "maxZ": 1500.0
+  },
+  "bbox": {
+    "westLon": 108.18818106464255,
+    "eastLon": 108.21621703842368,
+    "northLat": 16.067954657654433,
+    "southLat": 16.040844408071024,
+    "centreLat": 16.0544,
+    "centreLon": 108.2022
+  },
+  "noData": -32767.0,
+  "stats": {
+    "min": 2.061061143875122,
+    "max": 25.392606735229492,
+    "mean": 8.462543337392807,
+    "median": 8.262186050415039,
+    "std": 2.2081508019747442,
+    "nodataCells": 0,
+    "resampleMaxAbsErrM": 6.054367971488951,
+    "resampleMeanAbsErrM": 0.33723534917974857
+  },
+  "checkpoints": [
+    {
+      "cell": [0, 0],
+      "lat": 16.0678191157156,
+      "lon": 108.18832126338168,
+      "gridValueM": 7.377557754516602,
+      "directTileNearestM": 6.4334540367126465,
+      "absDiffM": 0.9441037178039551
+    },
+    {
+      "cell": [0, 99],
+      "lat": 16.0678191157156,
+      "lon": 108.21607873661833,
+      "gridValueM": 11.93746280670166,
+      "directTileNearestM": 11.671854019165039,
+      "absDiffM": 0.2656087875366211
+    },
+    {
+      "cell": [99, 0],
+      "lat": 16.04097996860192,
+      "lon": 108.18832312256654,
+      "gridValueM": 10.637548446655273,
+      "directTileNearestM": 10.294672966003418,
+      "absDiffM": 0.34287548065185547
+    },
+    {
+      "cell": [99, 99],
+      "lat": 16.04097996860192,
+      "lon": 108.21607687743347,
+      "gridValueM": 7.935569763183594,
+      "directTileNearestM": 7.214113235473633,
+      "absDiffM": 0.7214565277099609
+    },
+    {
+      "cell": [50, 50],
+      "lat": 16.05426444869875,
+      "lon": 108.20234017977623,
+      "gridValueM": 6.2985148429870605,
+      "directTileNearestM": 5.5646138191223145,
+      "absDiffM": 0.7339010238647461
+    },
+    {
+      "cell": [25, 75],
+      "lat": 16.061041890059464,
+      "lon": 108.20934941041673,
+      "gridValueM": 9.527286529541016,
+      "directTileNearestM": 9.290128707885742,
+      "absDiffM": 0.23715782165527344
+    },
+    {
+      "cell": [75, 25],
+      "lat": 16.04748677377117,
+      "lon": 108.19533142336468,
+      "gridValueM": 6.188024997711182,
+      "directTileNearestM": 4.575906276702881,
+      "absDiffM": 1.6121187210083008
+    }
+  ],
+  "license": "Copernicus DEM free licence (commercial use allowed with attribution)",
+  "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+  "processingHistory": [
+    "Downloaded Copernicus_DSM_COG_10_N16_00_E108_00_DEM.tif from the public AWS S3 bucket copernicus-dem-30m (anonymous, 2026-11-20)",
+    "Verified SHA-256, COG structure, EPSG:4326 / EGM2008 GeoKeys from the file itself",
+    "Cropped a 100x100-cell pilot window around lat 16.0544 lon 108.2022 and resampled it onto a regular 30 m ENU grid centred on the anchor using WGS84 geodetic-ECEF-ENU math (same constants as src/engine/geospatial/core.ts); bilinear resampling from RasterPixelIsArea source cells",
+    "No geoid conversion applied: elevations remain orthometric EGM2008 heights; world Y equals orthometric height"
+  ]
+}

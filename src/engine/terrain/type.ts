@@ -13,8 +13,11 @@
  *
  * Coordinate conventions (Phase 12): world +X = East, +Y = Up, -Z = North,
  * 1 world unit = 1 meter. World Y is an ellipsoidal height relative to the
- * Da Nang anchor (0 m reference assumption), never an orthometric height
- * unless a verified geoid transformation was applied during preprocessing.
+ * Da Nang anchor (0 m reference assumption) for WGS84_ELLIPSOID datasets.
+ * A dataset whose metadata says ORTHOMETRIC_EGM2008 keeps orthometric
+ * heights as world Y (mean-sea-level reference); it is never relabelled
+ * as ellipsoidal, and `isProductionReady` is false for it until a verified
+ * geoid transformation exists. See `src/world-core/terrain/validation.ts`.
  */
 
 /** Horizontal coordinate reference of a terrain dataset. */

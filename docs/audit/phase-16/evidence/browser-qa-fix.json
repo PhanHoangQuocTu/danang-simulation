@@ -1,0 +1,58 @@
+{
+  "at": "2026-11-20T03:59:28.751Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "mode": "synthetic",
+      "viewport": "1024x768",
+      "probe": "fix-verify",
+      "beforeF3": {
+        "canvases": 2,
+        "span": "Span: 144 m",
+        "ter09": null,
+        "ter10": null,
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "geoHeight": null
+      },
+      "afterF3": {
+        "canvases": 2,
+        "span": "Span: 144 m",
+        "ter09": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no",
+        "ter10": "Spawn Y 0 m equals sampled elevation 0",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "geoHeight": "0.000"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": ["http://localhost:3000/api/weather net::ERR_ABORTED"]
+    },
+    {
+      "mode": "dem",
+      "viewport": "1024x768",
+      "probe": "fix-verify",
+      "beforeF3": {
+        "canvases": 2,
+        "span": "Span: 3000 m",
+        "ter09": null,
+        "ter10": null,
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "geoHeight": null
+      },
+      "afterF3": {
+        "canvases": 2,
+        "span": "Span: 3000 m",
+        "ter09": "REAL DEM (pilot — orthometric, ellipsoid alignment NOT VERIFIED) — copernicus-dem-glo30-danang-pilot-v1 @ 30 m, datum ORTHOMETRIC_EGM2008, production-ready: no",
+        "ter10": "Spawn Y 6.045524001121521 m equals sampled elevation 6.045524001121521",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "geoHeight": "6.046"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

@@ -149,7 +149,9 @@ export function dataUseDenials(source: DataSource, use: DataUse): string[] {
 function ingestionDenials(source: DataSource, use: DataUse): string[] {
   const reasons = dataUseDenials(source, use);
   if (source.horizontalCrs !== 'EPSG:4326') reasons.push('requires-conversion');
-  if (source.category !== 'vector-osm') reasons.push('unsupported-dataset-kind');
+  // Phase 16: DEM ingestion is supported for the Copernicus DSM category
+  // (EPSG:4326, named vertical datum). Any other non-OSM kind stays denied.
+  if (source.category !== 'vector-osm' && source.category !== 'dsm') reasons.push('unsupported-dataset-kind');
   if (source.category !== 'vector-osm' && !source.verticalDatum) reasons.push('vertical-datum-unknown');
   return reasons;
 }

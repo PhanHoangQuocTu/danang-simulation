@@ -209,6 +209,8 @@
   "terrainDiag6": "Invalid input",
   "terrainDiag7": "Support surface",
   "terrainDiag8": "Production provider",
+  "terrainDiag9": "Terrain mode",
+  "terrainDiag10": "Spawn grounding",
   "dataSources": "Geographic data sources",
   "sourceSummary": "{total} sources · {candidate} candidates · {metadataVerified} metadata verified · {approved} approved · {ingested} ingested · {blocked} blocked",
   "sourceNotLoaded": "Real geometry loaded: no. Catalog entries are not loaded datasets. Coverage, rights and accuracy need dataset-specific review.",

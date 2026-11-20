@@ -47,10 +47,12 @@ const gridInputSchema = z.strictObject({
  *
  * The grid is already transformed to world meters by preprocessing: columns
  * run east (+X), rows run south (+Z from the north edge), elevations are
- * WGS84 ellipsoidal meters (world Y). This provider performs no CRS
- * conversion at sample time, so sampling stays allocation-free and fast.
- * It accepts only validated geographic metadata — orthometric data and
- * unknown datums are rejected by `validateTerrainDatasetMetadata`.
+ * world-Y meters in the datum named by the validated metadata (WGS84
+ * ellipsoidal, or orthometric EGM2008 for a Phase 16 pilot — never
+ * relabelled). This provider performs no CRS conversion at sample time,
+ * so sampling stays allocation-free and fast. It accepts only validated
+ * geographic metadata; unknown datums are rejected by
+ * `validateTerrainDatasetMetadata`.
  */
 export class GridDemProvider implements TerrainProvider {
   readonly metadata;
@@ -120,11 +122,13 @@ export class GridDemProvider implements TerrainProvider {
       (coverage.maxXMeters - coverage.minXMeters) / 2,
       (coverage.maxZMeters - coverage.minZMeters) / 2
     );
-    this.spawnPosition = [
-      (coverage.minXMeters + coverage.maxXMeters) / 2,
-      0,
-      (coverage.minZMeters + coverage.maxZMeters) / 2,
-    ];
+    // Spawn at the grid centre, at the sampled terrain height there — never
+    // at Y = 0, which can sit metres below (or above) a real DEM surface.
+    // If the centre cell itself is NoData, fall back to 0 and let the
+    // caller see the mismatch through the diagnostics spawn check.
+    const centreX = (coverage.minXMeters + coverage.maxXMeters) / 2;
+    const centreZ = (coverage.minZMeters + coverage.maxZMeters) / 2;
+    this.spawnPosition = [centreX, 0, centreZ];
     this.width = parsed.data.width;
     this.height = parsed.data.height;
     this.cellSizeMeters = parsed.data.cellSizeMeters;
@@ -133,6 +137,10 @@ export class GridDemProvider implements TerrainProvider {
     this.samples = new Float32Array(parsed.data.elevations);
     this.noData = parsed.data.noData;
     this.interpolation = parsed.data.interpolation ?? 'bilinear';
+    const centreSample = this.sampleElevation(centreX, centreZ);
+    if (centreSample.status === 'ok' && centreSample.elevationMeters !== null) {
+      this.spawnPosition = [centreX, centreSample.elevationMeters, centreZ];
+    }
   }
 
   private assertAlive(): void {

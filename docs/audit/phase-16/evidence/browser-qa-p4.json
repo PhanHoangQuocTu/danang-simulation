@@ -1,0 +1,1023 @@
+{
+  "at": "2026-11-20T03:49:49.997Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "mode": "dem",
+      "viewport": "1024x768",
+      "probe": "p4",
+      "f3baseline": {
+        "anim": "CHARACTER STATE IDLE",
+        "grounded": "Grounded",
+        "geoHeight": "6.046",
+        "elevationChip": "6.05",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "coords": "0.00 m, 0.00 m"
+      },
+      "markerBefore": {
+        "left": "50%",
+        "top": "50%"
+      },
+      "afterWalk": {
+        "anim": "CHARACTER STATE WALK",
+        "grounded": "Grounded",
+        "geoHeight": "6.039",
+        "elevationChip": "6.04",
+        "marker": {
+          "left": "50%",
+          "top": "49.9661%"
+        },
+        "coords": "0.00 m, -0.93 m"
+      },
+      "jumpTimeline": [
+        {
+          "t": 0.5,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "6.466"
+        },
+        {
+          "t": 1,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "6.831"
+        },
+        {
+          "t": 1.5,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "6.831"
+        },
+        {
+          "t": 2,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "7.133"
+        },
+        {
+          "t": 2.5,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "7.133"
+        },
+        {
+          "t": 3,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "7.373"
+        },
+        {
+          "t": 3.5,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "7.373"
+        },
+        {
+          "t": 4,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "7.551"
+        },
+        {
+          "t": 4.5,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "7.551"
+        },
+        {
+          "t": 5,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "7.666"
+        },
+        {
+          "t": 5.5,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "7.666"
+        },
+        {
+          "t": 6,
+          "anim": "CHARACTER STATE JUMP",
+          "grounded": "Airborne",
+          "geoHeight": "7.718"
+        },
+        {
+          "t": 6.5,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.718"
+        },
+        {
+          "t": 7,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.708"
+        },
+        {
+          "t": 7.5,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.708"
+        },
+        {
+          "t": 8,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.636"
+        },
+        {
+          "t": 8.5,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.501"
+        },
+        {
+          "t": 9,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.501"
+        },
+        {
+          "t": 9.5,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.303"
+        },
+        {
+          "t": 10,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.303"
+        },
+        {
+          "t": 10.5,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.043"
+        },
+        {
+          "t": 11,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "7.043"
+        },
+        {
+          "t": 11.5,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "6.721"
+        },
+        {
+          "t": 12,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "6.336"
+        },
+        {
+          "t": 12.5,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "6.336"
+        },
+        {
+          "t": 13,
+          "anim": "CHARACTER STATE FALL",
+          "grounded": "Airborne",
+          "geoHeight": "6.336"
+        },
+        {
+          "t": 13.5,
+          "anim": "CHARACTER STATE LANDING",
+          "grounded": "Grounded",
+          "geoHeight": "6.336"
+        },
+        {
+          "t": 14,
+          "anim": "CHARACTER STATE LANDING",
+          "grounded": "Grounded",
+          "geoHeight": "6.038"
+        },
+        {
+          "t": 14.5,
+          "anim": "CHARACTER STATE LANDING",
+          "grounded": "Grounded",
+          "geoHeight": "6.038"
+        },
+        {
+          "t": 15,
+          "anim": "CHARACTER STATE IDLE",
+          "grounded": "Grounded",
+          "geoHeight": "6.038"
+        }
+      ],
+      "jumpSeen": true,
+      "landedAtSec": 15,
+      "peakGeoHeight": 7.718,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "dem",
+      "viewport": "390x844",
+      "probe": "p4",
+      "f3baseline": {
+        "anim": null,
+        "grounded": null,
+        "geoHeight": "6.046",
+        "elevationChip": "6.05",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "coords": null
+      },
+      "markerBefore": {
+        "left": "50%",
+        "top": "50%"
+      },
+      "afterWalk": {
+        "anim": null,
+        "grounded": null,
+        "geoHeight": "6.032",
+        "elevationChip": "6.03",
+        "marker": {
+          "left": "50%",
+          "top": "49.9362%"
+        },
+        "coords": null
+      },
+      "jumpTimeline": [
+        {
+          "t": 0.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.367"
+        },
+        {
+          "t": 1,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.367"
+        },
+        {
+          "t": 1.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.545"
+        },
+        {
+          "t": 2,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.660"
+        },
+        {
+          "t": 2.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.712"
+        },
+        {
+          "t": 3,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.702"
+        },
+        {
+          "t": 3.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.630"
+        },
+        {
+          "t": 4,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.297"
+        },
+        {
+          "t": 4.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.297"
+        },
+        {
+          "t": 5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "7.037"
+        },
+        {
+          "t": 5.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.330"
+        },
+        {
+          "t": 6,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.330"
+        },
+        {
+          "t": 6.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 7,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 7.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 8,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 8.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 9,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 9.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 10,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 10.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 11,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 11.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 12,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 12.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 13,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 13.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 14,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 14.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 15,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 15.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 16,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 16.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 17,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 17.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 18,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 18.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 19,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 19.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 20,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 20.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 21,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 21.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 22,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 22.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 23,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 23.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 24,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 24.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 25,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 25.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 26,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 26.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 27,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 27.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 28,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 28.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 29,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 29.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        },
+        {
+          "t": 30,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "6.032"
+        }
+      ],
+      "jumpSeen": false,
+      "landedAtSec": null,
+      "peakGeoHeight": 7.712,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "390x844",
+      "probe": "p4",
+      "f3baseline": {
+        "anim": null,
+        "grounded": null,
+        "geoHeight": "0.000",
+        "elevationChip": "0.00",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "coords": null
+      },
+      "markerBefore": {
+        "left": "50%",
+        "top": "50%"
+      },
+      "afterWalk": {
+        "anim": null,
+        "grounded": null,
+        "geoHeight": "0.000",
+        "elevationChip": "0.00",
+        "marker": {
+          "left": "50%",
+          "top": "49.0512%"
+        },
+        "coords": null
+      },
+      "jumpTimeline": [
+        {
+          "t": 0.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.793"
+        },
+        {
+          "t": 1,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.095"
+        },
+        {
+          "t": 1.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.095"
+        },
+        {
+          "t": 2,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.335"
+        },
+        {
+          "t": 2.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.513"
+        },
+        {
+          "t": 3,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.513"
+        },
+        {
+          "t": 3.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.628"
+        },
+        {
+          "t": 4,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.680"
+        },
+        {
+          "t": 4.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.670"
+        },
+        {
+          "t": 5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.598"
+        },
+        {
+          "t": 5.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.598"
+        },
+        {
+          "t": 6,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.463"
+        },
+        {
+          "t": 6.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.265"
+        },
+        {
+          "t": 7,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.265"
+        },
+        {
+          "t": 7.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "1.005"
+        },
+        {
+          "t": 8,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.683"
+        },
+        {
+          "t": 8.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.683"
+        },
+        {
+          "t": 9,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.298"
+        },
+        {
+          "t": 9.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 10,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 10.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 11,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 11.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 12,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 12.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 13,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 13.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 14,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 14.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 15,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 15.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 16,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 16.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 17,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 17.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 18,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 18.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 19,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 19.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 20,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 20.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 21,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 21.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 22,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 22.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 23,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 23.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 24,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 24.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 25,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 25.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 26,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 26.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 27,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 27.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 28,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 28.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 29,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 29.5,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        },
+        {
+          "t": 30,
+          "anim": null,
+          "grounded": null,
+          "geoHeight": "0.000"
+        }
+      ],
+      "jumpSeen": false,
+      "landedAtSec": null,
+      "peakGeoHeight": 1.68,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

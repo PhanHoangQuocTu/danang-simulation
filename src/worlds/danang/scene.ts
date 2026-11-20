@@ -12,6 +12,7 @@ import { syntheticManifest } from './zones/manifest';
 import { INITIAL_INTERACTABLE_FIXTURES } from './zones/fixtures';
 import type { TerrainProvider } from '@/engine/terrain/type';
 import { requireElevation } from '@/engine/terrain/type';
+import { buildTerrainMesh } from './terrain-mesh';
 import { PLATFORM_COLLIDERS, TREE_COLLIDERS, syntheticTerrainProvider } from './zones/synthetic-terrain';
 
 /** The archived test environment uses synthetic local meters, not surveyed city geometry. */
@@ -21,7 +22,11 @@ export function createDaNangScene(
   terrain: TerrainProvider = syntheticTerrainProvider
 ) {
   const scene = new THREE.Scene();
-  const fog = new THREE.FogExp2(0xbae6fd, 0.0055);
+  // Phase 16: a geographic DEM world is kilometres across, so its fog must
+  // be far thinner than the 180 m synthetic world's, or the terrain would
+  // be fully fogged a few hundred metres from the player.
+  const isDem = terrain.metadata.isGeographic;
+  const fog = new THREE.FogExp2(0xbae6fd, isDem ? 0.0006 : 0.0055);
   scene.fog = fog;
   // 4. Dynamic Atmospheric Sky Dome
   const skyUniforms = {
@@ -225,49 +230,9 @@ export function createDaNangScene(
   scene.add(mainDirLight);
   scene.add(mainDirLight.target);
 
-  // 10. Sculpted 3D Terrain Mesh
-  const terrainSize = 180;
-  const terrainSegments = 128;
-  const terrainGeo = scope.own(new THREE.PlaneGeometry(terrainSize, terrainSize, terrainSegments, terrainSegments));
-  terrainGeo.rotateX(-Math.PI / 2);
-
-  const posAttr = terrainGeo.attributes.position;
-  const colors: number[] = [];
-  const cGrassLight = new THREE.Color(0x4d8b31);
-  const cGrassLush = new THREE.Color(0x3b7523);
-  const cPathDirt = new THREE.Color(0x948268);
-  const cRockSlope = new THREE.Color(0x64748b);
-  const tempColor = new THREE.Color();
-
-  for (let i = 0; i < posAttr.count; i++) {
-    const vx = posAttr.getX(i);
-    const vz = posAttr.getZ(i);
-    const vy = requireElevation(terrain.sampleElevation(vx, vz), vx, vz);
-    posAttr.setY(i, vy);
-
-    const pathCenterX = Math.sin(vz * 0.08) * 3.5;
-    const distToPath = Math.abs(vx - pathCenterX);
-    const distFromOrigin = Math.hypot(vx, vz);
-
-    if (distFromOrigin < 4.5) {
-      tempColor.copy(cPathDirt).lerp(cRockSlope, 0.45);
-    } else if (distToPath < 2.1 && Math.abs(vz) < 58) {
-      const pathBlend = THREE.MathUtils.smoothstep(distToPath, 1.1, 2.1);
-      tempColor.copy(cPathDirt).lerp(cGrassLight, pathBlend);
-    } else if (vy > 1.35) {
-      const rockBlend = THREE.MathUtils.clamp((vy - 1.35) / 1.8, 0, 0.85);
-      tempColor.copy(cGrassLush).lerp(cRockSlope, rockBlend);
-    } else {
-      const noiseMix = (Math.sin(vx * 0.14) * Math.cos(vz * 0.14) + 1) * 0.5;
-      tempColor.copy(cGrassLight).lerp(cGrassLush, noiseMix);
-    }
-
-    colors.push(tempColor.r, tempColor.g, tempColor.b);
-  }
-
-  terrainGeo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-  terrainGeo.computeVertexNormals();
-
+  // 10. Sculpted 3D Terrain Mesh — built from the active provider only.
+  // Synthetic keeps the 180 m / 128-segment mesh; a DEM provider sizes
+  // the mesh from its coverage and raster dimensions (Phase 16).
   const grassTexture = scope.own(createOrganicGrassTexture());
   const stoneTexture = scope.own(createStoneTexture());
 
@@ -279,8 +244,7 @@ export function createDaNangScene(
       metalness: 0.04,
     })
   );
-  const terrainMesh = new THREE.Mesh(terrainGeo, terrainMat);
-  terrainMesh.receiveShadow = true;
+  const { mesh: terrainMesh } = buildTerrainMesh(scope, terrain, terrainMat);
   scene.add(terrainMesh);
 
   // 11. Origin Compass Plaza & Winding Cobblestone Trail
@@ -295,7 +259,9 @@ export function createDaNangScene(
     })
   );
   const spawnPlaza = new THREE.Mesh(spawnPlazaGeo, spawnPlazaMat);
-  spawnPlaza.position.set(0, 0.02, 0);
+  // The plaza sits at the provider spawn (origin for synthetic, the DEM
+  // pilot centre at its sampled elevation for a DEM world).
+  spawnPlaza.position.set(terrain.spawnPosition[0], terrain.spawnPosition[1] + 0.02, terrain.spawnPosition[2]);
   spawnPlaza.receiveShadow = true;
   envGroup.add(spawnPlaza);
 
@@ -308,7 +274,7 @@ export function createDaNangScene(
     })
   );
   const spawnRing = new THREE.Mesh(spawnRingGeo, spawnRingMat);
-  spawnRing.position.set(0, 0.09, 0);
+  spawnRing.position.set(terrain.spawnPosition[0], terrain.spawnPosition[1] + 0.09, terrain.spawnPosition[2]);
   envGroup.add(spawnRing);
 
   const stepStoneGeo = scope.own(new THREE.CylinderGeometry(0.65, 0.72, 0.08, 10));
@@ -318,17 +284,21 @@ export function createDaNangScene(
       roughness: 0.8,
     })
   );
-  for (let z = -48; z <= 48; z += 2.6) {
-    if (Math.abs(z) < 4) continue;
-    const sx = Math.sin(z * 0.08) * 3.5 + (((z * 13) % 3) - 1) * 0.25;
-    const sy = requireElevation(terrain.sampleElevation(sx, z), sx, z);
-    const stone = new THREE.Mesh(stepStoneGeo, stepStoneMat);
-    stone.position.set(sx, sy + 0.03, z);
-    stone.rotation.y = z * 0.5;
-    stone.scale.set(1.1, 1, 0.85);
-    stone.receiveShadow = true;
-    stone.castShadow = true;
-    envGroup.add(stone);
+  // The winding step-stone path is synthetic-scene dressing; a DEM world
+  // has no synthetic path, so the stones are omitted there.
+  if (!isDem) {
+    for (let z = -48; z <= 48; z += 2.6) {
+      if (Math.abs(z) < 4) continue;
+      const sx = Math.sin(z * 0.08) * 3.5 + (((z * 13) % 3) - 1) * 0.25;
+      const sy = requireElevation(terrain.sampleElevation(sx, z), sx, z);
+      const stone = new THREE.Mesh(stepStoneGeo, stepStoneMat);
+      stone.position.set(sx, sy + 0.03, z);
+      stone.rotation.y = z * 0.5;
+      stone.scale.set(1.1, 1, 0.85);
+      stone.receiveShadow = true;
+      stone.castShadow = true;
+      envGroup.add(stone);
+    }
   }
 
   // 11.5 Automatic Night Pathway Lanterns
@@ -385,42 +355,49 @@ export function createDaNangScene(
     envGroup.add(lanternGroup);
   });
 
-  // 12. Stepped Stone Platforms
-  PLATFORM_COLLIDERS.forEach((plat) => {
-    const height = plat.topY - plat.baseY;
-    const pGeo = scope.own(new THREE.BoxGeometry(plat.width, height, plat.depth));
-    const pMat = scope.own(
-      new THREE.MeshStandardMaterial({
-        map: stoneTexture,
-        color: plat.color,
-        roughness: 0.72,
-        metalness: 0.08,
-      })
-    );
-    const pMesh = new THREE.Mesh(pGeo, pMat);
-    pMesh.position.set(plat.x, plat.baseY + height / 2, plat.z);
-    pMesh.castShadow = true;
-    pMesh.receiveShadow = true;
-    envGroup.add(pMesh);
+  // 12. Stepped Stone Platforms — synthetic colliders only. A DEM provider
+  // has no platforms (its support surface is the terrain itself), so
+  // visual-only platforms the character would fall through are omitted.
+  if (!isDem) {
+    PLATFORM_COLLIDERS.forEach((plat) => {
+      const height = plat.topY - plat.baseY;
+      const pGeo = scope.own(new THREE.BoxGeometry(plat.width, height, plat.depth));
+      const pMat = scope.own(
+        new THREE.MeshStandardMaterial({
+          map: stoneTexture,
+          color: plat.color,
+          roughness: 0.72,
+          metalness: 0.08,
+        })
+      );
+      const pMesh = new THREE.Mesh(pGeo, pMat);
+      pMesh.position.set(plat.x, plat.baseY + height / 2, plat.z);
+      pMesh.castShadow = true;
+      pMesh.receiveShadow = true;
+      envGroup.add(pMesh);
 
-    const trimGeo = scope.own(new THREE.BoxGeometry(plat.width + 0.16, 0.12, plat.depth + 0.16));
-    const trimMat = scope.own(
-      new THREE.MeshStandardMaterial({
-        color: 0xcbd5e1,
-        roughness: 0.6,
-      })
-    );
-    const trimMesh = new THREE.Mesh(trimGeo, trimMat);
-    trimMesh.position.set(plat.x, plat.topY - 0.06, plat.z);
-    trimMesh.castShadow = true;
-    trimMesh.receiveShadow = true;
-    envGroup.add(trimMesh);
-  });
+      const trimGeo = scope.own(new THREE.BoxGeometry(plat.width + 0.16, 0.12, plat.depth + 0.16));
+      const trimMat = scope.own(
+        new THREE.MeshStandardMaterial({
+          color: 0xcbd5e1,
+          roughness: 0.6,
+        })
+      );
+      const trimMesh = new THREE.Mesh(trimGeo, trimMat);
+      trimMesh.position.set(plat.x, plat.topY - 0.06, plat.z);
+      trimMesh.castShadow = true;
+      trimMesh.receiveShadow = true;
+      envGroup.add(trimMesh);
+    });
+  }
 
   const rockCatalog = scope.own(createSyntheticRockCatalog(envGroup, stoneTexture));
   const prefabs = new PrefabRegistry();
   prefabs.register('rock', rockCatalog.factory);
-  scope.own(prefabs.loadZone(syntheticManifest, 'phase-10'));
+  // The Phase 10 rock manifest places rocks on synthetic heights via the
+  // synthetic singleton; in a DEM world the rocks would sit on the wrong
+  // surface, so they are omitted there (Phase 17 will add real placement).
+  if (!isDem) scope.own(prefabs.loadZone(syntheticManifest, 'phase-10'));
 
   // 14. Multi-Species Trees with Wind-Responsive Crown Groups
   const trunkMat = scope.own(
@@ -455,63 +432,67 @@ export function createDaNangScene(
     z: number;
   }[] = [];
 
-  TREE_COLLIDERS.forEach((tree, idx) => {
-    const ty = requireElevation(terrain.sampleElevation(tree.x, tree.z), tree.x, tree.z);
-    const treeGroup = new THREE.Group();
-    treeGroup.position.set(tree.x, ty, tree.z);
+  // Trees are synthetic colliders; a DEM provider has no tree collision,
+  // so visual-only trees the character would walk through are omitted.
+  if (!isDem) {
+    TREE_COLLIDERS.forEach((tree, idx) => {
+      const ty = requireElevation(terrain.sampleElevation(tree.x, tree.z), tree.x, tree.z);
+      const treeGroup = new THREE.Group();
+      treeGroup.position.set(tree.x, ty, tree.z);
 
-    const scale = 0.85 + (idx % 4) * 0.22;
-    const trunkGeo = scope.own(new THREE.CylinderGeometry(0.22 * scale, 0.36 * scale, 2.4 * scale, 10));
-    const trunkMesh = new THREE.Mesh(trunkGeo, trunkMat);
-    trunkMesh.position.y = 1.2 * scale;
-    trunkMesh.castShadow = true;
-    trunkMesh.receiveShadow = true;
-    treeGroup.add(trunkMesh);
+      const scale = 0.85 + (idx % 4) * 0.22;
+      const trunkGeo = scope.own(new THREE.CylinderGeometry(0.22 * scale, 0.36 * scale, 2.4 * scale, 10));
+      const trunkMesh = new THREE.Mesh(trunkGeo, trunkMat);
+      trunkMesh.position.y = 1.2 * scale;
+      trunkMesh.castShadow = true;
+      trunkMesh.receiveShadow = true;
+      treeGroup.add(trunkMesh);
 
-    const crownGroup = new THREE.Group();
-    crownGroup.position.y = 2.2 * scale;
+      const crownGroup = new THREE.Group();
+      crownGroup.position.y = 2.2 * scale;
 
-    if (idx % 3 === 0) {
-      const crownGeo = scope.own(new THREE.IcosahedronGeometry(1.65 * scale, 1));
-      const c1 = new THREE.Mesh(crownGeo, oakLeafMat);
-      c1.position.set(0, 1.1 * scale, 0);
-      c1.castShadow = true;
-      c1.receiveShadow = true;
-      crownGroup.add(c1);
+      if (idx % 3 === 0) {
+        const crownGeo = scope.own(new THREE.IcosahedronGeometry(1.65 * scale, 1));
+        const c1 = new THREE.Mesh(crownGeo, oakLeafMat);
+        c1.position.set(0, 1.1 * scale, 0);
+        c1.castShadow = true;
+        c1.receiveShadow = true;
+        crownGroup.add(c1);
 
-      const c2 = new THREE.Mesh(crownGeo, pineLeafMat2);
-      c2.position.set(0.8 * scale, 0.6 * scale, 0.5 * scale);
-      c2.scale.setScalar(0.72);
-      c2.castShadow = true;
-      crownGroup.add(c2);
+        const c2 = new THREE.Mesh(crownGeo, pineLeafMat2);
+        c2.position.set(0.8 * scale, 0.6 * scale, 0.5 * scale);
+        c2.scale.setScalar(0.72);
+        c2.castShadow = true;
+        crownGroup.add(c2);
 
-      const c3 = new THREE.Mesh(crownGeo, pineLeafMat1);
-      c3.position.set(-0.75 * scale, 0.7 * scale, -0.45 * scale);
-      c3.scale.setScalar(0.68);
-      c3.castShadow = true;
-      crownGroup.add(c3);
-    } else {
-      for (let layer = 0; layer < 3; layer++) {
-        const coneRadius = (1.85 - layer * 0.42) * scale;
-        const coneHeight = (2.2 - layer * 0.3) * scale;
-        const coneGeo = scope.own(new THREE.ConeGeometry(coneRadius, coneHeight, 9));
-        const coneMesh = new THREE.Mesh(coneGeo, layer % 2 === 0 ? pineLeafMat1 : pineLeafMat2);
-        coneMesh.position.y = (0.8 + layer * 1.15) * scale;
-        coneMesh.castShadow = true;
-        coneMesh.receiveShadow = true;
-        crownGroup.add(coneMesh);
+        const c3 = new THREE.Mesh(crownGeo, pineLeafMat1);
+        c3.position.set(-0.75 * scale, 0.7 * scale, -0.45 * scale);
+        c3.scale.setScalar(0.68);
+        c3.castShadow = true;
+        crownGroup.add(c3);
+      } else {
+        for (let layer = 0; layer < 3; layer++) {
+          const coneRadius = (1.85 - layer * 0.42) * scale;
+          const coneHeight = (2.2 - layer * 0.3) * scale;
+          const coneGeo = scope.own(new THREE.ConeGeometry(coneRadius, coneHeight, 9));
+          const coneMesh = new THREE.Mesh(coneGeo, layer % 2 === 0 ? pineLeafMat1 : pineLeafMat2);
+          coneMesh.position.y = (0.8 + layer * 1.15) * scale;
+          coneMesh.castShadow = true;
+          coneMesh.receiveShadow = true;
+          crownGroup.add(coneMesh);
+        }
       }
-    }
 
-    treeGroup.add(crownGroup);
-    envGroup.add(treeGroup);
-    treeCrownGroups.push({
-      crown: crownGroup,
-      phaseOffset: idx * 0.75,
-      x: tree.x,
-      z: tree.z,
+      treeGroup.add(crownGroup);
+      envGroup.add(treeGroup);
+      treeCrownGroups.push({
+        crown: crownGroup,
+        phaseOffset: idx * 0.75,
+        x: tree.x,
+        z: tree.z,
+      });
     });
-  });
+  }
 
   // 15. Decorative Shrubs & Bushes
   const bushGeo = scope.own(new THREE.DodecahedronGeometry(0.55, 1));
