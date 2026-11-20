@@ -1,0 +1,3247 @@
+{
+  "tool": "qa-probe-2026-11-20.mjs (v2 textContent)",
+  "at": "2026-11-20T06:37:28.327Z",
+  "finishedAt": "2026-11-20T06:57:07.698Z",
+  "base": "http://localhost:3000",
+  "head": "f10d98c",
+  "results": [
+    {
+      "mode": "synthetic",
+      "viewport": "1920x1080",
+      "url": "http://localhost:3000/",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1920,
+            "h": 1080
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:37:36Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon43.1°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "timeToInitSec": 7.188,
+      "spawnEvalMs": 2443,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1920,
+            "h": 1080
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "0.000",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:37:36Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon43.1°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "f3EvalMs": 804,
+      "f3Shot": "browser-synthetic-1920x1080-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "3.50",
+        "after": "0.00 m, -0.58 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.5996%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 1.68,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "0.793"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.095"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.095"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.513"
+          },
+          {
+            "t": "jump-6s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.513"
+          },
+          {
+            "t": "jump-7s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.680"
+          },
+          {
+            "t": "jump-8s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.680"
+          },
+          {
+            "t": "jump-9s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.598"
+          },
+          {
+            "t": "jump-10s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.598"
+          },
+          {
+            "t": "jump-11s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.265"
+          },
+          {
+            "t": "jump-12s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.265"
+          },
+          {
+            "t": "jump-13s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "0.683"
+          },
+          {
+            "t": "jump-14s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "0.683"
+          }
+        ],
+        "baselineGeoHeight": "0.000",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 1.68,
+        "retried": false
+      },
+      "raf": {
+        "frames": 3,
+        "wallMs": 5201,
+        "meanDeltaMs": 1733.6666666666667,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 0.5768121515093252,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 2,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1920,
+            "h": 1080
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -0.63 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.5617%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:39:44Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.7°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.3 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "shot": "browser-synthetic-1920x1080.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "1366x768",
+      "url": "http://localhost:3000/",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1366,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:40:05Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.7°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "timeToInitSec": 6.688,
+      "spawnEvalMs": 1828,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1366,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "0.000",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:40:09Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.7°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "f3EvalMs": 1704,
+      "f3Shot": "browser-synthetic-1366x768-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "3.50",
+        "after": "0.00 m, -0.58 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.5996%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 1.68,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "0.793"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.095"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.095"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.513"
+          },
+          {
+            "t": "jump-6s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.513"
+          },
+          {
+            "t": "jump-7s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.680"
+          },
+          {
+            "t": "jump-8s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.680"
+          },
+          {
+            "t": "jump-9s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.598"
+          },
+          {
+            "t": "jump-10s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.598"
+          },
+          {
+            "t": "jump-11s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.265"
+          },
+          {
+            "t": "jump-12s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.265"
+          },
+          {
+            "t": "jump-13s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "0.683"
+          },
+          {
+            "t": "jump-14s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "0.683"
+          }
+        ],
+        "baselineGeoHeight": "0.000",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 1.68,
+        "retried": false
+      },
+      "raf": {
+        "frames": 3,
+        "wallMs": 3094.099999999904,
+        "meanDeltaMs": 1031.3666666666347,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 0.9695872790149294,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 2,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1366,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -0.63 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.5617%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:41:22Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.5°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.3 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "shot": "browser-synthetic-1366x768.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "1024x768",
+      "url": "http://localhost:3000/",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1024,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:41:34Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.4°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "timeToInitSec": 6.077,
+      "spawnEvalMs": 1555,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1024,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "0.000",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:41:34Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.4°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "f3EvalMs": 414,
+      "f3Shot": "browser-synthetic-1024x768-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "4.03",
+        "after": "0.00 m, -0.80 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.4476%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 1.68,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "0.793"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.095"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.513"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.513"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.680"
+          },
+          {
+            "t": "jump-6s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.598"
+          },
+          {
+            "t": "jump-7s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.265"
+          },
+          {
+            "t": "jump-8s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.265"
+          },
+          {
+            "t": "jump-9s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "0.683"
+          },
+          {
+            "t": "jump-10s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "0.683"
+          }
+        ],
+        "baselineGeoHeight": "0.000",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 1.68,
+        "retried": false
+      },
+      "raf": {
+        "frames": 4,
+        "wallMs": 3574.399999999907,
+        "meanDeltaMs": 893.5999999999767,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 1.1190689346464033,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 3,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1024,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -0.85 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.4073%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:42:38Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.2°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.1 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "shot": "browser-synthetic-1024x768.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "768x1024",
+      "url": "http://localhost:3000/",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 768,
+            "h": 1024
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:42:50Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.2°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "timeToInitSec": 5.668,
+      "spawnEvalMs": 1280,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 768,
+            "h": 1024
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "0.000",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:42:50Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.2°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "f3EvalMs": 26,
+      "f3Shot": "browser-synthetic-768x1024-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "4.03",
+        "after": "0.00 m, -0.80 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.4476%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 1.68,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "0.793"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.095"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.513"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.680"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.680"
+          },
+          {
+            "t": "jump-6s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.598"
+          },
+          {
+            "t": "jump-7s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.265"
+          },
+          {
+            "t": "jump-8s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "0.683"
+          },
+          {
+            "t": "jump-9s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "0.683"
+          }
+        ],
+        "baselineGeoHeight": "0.000",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 1.68,
+        "retried": false
+      },
+      "raf": {
+        "frames": 4,
+        "wallMs": 3002.5999999999985,
+        "meanDeltaMs": 750.6499999999996,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 1.332178778392061,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 3,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 768,
+            "h": 1024
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -0.85 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.4073%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:43:47Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon42.1°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.1 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "shot": "browser-synthetic-768x1024.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "390x844",
+      "url": "http://localhost:3000/",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 390,
+            "h": 844
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": null,
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": null,
+        "checksChip": null,
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": null,
+        "speed": null,
+        "grounded": null,
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "13:45:4126°C",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": false,
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "timeToInitSec": null,
+      "spawnEvalMs": 518,
+      "worldInitialised": false,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 390,
+            "h": 844
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": null,
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": null,
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": null,
+        "speed": null,
+        "grounded": null,
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "13:45:4426°C",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "f3EvalMs": 286,
+      "f3Shot": "browser-synthetic-390x844-f3.png",
+      "walk": {
+        "before": null,
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": null,
+        "duringSpeed": null,
+        "after": null,
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.1125%"
+        },
+        "afterAnim": null,
+        "afterGeoHeight": "0.000",
+        "moved": true
+      },
+      "jump": {
+        "airborne": false,
+        "landed": false,
+        "peakGeoHeight": 1.67,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.793"
+          },
+          {
+            "t": "jump-2s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "1.335"
+          },
+          {
+            "t": "jump-3s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "1.628"
+          },
+          {
+            "t": "jump-4s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "1.463"
+          },
+          {
+            "t": "jump-5s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "1.005"
+          },
+          {
+            "t": "jump-6s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.298"
+          },
+          {
+            "t": "jump-7s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-8s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-9s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-10s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-11s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-12s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-13s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-14s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-15s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-16s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-17s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "jump-18s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "retry-1s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "1.095"
+          },
+          {
+            "t": "retry-2s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "1.335"
+          },
+          {
+            "t": "retry-3s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "1.670"
+          },
+          {
+            "t": "retry-4s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "1.463"
+          },
+          {
+            "t": "retry-5s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "1.005"
+          },
+          {
+            "t": "retry-6s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "retry-7s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "retry-8s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "retry-9s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "retry-10s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "retry-11s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          },
+          {
+            "t": "retry-12s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "0.000"
+          }
+        ],
+        "retried": true,
+        "baselineGeoHeight": "0.000",
+        "baselineAnim": null,
+        "baselineGrounded": null
+      },
+      "raf": {
+        "frames": 7,
+        "wallMs": 3479.1000000001804,
+        "meanDeltaMs": 497.0142857143115,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 2.012014601477289,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 4,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 390,
+            "h": 844
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": null,
+        "marker": {
+          "left": "50%",
+          "top": "49.0922%"
+        },
+        "span": null,
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": null,
+        "speed": null,
+        "grounded": null,
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "13:47:0726°C",
+        "interactionText": "5.6 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "shot": "browser-synthetic-390x844.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "synthetic",
+      "viewport": "844x390",
+      "url": "http://localhost:3000/",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 844,
+            "h": 390
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:47:18Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon41.5°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "timeToInitSec": 4.473,
+      "spawnEvalMs": 1126,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 844,
+            "h": 390
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "0.000",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:47:21Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon41.5°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "f3EvalMs": 696,
+      "f3Shot": "browser-synthetic-844x390-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "4.28",
+        "after": "0.00 m, -1.05 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.2681%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 1.67,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "0.793"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.095"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "1.513"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.670"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.463"
+          },
+          {
+            "t": "jump-6s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "1.265"
+          },
+          {
+            "t": "jump-7s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "0.683"
+          }
+        ],
+        "baselineGeoHeight": "0.000",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 1.67,
+        "retried": false
+      },
+      "raf": {
+        "frames": 6,
+        "wallMs": 3987.399999999907,
+        "meanDeltaMs": 664.5666666666511,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 1.5047399307819984,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 3,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 844,
+            "h": 390
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -1.08 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.252%"
+        },
+        "span": "Span: 144 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 0.00 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:48:10Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon41.3°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity80%Cloud cover98%Wind17.5 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:30Open-Meteo",
+        "interactionText": "5.8 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "shot": "browser-synthetic-844x390.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "dem",
+      "viewport": "1920x1080",
+      "url": "http://localhost:3000/?terrain=dem",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1920,
+            "h": 1080
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:48:23Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon41.3°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "timeToInitSec": 8.521,
+      "spawnEvalMs": 1993,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1920,
+            "h": 1080
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "6.046",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:48:23Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon41.3°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "f3EvalMs": 335,
+      "f3Shot": "browser-dem-1920x1080-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "3.50",
+        "after": "0.00 m, -0.58 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.9808%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 7.711,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "6.041"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "6.834"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.136"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.376"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.376"
+          },
+          {
+            "t": "jump-6s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.669"
+          },
+          {
+            "t": "jump-7s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.669"
+          },
+          {
+            "t": "jump-8s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.711"
+          },
+          {
+            "t": "jump-9s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.711"
+          },
+          {
+            "t": "jump-10s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.504"
+          },
+          {
+            "t": "jump-11s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.504"
+          },
+          {
+            "t": "jump-12s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.046"
+          },
+          {
+            "t": "jump-13s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "6.724"
+          },
+          {
+            "t": "jump-14s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "6.724"
+          }
+        ],
+        "baselineGeoHeight": "6.041",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 7.711,
+        "retried": false
+      },
+      "raf": {
+        "frames": 3,
+        "wallMs": 3273.1000000001804,
+        "meanDeltaMs": 1091.0333333333936,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 0.916562280406903,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 2,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1920,
+            "h": 1080
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -0.63 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.979%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.04 m",
+        "fpsChip": "FPS: 10",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:49:59Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon41.0°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.3 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1920,
+        "innerW": 1920
+      },
+      "shot": "browser-dem-1920x1080.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "dem",
+      "viewport": "1366x768",
+      "url": "http://localhost:3000/?terrain=dem",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1366,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:50:14Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon41.0°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "timeToInitSec": 5.193,
+      "spawnEvalMs": 1195,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1366,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "6.046",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:50:17Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon41.0°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "f3EvalMs": 912,
+      "f3Shot": "browser-dem-1366x768-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "4.03",
+        "after": "0.00 m, -0.80 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.9735%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 7.72,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "6.832"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.135"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.552"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.720"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.720"
+          },
+          {
+            "t": "jump-6s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.637"
+          },
+          {
+            "t": "jump-7s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.305"
+          },
+          {
+            "t": "jump-8s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "6.722"
+          },
+          {
+            "t": "jump-9s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "6.722"
+          }
+        ],
+        "baselineGeoHeight": "6.040",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 7.72,
+        "retried": false
+      },
+      "raf": {
+        "frames": 5,
+        "wallMs": 3786.7000000000917,
+        "meanDeltaMs": 757.3400000000183,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 1.3204109118757439,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 3,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1366,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -0.85 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.9716%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.04 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:51:15Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon40.8°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.1 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1366,
+        "innerW": 1366
+      },
+      "shot": "browser-dem-1366x768.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "dem",
+      "viewport": "1024x768",
+      "url": "http://localhost:3000/?terrain=dem",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1024,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:51:25Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon40.8°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "timeToInitSec": 4.411,
+      "spawnEvalMs": 1000,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1024,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "6.046",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:51:28Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon40.8°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "f3EvalMs": 519,
+      "f3Shot": "browser-dem-1024x768-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "4.28",
+        "after": "0.00 m, -1.02 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.9661%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 7.718,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "6.831"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.133"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.551"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.718"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.636"
+          },
+          {
+            "t": "jump-6s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.636"
+          },
+          {
+            "t": "jump-7s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.303"
+          },
+          {
+            "t": "jump-8s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "6.721"
+          }
+        ],
+        "baselineGeoHeight": "6.038",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 7.718,
+        "retried": false
+      },
+      "raf": {
+        "frames": 5,
+        "wallMs": 3088.199999999815,
+        "meanDeltaMs": 617.639999999963,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 1.6190661226605463,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 3,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 1024,
+            "h": 768
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -1.08 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.9641%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.04 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:52:17Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon40.6°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "5.8 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 1024,
+        "innerW": 1024
+      },
+      "shot": "browser-dem-1024x768.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "dem",
+      "viewport": "768x1024",
+      "url": "http://localhost:3000/?terrain=dem",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 768,
+            "h": 1024
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:52:28Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon40.6°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "timeToInitSec": 4.583,
+      "spawnEvalMs": 1068,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 768,
+            "h": 1024
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "6.046",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:52:31Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon40.6°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "f3EvalMs": 509,
+      "f3Shot": "browser-dem-768x1024-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "4.28",
+        "after": "0.00 m, -1.02 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.9661%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 7.708,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "6.831"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.133"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.373"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.666"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.708"
+          },
+          {
+            "t": "jump-6s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.501"
+          },
+          {
+            "t": "jump-7s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.043"
+          },
+          {
+            "t": "jump-8s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "6.336"
+          }
+        ],
+        "baselineGeoHeight": "6.038",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 7.708,
+        "retried": false
+      },
+      "raf": {
+        "frames": 5,
+        "wallMs": 3002.4000000001834,
+        "meanDeltaMs": 600.4800000000366,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 1.6653343991472471,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 3,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 768,
+            "h": 1024
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -1.08 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.9641%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.04 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:53:17Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon40.5°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "5.8 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 768,
+        "innerW": 768
+      },
+      "shot": "browser-dem-768x1024.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "dem",
+      "viewport": "390x844",
+      "url": "http://localhost:3000/?terrain=dem",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 390,
+            "h": 844
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": null,
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": null,
+        "checksChip": null,
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": null,
+        "speed": null,
+        "grounded": null,
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "13:55:0826°C",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": false,
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "timeToInitSec": null,
+      "spawnEvalMs": 351,
+      "worldInitialised": false,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 390,
+            "h": 844
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": null,
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": null,
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": null,
+        "speed": null,
+        "grounded": null,
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "13:55:1026°C",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "f3EvalMs": 302,
+      "f3Shot": "browser-dem-390x844-f3.png",
+      "walk": {
+        "before": null,
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": null,
+        "duringSpeed": null,
+        "after": null,
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.9494%"
+        },
+        "afterAnim": null,
+        "afterGeoHeight": "6.038",
+        "moved": true
+      },
+      "jump": {
+        "airborne": false,
+        "landed": false,
+        "peakGeoHeight": 7.715,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.827"
+          },
+          {
+            "t": "jump-2s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "7.662"
+          },
+          {
+            "t": "jump-3s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "7.632"
+          },
+          {
+            "t": "jump-4s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "7.040"
+          },
+          {
+            "t": "jump-5s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-6s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-7s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-8s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-9s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-10s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-11s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-12s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-13s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-14s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-15s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-16s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-17s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "jump-18s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "retry-1s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.827"
+          },
+          {
+            "t": "retry-2s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "7.662"
+          },
+          {
+            "t": "retry-3s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "7.715"
+          },
+          {
+            "t": "retry-4s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "7.497"
+          },
+          {
+            "t": "retry-5s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "retry-6s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "retry-7s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "retry-8s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "retry-9s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "retry-10s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "retry-11s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          },
+          {
+            "t": "retry-12s",
+            "anim": null,
+            "grounded": null,
+            "geoHeight": "6.035"
+          }
+        ],
+        "retried": true,
+        "baselineGeoHeight": "6.035",
+        "baselineAnim": null,
+        "baselineGrounded": null
+      },
+      "raf": {
+        "frames": 8,
+        "wallMs": 3039.8999999992666,
+        "meanDeltaMs": 379.9874999999083,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 2.631665515313639,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 5,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 390,
+            "h": 844
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": null,
+        "marker": {
+          "left": "50%",
+          "top": "49.9491%"
+        },
+        "span": null,
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": null,
+        "speed": null,
+        "grounded": null,
+        "elevationChip": "Elevation: 6.03 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "13:56:2026°C",
+        "interactionText": "5.4 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 390,
+        "innerW": 390
+      },
+      "shot": "browser-dem-390x844.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    },
+    {
+      "mode": "dem",
+      "viewport": "844x390",
+      "url": "http://localhost:3000/?terrain=dem",
+      "spawn": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 844,
+            "h": 390
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:56:27Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon39.9°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "timeToInitSec": 3.363,
+      "spawnEvalMs": 702,
+      "worldInitialised": true,
+      "f3": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 844,
+            "h": 390
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, 0.00 m",
+        "marker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": null,
+        "terrainSummary": "Terrain checks: 10/10",
+        "ter09": "TER-09: Terrain modePASSED",
+        "ter10": "TER-10: Spawn groundingPASSED",
+        "geoHeight": "6.046",
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.05 m",
+        "fpsChip": null,
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:56:30Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon39.9°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "6.9 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "f3EvalMs": 320,
+      "f3Shot": "browser-dem-844x390-f3.png",
+      "walk": {
+        "before": "0.00 m, 0.00 m",
+        "beforeMarker": {
+          "left": "50%",
+          "top": "50%"
+        },
+        "duringAnim": "WALK",
+        "duringSpeed": "4.45",
+        "after": "0.00 m, -1.50 m",
+        "afterMarker": {
+          "left": "50%",
+          "top": "49.9499%"
+        },
+        "afterAnim": "WALK",
+        "afterGeoHeight": null,
+        "moved": true
+      },
+      "jump": {
+        "airborne": true,
+        "landed": true,
+        "peak": 7.705,
+        "timeline": [
+          {
+            "t": "jump-1s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "6.827"
+          },
+          {
+            "t": "jump-2s",
+            "anim": "JUMP",
+            "grounded": "Airborne",
+            "geoHeight": "7.370"
+          },
+          {
+            "t": "jump-3s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.705"
+          },
+          {
+            "t": "jump-4s",
+            "anim": "FALL",
+            "grounded": "Airborne",
+            "geoHeight": "7.497"
+          },
+          {
+            "t": "jump-5s",
+            "anim": "LANDING",
+            "grounded": "Grounded",
+            "geoHeight": "6.332"
+          }
+        ],
+        "baselineGeoHeight": "6.035",
+        "baselineAnim": "IDLE",
+        "baselineGrounded": "Grounded",
+        "peakGeoHeight": 7.705,
+        "retried": false
+      },
+      "raf": {
+        "frames": 7,
+        "wallMs": 3049.2999999994427,
+        "meanDeltaMs": 435.6142857142061,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "rafFps": 2.2956088282560847,
+      "softwareRenderer": true,
+      "webglContextLoss": {
+        "lostFired": true,
+        "isContextLost": true,
+        "canvasesAtLoss": 2,
+        "restoredFired": true,
+        "isContextLostAfterRestore": false,
+        "rafTicksAfterRestore": 4,
+        "canvasesAfterRestore": 2
+      },
+      "final": {
+        "canvases": 2,
+        "canvasDetails": [
+          {
+            "w": 844,
+            "h": 390
+          },
+          {
+            "w": 256,
+            "h": 256
+          }
+        ],
+        "coords": "0.00 m, -1.53 m",
+        "marker": {
+          "left": "50%",
+          "top": "49.9491%"
+        },
+        "span": "Span: 3000 m",
+        "checksChip": "Checks: 35/35",
+        "terrainSummary": null,
+        "ter09": null,
+        "ter10": null,
+        "geoHeight": null,
+        "anim": "IDLE",
+        "speed": "0.00",
+        "grounded": "Grounded",
+        "elevationChip": "Elevation: 6.03 m",
+        "fpsChip": "FPS: 0",
+        "cameraDist": null,
+        "cameraAngles": null,
+        "weatherText": "DA NANG, VIETNAM13:57:04Friday, November 20, 2026GMT+7 · Asia/Ho_Chi_MinhAfternoon39.8°26°CFeels like 29°CDrizzleWMO #51LIVEHumidity81%Cloud cover99%Wind17.6 km/h · NEPrecipitation0.1 mmSunrise 05:52Sunset 17:12Observed: 13:45Open-Meteo",
+        "interactionText": "5.4 m / max 5.0 m — move closer",
+        "interactionVisible": true,
+        "minimapPresent": true,
+        "hudToolbar": true,
+        "debugPanelOpen": true,
+        "overflowX": false,
+        "scrollW": 844,
+        "innerW": 844
+      },
+      "shot": "browser-dem-844x390.png",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "weatherCalls": [
+        {
+          "url": "http://localhost:3000/api/weather",
+          "status": 200
+        }
+      ],
+      "weatherStatus": "LIVE (HTTP 200 observed)",
+      "camera": {
+        "spawnAngles": null,
+        "finalAngles": null
+      }
+    }
+  ]
+}

@@ -38,5 +38,5 @@ Each failure was fixed and the gate re-run to exit 0. No gate was skipped, no wa
 
 ## What the baseline did NOT include
 
-- No browser verification was run in this session (see `PERFORMANCE_REPORT.md` and `KNOWN_ISSUES.md`): the subagent that did this work has no live-browser capability. The production build exists (`.next/`), and the browser procedure is documented so the parent agent can run it.
-- Coverage numbers were not re-measured in the final run; the baseline coverage (77.83% / 67.3% / 63.03% / 79.64%) is from Phase 15. The full test suite passes; coverage re-measurement is a follow-up, not a gate in this phase.
+- Browser verification: **done 2026-11-20** — full 6-viewport × 2-mode QA (12/12 PASS) plus a full 6-viewport re-QA after the 2-defect fix (12/12 PASS); see `docs/audit/verification-2026-11-20/VERIFICATION_REPORT.md`. The "no browser verification was run in this session" line below was the pre-QA text.
+- Coverage numbers were re-measured 2026-11-20 in the verification audit: **78.67% / 69.18% / 63.72% / 80.52%** (Phase 15 baseline was 77.83% / 67.3% / 63.03% / 79.64%).

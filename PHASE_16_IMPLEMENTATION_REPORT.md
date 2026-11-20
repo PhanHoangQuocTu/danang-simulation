@@ -1,7 +1,7 @@
 # Phase 16 — Real Terrain & DEM Integration — Implementation Report
 
-**Status: IMPLEMENTED, UNCOMMITTED — push authorisation pending (see §21).**
-**Date:** 2026-11-20. **Local HEAD:** `9170689`. **Branch:** local `master`, tree has uncommitted Phase 16 work only. **No commit, no push was made in this phase.**
+**Status: IMPLEMENTED and PUSHED to `main` on 2026-11-20 as `f10d98c` (`feat(terrain): integrate real copernicus dem pilot for da nang`, parent `9170689`).**
+**Date:** 2026-11-20. **Local HEAD at implementation time:** `9170689`. **Branch:** local `master`, tree had uncommitted Phase 16 work only at that time. **Update 2026-11-20: the Project Owner authorized the push and the work landed on `main` as `f10d98c`; the "UNCOMMITTED — push authorisation pending" line above was the pre-push text and is kept here as a dated historical note.**
 **Toolchain:** Node 22.23.5 / pnpm 12.14.0.
 **Overall verdict: PARTIAL** — a real DEM is acquired, ingested and integrated behind an explicit opt-in, with all gates passing; browser verification, geographic accuracy certification and ellipsoid alignment remain NOT VERIFIED.
 
@@ -62,7 +62,7 @@ Copernicus GLO-30 is the only candidate that is (a) anonymously downloadable —
 
 ## 7. Pilot coverage
 
-Centre lat 16.0544, lon 108.2022; source window rows 3354–3453, cols 678–777 (100×100 cells); bbox lon 108.188333–108.216111, lat 16.040556–16.068333; **3074 m N–S × 2972 m E–W** (~9.1 km²); cell 30.74 m (lat) × 29.72 m (lon). Justification: 100 cells across gives ~100 independent samples per axis — an order of magnitude more than the 180 m synthetic boundary — while staying far inside one tile (no mosaicking; tile edge ~6 km north, ~22 km east). The pilot is flat coastal urban terrain (mean 8.47 m); it will not exercise steep-slope handling — a mountain pilot over the same tile (max 1408.79 m) is the natural follow-up.
+Centre lat 16.0544, lon 108.2022; source window rows 3354–3453, cols 678–777 (100×100 cells); bbox lon 108.188333–108.216111, lat 16.040556–16.068333 (source-window extent — the resampled-grid extent in §17 P16-04 is lon 108.188181–108.216217, lat 16.040844–16.067955, differing by ~15–30 m per edge because it is measured on the resampled grid, not the source window); **3074 m N–S × 2972 m E–W** (~9.1 km²); cell 30.74 m (lat) × 29.72 m (lon). Justification: 100 cells across gives ~100 independent samples per axis — an order of magnitude more than the 180 m synthetic boundary — while staying far inside one tile (no mosaicking; tile edge ~6 km north, ~22 km east). The pilot is flat coastal urban terrain (mean 8.47 m); it will not exercise steep-slope handling — a mountain pilot over the same tile (max 1408.79 m) is the natural follow-up.
 
 ## 8. CRS and datum
 
@@ -79,7 +79,7 @@ Measured (reproduced in an independent re-check): raw window min 1.79 / max 25.6
 
 ## 10. Provider and mesh integration
 
-- **Provider:** `danangDemPilotGridInput()` → `GridDemProvider` via `selectTerrainProvider` in `createWorldRuntime` (`dem-pilot` mode). Coverage ±1500 m, boundary 1500 m, spawn = sampled centre elevation (~6.30 m, not Y = 0). Synthetic stays the default; DEM is selected only by the exact `?terrain=dem` query (`resolveTerrainMode`).
+- **Provider:** `danangDemPilotGridInput()` → `GridDemProvider` via `selectTerrainProvider` in `createWorldRuntime` (`dem-pilot` mode). Coverage ±1500 m, boundary 1500 m, spawn = sampled centre elevation (measured 6.045524001121521 m in the browser, not Y = 0). Synthetic stays the default; DEM is selected only by the exact `?terrain=dem` query (`resolveTerrainMode`).
 - **Mesh:** `buildTerrainMesh(scope, terrain, material)` — one builder, no duplicated formula. Synthetic: 180 m / 128 segments, original path/rock colouring. DEM: 3000 m from coverage, 99×99 segments from raster dimensions, hypsometric colouring, vertical exaggeration 1.0 (vertex Y = sampled elevation unchanged). Fog 0.0006 in DEM mode (vs 0.0055 synthetic); camera far 6000 m (vs 320 m); Mini Map half-extent 1500 m and camera height 1600 m (vs 72 m / 140 m).
 - **Scene:** `scene.ts` calls `buildTerrainMesh` instead of hardcoding 180/128. Spawn plaza/ring sit at the provider spawn. Step stones, platforms, manifest rocks and trees are skipped in DEM mode; lanterns, bushes, grass and the 3 interaction fixtures are kept and sample the active provider.
 - **Lifecycle:** runtime-owned DEM provider disposed exactly once on runtime dispose; active provider resets to synthetic. A DEM construction failure throws instead of silently falling back to synthetic.
@@ -128,7 +128,7 @@ Three failures occurred during the work and were fixed before the final run (unu
 
 ## 15. Browser QA
 
-**Not run in this session — NOT VERIFIED.** The subagent that implemented Phase 16 has no live-browser capability, so no viewport result is claimed. The production build exists (`.next/` from the passing build). Procedure for the parent agent: start the standalone server with `.next/static` + `public` copied into `.next/standalone/` (Phase 15 lesson — without the copy, `/_next/static/...` subresources 404 and the world never initialises), then verify all 6 viewports (1920×1080, 1366×768, 1024×768, 768×1024, 390×844, 844×390) in both default mode and `?terrain=dem`: world initialises, character grounded/moves/jumps on the real terrain, camera/Mini Map/HUD/weather/interaction/F3 work, 0 console errors, WebGL context loss/restore.
+**Update 2026-11-20: the browser QA described below as "not run" was run after this report was written — first by the parent agent (6 viewports × 2 modes, 12/12 operationally PASS, 2 real defects found), then as a full 6-viewport re-QA after the fixes (12/12 PASS, see `docs/audit/verification-2026-11-20/VERIFICATION_REPORT.md`). The paragraph below is kept as the pre-QA text. Procedure for the original run: start the standalone server with `.next/static` + `public` copied into `.next/standalone/` (Phase 15 lesson — without the copy, `/_next/static/...` subresources 404 and the world never initialises), then verify all 6 viewports (1920×1080, 1366×768, 1024×768, 768×1024, 390×844, 844×390) in both default mode and `?terrain=dem`: world initialises, character grounded/moves/jumps on the real terrain, camera/Mini Map/HUD/weather/interaction/F3 work, 0 console errors, WebGL context loss/restore.
 
 What the automated tests do cover instead: DEM scene composition (no synthetic colliders, fog 0.0006), DEM runtime creation/disposal, and character grounding/movement/jump/boundary in jsdom with the real provider.
 
@@ -187,15 +187,15 @@ One non-error observation: the synthetic run logged one failed request, `/api/we
 | P16-18 | F3 diagnostics updated | **PARTIAL** | TER-09/TER-10 label REAL DEM correctly after the fix (browser-verified at 1024×768); no UNAVAILABLE runtime state exists yet |
 | P16-19 | Geographic validation evidence available | **NOT VERIFIED** | No independent ground control points, no surveyed checkpoints, no RMSE claimed |
 | P16-20 | Performance evaluated | **PARTIAL** | Mesh/asset/gate costs measured (DEM mesh 10,000 vertices, smaller than synthetic 16,641; pilot asset 40 KB); FPS 60 NOT_APPLICABLE on SwiftShader, no GPU/Docker in VM |
-| P16-21 | Responsive browser QA completed | **PARTIAL** | 6 viewports × 2 modes all operationally PASS (0 console errors); full 6-viewport re-QA after the 2-defect fix has not run — only a 1024×768 spot-check |
+| P16-21 | Responsive browser QA completed | **PASS** | Full 6-viewport × 2-mode re-QA after the 2-defect fix ran 2026-11-20: 12/12 PASS, 0 console errors, defects confirmed fixed (see `docs/audit/verification-2026-11-20/VERIFICATION_REPORT.md`). Caveats: E-activate path not exercised (no interactable within 5.0 m of spawn); 390×844 F3 needs 2 taps from its initial hidden state; FPS NOT_APPLICABLE on SwiftShader |
 | P16-22 | Existing Phase 01–15 regression verified | **PASS** | §12; 53 files / 302 tests, exit 0; no test weakened |
 | P16-23 | No unauthorized data introduced | **PASS** | Only Copernicus GLO-30 (open, anonymous S3 download, attribution recorded); no scraping, no bypassed auth/payment |
 | P16-24 | Documentation updated | **PASS** | `docs/PHASE_STATUS.md` + phase-16 audit docs updated; historical Phase 11–15 reports untouched |
 | P16-25 | Implementation report completed | **PASS** | This report + `docs/audit/phase-16/` |
 
-**Tally (P16-01..P16-25):** 17 PASS, 6 PARTIAL, 1 NOT VERIFIED, 0 FAIL.
+**Tally (P16-01..P16-25):** 18 PASS, 5 PARTIAL, 1 NOT VERIFIED, 0 FAIL. *(Update 2026-11-20: P16-21 moved PARTIAL → PASS after the full 6-viewport re-QA; tally was 17/6/1 before that run.)*
 
-## 18. File list (uncommitted)
+## 18. File list (committed as `f10d98c` on 2026-11-20)
 
 Modified (18): `src/engine/terrain/type.ts`, `src/messages/en/worldExplorer.json`, `src/messages/vi/worldExplorer.json`, `src/modules/WorldExplorer/__tests__/hud-semantics.test.tsx`, `src/modules/WorldExplorer/__tests__/terrain-diagnostics.test.ts`, `src/modules/WorldExplorer/components/WorldHud.tsx`, `src/modules/WorldExplorer/hooks/useWorldExplorer.ts`, `src/modules/WorldExplorer/runtime/world.ts`, `src/modules/WorldExplorer/terrain-diagnostics.ts`, `src/world-core/registries/__tests__/data-sources.test.ts`, `src/world-core/registries/data-sources.ts`, `src/world-core/terrain/__tests__/grid.test.ts`, `src/world-core/terrain/__tests__/validation.test.ts`, `src/world-core/terrain/grid.ts`, `src/world-core/terrain/selection.ts`, `src/world-core/terrain/validation.ts`, `src/worlds/danang/data-sources.ts`, `src/worlds/danang/scene.ts`.
 
@@ -207,19 +207,21 @@ Deleted: none. Historical Phase 11–15 reports untouched. `docs/PHASE_STATUS.md
 
 ## 19. Rollback strategy
 
-The work is uncommitted. `git checkout -- .` plus removing the new untracked paths restores HEAD `9170689` exactly (verify with `git status --short`). At runtime, the DEM path is entirely opt-in: without `?terrain=dem` the default path is the Phase 15 synthetic behaviour, and a DEM construction failure throws instead of silently falling back. Full detail: `docs/audit/phase-16/KNOWN_ISSUES.md`.
+The work is committed as `f10d98c` on `main` (2026-11-20). To roll back, `git revert f10d98c` (or reset the branch to `9170689`); do NOT use `git checkout -- .` — that only discards uncommitted changes and does not undo a pushed commit. At runtime, the DEM path is entirely opt-in: without `?terrain=dem` the default path is the Phase 15 synthetic behaviour, and a DEM construction failure throws instead of silently falling back. Full detail: `docs/audit/phase-16/KNOWN_ISSUES.md`.
 
 ## 20. Phase 17 dependencies
 
-1. Browser verification at 6 viewports (see §15) — before any claim the DEM world works in the browser.
+1. Browser verification at 6 viewports (see §15) — **done 2026-11-20** (12/12 PASS, full re-QA after the fix).
 2. Independent checkpoints / GCPs and an RMSE measurement for geographic certification.
 3. A verified geoid undulation value for Da Nang (or a documented decision to stay orthometric) before the DEM can be called production-ready.
 4. Mountain pilot (steep terrain) and, if approved, a larger-area DEM with tiling/LOD.
 5. Re-placing colliders (platforms/rocks/trees) from DEM heights; FABDEM cross-check and its licence decision.
 6. Production asset delivery decision for anything larger than the embedded 40 KB pilot (no Git LFS without approval).
-7. Coverage re-measurement (Phase 15 baseline: 77.83% / 67.3% / 63.03% / 79.64%).
+7. Coverage re-measurement (Phase 15 baseline: 77.83% / 67.3% / 63.03% / 79.64%) — **done 2026-11-20: 78.67% / 69.18% / 63.72% / 80.52%** (verification audit, all gates exit 0).
 8. Cleanup of dead code carried over from Phase 15 (`unsupported-crs` never returned; `GAME_CONFIG.worldBoundaryRadius: 68` dead duplicate).
 
 ## 21. Push authorisation
+
+**Update 2026-11-20: the Project Owner authorized the push at 13:16 +07 and the work landed on `main` as `f10d98c`. The "no commit and no push" line below was the pre-push text, kept as a dated historical note.**
 
 **No commit and no push were made in this phase, per §24 of the Phase 16 prompt. All work above is uncommitted in the working copy at `~/workspace/danang-simulation-work/danang-simulation-main/`. Push authorisation is pending from the Project Owner.**

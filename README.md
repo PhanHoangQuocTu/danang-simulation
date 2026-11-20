@@ -2,7 +2,7 @@
 
 Ứng dụng Next.js 16 tích hợp mô phỏng Three.js Phase 1–10: nhân vật góc nhìn thứ ba, địa hình thử nghiệm tổng hợp, Mini Map, tương tác, đồng hồ Đà Nẵng và thời tiết Open-Meteo.
 
-Mở `/` hoặc `/vi` để khám phá. Địa hình hiện tại là synthetic local meters, không phải bản dựng địa lý thành phố đã đo đạc. Phase 12–14 có Geospatial Core, source registry và imagery alignment inspector; chưa có ảnh hoặc GCP thật được duyệt. Xem [báo cáo Phase 14](PHASE_14_IMPLEMENTATION_REPORT.md) cho trạng thái **PARTIAL** và giới hạn, và [báo cáo hoàn thiện Phase 14](PHASE_14_COMPLETION_REPORT.md) (19/11/2026) cho các mục đã hoàn thiện có bằng chứng chạy thật và các blocker còn lại.
+Mở `/` hoặc `/vi` để khám phá. Địa hình hiện tại là synthetic local meters, không phải bản dựng địa lý thành phố đã đo đạc. Phase 12–14 có Geospatial Core, source registry và imagery alignment inspector; chưa có ảnh hoặc GCP thật được duyệt. Phase 15 thêm kiến trúc Terrain Provider thống nhất; Phase 16 tích hợp DEM thật Copernicus GLO-30 (pilot 3 km × 3 km, chọn bằng `?terrain=dem`, synthetic vẫn là mặc định) — xem [báo cáo Phase 16](PHASE_16_IMPLEMENTATION_REPORT.md) (kết luận **PARTIAL**). Xem [báo cáo Phase 14](PHASE_14_IMPLEMENTATION_REPORT.md) cho trạng thái **PARTIAL** và giới hạn, và [báo cáo hoàn thiện Phase 14](PHASE_14_COMPLETION_REPORT.md) (19/11/2026) cho các mục đã hoàn thiện có bằng chứng chạy thật và các blocker còn lại.
 
 Xem [báo cáo browser QA và ảnh so sánh Phase 10](docs/migration/evidence/PHASE_1_TO_10_BROWSER_QA_REPORT.md) cho kiểm thử Chrome/Edge, sáu kích thước viewport, kết quả đo và giới hạn đã xác minh.
 

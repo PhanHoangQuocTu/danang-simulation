@@ -346,6 +346,8 @@ Known issues: `PHASE_15_IMPLEMENTATION_REPORT.md` (Appendix: KNOWN_ISSUES.md). H
 
 ### Files changed (local only, unpushed — no commit made)
 
+*(Update 2026-11-20: this section heading was the pre-push text. Phase 15 was pushed to `main` on 2026-11-20 as `b0722d87` + `5fc908a`; see §2.)*
+
 New: `src/engine/terrain/{const,type}.ts`,
 `src/world-core/terrain/{validation,grid,fixtures,selection}.ts`,
 `src/world-core/terrain/__tests__/{validation,grid,synthetic,selection}.test.ts`,
@@ -384,6 +386,8 @@ Deleted: `src/worlds/danang/zones/synthetic.ts`.
 **Push authorization needed:** nothing was committed or pushed in this task.
 The parent/user must explicitly authorize push before these Phase 15 changes go
 to `main`.
+
+*(Update 2026-11-20: authorization was given and Phase 15 was pushed to `main` on 2026-11-20 as `b0722d87` + `5fc908a`; the lines above were the pre-push text.)*
 
 ---
 

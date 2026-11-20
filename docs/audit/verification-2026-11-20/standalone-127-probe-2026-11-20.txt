@@ -1,0 +1,8 @@
+Standalone 127.0.0.1 redirect-loop re-probe — 2026-11-20 (this VM)
+Server: .next/standalone/server.js, HOSTNAME=127.0.0.1, PORT=3102, .next/static + public copied into .next/standalone/
+Next.js: 16.4.6 installed; npm view next version = 16.4.6 (latest stable, unchanged since 2026-11-19)
+  GET http://127.0.0.1:3102/   -> HTTP 307 Temporary Redirect, Location: /   (loops to itself)
+  GET http://127.0.0.1:3102/en -> HTTP 307 Temporary Redirect, Location: /   (loops to itself)
+  GET http://localhost:3102/   -> HTTP 307, Location: / (curl fell back to 127.0.0.1 in this VM; localhost resolves ::1, server bound 127.0.0.1 only — not a separate localhost result)
+Verdict: standalone 127.0.0.1 redirect loop still FAIL on Next 16.4.6. Upstream issue #94745, fix PR #95917: PR page fetched 2026-11-20, state could NOT be verified directly (GitHub API HTTP 403 rate limit); no stable release contains a fix either way. Workaround stands: HOSTNAME=localhost or 0.0.0.0.
+Live weather BFF probe, same day: GET http://localhost:3101/api/weather -> HTTP 200, temperature 26.2, weatherCode 51, humidity 81 (direct Open-Meteo also HTTP 200, 26.5 C). Quota reset since 2026-11-19.

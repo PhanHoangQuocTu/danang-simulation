@@ -12,8 +12,8 @@
 
 - **FPS 60: NOT VERIFIED / NOT_APPLICABLE on SwiftShader.** This VM has no GPU and no Docker; headless 3D runs on SwiftShader software rendering only. Phase 15 measured 0.79 FPS over 20 s on SwiftShader — that number describes the software renderer, not the product. No FPS figure is claimed for Phase 16.
 - **Physical device / Docker / GPU long-term profiling: NOT VERIFIED.** Same standing blocker as Phases 14–15: no Docker (`docker: command not found`), no `/dev/dri`, no `nvidia-smi` in this VM.
-- **Browser frame cost: NOT VERIFIED.** No live-browser run was performed in this session (see `KNOWN_ISSUES.md`); the 6-viewport browser verification is pending with the parent agent, including the frame-cost observation that would let the performance criterion be judged.
-- **Live weather observation: NOT VERIFIED.** Open-Meteo 429 daily limit on the shared egress IP (standing blocker; the BFF 429 handling from the 2026-11-19 verification fix is unchanged).
+- **Browser frame cost: measured on SwiftShader only — NOT_APPLICABLE as a product number.** The full 6-viewport re-QA of 2026-11-20 measured rAF 0.6–2.6 fps (software rendering); no GPU/Docker in this VM, so no 60 FPS claim is made.
+- **Live weather observation: VERIFIED LIVE 2026-11-20.** Direct Open-Meteo returned HTTP 200 (26.5 °C) and the BFF `/api/weather` returned HTTP 200 in the live browser QA (26 °C drizzle, WMO #51) and in a direct probe (26.2 °C, WMO 51, humidity 81%). The shared-egress daily quota has reset since 2026-11-19; the 429 handling added then is unchanged.
 
 ## Performance risks noted for Phase 17
 

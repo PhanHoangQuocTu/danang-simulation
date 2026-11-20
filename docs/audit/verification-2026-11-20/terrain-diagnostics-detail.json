@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-20T06:58Z",
+  "dem": {
+    "checks": [
+      { "id": "TER-01", "passed": true, "title": "Provider copernicus-dem-glo30-danang-pilot-v1 v1 is active" },
+      { "id": "TER-02", "passed": true, "title": "EPSG:4326 / ORTHOMETRIC_EGM2008 / production" },
+      { "id": "TER-03", "passed": true, "title": "Spawn elevation 6.045524001121521" },
+      { "id": "TER-04", "passed": true, "title": "Boundary 1500 m inside coverage -1500..1500 m" },
+      { "id": "TER-05", "passed": true, "title": "Outside coverage returns outside-coverage, never a silent zero" },
+      { "id": "TER-06", "passed": true, "title": "Invalid input returns invalid-input" },
+      { "id": "TER-07", "passed": true, "title": "Support surface is terrain or higher, from one evaluation" },
+      {
+        "id": "TER-08",
+        "passed": true,
+        "title": "Production provider is copernicus-dem-glo30-danang-pilot-v1 (production)"
+      },
+      {
+        "id": "TER-09",
+        "passed": true,
+        "title": "REAL DEM (pilot — orthometric, ellipsoid alignment NOT VERIFIED) — copernicus-dem-glo30-danang-pilot-v1 @ 30 m, datum ORTHOMETRIC_EGM2008, production-ready: no"
+      },
+      {
+        "id": "TER-10",
+        "passed": true,
+        "title": "Spawn Y 6.045524001121521 m equals sampled elevation 6.045524001121521"
+      }
+    ],
+    "geoTelemetry": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North. WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL. SIMULATED POSITION — NOT GEO-VERIFIED. Derived latitude 16.0544000°, derived longitude 108.2022000°, simulated ellipsoid height 6.046 m, compass heading 180.0°",
+    "url": "http://localhost:3000/?terrain=dem"
+  },
+  "head": "f10d98c",
+  "method": "F3 expanded, read ul.world-diagnostics li title attributes + [data-testid=geo-telemetry] text",
+  "synthetic": {
+    "checks": [
+      { "id": "TER-01", "passed": true, "title": "Provider synthetic-danang-phase-10 v1 is active" },
+      { "id": "TER-02", "passed": true, "title": "synthetic-local-meters / SYNTHETIC_LOCAL / production" },
+      { "id": "TER-03", "passed": true, "title": "Spawn elevation 0" },
+      { "id": "TER-04", "passed": true, "title": "Boundary 68 m inside coverage -90..90 m" },
+      { "id": "TER-05", "passed": true, "title": "Outside coverage returns outside-coverage, never a silent zero" },
+      { "id": "TER-06", "passed": true, "title": "Invalid input returns invalid-input" },
+      { "id": "TER-07", "passed": true, "title": "Support surface is terrain or higher, from one evaluation" },
+      { "id": "TER-08", "passed": true, "title": "Production provider is synthetic-danang-phase-10 (production)" },
+      {
+        "id": "TER-09",
+        "passed": true,
+        "title": "SYNTHETIC TERRAIN — synthetic-danang-phase-10 @ n/a m, datum SYNTHETIC_LOCAL, production-ready: no"
+      },
+      { "id": "TER-10", "passed": true, "title": "Spawn Y 0 m equals sampled elevation 0" }
+    ],
+    "geoTelemetry": "Geo Core: READY · reference-only WGS84 / ECEF / ENU · +X East / +Y Up / -Z North. WGS84 ellipsoid · anchor 0m reference assumption, not measured MSL. SIMULATED POSITION — NOT GEO-VERIFIED. Derived latitude 16.0544000°, derived longitude 108.2022000°, simulated ellipsoid height 0.000 m, compass heading 180.0°",
+    "url": "http://localhost:3000/"
+  },
+  "tool": "qa-ter-detail.mjs",
+  "viewport": "1024x768"
+}
